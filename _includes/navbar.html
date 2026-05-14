@@ -1,13 +1,12 @@
 <!-- _includes/navbar.html -->
 
-<nav class="topbar" aria-label="Reading and accessibility tools">
-
 <style>
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: #ffffff;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -40,28 +39,47 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  padding: 0.35rem 0.6rem;
+  padding: 0.35rem 0.65rem;
   border-radius: 8px;
   color: #374151;
   font-size: 0.9rem;
+  transition: background 0.2s ease;
 }
 
 .topbar-button:hover {
   background: #f3f4f6;
 }
 
+/* =========================
+   DARK MODE
+========================= */
+
 body.dark-mode {
-  background: #0f172a;
-  color: #f3f4f6;
+  --background: #0f172a;
+  --surface: #111827;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --border: #1f2937;
+  --primary: #93c5fd;
+  --primary-hover: #bfdbfe;
+}
+
+body.dark-mode {
+  background: var(--background);
+  color: var(--text);
 }
 
 body.dark-mode .topbar {
-  background: #111827;
-  border-color: #1f2937;
+  background: rgba(15, 23, 42, 0.94);
+  border-color: var(--border);
 }
 
 body.dark-mode .topbar-button {
   color: #f3f4f6;
+}
+
+body.dark-mode .topbar-button:hover {
+  background: #1e293b;
 }
 
 body.dark-mode .topbar-search input {
@@ -70,10 +88,89 @@ body.dark-mode .topbar-search input {
   border-color: #374151;
 }
 
+body.dark-mode .site-header,
+body.dark-mode .site-footer,
+body.dark-mode .content-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.dark-mode .site-title,
+body.dark-mode .site-title a,
+body.dark-mode .site-tagline,
+body.dark-mode .content-card h1,
+body.dark-mode .content-card h2,
+body.dark-mode .content-card h3,
+body.dark-mode .content-card h4,
+body.dark-mode .content-card p,
+body.dark-mode .content-card li,
+body.dark-mode .content-card strong,
+body.dark-mode .content-card em,
+body.dark-mode .footer-inner p,
+body.dark-mode .footer-note {
+  color: #f3f4f6;
+}
+
+body.dark-mode .content-card blockquote {
+  background: #172033;
+  color: #f3f4f6;
+}
+
+body.dark-mode a {
+  color: #93c5fd;
+}
+
+/* =========================
+   READING MODE
+========================= */
+
 body.reading-mode {
   font-size: 1.08rem;
   line-height: 2.1;
 }
+
+body.reading-mode .content-card {
+  max-width: 75ch;
+  margin-inline: auto;
+}
+
+/* =========================
+   NEURODIVERGENT MODE
+========================= */
+
+body.neurodivergent-mode {
+  letter-spacing: 0.02em;
+  word-spacing: 0.08em;
+  line-height: 2.2;
+}
+
+body.neurodivergent-mode .content-card {
+  max-width: 80ch;
+}
+
+body.neurodivergent-mode p,
+body.neurodivergent-mode li {
+  margin-bottom: 1.8rem;
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
@@ -100,58 +197,70 @@ body.reading-mode {
 }
 </style>
 
-<div class="topbar-inner">
+<nav class="topbar" aria-label="Reading and accessibility tools">
 
-  <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
+  <div class="topbar-inner">
 
-    <input
-      type="search"
-      name="q"
-      placeholder="Search"
-      aria-label="Search">
+    <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
 
-  </form>
+      <input
+        type="search"
+        name="q"
+        placeholder="Search"
+        aria-label="Search">
 
-  <button
-    class="topbar-button"
-    id="decrease-font"
-    aria-label="Decrease font size">
+    </form>
 
-    A-
-  </button>
+    <button
+      class="topbar-button"
+      id="decrease-font"
+      aria-label="Decrease font size">
 
-  <button
-    class="topbar-button"
-    id="increase-font"
-    aria-label="Increase font size">
+      A-
+    </button>
 
-    A+
-  </button>
+    <button
+      class="topbar-button"
+      id="increase-font"
+      aria-label="Increase font size">
 
-  <button
-    class="topbar-button"
-    id="theme-toggle"
-    aria-label="Toggle dark mode">
+      A+
+    </button>
 
-    ☾
-  </button>
+    <button
+      class="topbar-button"
+      id="theme-toggle"
+      aria-label="Toggle dark mode">
 
-  <button
-    class="topbar-button"
-    id="reading-toggle"
-    aria-label="Reading mode">
+      ☾
+    </button>
 
-    Reader
-  </button>
+    <button
+      class="topbar-button"
+      id="reading-toggle"
+      aria-label="Reading mode">
 
-</div>
+      Reader
+    </button>
+
+    <button
+      class="topbar-button"
+      id="neurodivergent-toggle"
+      aria-label="Neurodivergent reading mode">
+
+      ND
+    </button>
+
+  </div>
+
+</nav>
 
 <script>
-
 const increaseButton = document.getElementById('increase-font');
 const decreaseButton = document.getElementById('decrease-font');
 const themeButton = document.getElementById('theme-toggle');
 const readerButton = document.getElementById('reading-toggle');
+const neurodivergentButton = document.getElementById('neurodivergent-toggle');
 
 let currentFontSize = 100;
 
@@ -181,6 +290,9 @@ if (readerButton) {
   });
 }
 
+if (neurodivergentButton) {
+  neurodivergentButton.addEventListener('click', () => {
+    document.body.classList.toggle('neurodivergent-mode');
+  });
+}
 </script>
-
-</nav>
