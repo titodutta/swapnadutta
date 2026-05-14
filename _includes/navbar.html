@@ -1,443 +1,263 @@
-{% unless page.hide_utilities %}
-<!-- =========================================================
-     Sunil Abraham Project
-     Utility Toolbox v2.1
-     Licence: CC BY-SA 4.0
-     ========================================================= -->
+<!-- _includes/navbar.html -->
 
 <style>
-#utilityToolboxContainer {
-  position: fixed;
-  bottom: 35px;
-  right: 20px;
-  z-index: 99999;
-  font-family: sans-serif;
-  font-size: 14px;
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.topbar-inner {
+  width: min(88%, 900px);
+  margin-inline: auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.7rem 0;
 }
 
-#toggleToolbox {
-  background: #2d4d7a;
-  color: #fff;
+.topbar-search {
+  flex: 1;
+  max-width: 220px;
+}
+
+.topbar-search input {
+  width: 100%;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  background: #ffffff;
+  color: #111827;
+}
+
+.topbar-search input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.topbar-button {
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
+  background: transparent;
   cursor: pointer;
-  font-size: 14px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-#toggleToolbox:hover {
-  background: #1a3355;
-}
-
-#toolboxContent {
-  display: none;
-  margin-top: 8px;
-  flex-direction: column;
-  gap: 12px;
-  background: #fff;
-  padding: 14px;
+  padding: 0.45rem 0.7rem;
   border-radius: 8px;
-  color: #2c3e50;
-  width: 260px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-  max-height: 80vh;
-  overflow-y: auto;
+  color: #374151;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
 }
 
-.toolbox-title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 6px 0 10px;
-  color: #002d62;
-  border-bottom: 1px solid #dce7f9;
-  margin-bottom: 4px;
+.topbar-button:hover {
+  background: #f3f4f6;
 }
 
-.tool-section {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.topbar-button.active {
+  background: #e0edff;
+  color: #1d4ed8;
 }
 
-.tool-label {
-  font-weight: bold;
-  font-size: 12px;
-  color: #005b96;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
+/* =========================
+   MOBILE
+========================= */
 
-.utility-button {
-  background: #e6f2ff;
-  color: #1e2a38;
-  border: 1px solid #b0c8e8;
-  padding: 5px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: background 0.2s;
-}
+@media (max-width: 768px) {
 
-.utility-button:hover {
-  background: #c8e0f9;
-}
+  .topbar-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-.utility-select {
-  padding: 6px 8px;
-  width: 100%;
-  border-radius: 6px;
-  border: 1px solid #b0c8e8;
-  font-size: 13px;
-  cursor: pointer;
-  background: #fff;
-}
+  .topbar-search {
+    max-width: 100%;
+  }
 
-.utility-select:hover {
-  border-color: #2d4d7a;
-}
-
-.utility-slider {
-  width: 100%;
-  cursor: pointer;
-  accent-color: #2d4d7a;
-  margin-top: 4px;
-}
-
-.btn-row {
-  display: flex;
-  gap: 6px;
-}
-
-.tool-divider {
-  border: none;
-  border-top: 1px solid #dce7f9;
-  margin: 2px 0;
-}
-
-#resetAllBtn {
-  width: 100%;
-  background: #c62828;
-  color: #fff;
-  border: none;
-  padding: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: bold;
-  transition: background 0.2s;
-}
-
-#resetAllBtn:hover {
-  background: #922b21;
-}
-
-#backToTopBtn {
-  position: fixed;
-  bottom: 35px;
-  left: 10px;
-  background: #2d4d7a;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 99997;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  display: none;
-  transition: background 0.2s;
-}
-
-#backToTopBtn:hover {
-  background: #1a3355;
+  .topbar-tools {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 </style>
 
-<div id="utilityToolboxContainer" translate="no">
-  <button id="toggleToolbox" title="Toggle Utilities">⚙️ Utilities</button>
+<nav class="topbar" aria-label="Reading and accessibility tools">
 
-  <div id="toolboxContent">
+  <div class="topbar-inner">
 
-    <div class="toolbox-title">⚙️ Utilities</div>
+    <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
 
-    <!-- TRANSLATE -->
-    <div class="tool-section">
-      <div class="tool-label">Translate</div>
-      {% include translate.html %}
-    </div>
+      <input
+        type="search"
+        name="q"
+        placeholder="Search"
+        aria-label="Search">
 
-    <hr class="tool-divider">
+    </form>
 
-    <!-- FONT -->
-    <div class="tool-section">
-      <div class="tool-label">Font</div>
-      <select id="fontSelector" class="utility-select">
-        <option value="">Default</option>
-        <option value="arial">Arial</option>
-        <option value="atkinson">Atkinson Hyperlegible</option>
-        <option value="courier">Courier New</option>
-        <option value="georgia">Georgia</option>
-        <option value="lato">Lato</option>
-        <option value="lexend">Lexend</option>
-        <option value="merriweather">Merriweather</option>
-        <option value="opendyslexic">OpenDyslexic</option>
-        <option value="playfair">Playfair Display</option>
-        <option value="roboto">Roboto</option>
-        <option value="sourcesans">Source Sans 3</option>
-        <option value="ubuntu">Ubuntu</option>
-      </select>
-    </div>
+    <div class="topbar-tools">
 
-    <hr class="tool-divider">
+      <button
+        class="topbar-button"
+        id="font-decrease"
+        title="Decrease font size"
+        aria-label="Decrease font size">
 
-    <!-- FONT SIZE -->
-    <div class="tool-section">
-      <div class="tool-label">Font Size</div>
-      <div class="btn-row">
-        <button id="textZoomOut" class="utility-button">A−</button>
-        <button id="textZoomIn" class="utility-button">A+</button>
-        <button id="textZoomReset" class="utility-button">🔁</button>
-      </div>
-      <input type="range" id="fontSizeSlider" class="utility-slider" min="60" max="200" step="5" value="100" />
-    </div>
+        A−
+      </button>
 
-    <hr class="tool-divider">
+      <button
+        class="topbar-button"
+        id="font-reset"
+        title="Reset font size"
+        aria-label="Reset font size">
 
-    <!-- FONT COLOUR -->
-    <div class="tool-section">
-      <div class="tool-label">Font Colour</div>
-      <select id="fontColorSelect" class="utility-select">
-        <option value="">Default</option>
-        <option value="#000000">Black</option>
-        <option value="#222222">Dark Grey</option>
-        <option value="#1a3355">Navy</option>
-        <option value="#006400">Dark Green</option>
-        <option value="#8b0000">Dark Red</option>
-        <option value="#4b0082">Indigo</option>
-        <option value="#800000">Maroon</option>
-        <option value="#191970">Midnight Blue</option>
-        <option value="#8b4513">Saddle Brown</option>
-      </select>
-    </div>
+        A
+      </button>
 
-    <hr class="tool-divider">
+      <button
+        class="topbar-button"
+        id="font-increase"
+        title="Increase font size"
+        aria-label="Increase font size">
 
-    <!-- LINE HEIGHT -->
-    <div class="tool-section">
-      <div class="tool-label">Line Height</div>
-      <div class="btn-row">
-        <button id="lineHeightDecrease" class="utility-button">⬇️</button>
-        <button id="lineHeightIncrease" class="utility-button">⬆️</button>
-        <button id="lineHeightReset" class="utility-button">🔁</button>
-      </div>
-      <input type="range" id="lineHeightSlider" class="utility-slider" min="1" max="3" step="0.1" value="1.6" />
-    </div>
+        A+
+      </button>
 
-    <hr class="tool-divider">
+      <button
+        class="topbar-button"
+        id="theme-toggle"
+        title="Dark mode"
+        aria-label="Toggle dark mode">
 
-    <!-- LETTER SPACING -->
-    <div class="tool-section">
-      <div class="tool-label">Letter Spacing</div>
-      <input type="range" id="letterSpacingSlider" class="utility-slider" min="0" max="5" step="0.5" value="0" />
-      <button id="letterSpacingReset" class="utility-button">🔁 Reset</button>
-    </div>
+        ☾
+      </button>
 
-    <hr class="tool-divider">
+      <button
+        class="topbar-button"
+        id="reader-toggle"
+        title="Calmer reading layout"
+        aria-label="Reader mode">
 
-    <!-- WORD SPACING -->
-    <div class="tool-section">
-      <div class="tool-label">Word Spacing</div>
-      <input type="range" id="wordSpacingSlider" class="utility-slider" min="0" max="20" step="1" value="0" />
-      <button id="wordSpacingReset" class="utility-button">🔁 Reset</button>
-    </div>
+        Reader
+      </button>
 
-    <hr class="tool-divider">
+      <button
+        class="topbar-button"
+        id="neuro-toggle"
+        title="Extra spacing and easier reading"
+        aria-label="Neurodivergent reading mode">
 
-    <!-- RESET ALL -->
-    <div class="tool-section">
-      <button id="resetAllBtn">🔄 Reset All Settings</button>
+        ND
+      </button>
+
     </div>
 
   </div>
-</div>
 
-<!-- Back to Top -->
-<button id="backToTopBtn" title="Back to Top">⬆️</button>
+</nav>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+const body = document.body;
 
-  const toggleBtn = document.getElementById('toggleToolbox');
-  const toolbox   = document.getElementById('toolboxContent');
-  const target    = document.querySelector('main#maincontent');
+const increaseButton = document.getElementById('font-increase');
+const decreaseButton = document.getElementById('font-decrease');
+const resetButton = document.getElementById('font-reset');
 
-  /* ── TOOLBOX OPEN/CLOSE ── */
-  if (localStorage.getItem('toolboxOpen') === 'true') {
-    toolbox.style.display = 'flex';
-    toggleBtn.textContent = '❌ Close';
-  }
+const themeButton = document.getElementById('theme-toggle');
+const readerButton = document.getElementById('reader-toggle');
+const neuroButton = document.getElementById('neuro-toggle');
 
-  toggleBtn.onclick = () => {
-    const expanded = toolbox.style.display === 'flex';
-    toolbox.style.display = expanded ? 'none' : 'flex';
-    toggleBtn.textContent = expanded ? '⚙️ Utilities' : '❌ Close';
-    localStorage.setItem('toolboxOpen', String(!expanded));
-  };
+let currentSize =
+  parseInt(localStorage.getItem('fontSize')) || 100;
 
-  /* ── FONT SIZE ── */
-  let fontSize = parseFloat(localStorage.getItem('zoomFontSize')) || 100;
-  const fontSizeSlider = document.getElementById('fontSizeSlider');
+function applyFontSize(size) {
+  currentSize = size;
+  body.style.fontSize = size + '%';
+  localStorage.setItem('fontSize', size);
+}
 
-  function applyFontSize(val) {
-    fontSize = Math.min(200, Math.max(60, val));
-    target.style.fontSize = fontSize + '%';
-    fontSizeSlider.value = fontSize;
-    localStorage.setItem('zoomFontSize', fontSize);
-  }
+applyFontSize(currentSize);
 
-  document.getElementById('textZoomIn').onclick    = () => applyFontSize(fontSize + 10);
-  document.getElementById('textZoomOut').onclick   = () => applyFontSize(fontSize - 10);
-  document.getElementById('textZoomReset').onclick = () => applyFontSize(100);
-  fontSizeSlider.oninput = () => applyFontSize(parseFloat(fontSizeSlider.value));
-  applyFontSize(fontSize);
+increaseButton.addEventListener('click', () => {
+  applyFontSize(Math.min(currentSize + 10, 160));
+});
 
-  /* ── LINE HEIGHT ── */
-  let lineHeight = parseFloat(localStorage.getItem('customLineHeight')) || 1.6;
-  const lineHeightSlider = document.getElementById('lineHeightSlider');
+decreaseButton.addEventListener('click', () => {
+  applyFontSize(Math.max(currentSize - 10, 80));
+});
 
-  function applyLineHeight(val) {
-    lineHeight = Math.round(Math.min(3, Math.max(1, val)) * 10) / 10;
-    target.style.lineHeight = lineHeight;
-    lineHeightSlider.value = lineHeight;
-    localStorage.setItem('customLineHeight', lineHeight);
-  }
+resetButton.addEventListener('click', () => {
+  applyFontSize(100);
+});
 
-  document.getElementById('lineHeightIncrease').onclick = () => applyLineHeight(lineHeight + 0.1);
-  document.getElementById('lineHeightDecrease').onclick = () => applyLineHeight(lineHeight - 0.1);
-  document.getElementById('lineHeightReset').onclick    = () => applyLineHeight(1.6);
-  lineHeightSlider.oninput = () => applyLineHeight(parseFloat(lineHeightSlider.value));
-  applyLineHeight(lineHeight);
+/* =========================
+   DARK MODE
+========================= */
 
-  /* ── LETTER SPACING ── */
-  let letterSpacing = parseFloat(localStorage.getItem('letterSpacing')) || 0;
-  const letterSlider = document.getElementById('letterSpacingSlider');
+if (localStorage.getItem('darkMode') === 'true') {
+  body.classList.add('dark-mode');
+  themeButton.classList.add('active');
+}
 
-  function applyLetterSpacing(val) {
-    letterSpacing = val;
-    target.style.letterSpacing = val + 'px';
-    letterSlider.value = val;
-    localStorage.setItem('letterSpacing', val);
-  }
+themeButton.addEventListener('click', () => {
 
-  letterSlider.oninput = () => applyLetterSpacing(parseFloat(letterSlider.value));
-  document.getElementById('letterSpacingReset').onclick = () => applyLetterSpacing(0);
-  applyLetterSpacing(letterSpacing);
+  body.classList.toggle('dark-mode');
 
-  /* ── WORD SPACING ── */
-  let wordSpacing = parseFloat(localStorage.getItem('wordSpacing')) || 0;
-  const wordSlider = document.getElementById('wordSpacingSlider');
+  themeButton.classList.toggle('active');
 
-  function applyWordSpacing(val) {
-    wordSpacing = val;
-    target.style.wordSpacing = val + 'px';
-    wordSlider.value = val;
-    localStorage.setItem('wordSpacing', val);
-  }
+  localStorage.setItem(
+    'darkMode',
+    body.classList.contains('dark-mode')
+  );
+});
 
-  wordSlider.oninput = () => applyWordSpacing(parseFloat(wordSlider.value));
-  document.getElementById('wordSpacingReset').onclick = () => applyWordSpacing(0);
-  applyWordSpacing(wordSpacing);
+/* =========================
+   READER MODE
+========================= */
 
-  /* ── FONTS ── */
-  const fontMap = {
-    arial:        'Arial, sans-serif',
-    atkinson:     "'Atkinson Hyperlegible', sans-serif",
-    courier:      "'Courier New', monospace",
-    georgia:      'Georgia, serif',
-    lato:         "'Lato', sans-serif",
-    lexend:       "'Lexend', sans-serif",
-    merriweather: "'Merriweather', serif",
-    opendyslexic: "'OpenDyslexic', sans-serif",
-    playfair:     "'Playfair Display', serif",
-    roboto:       "'Roboto', sans-serif",
-    sourcesans:   "'Source Sans 3', sans-serif",
-    ubuntu:       "'Ubuntu', sans-serif"
-  };
+if (localStorage.getItem('readerMode') === 'true') {
+  body.classList.add('reading-mode');
+  readerButton.classList.add('active');
+}
 
-  const googleFonts = {
-    atkinson:     'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap',
-    lato:         'https://fonts.googleapis.com/css2?family=Lato&display=swap',
-    lexend:       'https://fonts.googleapis.com/css2?family=Lexend&display=swap',
-    merriweather: 'https://fonts.googleapis.com/css2?family=Merriweather&display=swap',
-    opendyslexic: 'https://fonts.cdnfonts.com/css/opendyslexic',
-    playfair:     'https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap',
-    roboto:       'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
-    sourcesans:   'https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap',
-    ubuntu:       'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'
-  };
+readerButton.addEventListener('click', () => {
 
-  const loadedFonts = {};
+  body.classList.toggle('reading-mode');
 
-  function loadFont(key) {
-    if (googleFonts[key] && !loadedFonts[key]) {
-      const l = document.createElement('link');
-      l.rel = 'stylesheet';
-      l.href = googleFonts[key];
-      document.head.appendChild(l);
-      loadedFonts[key] = true;
-    }
-  }
+  readerButton.classList.toggle('active');
 
-  function applyFont(key) {
-    if (key) loadFont(key);
-    target.style.fontFamily = key ? fontMap[key] : '';
-    localStorage.setItem('fontFamily', key || '');
-  }
+  localStorage.setItem(
+    'readerMode',
+    body.classList.contains('reading-mode')
+  );
+});
 
-  const fontSelector = document.getElementById('fontSelector');
-  fontSelector.onchange = () => applyFont(fontSelector.value);
-  const savedFont = localStorage.getItem('fontFamily');
-  if (savedFont) { fontSelector.value = savedFont; applyFont(savedFont); }
+/* =========================
+   NEURODIVERGENT MODE
+========================= */
 
-  /* ── FONT COLOUR ── */
-  function applyFontColor(val) {
-    target.style.color = val || '';
-    localStorage.setItem('fontColor', val || '');
-  }
+if (localStorage.getItem('neuroMode') === 'true') {
+  body.classList.add('neurodivergent-mode');
+  neuroButton.classList.add('active');
+}
 
-  const fontColorSelect = document.getElementById('fontColorSelect');
-  fontColorSelect.onchange = () => applyFontColor(fontColorSelect.value);
-  const savedFontColor = localStorage.getItem('fontColor');
-  if (savedFontColor) { fontColorSelect.value = savedFontColor; applyFontColor(savedFontColor); }
+neuroButton.addEventListener('click', () => {
 
-  /* ── RESET ALL ── */
-  document.getElementById('resetAllBtn').onclick = () => {
-    ['zoomFontSize','customLineHeight','letterSpacing','wordSpacing',
-     'fontFamily','fontColor'].forEach(k => localStorage.removeItem(k));
+  body.classList.toggle('neurodivergent-mode');
 
-    applyFontSize(100);
-    applyLineHeight(1.6);
-    applyLetterSpacing(0);
-    applyWordSpacing(0);
-    applyFont('');
-    applyFontColor('');
+  neuroButton.classList.toggle('active');
 
-    fontSelector.value    = '';
-    fontColorSelect.value = '';
-  };
-
-  /* ── BACK TO TOP ── */
-  const topBtn = document.getElementById('backToTopBtn');
-  window.addEventListener('scroll', () => {
-    topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
+  localStorage.setItem(
+    'neuroMode',
+    body.classList.contains('neurodivergent-mode')
+  );
 });
 </script>
-{% endunless %}
