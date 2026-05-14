@@ -1,298 +1,443 @@
-<!-- _includes/navbar.html -->
+{% unless page.hide_utilities %}
+<!-- =========================================================
+     Sunil Abraham Project
+     Utility Toolbox v2.1
+     Licence: CC BY-SA 4.0
+     ========================================================= -->
 
 <style>
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 2000;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.topbar-inner {
-  width: min(88%, 900px);
-  margin-inline: auto;
+#utilityToolboxContainer {
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  z-index: 99999;
+  font-family: sans-serif;
+  font-size: 14px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.7rem 0;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.topbar-search input {
-  width: 180px;
-  padding: 0.45rem 0.8rem;
-  border: 1px solid #d1d5db;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  background: #ffffff;
-  color: #111827;
-}
-
-.topbar-search input:focus {
-  outline: none;
-  border-color: #2563eb;
-}
-
-.topbar-button {
+#toggleToolbox {
+  background: #2d4d7a;
+  color: #fff;
   border: none;
-  background: transparent;
+  padding: 10px 16px;
+  border-radius: 6px;
   cursor: pointer;
-  padding: 0.35rem 0.65rem;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#toggleToolbox:hover {
+  background: #1a3355;
+}
+
+#toolboxContent {
+  display: none;
+  margin-top: 8px;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  padding: 14px;
   border-radius: 8px;
-  color: #374151;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
+  color: #2c3e50;
+  width: 260px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
-.topbar-button:hover {
-  background: #f3f4f6;
+.toolbox-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 6px 0 10px;
+  color: #002d62;
+  border-bottom: 1px solid #dce7f9;
+  margin-bottom: 4px;
 }
 
-/* =========================
-   DARK MODE
-========================= */
-
-body.dark-mode {
-  --background: #0f172a;
-  --surface: #111827;
-  --text: #f3f4f6;
-  --muted: #9ca3af;
-  --border: #1f2937;
-  --primary: #93c5fd;
-  --primary-hover: #bfdbfe;
+.tool-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-body.dark-mode {
-  background: var(--background);
-  color: var(--text);
+.tool-label {
+  font-weight: bold;
+  font-size: 12px;
+  color: #005b96;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-body.dark-mode .topbar {
-  background: rgba(15, 23, 42, 0.94);
-  border-color: var(--border);
+.utility-button {
+  background: #e6f2ff;
+  color: #1e2a38;
+  border: 1px solid #b0c8e8;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
 }
 
-body.dark-mode .topbar-button {
-  color: #f3f4f6;
+.utility-button:hover {
+  background: #c8e0f9;
 }
 
-body.dark-mode .topbar-button:hover {
-  background: #1e293b;
+.utility-select {
+  padding: 6px 8px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #b0c8e8;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
 }
 
-body.dark-mode .topbar-search input {
-  background: #0f172a;
-  color: #f3f4f6;
-  border-color: #374151;
+.utility-select:hover {
+  border-color: #2d4d7a;
 }
 
-body.dark-mode .site-header,
-body.dark-mode .site-footer,
-body.dark-mode .content-card {
-  background: var(--surface);
-  border-color: var(--border);
+.utility-slider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: #2d4d7a;
+  margin-top: 4px;
 }
 
-body.dark-mode .site-title,
-body.dark-mode .site-title a,
-body.dark-mode .site-tagline,
-body.dark-mode .content-card h1,
-body.dark-mode .content-card h2,
-body.dark-mode .content-card h3,
-body.dark-mode .content-card h4,
-body.dark-mode .content-card p,
-body.dark-mode .content-card li,
-body.dark-mode .content-card strong,
-body.dark-mode .content-card em,
-body.dark-mode .footer-inner p,
-body.dark-mode .footer-note {
-  color: #f3f4f6;
+.btn-row {
+  display: flex;
+  gap: 6px;
 }
 
-body.dark-mode .content-card blockquote {
-  background: #172033;
-  color: #f3f4f6;
+.tool-divider {
+  border: none;
+  border-top: 1px solid #dce7f9;
+  margin: 2px 0;
 }
 
-body.dark-mode a {
-  color: #93c5fd;
+#resetAllBtn {
+  width: 100%;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background 0.2s;
 }
 
-/* =========================
-   READING MODE
-========================= */
-
-body.reading-mode {
-  font-size: 1.08rem;
-  line-height: 2.1;
+#resetAllBtn:hover {
+  background: #922b21;
 }
 
-body.reading-mode .content-card {
-  max-width: 75ch;
-  margin-inline: auto;
+#backToTopBtn {
+  position: fixed;
+  bottom: 35px;
+  left: 10px;
+  background: #2d4d7a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 99997;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: none;
+  transition: background 0.2s;
 }
 
-/* =========================
-   NEURODIVERGENT MODE
-========================= */
-
-body.neurodivergent-mode {
-  letter-spacing: 0.02em;
-  word-spacing: 0.08em;
-  line-height: 2.2;
-}
-
-body.neurodivergent-mode .content-card {
-  max-width: 80ch;
-}
-
-body.neurodivergent-mode p,
-body.neurodivergent-mode li {
-  margin-bottom: 1.8rem;
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-  .topbar-inner {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    scrollbar-width: none;
-  }
-
-  .topbar-inner::-webkit-scrollbar {
-    display: none;
-  }
-
-  .topbar-search input {
-    width: 140px;
-    min-width: 140px;
-  }
-
-  .topbar-button {
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+#backToTopBtn:hover {
+  background: #1a3355;
 }
 </style>
 
-<nav class="topbar" aria-label="Reading and accessibility tools">
+<div id="utilityToolboxContainer" translate="no">
+  <button id="toggleToolbox" title="Toggle Utilities">⚙️ Utilities</button>
 
-  <div class="topbar-inner">
+  <div id="toolboxContent">
 
-    <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
+    <div class="toolbox-title">⚙️ Utilities</div>
 
-      <input
-        type="search"
-        name="q"
-        placeholder="Search"
-        aria-label="Search">
+    <!-- TRANSLATE -->
+    <div class="tool-section">
+      <div class="tool-label">Translate</div>
+      {% include translate.html %}
+    </div>
 
-    </form>
+    <hr class="tool-divider">
 
-    <button
-      class="topbar-button"
-      id="decrease-font"
-      aria-label="Decrease font size">
+    <!-- FONT -->
+    <div class="tool-section">
+      <div class="tool-label">Font</div>
+      <select id="fontSelector" class="utility-select">
+        <option value="">Default</option>
+        <option value="arial">Arial</option>
+        <option value="atkinson">Atkinson Hyperlegible</option>
+        <option value="courier">Courier New</option>
+        <option value="georgia">Georgia</option>
+        <option value="lato">Lato</option>
+        <option value="lexend">Lexend</option>
+        <option value="merriweather">Merriweather</option>
+        <option value="opendyslexic">OpenDyslexic</option>
+        <option value="playfair">Playfair Display</option>
+        <option value="roboto">Roboto</option>
+        <option value="sourcesans">Source Sans 3</option>
+        <option value="ubuntu">Ubuntu</option>
+      </select>
+    </div>
 
-      A-
-    </button>
+    <hr class="tool-divider">
 
-    <button
-      class="topbar-button"
-      id="increase-font"
-      aria-label="Increase font size">
+    <!-- FONT SIZE -->
+    <div class="tool-section">
+      <div class="tool-label">Font Size</div>
+      <div class="btn-row">
+        <button id="textZoomOut" class="utility-button">A−</button>
+        <button id="textZoomIn" class="utility-button">A+</button>
+        <button id="textZoomReset" class="utility-button">🔁</button>
+      </div>
+      <input type="range" id="fontSizeSlider" class="utility-slider" min="60" max="200" step="5" value="100" />
+    </div>
 
-      A+
-    </button>
+    <hr class="tool-divider">
 
-    <button
-      class="topbar-button"
-      id="theme-toggle"
-      aria-label="Toggle dark mode">
+    <!-- FONT COLOUR -->
+    <div class="tool-section">
+      <div class="tool-label">Font Colour</div>
+      <select id="fontColorSelect" class="utility-select">
+        <option value="">Default</option>
+        <option value="#000000">Black</option>
+        <option value="#222222">Dark Grey</option>
+        <option value="#1a3355">Navy</option>
+        <option value="#006400">Dark Green</option>
+        <option value="#8b0000">Dark Red</option>
+        <option value="#4b0082">Indigo</option>
+        <option value="#800000">Maroon</option>
+        <option value="#191970">Midnight Blue</option>
+        <option value="#8b4513">Saddle Brown</option>
+      </select>
+    </div>
 
-      ☾
-    </button>
+    <hr class="tool-divider">
 
-    <button
-      class="topbar-button"
-      id="reading-toggle"
-      aria-label="Reading mode">
+    <!-- LINE HEIGHT -->
+    <div class="tool-section">
+      <div class="tool-label">Line Height</div>
+      <div class="btn-row">
+        <button id="lineHeightDecrease" class="utility-button">⬇️</button>
+        <button id="lineHeightIncrease" class="utility-button">⬆️</button>
+        <button id="lineHeightReset" class="utility-button">🔁</button>
+      </div>
+      <input type="range" id="lineHeightSlider" class="utility-slider" min="1" max="3" step="0.1" value="1.6" />
+    </div>
 
-      Reader
-    </button>
+    <hr class="tool-divider">
 
-    <button
-      class="topbar-button"
-      id="neurodivergent-toggle"
-      aria-label="Neurodivergent reading mode">
+    <!-- LETTER SPACING -->
+    <div class="tool-section">
+      <div class="tool-label">Letter Spacing</div>
+      <input type="range" id="letterSpacingSlider" class="utility-slider" min="0" max="5" step="0.5" value="0" />
+      <button id="letterSpacingReset" class="utility-button">🔁 Reset</button>
+    </div>
 
-      ND
-    </button>
+    <hr class="tool-divider">
+
+    <!-- WORD SPACING -->
+    <div class="tool-section">
+      <div class="tool-label">Word Spacing</div>
+      <input type="range" id="wordSpacingSlider" class="utility-slider" min="0" max="20" step="1" value="0" />
+      <button id="wordSpacingReset" class="utility-button">🔁 Reset</button>
+    </div>
+
+    <hr class="tool-divider">
+
+    <!-- RESET ALL -->
+    <div class="tool-section">
+      <button id="resetAllBtn">🔄 Reset All Settings</button>
+    </div>
 
   </div>
+</div>
 
-</nav>
+<!-- Back to Top -->
+<button id="backToTopBtn" title="Back to Top">⬆️</button>
 
 <script>
-const increaseButton = document.getElementById('increase-font');
-const decreaseButton = document.getElementById('decrease-font');
-const themeButton = document.getElementById('theme-toggle');
-const readerButton = document.getElementById('reading-toggle');
-const neurodivergentButton = document.getElementById('neurodivergent-toggle');
+document.addEventListener('DOMContentLoaded', function () {
 
-let currentFontSize = 100;
+  const toggleBtn = document.getElementById('toggleToolbox');
+  const toolbox   = document.getElementById('toolboxContent');
+  const target    = document.querySelector('main#maincontent');
 
-if (increaseButton) {
-  increaseButton.addEventListener('click', () => {
-    currentFontSize += 10;
-    document.body.style.fontSize = currentFontSize + '%';
+  /* ── TOOLBOX OPEN/CLOSE ── */
+  if (localStorage.getItem('toolboxOpen') === 'true') {
+    toolbox.style.display = 'flex';
+    toggleBtn.textContent = '❌ Close';
+  }
+
+  toggleBtn.onclick = () => {
+    const expanded = toolbox.style.display === 'flex';
+    toolbox.style.display = expanded ? 'none' : 'flex';
+    toggleBtn.textContent = expanded ? '⚙️ Utilities' : '❌ Close';
+    localStorage.setItem('toolboxOpen', String(!expanded));
+  };
+
+  /* ── FONT SIZE ── */
+  let fontSize = parseFloat(localStorage.getItem('zoomFontSize')) || 100;
+  const fontSizeSlider = document.getElementById('fontSizeSlider');
+
+  function applyFontSize(val) {
+    fontSize = Math.min(200, Math.max(60, val));
+    target.style.fontSize = fontSize + '%';
+    fontSizeSlider.value = fontSize;
+    localStorage.setItem('zoomFontSize', fontSize);
+  }
+
+  document.getElementById('textZoomIn').onclick    = () => applyFontSize(fontSize + 10);
+  document.getElementById('textZoomOut').onclick   = () => applyFontSize(fontSize - 10);
+  document.getElementById('textZoomReset').onclick = () => applyFontSize(100);
+  fontSizeSlider.oninput = () => applyFontSize(parseFloat(fontSizeSlider.value));
+  applyFontSize(fontSize);
+
+  /* ── LINE HEIGHT ── */
+  let lineHeight = parseFloat(localStorage.getItem('customLineHeight')) || 1.6;
+  const lineHeightSlider = document.getElementById('lineHeightSlider');
+
+  function applyLineHeight(val) {
+    lineHeight = Math.round(Math.min(3, Math.max(1, val)) * 10) / 10;
+    target.style.lineHeight = lineHeight;
+    lineHeightSlider.value = lineHeight;
+    localStorage.setItem('customLineHeight', lineHeight);
+  }
+
+  document.getElementById('lineHeightIncrease').onclick = () => applyLineHeight(lineHeight + 0.1);
+  document.getElementById('lineHeightDecrease').onclick = () => applyLineHeight(lineHeight - 0.1);
+  document.getElementById('lineHeightReset').onclick    = () => applyLineHeight(1.6);
+  lineHeightSlider.oninput = () => applyLineHeight(parseFloat(lineHeightSlider.value));
+  applyLineHeight(lineHeight);
+
+  /* ── LETTER SPACING ── */
+  let letterSpacing = parseFloat(localStorage.getItem('letterSpacing')) || 0;
+  const letterSlider = document.getElementById('letterSpacingSlider');
+
+  function applyLetterSpacing(val) {
+    letterSpacing = val;
+    target.style.letterSpacing = val + 'px';
+    letterSlider.value = val;
+    localStorage.setItem('letterSpacing', val);
+  }
+
+  letterSlider.oninput = () => applyLetterSpacing(parseFloat(letterSlider.value));
+  document.getElementById('letterSpacingReset').onclick = () => applyLetterSpacing(0);
+  applyLetterSpacing(letterSpacing);
+
+  /* ── WORD SPACING ── */
+  let wordSpacing = parseFloat(localStorage.getItem('wordSpacing')) || 0;
+  const wordSlider = document.getElementById('wordSpacingSlider');
+
+  function applyWordSpacing(val) {
+    wordSpacing = val;
+    target.style.wordSpacing = val + 'px';
+    wordSlider.value = val;
+    localStorage.setItem('wordSpacing', val);
+  }
+
+  wordSlider.oninput = () => applyWordSpacing(parseFloat(wordSlider.value));
+  document.getElementById('wordSpacingReset').onclick = () => applyWordSpacing(0);
+  applyWordSpacing(wordSpacing);
+
+  /* ── FONTS ── */
+  const fontMap = {
+    arial:        'Arial, sans-serif',
+    atkinson:     "'Atkinson Hyperlegible', sans-serif",
+    courier:      "'Courier New', monospace",
+    georgia:      'Georgia, serif',
+    lato:         "'Lato', sans-serif",
+    lexend:       "'Lexend', sans-serif",
+    merriweather: "'Merriweather', serif",
+    opendyslexic: "'OpenDyslexic', sans-serif",
+    playfair:     "'Playfair Display', serif",
+    roboto:       "'Roboto', sans-serif",
+    sourcesans:   "'Source Sans 3', sans-serif",
+    ubuntu:       "'Ubuntu', sans-serif"
+  };
+
+  const googleFonts = {
+    atkinson:     'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap',
+    lato:         'https://fonts.googleapis.com/css2?family=Lato&display=swap',
+    lexend:       'https://fonts.googleapis.com/css2?family=Lexend&display=swap',
+    merriweather: 'https://fonts.googleapis.com/css2?family=Merriweather&display=swap',
+    opendyslexic: 'https://fonts.cdnfonts.com/css/opendyslexic',
+    playfair:     'https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap',
+    roboto:       'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+    sourcesans:   'https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap',
+    ubuntu:       'https://fonts.googleapis.com/css2?family=Ubuntu&display=swap'
+  };
+
+  const loadedFonts = {};
+
+  function loadFont(key) {
+    if (googleFonts[key] && !loadedFonts[key]) {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = googleFonts[key];
+      document.head.appendChild(l);
+      loadedFonts[key] = true;
+    }
+  }
+
+  function applyFont(key) {
+    if (key) loadFont(key);
+    target.style.fontFamily = key ? fontMap[key] : '';
+    localStorage.setItem('fontFamily', key || '');
+  }
+
+  const fontSelector = document.getElementById('fontSelector');
+  fontSelector.onchange = () => applyFont(fontSelector.value);
+  const savedFont = localStorage.getItem('fontFamily');
+  if (savedFont) { fontSelector.value = savedFont; applyFont(savedFont); }
+
+  /* ── FONT COLOUR ── */
+  function applyFontColor(val) {
+    target.style.color = val || '';
+    localStorage.setItem('fontColor', val || '');
+  }
+
+  const fontColorSelect = document.getElementById('fontColorSelect');
+  fontColorSelect.onchange = () => applyFontColor(fontColorSelect.value);
+  const savedFontColor = localStorage.getItem('fontColor');
+  if (savedFontColor) { fontColorSelect.value = savedFontColor; applyFontColor(savedFontColor); }
+
+  /* ── RESET ALL ── */
+  document.getElementById('resetAllBtn').onclick = () => {
+    ['zoomFontSize','customLineHeight','letterSpacing','wordSpacing',
+     'fontFamily','fontColor'].forEach(k => localStorage.removeItem(k));
+
+    applyFontSize(100);
+    applyLineHeight(1.6);
+    applyLetterSpacing(0);
+    applyWordSpacing(0);
+    applyFont('');
+    applyFontColor('');
+
+    fontSelector.value    = '';
+    fontColorSelect.value = '';
+  };
+
+  /* ── BACK TO TOP ── */
+  const topBtn = document.getElementById('backToTopBtn');
+  window.addEventListener('scroll', () => {
+    topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
-}
+  topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-if (decreaseButton) {
-  decreaseButton.addEventListener('click', () => {
-    currentFontSize -= 10;
-    document.body.style.fontSize = currentFontSize + '%';
-  });
-}
-
-if (themeButton) {
-  themeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-}
-
-if (readerButton) {
-  readerButton.addEventListener('click', () => {
-    document.body.classList.toggle('reading-mode');
-  });
-}
-
-if (neurodivergentButton) {
-  neurodivergentButton.addEventListener('click', () => {
-    document.body.classList.toggle('neurodivergent-mode');
-  });
-}
+});
 </script>
+{% endunless %}
