@@ -120,7 +120,7 @@
 }
 
 html {
-  scroll-behaviour: smooth;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -488,7 +488,7 @@ figcaption {
   font-size: .92rem;
   color: var(--muted);
 
-  text-align: centre;
+  text-align: center;
   font-style: italic;
 }
 
@@ -593,4 +593,321 @@ figcaption {
 
 .gallery-item:hover img {
   transform: scale(1.04);
+}
+
+/* ──────────────────────────────────────────────────────
+   14. HEADER ORNAMENT
+────────────────────────────────────────────────────── */
+
+.site-header-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-top: 3rem;
+
+  opacity: .55;
+}
+
+.site-header-ornament::before,
+.site-header-ornament::after {
+  content: '';
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      var(--border)
+    );
+}
+
+.site-header-ornament::before {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      var(--border)
+    );
+}
+
+.site-header-ornament span {
+  font-size: .8rem;
+  letter-spacing: .3em;
+  color: var(--muted);
+}
+
+
+/* ──────────────────────────────────────────────────────
+   15. FOOTER
+────────────────────────────────────────────────────── */
+
+.site-footer {
+  margin-top: auto;
+
+  border-top: 1px solid var(--border);
+
+  background: var(--bg-soft);
+
+  padding:
+    4rem 0;
+}
+
+.site-footer-inner {
+  width: min(94%, var(--site-width));
+  margin: auto;
+
+  text-align: center;
+}
+
+.site-footer-ornament {
+  margin-bottom: 1.5rem;
+
+  font-size: .8rem;
+  letter-spacing: .3em;
+
+  color: var(--muted);
+
+  opacity: .7;
+}
+
+.candle-icon {
+  display: block;
+
+  margin:
+    0 auto
+    1.5rem;
+
+  font-size: 2rem;
+
+  animation: flicker 3s ease-in-out infinite;
+}
+
+@keyframes flicker {
+
+  0%,100% {
+    transform: rotate(-1deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(1deg);
+    opacity: .92;
+  }
+}
+
+.site-footer p {
+  margin-bottom: .7rem;
+
+  color: var(--muted);
+}
+
+.site-footer nav {
+  margin-top: 1.5rem;
+}
+
+.site-footer nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.site-footer nav a:hover {
+  color: var(--text);
+}
+
+
+/* ──────────────────────────────────────────────────────
+   16. UTILITIES
+────────────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0,0,0,0);
+
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-light {
+  color: var(--light);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+
+/* ──────────────────────────────────────────────────────
+   17. RESPONSIVE
+────────────────────────────────────────────────────── */
+
+@media (max-width: 980px) {
+
+  .content-card {
+
+    padding:
+      2.5rem 2rem;
+  }
+
+  .site-nav ul {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 720px) {
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .site-header {
+
+    padding:
+      3.5rem 0
+      2.5rem;
+  }
+
+  .container {
+
+    padding:
+      2.5rem 0
+      4rem;
+  }
+
+  .content-card {
+
+    padding:
+      2rem 1.4rem;
+
+    border-radius: 0;
+
+    border-left: none;
+    border-right: none;
+  }
+
+  .toolbar-label {
+    display: none;
+  }
+
+  .gallery {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+
+  body {
+    line-height: 1.8;
+  }
+
+  .toolbar-inner {
+    gap: .45rem;
+  }
+
+  .toolbar-btn span {
+    display: none;
+  }
+
+  .toolbar-btn {
+
+    width: 2.2rem;
+    height: 2.2rem;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .site-nav ul {
+    gap: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────
+   18. REDUCED MOTION
+────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────
+   19. PRINT
+────────────────────────────────────────────────────── */
+
+@media print {
+
+  .toolbar,
+  .site-nav,
+  .skip-link {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .content-card {
+
+    box-shadow: none;
+
+    border: none;
+
+    padding: 0;
+  }
+
+  a[href]::after {
+
+    content:
+      " (" attr(href) ")";
+
+    font-size: .8em;
+  }
 }
