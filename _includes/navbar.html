@@ -53,12 +53,24 @@
 @media (max-width: 768px) {
 
   .topbar-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    scrollbar-width: none;
+  }
+
+  .topbar-inner::-webkit-scrollbar {
+    display: none;
   }
 
   .topbar-search input {
-    width: 100%;
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .topbar-button {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 }
 </style>
