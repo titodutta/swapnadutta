@@ -8,9 +8,6 @@ markdown: kramdown
 
 permalink: pretty
 
-plugins:
-  - jekyll-feed
-
 defaults:
   -
     scope:
