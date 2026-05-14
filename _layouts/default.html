@@ -1,28 +1,163 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: 'en' }}" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ page.title }}</title>
+  <!-- Primary Meta Tags -->
+  <title>{% if page.title %}{{ page.title }} | {% endif %}Swapna Dutta — In Loving Memory</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}Remembering Swapna Dutta — a life of love, kindness, and cherished memories.{% endif %}">
 
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/global.css">
+
+  <!-- Inline critical CSS for above-the-fold content (prevents flash of unstyled content) -->
+  <style>
+    /* Minimal critical styles for immediate paint */
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #faf8f5;
+      color: #3d3929;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .site-header {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139, 119, 80, 0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: #5c4d3c;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 4px 4px;
+      z-index: 1000;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Skip navigation link for keyboard users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   {% include header.html %}
 
-  <main class="container">
-
-    <article class="content-card">
-      {{ content }}
-    </article>
-
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <article class="content-card">
+        {{ content }}
+      </article>
+    </div>
   </main>
 
   {% include footer.html %}
 
+  <!-- Reading progress indicator -->
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress-bar" id="readingProgressBar"></div>
+  </div>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M10 17V3M10 3L4 9M10 3L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- Theme toggle (hidden for now, ready for dark mode) -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode" style="display: none;">
+    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+      <path d="M10 2V4M10 16V18M2 10H4M16 10H18M3.5 3.5L5 5M15 15L16.5 16.5M3.5 16.5L5 15M15 5L16.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="display: none;">
+      <path d="M17 12.5A7.5 7.5 0 0110 3a7.5 7.5 0 107 9.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <script>
+    // Minimal JavaScript for progressive enhancement
+    (function() {
+      // Reading progress bar
+      const progressBar = document.getElementById('readingProgressBar');
+      if (progressBar) {
+        window.addEventListener('scroll', () => {
+          const winScroll = document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = (winScroll / height) * 100;
+          progressBar.style.width = scrolled + '%';
+        }, { passive: true });
+      }
+
+      // Back to top button
+      const backToTop = document.getElementById('backToTop');
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 400) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Theme toggle placeholder (ready for dark mode)
+      const themeToggle = document.getElementById('themeToggle');
+      const html = document.documentElement;
+
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        themeToggle.style.display = 'flex';
+      }
+
+      // Enable theme toggle when dark mode CSS is added
+      // Currently hidden, uncomment below when ready:
+      // themeToggle.style.display = 'flex';
+      // themeToggle.addEventListener('click', () => {
+      //   const currentTheme = html.getAttribute('data-theme');
+      //   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      //   html.setAttribute('data-theme', newTheme);
+      //   localStorage.setItem('theme', newTheme);
+      // });
+
+      // Respect user's system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      if (!localStorage.getItem('theme') && prefersDark.matches) {
+        html.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </body>
 </html>
