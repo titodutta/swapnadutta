@@ -1,66 +1,40 @@
-<!-- header.html -->
+<!-- _includes/header.html -->
+<header class="site-header">
 
-<header class="site-header" role="banner">
-  <div class="site-header-inner">
+  <div class="container header-inner">
 
-    <div class="site-title">
-      <a href="{{ '/' | relative_url }}">
-        {{ site.title | default: 'Swapna Dutta' }}
+    <div class="site-branding">
+      <a href="{{ '/' | relative_url }}" class="site-title">
+        {{ site.title }}
       </a>
+
+      {% if site.description %}
+      <p class="site-tagline">
+        {{ site.description }}
+      </p>
+      {% endif %}
     </div>
 
-    {% if site.tagline %}
-      <p class="site-tagline">
-        {{ site.tagline }}
-      </p>
-    {% else %}
-      <p class="site-tagline">
-        In loving memory • স্মৃতির আলো
-      </p>
-    {% endif %}
-
     <nav class="site-nav" aria-label="Primary navigation">
-      <ul>
+
+      <ul class="nav-list">
 
         <li>
-          <a
-            href="{{ '/' | relative_url }}"
-            {% if page.url == '/' %}
-              aria-current="page"
-            {% endif %}
-          >
-            Home
-          </a>
+          <a href="{{ '/' | relative_url }}">Home</a>
         </li>
 
         <li>
-          <a
-            href="{{ '/articles/' | relative_url }}"
-            {% if page.url contains '/articles' %}
-              aria-current="page"
-            {% endif %}
-          >
-            Articles
-          </a>
+          <a href="{{ '/articles/' | relative_url }}">Articles</a>
         </li>
 
         <li>
-          <a
-            href="{{ '/photos/' | relative_url }}"
-            {% if page.url contains '/photos' %}
-              aria-current="page"
-            {% endif %}
-          >
-            Photos
-          </a>
+          <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
         </li>
 
       </ul>
+
     </nav>
 
-    <div class="site-header-ornament" aria-hidden="true">
-      <span>✦ ✦ ✦</span>
-    </div>
-
   </div>
+
 </header>
