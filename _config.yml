@@ -1,0 +1,23 @@
+title: "Swapna Dutta"
+description: "In loving memory"
+
+timezone: Asia/Kolkata
+lang: en
+
+markdown: kramdown
+
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - LICENSE
