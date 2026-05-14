@@ -1,6 +1,6 @@
 <!-- _includes/navbar.html -->
 
-<nav class="topbar" aria-label="Top navigation">
+<nav class="topbar" aria-label="Reading and accessibility tools">
 
 <style>
 .topbar {
@@ -15,46 +15,35 @@
   width: min(88%, 900px);
   margin-inline: auto;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 0.6rem;
   padding: 0.7rem 0;
 }
 
-.topbar-links {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.topbar-links a {
-  text-decoration: none;
-  color: #374151;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .topbar-search input {
-  width: 160px;
+  width: 180px;
   padding: 0.45rem 0.8rem;
   border: 1px solid #d1d5db;
   border-radius: 999px;
   font-size: 0.9rem;
+  background: #ffffff;
+  color: #111827;
+}
+
+.topbar-search input:focus {
+  outline: none;
+  border-color: #2563eb;
 }
 
 .topbar-button {
   border: none;
   background: transparent;
   cursor: pointer;
-  padding: 0.35rem 0.55rem;
+  padding: 0.35rem 0.6rem;
   border-radius: 8px;
   color: #374151;
+  font-size: 0.9rem;
 }
 
 .topbar-button:hover {
@@ -64,11 +53,7 @@
 @media (max-width: 768px) {
 
   .topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .topbar-right {
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
@@ -80,37 +65,23 @@
 
 <div class="topbar-inner">
 
-  <div class="topbar-links">
+  <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
 
-    <a href="{{ '/' | relative_url }}">Home</a>
+    <input
+      type="search"
+      name="q"
+      placeholder="Search"
+      aria-label="Search">
 
-    <a href="{{ '/articles/' | relative_url }}">Articles</a>
+  </form>
 
-    <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
+  <button class="topbar-button" aria-label="Decrease font size">A-</button>
 
-  </div>
+  <button class="topbar-button" aria-label="Increase font size">A+</button>
 
-  <div class="topbar-right">
+  <button class="topbar-button" aria-label="Toggle dark mode">☾</button>
 
-    <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
-
-      <input
-        type="search"
-        name="q"
-        placeholder="Search"
-        aria-label="Search">
-
-    </form>
-
-    <button class="topbar-button" aria-label="Decrease font size">A-</button>
-
-    <button class="topbar-button" aria-label="Increase font size">A+</button>
-
-    <button class="topbar-button" aria-label="Toggle dark mode">☾</button>
-
-    <button class="topbar-button" aria-label="Reading mode">Reader</button>
-
-  </div>
+  <button class="topbar-button" aria-label="Reading mode">Reader</button>
 
 </div>
 
