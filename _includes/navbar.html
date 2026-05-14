@@ -50,6 +50,31 @@
   background: #f3f4f6;
 }
 
+body.dark-mode {
+  background: #0f172a;
+  color: #f3f4f6;
+}
+
+body.dark-mode .topbar {
+  background: #111827;
+  border-color: #1f2937;
+}
+
+body.dark-mode .topbar-button {
+  color: #f3f4f6;
+}
+
+body.dark-mode .topbar-search input {
+  background: #0f172a;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+body.reading-mode {
+  font-size: 1.08rem;
+  line-height: 2.1;
+}
+
 @media (max-width: 768px) {
 
   .topbar-inner {
@@ -87,14 +112,75 @@
 
   </form>
 
-  <button class="topbar-button" aria-label="Decrease font size">A-</button>
+  <button
+    class="topbar-button"
+    id="decrease-font"
+    aria-label="Decrease font size">
 
-  <button class="topbar-button" aria-label="Increase font size">A+</button>
+    A-
+  </button>
 
-  <button class="topbar-button" aria-label="Toggle dark mode">☾</button>
+  <button
+    class="topbar-button"
+    id="increase-font"
+    aria-label="Increase font size">
 
-  <button class="topbar-button" aria-label="Reading mode">Reader</button>
+    A+
+  </button>
+
+  <button
+    class="topbar-button"
+    id="theme-toggle"
+    aria-label="Toggle dark mode">
+
+    ☾
+  </button>
+
+  <button
+    class="topbar-button"
+    id="reading-toggle"
+    aria-label="Reading mode">
+
+    Reader
+  </button>
 
 </div>
+
+<script>
+
+const increaseButton = document.getElementById('increase-font');
+const decreaseButton = document.getElementById('decrease-font');
+const themeButton = document.getElementById('theme-toggle');
+const readerButton = document.getElementById('reading-toggle');
+
+let currentFontSize = 100;
+
+if (increaseButton) {
+  increaseButton.addEventListener('click', () => {
+    currentFontSize += 10;
+    document.body.style.fontSize = currentFontSize + '%';
+  });
+}
+
+if (decreaseButton) {
+  decreaseButton.addEventListener('click', () => {
+    currentFontSize -= 10;
+    document.body.style.fontSize = currentFontSize + '%';
+  });
+}
+
+if (themeButton) {
+  themeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+}
+
+if (readerButton) {
+  readerButton.addEventListener('click', () => {
+    document.body.classList.toggle('reading-mode');
+  });
+}
+
+</script>
 
 </nav>
