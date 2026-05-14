@@ -1,49 +1,16 @@
-<!-- footer.html -->
+<!-- _includes/footer.html -->
+<footer class="site-footer">
 
-<footer class="site-footer" role="contentinfo">
-  <div class="site-footer-inner">
-
-    <div class="site-footer-ornament" aria-hidden="true">
-      ✦ ❧ ✦
-    </div>
-
-    <span class="candle-icon" aria-hidden="true">
-      🕯
-    </span>
+  <div class="container footer-inner">
 
     <p>
-      In loving memory of
-      <strong>{{ site.title | default: 'Swapna Dutta' }}</strong>
+      © {{ "now" | date: "%Y" }} {{ site.title }}
     </p>
 
-    <p>
-      Memories remain where love never fades.
-    </p>
-
-    <nav aria-label="Footer navigation">
-
-      <a href="{{ '/' | relative_url }}">
-        Home
-      </a>
-
-      ·
-
-      <a href="{{ '/articles/' | relative_url }}">
-        Articles
-      </a>
-
-      ·
-
-      <a href="{{ '/photos/' | relative_url }}">
-        Photos
-      </a>
-
-    </nav>
-
-    <p style="margin-top: 1.5rem;">
-      © {{ 'now' | date: '%Y' }}
-      {{ site.title | default: 'Swapna Dutta' }}
+    <p class="footer-note">
+      In memory, with love.
     </p>
 
   </div>
+
 </footer>
