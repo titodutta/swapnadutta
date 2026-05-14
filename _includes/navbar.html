@@ -1,262 +1,117 @@
 <!-- _includes/navbar.html -->
 
-<nav class="site-navbar" aria-label="Primary navigation">
-  <div class="navbar-inner">
-
-    <div class="navbar-left">
-
-      <div class="navbar-links">
-
-        <a href="{{ '/' | relative_url }}">
-          Home
-        </a>
-
-        <a href="{{ '/articles/' | relative_url }}">
-          Articles
-        </a>
-
-        <a href="{{ '/gallery/' | relative_url }}">
-          Gallery
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="navbar-right">
-
-      <form
-        class="search-box"
-        action="{{ '/search/' | relative_url }}"
-        method="get">
-
-        <input
-          type="search"
-          name="q"
-          placeholder="Search"
-          aria-label="Search">
-      </form>
-
-      <button
-        class="navbar-button"
-        id="decrease-font"
-        aria-label="Decrease font size">
-
-        A-
-      </button>
-
-      <button
-        class="navbar-button"
-        id="increase-font"
-        aria-label="Increase font size">
-
-        A+
-      </button>
-
-      <button
-        class="navbar-button"
-        id="theme-toggle"
-        aria-label="Toggle dark mode">
-
-        ☾
-      </button>
-
-      <button
-        class="navbar-button"
-        id="reading-toggle"
-        aria-label="Toggle reading mode">
-
-        Reader
-      </button>
-
-    </div>
-
- <style>
-
-    .site-navbar {
-
-      position: sticky;
-      top: 0;
-
-      z-index: 1000;
-
-      background:
-        rgba(255, 255, 255, 0.94);
-
-      backdrop-filter: blur(12px);
-
-      border-bottom:
-        1px solid #e5e7eb;
-    }
-
-    .navbar-inner {
-
-      width: min(88%, 900px);
-
-      margin-inline: auto;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 2rem;
-
-      padding:
-        0.9rem
-        0;
-    }
-
-    .navbar-left {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 1.5rem;
-    }
-
-    .navbar-links {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 1.2rem;
-    }
-
-    .navbar-links a {
-
-      text-decoration: none;
-
-      color: #374151;
-
-      font-size: 0.98rem;
-
-      font-weight: 500;
-
-      position: relative;
-    }
-
-    .navbar-links a::after {
-
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      bottom: -4px;
-
-      width: 0;
-      height: 1px;
-
-      background: #2563eb;
-
-      transition: width 0.25s ease;
-    }
-
-    .navbar-links a:hover::after {
-
-      width: 100%;
-    }
-
-    .navbar-right {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 0.6rem;
-    }
-
-    .search-box input {
-
-      width: 180px;
-
-      padding:
-        0.55rem
-        0.9rem;
-
-      border:
-        1px solid #d1d5db;
-
-      border-radius: 999px;
-
-      font-size: 0.95rem;
-
-      background: #ffffff;
-
-      color: #111827;
-    }
-
-    .search-box input:focus {
-
-      outline: none;
-
-      border-color: #2563eb;
-    }
-
-    .navbar-button {
-
-      border: none;
-
-      background: transparent;
-
-      color: #374151;
-
-      cursor: pointer;
-
-      font-size: 0.95rem;
-
-      padding:
-        0.45rem
-        0.7rem;
-
-      border-radius: 10px;
-
-      transition:
-        background 0.2s ease;
-    }
-
-    .navbar-button:hover {
-
-      background: #f3f4f6;
-    }
-
-    @media (max-width: 900px) {
-
-      .navbar-inner {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 1rem;
-      }
-
-      .navbar-left {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 1rem;
-      }
-
-      .navbar-right {
-
-        flex-wrap: wrap;
-      }
-
-      .search-box input {
-
-        width: 100%;
-      }
-    }
-
-  </style>
+<nav class="topbar" aria-label="Top navigation">
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.topbar-inner {
+  width: min(88%, 900px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+}
+
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.topbar-links a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topbar-search input {
+  width: 160px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.topbar-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.35rem 0.55rem;
+  border-radius: 8px;
+  color: #374151;
+}
+
+.topbar-button:hover {
+  background: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar-right {
+    flex-wrap: wrap;
+  }
+
+  .topbar-search input {
+    width: 100%;
+  }
+}
+</style>
+
+<div class="topbar-inner">
+
+  <div class="topbar-links">
+
+    <a href="{{ '/' | relative_url }}">Home</a>
+
+    <a href="{{ '/articles/' | relative_url }}">Articles</a>
+
+    <a href="{{ '/gallery/' | relative_url }}">Gallery</a>
 
   </div>
+
+  <div class="topbar-right">
+
+    <form class="topbar-search" action="{{ '/search/' | relative_url }}" method="get">
+
+      <input
+        type="search"
+        name="q"
+        placeholder="Search"
+        aria-label="Search">
+
+    </form>
+
+    <button class="topbar-button" aria-label="Decrease font size">A-</button>
+
+    <button class="topbar-button" aria-label="Increase font size">A+</button>
+
+    <button class="topbar-button" aria-label="Toggle dark mode">☾</button>
+
+    <button class="topbar-button" aria-label="Reading mode">Reader</button>
+
+  </div>
+
+</div>
 
 </nav>
