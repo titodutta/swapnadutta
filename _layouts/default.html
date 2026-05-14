@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page.title }}</title>
+
+  <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  <main class="container">
+
+    <article class="content-card">
+      {{ content }}
+    </article>
+
+  </main>
+
+  {% include footer.html %}
+
+</body>
+</html>
