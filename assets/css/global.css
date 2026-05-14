@@ -65,7 +65,6 @@
   --space-4xl: 6rem;
 
   /* Layout */
-  --max-width-content: 720px;
   --max-width-wide: 900px;
   --border-radius-sm: 6px;
   --border-radius-md: 12px;
@@ -384,7 +383,7 @@ main:focus {
 }
 
 .container {
-  max-width: var(--max-width-content);
+  max-width: min(85%, 1000px);
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
