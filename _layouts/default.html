@@ -1,130 +1,50 @@
+<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}" data-theme="light" data-mode="reading-off">
+<html lang="{{ page.lang | default: 'en' }}">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-  <!-- Preconnect for performance -->
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  {% if page.description %}
+  <meta name="description" content="{{ page.description | escape }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Typography: Cormorant Garamond (display) + Lora (body) — classical, warm, literary -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/assets/css/global.css">
-
-  <!-- Theme color for mobile browsers -->
-  <meta name="theme-color" content="#f5f0e8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Skip to main content (accessibility) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ── TOOLBAR ── accessibility + mode toggles -->
-  <div class="toolbar" role="toolbar" aria-label="Accessibility and display options">
-    <div class="toolbar-inner">
-      <span class="toolbar-label">Display</span>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-      <button
-        class="toolbar-btn"
-        id="btn-dark-mode"
-        aria-label="Toggle dark mode"
-        aria-pressed="false"
-        title="Dark mode"
-        onclick="toggleDarkMode()"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-        <span>Dark</span>
-      </button>
-
-      <button
-        class="toolbar-btn"
-        id="btn-reading-mode"
-        aria-label="Toggle reading mode (focused, wider margins)"
-        aria-pressed="false"
-        title="Reading mode"
-        onclick="toggleReadingMode()"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-        </svg>
-        <span>Read</span>
-      </button>
-
-      <button
-        class="toolbar-btn"
-        id="btn-font-size"
-        aria-label="Increase font size"
-        title="Larger text"
-        onclick="cycleFontSize()"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/>
-        </svg>
-        <span>Text</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- ── HEADER ── -->
   {% include header.html %}
 
-  <!-- ── MAIN ── -->
-  <main class="container" id="main-content" tabindex="-1">
-    <article class="content-card" aria-label="Page content">
-      {{ content }}
-    </article>
+  <main id="main-content" class="site-main">
+
+    <div class="container">
+
+      <article class="content-card">
+        {{ content }}
+      </article>
+
+    </div>
+
   </main>
 
-  <!-- ── FOOTER ── -->
   {% include footer.html %}
 
-  <!-- ── SCRIPTS ── -->
-  <script>
-    // ─── Theme / Mode persistence ───────────────────────────────────────────
-
-    const html = document.documentElement;
-
-    function applyPrefs() {
-      const dark = localStorage.getItem('darkMode') === 'true';
-      const reading = localStorage.getItem('readingMode') === 'true';
-      const fontSize = localStorage.getItem('fontSize') || 'normal';
-
-      html.setAttribute('data-theme', dark ? 'dark' : 'light');
-      html.setAttribute('data-mode', reading ? 'reading-on' : 'reading-off');
-      html.setAttribute('data-font-size', fontSize);
-
-      document.getElementById('btn-dark-mode')?.setAttribute('aria-pressed', dark);
-      document.getElementById('btn-reading-mode')?.setAttribute('aria-pressed', reading);
-    }
-
-    function toggleDarkMode() {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      localStorage.setItem('darkMode', !isDark);
-      applyPrefs();
-    }
-
-    function toggleReadingMode() {
-      const isReading = html.getAttribute('data-mode') === 'reading-on';
-      localStorage.setItem('readingMode', !isReading);
-      applyPrefs();
-    }
-
-    const fontSizes = ['normal', 'large', 'xl'];
-    function cycleFontSize() {
-      const current = html.getAttribute('data-font-size') || 'normal';
-      const next = fontSizes[(fontSizes.indexOf(current) + 1) % fontSizes.length];
-      localStorage.setItem('fontSize', next);
-      applyPrefs();
-    }
-
-    // Apply on load (before paint to avoid flash)
-    applyPrefs();
-  </script>
 </body>
 </html>
