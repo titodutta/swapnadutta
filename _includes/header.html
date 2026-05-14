@@ -1,39 +1,66 @@
-<header class="site-header">
-  <div class="container">
-    <a href="/" class="site-title">Swapna Dutta</a>
-    
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="/" {% if page.url == "/" %}class="active" aria-current="page"{% endif %}>Home</a>
-      <a href="/articles/" {% if page.url == "/articles/" %}class="active" aria-current="page"{% endif %}>Articles</a>
-      <a href="/photos/" {% if page.url == "/photos/" %}class="active" aria-current="page"{% endif %}>Photos</a>
+<!-- header.html -->
+
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}">
+        {{ site.title | default: 'Swapna Dutta' }}
+      </a>
+    </div>
+
+    {% if site.tagline %}
+      <p class="site-tagline">
+        {{ site.tagline }}
+      </p>
+    {% else %}
+      <p class="site-tagline">
+        In loving memory • স্মৃতির আলো
+      </p>
+    {% endif %}
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul>
+
+        <li>
+          <a
+            href="{{ '/' | relative_url }}"
+            {% if page.url == '/' %}
+              aria-current="page"
+            {% endif %}
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="{{ '/articles/' | relative_url }}"
+            {% if page.url contains '/articles' %}
+              aria-current="page"
+            {% endif %}
+          >
+            Articles
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="{{ '/photos/' | relative_url }}"
+            {% if page.url contains '/photos' %}
+              aria-current="page"
+            {% endif %}
+          >
+            Photos
+          </a>
+        </li>
+
+      </ul>
     </nav>
 
-    <div class="header-utilities">
-      <form class="header-search" action="/search/" method="get" role="search">
-        <label for="search-input" class="sr-only">Search this site</label>
-        <input type="search" id="search-input" name="q" placeholder="Search..." aria-label="Search this site">
-        <button type="submit" aria-label="Submit search">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M11 11L14.5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </form>
-
-      <div class="font-size-controls" aria-label="Font size controls">
-        <button class="font-size-btn" data-size="small" aria-label="Small font size" title="Small text">A</button>
-        <button class="font-size-btn active" data-size="medium" aria-label="Medium font size (default)" title="Medium text">A</button>
-        <button class="font-size-btn" data-size="large" aria-label="Large font size" title="Large text">A</button>
-      </div>
-
-      <button class="reading-mode-toggle" id="readingModeToggle" aria-label="Toggle reading mode" title="Reading mode">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M5 6H13M5 9H13M5 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <div id="google_translate_element" class="google-translate"></div>
+    <div class="site-header-ornament" aria-hidden="true">
+      <span>✦ ✦ ✦</span>
     </div>
+
   </div>
 </header>
