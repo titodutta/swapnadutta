@@ -98,19 +98,21 @@ We may celebrate medal winners, professionals, or public figures — but we rare
 
 This is the difference (*prabheda*).
 
-<figure>
+<figure class="article-image">
 
-![Swapna Dutta sitting beside a sleeping cat in January 2024](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigLKOxbQI4Q3XSwW-DfNK0Em91roFHRTmqBOYitcZDalKFEekIq363oxPIiGBJrjtff9fPSWnIYCNIdAUzZ0gTKQhG77jG2zQesRBeMqfJzLgUuOgx5ikedAVN837V5VaJguJPOqaQ1ko-OrPeKhvC6hg_UWLvIiL2C4K7ErlF1xZ7a9JmpM5BNFlhJuI/s915/Mother%202024%20January.jpg)
+  <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigLKOxbQI4Q3XSwW-DfNK0Em91roFHRTmqBOYitcZDalKFEekIq363oxPIiGBJrjtff9fPSWnIYCNIdAUzZ0gTKQhG77jG2zQesRBeMqfJzLgUuOgx5ikedAVN837V5VaJguJPOqaQ1ko-OrPeKhvC6hg_UWLvIiL2C4K7ErlF1xZ7a9JmpM5BNFlhJuI/s915/Mother%202024%20January.jpg"
+    alt="Swapna Dutta sitting beside a sleeping cat in January 2024">
 
-<figcaption>
+  <figcaption>
 
-Swapna Dutta — my Mother.
+    Swapna Dutta — my Mother.
 
-In late 2023 she was admitted to Ruby Hospital, Kolkata, followed by an admission in a rehabilitation nursing home.
+    In late 2023 she was admitted to Ruby Hospital, Kolkata, followed by an admission in a rehabilitation nursing home.
 
-This photograph was taken around twenty days after her discharge (22 January 2024).
+    This photograph was taken around twenty days after her discharge (22 January 2024).
 
-</figcaption>
+  </figcaption>
 
 </figure>
 
