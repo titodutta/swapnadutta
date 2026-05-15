@@ -71,10 +71,11 @@ ol {
     "Segoe UI",
     sans-serif;
 
-  --serif:
-    "Noto Serif",
-    Georgia,
-    serif;
+--serif:
+  "Noto Serif",
+  "Noto Serif Bengali",
+  Georgia,
+  serif;
 }
 
 /* =========================
@@ -362,7 +363,7 @@ button:focus-visible {
 }
 
 /* =========================
-   FUTURE DARK MODE READY
+DARK MODE READY
 ========================= */
 
 /*
@@ -395,6 +396,37 @@ button:focus-visible {
   }
 }
 */
+
+/* =========================
+   ARTICLE IMAGES
+========================= */
+
+.article-image {
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.article-image img {
+  display: block;
+  margin-inline: auto;
+
+  max-width: 100%;
+  height: auto;
+
+  border-radius: 14px;
+ box-shadow: var(--shadow);
+}
+
+.article-image figcaption {
+  margin-top: 0.9rem;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  text-align: center;
+}
 
 /* =========================
    MOBILE
