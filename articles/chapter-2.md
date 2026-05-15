@@ -64,10 +64,21 @@ This quest for Love is eternal—universal. *Man's Eternal Quest.*
 
 Throughout ages, across all places, you'll hear this echo. If you cast your gaze outward, you'll find it there. And if you dive deep, saying "Dive, dive, dive, my mind, into the ocean of beauty," you might find this same resonance within your own heart.
 
-![Swapna Dutta near Ramakrishna Math, Kamarpukur](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4WvTGqG4Ysif7WE67hH9w_Zh_X5OVbxMqxt2-XK4QAy1IUDhtuSZjcpFNCql6DlwQesPUGEHD3fmWhfdEqtV4hMRMMFz9INKq-FAKU8O3Ys3qlgbUY_mmqYWI5mYjMrevQJAlIhTIC7UfDzApAZZ12-S2bDRLkdVwhSPeFw7qzv8a_1rXUYzYL6vhUms/s686/M3.jpg)
+<figure class="article-image">
 
-Swapna Dutta, photographed near [Ramakrishna Math, Kamarpukur](https://kamarpukur.rkmm.org/),  
-13 January 2020.
+  <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4WvTGqG4Ysif7WE67hH9w_Zh_X5OVbxMqxt2-XK4QAy1IUDhtuSZjcpFNCql6DlwQesPUGEHD3fmWhfdEqtV4hMRMMFz9INKq-FAKU8O3Ys3qlgbUY_mmqYWI5mYjMrevQJAlIhTIC7UfDzApAZZ12-S2bDRLkdVwhSPeFw7qzv8a_1rXUYzYL6vhUms/s686/M3.jpg"
+    alt="Swapna Dutta near Ramakrishna Math, Kamarpukur">
+
+  <figcaption>
+
+    Swapna Dutta, photographed near
+    <a href="https://kamarpukur.rkmm.org/">Ramakrishna Math, Kamarpukur</a>,
+    on 13 January 2020.
+
+  </figcaption>
+
+</figure>
 
 ## 27 July 2025: The Day my Mother Died
 
@@ -114,10 +125,20 @@ In the emergency ward of Bangur Hospital, at 10:00 pm on 27 July 2025, when the 
 
 Though at this time, my Mother wasn't speaking, she responded—minimally, faintly.
 
-![M. R. Bangur Hospital document](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOF2ZgX9cTLhLNYDUh_xInP0NCz1mjHpadLJSV-SVFnpBDpQlN3pKHlI-Vkl7n9nDF__ppFEy_wnuUJ1e9k4fl4PuN9oXvUG4oXv28VXFd314rMMPM-cnIYgcNtu_YZXPdWy8XeSpVKeWRK7EL8_4-ZzTrljzMSaSdL2XLKIcuvKbgMMrAMKq_7BSlVLs/s1280/MRBangurHospDoc.png)
+<figure class="article-image">
 
-Copy of M. R. Bangur Super Specialty Hospital's document.  
-27 July 2025, 10:01 pm.
+  <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOF2ZgX9cTLhLNYDUh_xInP0NCz1mjHpadLJSV-SVFnpBDpQlN3pKHlI-Vkl7n9nDF__ppFEy_wnuUJ1e9k4fl4PuN9oXvUG4oXv28VXFd314rMMPM-cnIYgcNtu_YZXPdWy8XeSpVKeWRK7EL8_4-ZzTrljzMSaSdL2XLKIcuvKbgMMrAMKq_7BSlVLs/s1280/MRBangurHospDoc.png"
+    alt="M. R. Bangur Hospital document">
+
+  <figcaption>
+
+    Copy of M. R. Bangur Super Specialty Hospital's document,
+    dated 27 July 2025, 10:01 pm.
+
+  </figcaption>
+
+</figure>
 
 After examining my Mother, the attending doctor instructed her admission to the female ward of the hospital. Admission forms were filled, and a patient card issued.
 
@@ -221,10 +242,23 @@ Waiting for an ECG test.
 
 ## Digressing? Or Completing the Picture?
 
-![Indira Gandhi Memorial Museum](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizHA9cx1rNBIo3c0REvMGXgccLoKnSU_t_MZDmhOyodkfeIqc0g2axFQu33Dd4a5kQgPFJAlxKcWDRHMJnD9gSSKFTX2zr4Oj3ANex4_HPW2JTAM1ckreg1b4jO50StwxXwwIEC5ELKQ74ThMyCo9K-nXGZvm1sCe9rYjFpXqEluVYX3xyqp_PSvTdKpQ/s686/Mother%20Courage.jpg)
+<figure class="article-image">
 
-At [Indira Gandhi Memorial Museum](https://indiragandhi.in/en/memorial), Delhi  
-21 November 2017
+  <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizHA9cx1rNBIo3c0REvMGXgccLoKnSU_t_MZDmhOyodkfeIqc0g2axFQu33Dd4a5kQgPFJAlxKcWDRHMJnD9gSSKFTX2zr4Oj3ANex4_HPW2JTAM1ckreg1b4jO50StwxXwwIEC5ELKQ74ThMyCo9K-nXGZvm1sCe9rYjFpXqEluVYX3xyqp_PSvTdKpQ/s686/Mother%20Courage.jpg"
+    alt="At Indira Gandhi Memorial Museum, Delhi">
+
+  <figcaption>
+
+    At
+    <a href="https://indiragandhi.in/en/memorial">
+      Indira Gandhi Memorial Museum
+    </a>,
+    Delhi, on 21 November 2017.
+
+  </figcaption>
+
+</figure>
 
 If you have read Chapter One and this Chapter Two, you might wonder if I have sometimes drifted off-topic.
 
