@@ -54,13 +54,23 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta1.html"
 
 এইটাই *প্রভেদ*।
 
-![স্বপ্না দত্ত, জানুয়ারি ২০২৪](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPn8H8kuat3KUbZ3oMRMSLiYjP5xLfszLP5ryLwS2I5TGw40SBiK4LHHfMKYQMsw1mZzO9QzuazXFEtlV_honaw-e8HGaqO3uXhlwrve_QlGfcKDKwu_QsKTfLlIR3GzF0aRQNzATCw_UIIhR3yIPx0xIF790utbAvQwjwcbetNuURhCBuc046F56lM30/s915/Mother%202024%20January.jpg)
+<figure class="article-image">
 
-স্বপ্না দত্ত, আমার মা, ২০২৪ সালের জানুয়ারি মাসে।
+  <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPn8H8kuat3KUbZ3oMRMSLiYjP5xLfszLP5ryLwS2I5TGw40SBiK4LHHfMKYQMsw1mZzO9QzuazXFEtlV_honaw-e8HGaqO3uXhlwrve_QlGfcKDKwu_QsKTfLlIR3GzF0aRQNzATCw_UIIhR3yIPx0xIF790utbAvQwjwcbetNuURhCBuc046F56lM30/s915/Mother%202024%20January.jpg"
+    alt="স্বপ্না দত্ত, জানুয়ারি ২০২৪">
 
-২০২৩ সালের শেষ দিকে মাকে রুবী হাসপাতালে, আর তারপরই আরেকটি রিহ্যাব সেন্টারে ভর্তি করানো হয়েছিল।
+  <figcaption>
 
-সেইখান থেকে ডিসচার্জের দিন কুড়ি পর।
+    স্বপ্না দত্ত, আমার মা, ২০২৪ সালের জানুয়ারি মাসে।
+
+    ২০২৩ সালের শেষ দিকে মাকে রুবী হাসপাতালে, আর তারপরই আরেকটি রিহ্যাব সেন্টারে ভর্তি করানো হয়েছিল।
+
+    সেইখান থেকে ডিসচার্জের প্রায় কুড়ি দিন পর এই ছবিটি তোলা।
+
+  </figcaption>
+
+</figure>
 
 ## চরৈবেতি
 
