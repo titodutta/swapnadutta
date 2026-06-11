@@ -3,9 +3,7 @@
 
   <div class="sd-navbox__body">
     <div class="sd-navbox__row">
-      <span class="sd-navbox__label">
-        {% if page.lang == 'bn' %}বাংলায় পড়ুন:{% else %}Read in Bengali:{% endif %}
-      </span>
+      <span class="sd-navbox__label">বাংলায় পড়ুন:</span>
       <a href="{{ '/bn/articles/chapter-1' | relative_url }}">প্রথম অধ্যায়</a>,
       <a href="{{ '/bn/articles/chapter-2' | relative_url }}">দ্বিতীয় অধ্যায়</a>,
       <a href="{{ '/bn/articles/chapter-3' | relative_url }}">তৃতীয় অধ্যায়</a>
@@ -18,28 +16,9 @@
       <a href="{{ '/bn/articles/chapter-7a' | relative_url }}">সপ্তম অধ্যায়, প্রথম পরিচ্ছেদ</a>
     </div>
 
-    {% unless page.lang == 'bn' %}
-    <div class="sd-navbox__row">
-      <span class="sd-navbox__label">Read in English:</span>
-      <a href="{{ '/articles/chapter-1' | relative_url }}">First Chapter</a>,
-      <a href="{{ '/articles/chapter-2' | relative_url }}">Second Chapter</a>,
-      <a href="{{ '/articles/chapter-3' | relative_url }}">Third Chapter</a>
-      (<a href="{{ '/articles/chapter-3a' | relative_url }}">Addendum</a>),
-      <a href="{{ '/articles/chapter-4a' | relative_url }}">Fourth Chapter, Part I</a>,
-      <a href="{{ '/articles/chapter-4b' | relative_url }}">Fourth Chapter, Part II</a>,
-      <a href="{{ '/articles/chapter-4c' | relative_url }}">Fourth Chapter, Part III</a>,
-      <a href="{{ '/articles/chapter-5' | relative_url }}">Fifth Chapter</a>,
-      <a href="{{ '/articles/chapter-6' | relative_url }}">Sixth Chapter</a>,
-      <a href="{{ '/articles/chapter-7a' | relative_url }}">Seventh Chapter, Part I</a>
-    </div>
-    {% endunless %}
-
     <div class="sd-navbox__row">
       <span class="sd-navbox__label">সূচি:</span>
       <a href="{{ '/bn/articles/' | relative_url }}">বাংলা সূচি</a>
-      {% unless page.lang == 'bn' %}
-        · <a href="{{ '/articles/' | relative_url }}">English index</a>
-      {% endunless %}
     </div>
   </div>
 </nav>
