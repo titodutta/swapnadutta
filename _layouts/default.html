@@ -48,7 +48,6 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  {% include navbar.html %}
   {% include header.html %}
 
   <main id="main-content" class="site-main">
@@ -93,6 +92,7 @@
       const printButton = document.getElementById('print-toggle');
       const increaseButton = document.getElementById('increase-font');
       const decreaseButton = document.getElementById('decrease-font');
+      const exitReaderButton = document.getElementById('exit-reader');
 
       let currentScale = 100;
 
@@ -101,16 +101,21 @@
       }
 
       function syncButtons() {
+        const dark = body.classList.contains('theme-dark');
+        const reader = body.classList.contains('reader-mode');
+
         if (themeButton) {
-          const dark = body.classList.contains('theme-dark');
           themeButton.setAttribute('aria-pressed', dark ? 'true' : 'false');
           themeButton.textContent = dark ? 'Light' : 'Dark';
         }
 
         if (readerButton) {
-          const reader = body.classList.contains('reader-mode');
           readerButton.setAttribute('aria-pressed', reader ? 'true' : 'false');
           readerButton.textContent = reader ? 'Normal' : 'Reader';
+        }
+
+        if (exitReaderButton) {
+          exitReaderButton.hidden = !reader;
         }
       }
 
@@ -124,6 +129,13 @@
       if (readerButton) {
         readerButton.addEventListener('click', function () {
           body.classList.toggle('reader-mode');
+          syncButtons();
+        });
+      }
+
+      if (exitReaderButton) {
+        exitReaderButton.addEventListener('click', function () {
+          body.classList.remove('reader-mode');
           syncButtons();
         });
       }
