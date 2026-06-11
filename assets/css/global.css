@@ -6,7 +6,6 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -72,8 +71,8 @@ select {
   --radius-lg: 0.875rem;
   --radius-full: 999px;
 
-  --page-width: 1100px;
-  --content-width: 760px;
+  --page-width: 1320px;
+  --content-width: 980px;
 
   --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
@@ -122,7 +121,7 @@ body {
 }
 
 .site-header__inner {
-  width: min(94%, var(--page-width));
+  width: min(96%, var(--page-width));
   margin: 0 auto;
   padding: var(--space-8) 0 var(--space-6);
 }
@@ -157,50 +156,9 @@ body {
 }
 
 .site-navbar__inner {
-  width: min(94%, var(--page-width));
+  width: min(96%, var(--page-width));
   margin: 0 auto;
   padding: var(--space-4) 0;
-}
-
-.breadcrumbs-wrap {
-  margin-bottom: var(--space-3);
-}
-
-.breadcrumbs {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  padding-left: 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.breadcrumbs li {
-  display: inline-flex;
-  align-items: center;
-}
-
-.breadcrumbs li::after {
-  content: "/";
-  margin-left: var(--space-2);
-  color: #b9b2a7;
-}
-
-.breadcrumbs li:last-child::after {
-  content: "";
-  margin: 0;
-}
-
-.breadcrumbs a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.breadcrumbs a:hover,
-.breadcrumbs a:focus-visible {
-  color: var(--accent);
-  text-decoration: underline;
 }
 
 .nav-toggle {
@@ -253,7 +211,7 @@ body {
 }
 
 .page-shell {
-  width: min(94%, var(--page-width));
+  width: min(96%, var(--page-width));
   margin: 0 auto;
 }
 
@@ -328,7 +286,7 @@ body {
 
 .page-content p,
 .page-content li {
-  max-width: 70ch;
+  max-width: 72ch;
   font-size: var(--text-base);
   line-height: 1.78;
 }
@@ -380,7 +338,7 @@ body {
 }
 
 .footer-inner {
-  width: min(94%, var(--page-width));
+  width: min(96%, var(--page-width));
   margin: 0 auto;
   padding: var(--space-6) 0 var(--space-10);
   text-align: center;
@@ -459,6 +417,19 @@ select:focus-visible {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 @media print {
   .site-header,
   .site-navbar,
@@ -480,18 +451,5 @@ select:focus-visible {
     border: 0 !important;
     box-shadow: none !important;
     background: #fff !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
   }
 }

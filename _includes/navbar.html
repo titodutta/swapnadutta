@@ -1,22 +1,5 @@
 <nav class="site-navbar" aria-label="Primary navigation">
   <div class="site-navbar__inner">
-    {% if page.breadcrumbs and page.breadcrumbs.size > 0 %}
-    <div class="breadcrumbs-wrap">
-      <ol class="breadcrumbs">
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        {% for item in page.breadcrumbs %}
-        <li>
-          {% if forloop.last %}
-            <span aria-current="page">{{ item.title }}</span>
-          {% else %}
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          {% endif %}
-        </li>
-        {% endfor %}
-      </ol>
-    </div>
-    {% endif %}
-
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
       <span class="nav-toggle__label">Menu</span>
     </button>
@@ -35,9 +18,20 @@
       const nav = document.getElementById('primary-nav');
       if (!toggle || !nav) return;
 
+      const setOpen = (open) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.classList.toggle('is-open', open);
+      };
+
+      setOpen(false);
+
       toggle.addEventListener('click', function () {
-        const isOpen = nav.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        setOpen(!nav.classList.contains('is-open'));
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 820) setOpen(false);
       });
     })();
   </script>
