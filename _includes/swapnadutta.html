@@ -1,337 +1,113 @@
-<div class="sd-box" role="region" aria-label="Swapna Dutta series">
+<div class="sd-navbox" role="navigation" aria-label="Swapna Dutta series navigation">
   <style>
-    .sd-box {
-      --sd-bg: #fffaf6;
-      --sd-surface: #fffdfb;
-      --sd-text: #1f2937;
-      --sd-muted: #5b6472;
-      --sd-border: #d9c7ba;
-      --sd-accent: #7a1f1f;
-      --sd-accent-2: #b45309;
-      --sd-link: #174ea6;
-      --sd-link-hover: #7a1f1f;
-      --sd-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-      --sd-radius: 14px;
-      --sd-focus: #0f766e;
-
+    .sd-navbox {
       margin: 1.5rem 0;
-      padding: 1rem;
-      border: 1px solid var(--sd-border);
-      border-radius: var(--sd-radius);
-      background:
-        linear-gradient(135deg, rgba(122, 31, 31, 0.06), rgba(180, 83, 9, 0.04)) padding-box,
-        linear-gradient(135deg, #7a1f1f, #b45309, #0f766e) border-box;
-      box-shadow: var(--sd-shadow);
-      color: var(--sd-text);
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+      color: #202122;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .sd-navbox a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+
+    .sd-navbox a:hover,
+    .sd-navbox a:focus {
+      text-decoration: underline;
+    }
+
+    .sd-navbox a:focus-visible {
+      outline: 2px solid #3366cc;
+      outline-offset: 2px;
+    }
+
+    .sd-navbox__title {
+      padding: 0.5rem 0.75rem;
+      text-align: center;
+      font-weight: 700;
+      background: #eaecf0;
+      border-bottom: 1px solid #a2a9b1;
+    }
+
+    .sd-navbox__body {
+      padding: 0.75rem;
+    }
+
+    .sd-navbox__row + .sd-navbox__row {
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid #eaecf0;
+    }
+
+    .sd-navbox__label {
+      font-weight: 700;
     }
 
     @media (prefers-color-scheme: dark) {
-      .sd-box {
-        --sd-bg: #161514;
-        --sd-surface: #1d1b1a;
-        --sd-text: #ece7e2;
-        --sd-muted: #c1b7ae;
-        --sd-border: #4b3e37;
-        --sd-accent: #f2b3b3;
-        --sd-accent-2: #f5c27a;
-        --sd-link: #9fc3ff;
-        --sd-link-hover: #ffd2d2;
-        --sd-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-        --sd-focus: #8bd3dd;
-      }
-    }
-
-    .sd-box__inner {
-      background: var(--sd-surface);
-      border-radius: calc(var(--sd-radius) - 4px);
-      padding: 1rem;
-    }
-
-    .sd-box__top {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 1rem;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .sd-box__image-link {
-      display: inline-block;
-      border-radius: 12px;
-    }
-
-    .sd-box__image-link:focus-visible,
-    .sd-box a:focus-visible,
-    .sd-box select:focus-visible {
-      outline: 3px solid var(--sd-focus);
-      outline-offset: 3px;
-      border-radius: 10px;
-    }
-
-    .sd-box__image {
-      display: block;
-      width: 92px;
-      height: auto;
-      border-radius: 12px;
-      border: 1px solid var(--sd-border);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    }
-
-    .sd-box__title {
-      margin: 0 0 0.35rem;
-      color: var(--sd-accent);
-      font-size: 1.2rem;
-      line-height: 1.3;
-    }
-
-    .sd-box__desc {
-      margin: 0;
-      color: var(--sd-muted);
-      line-height: 1.55;
-      font-size: 0.98rem;
-    }
-
-    .sd-box__controls {
-      display: flex;
-      justify-content: flex-end;
-      margin: 0 0 1rem;
-    }
-
-    .sd-box__label {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      font-size: 0.95rem;
-      color: var(--sd-muted);
-    }
-
-    .sd-box__select {
-      min-width: 12rem;
-      padding: 0.55rem 2.25rem 0.55rem 0.75rem;
-      border: 1px solid var(--sd-border);
-      border-radius: 10px;
-      background-color: var(--sd-bg);
-      color: var(--sd-text);
-      font: inherit;
-    }
-
-    .sd-box a {
-      color: var(--sd-link);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .sd-box a:hover {
-      color: var(--sd-link-hover);
-    }
-
-    .sd-box__panel[hidden] {
-      display: none !important;
-    }
-
-    .sd-box__panel h2 {
-      margin: 0 0 0.75rem;
-      color: var(--sd-accent);
-      font-size: 1.35rem;
-      line-height: 1.3;
-    }
-
-    .sd-box__panel p {
-      margin: 0 0 1rem;
-      line-height: 1.7;
-    }
-
-    .sd-box__links {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-    }
-
-    .sd-box__links li {
-      margin: 0 0 0.75rem;
-      line-height: 1.65;
-    }
-
-    .sd-box__meta {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--sd-border);
-      color: var(--sd-muted);
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-
-    .sd-box__meta ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.2rem;
-    }
-
-    @media (max-width: 640px) {
-      .sd-box {
-        padding: 0.75rem;
+      .sd-navbox {
+        border-color: #54595d;
+        background: #1f1f1f;
+        color: #eaecf0;
       }
 
-      .sd-box__inner {
-        padding: 0.85rem;
+      .sd-navbox a {
+        color: #8ab4f8;
       }
 
-      .sd-box__top {
-        grid-template-columns: 1fr;
-        text-align: center;
+      .sd-navbox__title {
+        background: #2a2a2a;
+        border-bottom-color: #54595d;
       }
 
-      .sd-box__image-link,
-      .sd-box__image {
-        margin-inline: auto;
-      }
-
-      .sd-box__controls {
-        justify-content: stretch;
-      }
-
-      .sd-box__select {
-        min-width: 100%;
+      .sd-navbox__row + .sd-navbox__row {
+        border-top-color: #3a3a3a;
       }
     }
   </style>
 
-  <div class="sd-box__inner">
-    <div class="sd-box__controls">
-      <label class="sd-box__label" for="sd-lang-select">
-        Language
-        <select class="sd-box__select" id="sd-lang-select" aria-controls="sd-panel-en sd-panel-bn">
-          <option value="en">English</option>
-          <option value="bn">বাংলা</option>
-        </select>
-      </label>
-    </div>
-
-    <div class="sd-box__top">
-      <a
-        class="sd-box__image-link"
-        href="{{ '/p/swapna-dutta.html' | relative_url }}"
-        aria-label="Open Swapna Dutta series page"
-      >
-        <img
-          class="sd-box__image"
-          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhilxl9cAVrNUUOTLx7qre2kifMSUkoSe8Vv_HOh3nYG3V1Jpjz-zHpXO4s-j2qXkFNlkRjFxteWWmFuBCGAiOsL0COuWDsQ9CXnl0l2pNnJtkINkG1OdsB5-lNJf614OkeYX3PHxaLX-cIzm56-1w8UfqzjsJHaBiU_n5Q78dqwJeidyNFyeTjlTFIdZY/s686/M.jpg"
-          alt="Swapna Dutta, my Mother"
-          loading="lazy"
-          width="89"
-          height="132"
-        >
-      </a>
-
-      <div>
-        <p class="sd-box__title">Swapna Dutta, my Mother · স্বপ্না দত্ত, আমার মা</p>
-        <p class="sd-box__desc">
-          A bilingual series of personal memories, reflections, and life-writing in English and Bengali.
-        </p>
-      </div>
-    </div>
-
-    <section class="sd-box__panel" id="sd-panel-en" lang="en">
-      <h2>Weaving a Tapestry of Memories</h2>
-      <p>
-        I am weaving a tapestry of memories about my Mother, <strong>Swapna Dutta</strong> (2 October 1953 – 27 July 2025). Some memories come from the distant past, some from later events, some carry joy, and some discomfort.
-      </p>
-      <p>
-        I have tried to ensure these writings are not only personal, but also open to broader human reflection. Another major purpose of this series is to understand my own life more clearly.
-      </p>
-
-      <ul class="sd-box__links">
-        <li>
-          <strong>Read in English:</strong>
-          <a href="{{ '/2025/08/swapnadutta1en.html' | relative_url }}">First Chapter</a>,
-          <a href="{{ '/2025/08/swapnadutta2en.html' | relative_url }}">Second Chapter</a>,
-          <a href="{{ '/2025/08/swapnadutta3en.html' | relative_url }}">Third Chapter</a>
-          (<a href="{{ '/2025/08/swapnadutta3aen.html' | relative_url }}">Addendum</a>),
-          Fourth Chapter
-          (<a href="{{ '/2025/08/swapnadutta4aen.html' | relative_url }}">Part I</a>,
-          <a href="{{ '/2025/08/swapnadutta4ben.html' | relative_url }}">Part II</a>,
-          <a href="{{ '/2025/08/swapnadutta4cen.html' | relative_url }}">Part III</a>),
-          <a href="{{ '/2025/08/swapnadutta5en.html' | relative_url }}">Fifth Chapter</a>,
-          <a href="{{ '/2025/08/swapnadutta6en.html' | relative_url }}">Sixth Chapter</a>,
-          Seventh Chapter
-          (<a href="{{ '/2025/09/swapnadutta7aen.html' | relative_url }}">Part I</a>)
-        </li>
-      </ul>
-    </section>
-
-    <section class="sd-box__panel" id="sd-panel-bn" lang="bn" hidden>
-      <h2>স্মৃতির গাঁথা</h2>
-      <p>
-        আমার মা, <strong>স্বপ্না দত্ত</strong> (২ অক্টোবর ১৯৫৩ – ২৭ জুলাই ২০২৫), সম্পর্কে স্মৃতিগাঁথা বুনতে বসেছি। অতীতের কিছু স্মৃতি, কিছু ঘটনা, কিছু ভালোলাগা, কিছু অস্বস্তি—সব মিলিয়ে এই লেখাগুলি।
-      </p>
-      <p>
-        বিশেষ চেষ্টা করেছি যাতে এই স্মৃতিচর্চা শুধু ব্যক্তিগত না থাকে, বরং আরও বৃহত্তর মানবিক অনুভবের দিকে খুলে যায়। এই সিরিজের আরেকটি বড় উদ্দেশ্য হলো নিজের জীবনকে আরও স্পষ্টভাবে বোঝার চেষ্টা করা।
-      </p>
-
-      <ul class="sd-box__links">
-        <li>
-          <strong>বাংলায় পড়ুন:</strong>
-          <a href="{{ '/2025/08/swapnadutta1.html' | relative_url }}">প্রথম অধ্যায়</a>,
-          <a href="{{ '/2025/08/swapnadutta2.html' | relative_url }}">দ্বিতীয় অধ্যায়</a>,
-          <a href="{{ '/2025/08/swapnadutta3.html' | relative_url }}">তৃতীয় অধ্যায়</a>
-          (<a href="{{ '/2025/08/swapnadutta3a.html' | relative_url }}">সংযোজন</a>),
-          চতুর্থ অধ্যায়
-          (<a href="{{ '/2025/08/swapnadutta4a.html' | relative_url }}">প্রথম পরিচ্ছেদ</a>,
-          <a href="{{ '/2025/08/swapnadutta4b.html' | relative_url }}">দ্বিতীয় পরিচ্ছেদ</a>,
-          <a href="{{ '/2025/08/swapnadutta4c.html' | relative_url }}">তৃতীয় পরিচ্ছেদ</a>),
-          <a href="{{ '/2025/08/swapnadutta5.html' | relative_url }}">পঞ্চম অধ্যায়</a>,
-          <a href="{{ '/2025/08/swapnadutta6.html' | relative_url }}">ষষ্ঠ অধ্যায়</a>,
-          সপ্তম অধ্যায়
-          (<a href="{{ '/2025/09/swapnadutta7a.html' | relative_url }}">প্রথম পরিচ্ছেদ</a>)
-        </li>
-      </ul>
-    </section>
-
-    <div class="sd-box__meta">
-      <p>
-        This page can also be accessed using:
-      </p>
-      <ul>
-        <li><a href="{{ '/sd' | relative_url }}">/sd</a></li>
-        <li><a href="https://tinyurl.com/swapnadutta" target="_blank" rel="noopener noreferrer">tinyurl.com/swapnadutta</a></li>
-        <li><a href="https://is.gd/swapna" target="_blank" rel="noopener noreferrer">is.gd/swapna</a></li>
-      </ul>
-      <p>
-        Add <code>#en</code> or <code>#bn</code> to the URL to open a specific language directly.
-      </p>
-    </div>
+  <div class="sd-navbox__title">
+    Swapna Dutta, my Mother · Series navigation
   </div>
 
-  <script>
-    (function () {
-      const root = document.currentScript.closest('.sd-box');
-      if (!root) return;
+  <div class="sd-navbox__body">
+    <div class="sd-navbox__row">
+      <span class="sd-navbox__label">বাংলায় পড়ুন:</span>
+      <a href="{{ '/2025/08/swapnadutta1.html' | relative_url }}">প্রথম অধ্যায়</a>,
+      <a href="{{ '/2025/08/swapnadutta2.html' | relative_url }}">দ্বিতীয় অধ্যায়</a>,
+      <a href="{{ '/2025/08/swapnadutta3.html' | relative_url }}">তৃতীয় অধ্যায়</a>
+      (<a href="{{ '/2025/08/swapnadutta3a.html' | relative_url }}">সংযোজন</a>),
+      চতুর্থ অধ্যায়
+      (<a href="{{ '/2025/08/swapnadutta4a.html' | relative_url }}">প্রথম পরিচ্ছেদ</a>,
+      <a href="{{ '/2025/08/swapnadutta4b.html' | relative_url }}">দ্বিতীয় পরিচ্ছেদ</a>,
+      <a href="{{ '/2025/08/swapnadutta4c.html' | relative_url }}">তৃতীয় পরিচ্ছেদ</a>),
+      <a href="{{ '/2025/08/swapnadutta5.html' | relative_url }}">পঞ্চম অধ্যায়</a>,
+      <a href="{{ '/2025/08/swapnadutta6.html' | relative_url }}">ষষ্ঠ অধ্যায়</a>,
+      সপ্তম অধ্যায়
+      (<a href="{{ '/2025/09/swapnadutta7a.html' | relative_url }}">প্রথম পরিচ্ছেদ</a>)
+    </div>
 
-      const select = root.querySelector('#sd-lang-select');
-      const panelEn = root.querySelector('#sd-panel-en');
-      const panelBn = root.querySelector('#sd-panel-bn');
+    <div class="sd-navbox__row">
+      <span class="sd-navbox__label">Read in English:</span>
+      <a href="{{ '/2025/08/swapnadutta1en.html' | relative_url }}">First Chapter</a>,
+      <a href="{{ '/2025/08/swapnadutta2en.html' | relative_url }}">Second Chapter</a>,
+      <a href="{{ '/2025/08/swapnadutta3en.html' | relative_url }}">Third Chapter</a>
+      (<a href="{{ '/2025/08/swapnadutta3aen.html' | relative_url }}">Addendum</a>),
+      Fourth Chapter
+      (<a href="{{ '/2025/08/swapnadutta4aen.html' | relative_url }}">Part I</a>,
+      <a href="{{ '/2025/08/swapnadutta4ben.html' | relative_url }}">Part II</a>,
+      <a href="{{ '/2025/08/swapnadutta4cen.html' | relative_url }}">Part III</a>),
+      <a href="{{ '/2025/08/swapnadutta5en.html' | relative_url }}">Fifth Chapter</a>,
+      <a href="{{ '/2025/08/swapnadutta6en.html' | relative_url }}">Sixth Chapter</a>,
+      Seventh Chapter
+      (<a href="{{ '/2025/09/swapnadutta7aen.html' | relative_url }}">Part I</a>)
+    </div>
 
-      function setLanguage(lang) {
-        const active = lang === 'bn' ? 'bn' : 'en';
-        panelEn.hidden = active !== 'en';
-        panelBn.hidden = active !== 'bn';
-        select.value = active;
-      }
-
-      const hash = window.location.hash.replace('#', '');
-      if (hash === 'bn' || hash === 'en') {
-        setLanguage(hash);
-      } else {
-        setLanguage(select.value);
-      }
-
-      select.addEventListener('change', function () {
-        setLanguage(this.value);
-      });
-
-      window.addEventListener('hashchange', function () {
-        const next = window.location.hash.replace('#', '');
-        if (next === 'bn' || next === 'en') setLanguage(next);
-      });
-    })();
-  </script>
+    <div class="sd-navbox__row">
+      <span class="sd-navbox__label">Series page:</span>
+      <a href="{{ '/p/swapna-dutta.html' | relative_url }}">Swapna Dutta, my Mother</a>
+    </div>
+  </div>
 </div>
