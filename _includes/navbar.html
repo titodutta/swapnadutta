@@ -1,29 +1,44 @@
-<nav class="topbar" aria-label="Accessibility and reading tools">
-  <div class="container topbar-inner">
-    <div class="topbar-language">
-      {% if page.lang == 'bn' %}
-        <span aria-current="true">বাংলা</span>
-        {% if page.alternate_en %}
-          <a href="{{ page.alternate_en | relative_url }}">English</a>
-        {% else %}
-          <span class="is-muted">English</span>
-        {% endif %}
-      {% else %}
-        {% if page.alternate_bn %}
-          <a href="{{ page.alternate_bn | relative_url }}">বাংলা</a>
-        {% else %}
-          <span class="is-muted">বাংলা</span>
-        {% endif %}
-        <span aria-current="true">English</span>
-      {% endif %}
+<nav class="site-navbar" aria-label="Primary navigation">
+  <div class="site-navbar__inner">
+    {% if page.breadcrumbs and page.breadcrumbs.size > 0 %}
+    <div class="breadcrumbs-wrap">
+      <ol class="breadcrumbs">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        {% for item in page.breadcrumbs %}
+        <li>
+          {% if forloop.last %}
+            <span aria-current="page">{{ item.title }}</span>
+          {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
     </div>
+    {% endif %}
 
-    <div class="topbar-tools">
-      <button class="topbar-button" id="decrease-font" type="button" aria-label="Decrease font size">A-</button>
-      <button class="topbar-button" id="increase-font" type="button" aria-label="Increase font size">A+</button>
-      <button class="topbar-button" id="reading-toggle" type="button" aria-pressed="false" aria-label="Toggle reader mode">Reader</button>
-      <button class="topbar-button" id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">Dark</button>
-      <button class="topbar-button" id="print-toggle" type="button" aria-label="Print this page">Print</button>
-    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <ul id="primary-nav" class="nav-list">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/articles/' | relative_url }}">Articles</a></li>
+      <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+    </ul>
   </div>
+
+  <script>
+    (function () {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener('click', function () {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    })();
+  </script>
 </nav>

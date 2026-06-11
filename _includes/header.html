@@ -1,34 +1,9 @@
 <header class="site-header">
   <div class="site-header__inner">
-    <div class="site-branding">
-      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
-      {% if site.description %}
-      <p class="site-tagline">{{ site.description }}</p>
-      {% endif %}
-    </div>
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
 
-    <nav class="site-nav" aria-label="Primary navigation">
-      <ul class="nav-list">
-        {% if page.lang == 'bn' %}
-          <li><a href="{{ '/bn/' | relative_url }}">হোম</a></li>
-          <li><a href="{{ '/bn/articles/' | relative_url }}">প্রবন্ধ</a></li>
-          <li><a href="{{ '/gallery/' | relative_url }}">গ্যালারি</a></li>
-        {% else %}
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/articles/' | relative_url }}">Articles</a></li>
-          <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
-        {% endif %}
-      </ul>
-    </nav>
-
-    <div class="language-row" aria-label="Language switcher">
-      {% if page.lang == 'bn' %}
-        <a class="language-link" href="{{ page.alternate_en | default: '/' | relative_url }}">English</a>
-        <span class="language-current" aria-current="page">বাংলা</span>
-      {% else %}
-        <span class="language-current" aria-current="page">English</span>
-        <a class="language-link" href="{{ page.alternate_bn | default: '/bn/' | relative_url }}">বাংলা</a>
-      {% endif %}
-    </div>
+    {% if site.description %}
+    <p class="site-tagline">{{ site.description }}</p>
+    {% endif %}
   </div>
 </header>
