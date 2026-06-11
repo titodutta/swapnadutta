@@ -26,7 +26,27 @@
       <article class="content-card">
         {% if page.title %}
         <header class="page-header">
-          <h1 class="page-title">{{ page.title }}</h1>
+          <div class="page-title-row">
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  {% if page.url contains '/bn/' %}
+    <a
+      class="language-switcher"
+      href="{{ page.url | remove_first: '/bn' }}"
+      title="Read this page in English"
+      aria-label="Read this page in English">
+      English
+    </a>
+  {% else %}
+    <a
+      class="language-switcher"
+      href="/bn{{ page.url }}"
+      title="বাংলায় পড়ুন"
+      aria-label="Read this page in Bengali">
+      বাংলা
+    </a>
+  {% endif %}
+</div>
 
           {% if page.description %}
           <p class="page-description">{{ page.description }}</p>
