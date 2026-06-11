@@ -3,7 +3,9 @@
 
   <div class="sd-navbox__body">
     <div class="sd-navbox__row">
-      <span class="sd-navbox__label">বাংলায় পড়ুন:</span>
+      <span class="sd-navbox__label">
+        {% if page.lang == 'bn' %}বাংলায় পড়ুন:{% else %}Read in Bengali:{% endif %}
+      </span>
       <a href="{{ '/bn/articles/chapter-1' | relative_url }}">প্রথম অধ্যায়</a>,
       <a href="{{ '/bn/articles/chapter-2' | relative_url }}">দ্বিতীয় অধ্যায়</a>,
       <a href="{{ '/bn/articles/chapter-3' | relative_url }}">তৃতীয় অধ্যায়</a>
@@ -16,6 +18,7 @@
       <a href="{{ '/bn/articles/chapter-7a' | relative_url }}">সপ্তম অধ্যায়, প্রথম পরিচ্ছেদ</a>
     </div>
 
+    {% unless page.lang == 'bn' %}
     <div class="sd-navbox__row">
       <span class="sd-navbox__label">Read in English:</span>
       <a href="{{ '/articles/chapter-1' | relative_url }}">First Chapter</a>,
@@ -29,11 +32,14 @@
       <a href="{{ '/articles/chapter-6' | relative_url }}">Sixth Chapter</a>,
       <a href="{{ '/articles/chapter-7a' | relative_url }}">Seventh Chapter, Part I</a>
     </div>
+    {% endunless %}
 
     <div class="sd-navbox__row">
-      <span class="sd-navbox__label">Indexes:</span>
-      <a href="{{ '/articles/' | relative_url }}">English index</a> ·
+      <span class="sd-navbox__label">সূচি:</span>
       <a href="{{ '/bn/articles/' | relative_url }}">বাংলা সূচি</a>
+      {% unless page.lang == 'bn' %}
+        · <a href="{{ '/articles/' | relative_url }}">English index</a>
+      {% endunless %}
     </div>
   </div>
 </nav>
