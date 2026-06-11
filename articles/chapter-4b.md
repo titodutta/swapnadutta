@@ -145,3 +145,5 @@ The entire ceremony took about 50 minutes. Afterwards, we went to a local salon 
 With that, the second part of the fourth chapter comes to a close.
 
 *Charaiveti*.
+
+{% include swapnadutta.html %}

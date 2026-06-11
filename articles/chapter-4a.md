@@ -313,3 +313,5 @@ Perhaps for this very reason, [Ādi Śaṅkarācārya](https://en.wikipedia.org/
 With that, the first part of the fourth chapter comes to a close.
 
 *Charaiveti*.
+
+{% include swapnadutta.html %}

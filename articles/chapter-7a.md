@@ -117,20 +117,4 @@ Thus ends the Seventh Chapter, Part I.
 
 *Charaiveti*.
 
-<hr class="hr-gradient" />
-
-<style>
-.hr-gradient {
-  border: 0;
-  height: 2px;
-  border-radius: 6px;
-  background: linear-gradient(90deg,
-    #800000 0%,   /* deep maroon */
-    #a83232 25%,  /* strong red-maroon */
-    #c94f4f 50%,  /* softer red */
-    #e27b7b 75%,  /* light rose */
-    #f2c0c0 100%  /* pale pinkish */
-  );
-  margin: 1.2rem 0;
-}
-</style>
+{% include swapnadutta.html %}

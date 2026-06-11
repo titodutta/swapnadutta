@@ -83,6 +83,8 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta6.html"
 
 *মেরি মহবুব কঁহি অউর মিলাকর মুঝসে।*
 
+{% include swapnadutta.html %}
+
 <style>
 .bluequote {
   background: #e7f3ff;

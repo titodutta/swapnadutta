@@ -202,3 +202,5 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta4c.html"
 চতুর্থ অধ্যায়, তৃতীয় পরিচ্ছেদ — শ্রাদ্ধদিবস — এইখানেই শেষ করলাম।
 
 চরৈবেতি।
+
+{% include swapnadutta.html %}

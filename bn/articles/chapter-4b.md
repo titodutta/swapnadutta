@@ -143,3 +143,5 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta4b.html"
 চতুর্থ অধ্যায়, দ্বিতীয় পরিচ্ছেদ — ঘাটকাজপর্ব — এইখানেই শেষ করলাম।
 
 চরৈবেতি।
+
+{% include swapnadutta.html %}

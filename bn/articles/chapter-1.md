@@ -87,3 +87,5 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta1.html"
 প্রথম অধ্যায় এইখানেই শেষ করছি। এরপর আরও কিছুটা এগিয়ে যাওয়ার ইচ্ছে আছে। ঠিক কীভাবে লেখাটা এগিয়ে নিয়ে যাবো, আর কতটা এগিয়ে নিয়ে যেতে পারবো, জানি না।
 
 চরৈবেতি।
+
+{% include swapnadutta.html %}

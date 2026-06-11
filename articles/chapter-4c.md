@@ -196,3 +196,5 @@ I feel a sense of weariness within me. A dull, heavy ache is lingering.
 With this, the third part of the fourth chapter — the Day of *Śrāddha* — comes to an end.
 
 *Charaiveti*.
+
+{% include swapnadutta.html %}

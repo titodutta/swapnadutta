@@ -115,19 +115,4 @@ original_url: "https://www.silentcontemplation.com/2025/09/swapnadutta7a.html"
 
 সপ্তম অধ্যায়, প্রথম পরিচ্ছেদ এইখানেই শেষ করলাম। চরৈবেতি।
 
-<hr class="hr-gradient" />
-
-<style>
-.hr-gradient {
-  border: 0;
-  height: 2px;
-  border-radius: 6px;
-  background: linear-gradient(90deg,
-    #338eff 0%, 
-    #66baff 25%, 
-    #99d1ff 50%, 
-    #cce7ff 75%, 
-    #e6f2ff 100%);
-  margin: 1.2rem 0;
-}
-</style>
+{% include swapnadutta.html %}

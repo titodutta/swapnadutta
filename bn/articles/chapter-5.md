@@ -97,3 +97,5 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta5.html"
 ব্যাস, এই অবধি। পঞ্চম অধ্যায় এইখানেই শেষ করলাম।
 
 *এই শব্দটা আজ লিখতে ইচ্ছে করছে না, জোর করেই লিখছি* — চরৈবেতি।
+
+{% include swapnadutta.html %}

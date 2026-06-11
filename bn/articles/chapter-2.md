@@ -213,3 +213,5 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta2.html"
 দ্বিতীয় অধ্যায় আপাততঃ এইখানেই শেষ করছি।
 
 চরৈবেতি।
+
+{% include swapnadutta.html %}
