@@ -8,6 +8,16 @@
     </div>
 
     <div class="site-header__navblock">
+      <div class="language-switcher" aria-label="Language switcher">
+        {% if page.lang == 'bn' %}
+          <a href="{{ page.alternate_en | default: '/' | relative_url }}">English</a>
+          <span aria-current="page">বাংলা</span>
+        {% else %}
+          <a href="{{ page.alternate_bn | default: '/bn/' | relative_url }}">বাংলা</a>
+          <span aria-current="page">English</span>
+        {% endif %}
+      </div>
+
       <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-list">
           {% if page.lang == 'bn' %}
@@ -21,24 +31,6 @@
           {% endif %}
         </ul>
       </nav>
-
-      <div class="language-switcher" aria-label="Language switcher">
-        {% if page.lang == 'bn' %}
-          {% if page.alternate_en %}
-            <a href="{{ page.alternate_en | relative_url }}">English</a>
-          {% else %}
-            <span class="is-muted">English</span>
-          {% endif %}
-          <span aria-current="page">বাংলা</span>
-        {% else %}
-          {% if page.alternate_bn %}
-            <a href="{{ page.alternate_bn | relative_url }}">বাংলা</a>
-          {% else %}
-            <span class="is-muted">বাংলা</span>
-          {% endif %}
-          <span aria-current="page">English</span>
-        {% endif %}
-      </div>
     </div>
   </div>
 </header>

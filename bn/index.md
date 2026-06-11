@@ -5,6 +5,8 @@ title: প্রথম পাতা
 description: "স্বপ্না দত্তকে উৎসর্গীকৃত স্মারক ও সংরক্ষণমূলক ওয়েবসাইট।"
 categories: [Project pages]
 permalink: /bn/
+alternate_en: /
+alternate_bn: /bn/
 created: 2026-05-15
 ---
 
