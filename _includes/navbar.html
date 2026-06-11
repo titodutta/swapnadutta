@@ -1,8 +1,8 @@
 <nav class="site-navbar" aria-label="Primary navigation">
   <div class="site-navbar__inner">
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-      Menu
-    </button>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+  ☰ Menu
+</button>
 
     <ul id="primary-nav" class="nav-list">
       <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -13,7 +13,7 @@
   </div>
 
   <style>
-    .site-navbar {
+.site-navbar {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
@@ -27,60 +27,80 @@
 .nav-toggle {
   display: none;
   align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.65rem 0.95rem;
-  border: 1px solid var(--border);
+  justify-content: flex-start;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid #c8c0b3;
   border-radius: var(--radius-full);
+
   background: var(--surface-soft);
+
+  cursor: pointer;
 }
 
 .nav-list {
   list-style: none;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   gap: var(--space-2);
+
   padding-left: 0;
 }
 
 .nav-list a {
   display: inline-flex;
   align-items: center;
+
   min-height: 44px;
+
   padding: 0.45rem 0.9rem;
+
   border: 1px solid transparent;
   border-radius: var(--radius-full);
+
   color: var(--text);
+
   font-size: 0.97rem;
   font-weight: 500;
+
   text-decoration: none;
 }
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
   color: var(--accent-hover);
+
   background: var(--surface-soft);
   border-color: var(--border);
+
   outline: none;
 }
 
 @media (max-width: 820px) {
-.nav-toggle {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 0.85rem 1rem;
-}
+
+  .nav-toggle {
+    display: flex;
+    width: auto;
+  }
 
   .nav-list {
     display: none;
+
     margin-top: var(--space-3);
+
     flex-direction: column;
+
     gap: var(--space-2);
+
     padding: var(--space-3);
+
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
+
     background: var(--surface-soft);
   }
 
@@ -92,9 +112,7 @@
     width: 100%;
     justify-content: flex-start;
   }
-
 }
-
   </style>
   <script>
     (function () {
