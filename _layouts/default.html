@@ -1,51 +1,107 @@
-<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
 
-  <title>
-    {% if page.title %}
-      {{ page.title }} | {{ site.title }}
-    {% else %}
-      {{ site.title }}
-    {% endif %}
-  </title>
+  {% assign page_title = page.title | default: site.title %}
+  {% assign site_title = site.title | default: 'Swapna Dutta' %}
+  {% assign page_description = page.description | default: site.description %}
+  {% assign page_type = page.og_type | default: 'article' %}
+  {% assign page_image = page.image | default: site.og_image %}
+  {% assign canonical_url = page.url | absolute_url %}
 
-  {% if page.description %}
-  <meta name="description" content="{{ page.description | escape }}">
+  <title>{% if page.title %}{{ page.title }} | {{ site_title }}{% else %}{{ site_title }}{% endif %}</title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
   {% endif %}
 
-  <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+  {% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords | escape }}">
+  {% endif %}
+
+  {% if site.author or page.author %}
+  <meta name="author" content="{{ page.author | default: site.author | escape }}">
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  <meta property="og:locale" content="{% if page.lang == 'bn' %}bn_BD{% else %}en_US{% endif %}">
+  <meta property="og:site_name" content="{{ site_title | escape }}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  {% if page_description %}
+  <meta property="og:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+  {% endif %}
+  <meta property="og:type" content="{{ page_type }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  {% if page_image %}
+  <meta property="og:image" content="{{ page_image | absolute_url }}">
+  {% endif %}
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title | escape }}">
+  {% if page_description %}
+  <meta name="twitter:description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+  {% endif %}
+  {% if page_image %}
+  <meta name="twitter:image" content="{{ page_image | absolute_url }}">
+  {% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+  </style>
 </head>
 
 <body>
-
   <a class="skip-link" href="#main-content">Skip to content</a>
-  
+
   {% include navbar.html %}
-  
   {% include header.html %}
 
-  <main id="main-content" class="site-main">
-
+  <main id="main-content" class="site-main" tabindex="-1">
     <div class="container">
-
       <article class="content-card">
+        {% if page.title %}
+          <header class="page-header">
+            <h1 class="page-title">{{ page.title }}</h1>
+            {% if page.date or page.last_modified_at %}
+              <div class="page-meta">
+                {% if page.date %}
+                  <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%-d %B %Y" }}
+                  </time>
+                {% endif %}
+                {% if page.date and page.last_modified_at %}
+                  <span aria-hidden="true"> · </span>
+                {% endif %}
+                {% if page.last_modified_at %}
+                  <span>
+                    Updated:
+                    <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+                      {{ page.last_modified_at | date: "%-d %B %Y" }}
+                    </time>
+                  </span>
+                {% endif %}
+              </div>
+            {% endif %}
+          </header>
+        {% endif %}
+
         {{ content }}
       </article>
-
     </div>
-
   </main>
 
   {% include footer.html %}
-
 </body>
 </html>
