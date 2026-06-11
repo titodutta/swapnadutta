@@ -26,11 +26,15 @@
         {% if page.lang == 'bn' %}
           {% if page.alternate_en %}
             <a href="{{ page.alternate_en | relative_url }}">English</a>
+          {% else %}
+            <span class="is-muted">English</span>
           {% endif %}
           <span aria-current="page">বাংলা</span>
         {% else %}
           {% if page.alternate_bn %}
             <a href="{{ page.alternate_bn | relative_url }}">বাংলা</a>
+          {% else %}
+            <span class="is-muted">বাংলা</span>
           {% endif %}
           <span aria-current="page">English</span>
         {% endif %}
