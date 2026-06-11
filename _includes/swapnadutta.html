@@ -1,124 +1,39 @@
-<div class="sd-navbox" role="navigation" aria-label="Swapna Dutta series navigation">
-  <style>
-    .sd-navbox {
-      color-scheme: light dark;
-      margin: 1.5rem 0;
-      border: 1px solid #a2a9b1;
-      background-color: #f8f9fa;
-      color: #202122;
-      font-size: 0.95rem;
-      line-height: 1.55;
-    }
-
-    .sd-navbox a {
-      color: #0645ad;
-      text-decoration: none;
-    }
-
-    .sd-navbox a:hover,
-    .sd-navbox a:focus {
-      text-decoration: underline;
-    }
-
-    .sd-navbox a:focus-visible {
-      outline: 2px solid #3366cc;
-      outline-offset: 2px;
-    }
-
-    .sd-navbox__title {
-      padding: 0.5rem 0.75rem;
-      text-align: center;
-      font-weight: 700;
-      background-color: #eaecf0;
-      border-bottom: 1px solid #a2a9b1;
-      color: inherit;
-    }
-
-    .sd-navbox__body {
-      padding: 0.75rem;
-    }
-
-    .sd-navbox__row + .sd-navbox__row {
-      margin-top: 0.6rem;
-      padding-top: 0.6rem;
-      border-top: 1px solid #eaecf0;
-    }
-
-    .sd-navbox__label {
-      font-weight: 700;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .sd-navbox {
-        border-color: #54595d;
-        background-color: #1f1f1f;
-        color: #eaecf0;
-      }
-
-      .sd-navbox a {
-        color: #8ab4f8;
-      }
-
-      .sd-navbox a:visited {
-        color: #c58af9;
-      }
-
-      .sd-navbox a:focus-visible {
-        outline-color: #8ab4f8;
-      }
-
-      .sd-navbox__title {
-        background-color: #2a2a2a;
-        border-bottom-color: #54595d;
-      }
-
-      .sd-navbox__row + .sd-navbox__row {
-        border-top-color: #3a3a3a;
-      }
-    }
-  </style>
-
-  <div class="sd-navbox__title">
-    Swapna Dutta, my Mother · Series navigation
-  </div>
+<nav class="sd-navbox" aria-label="Swapna Dutta series navigation">
+  <div class="sd-navbox__title">Series navigation</div>
 
   <div class="sd-navbox__body">
     <div class="sd-navbox__row">
       <span class="sd-navbox__label">বাংলায় পড়ুন:</span>
-      <a href="/bn/articles/chapter-1">প্রথম অধ্যায়</a>,
-      <a href="/bn/articles/chapter-2">দ্বিতীয় অধ্যায়</a>,
-      <a href="/bn/articles/chapter-3">তৃতীয় অধ্যায়</a>
-      (<a href="/bn/articles/chapter-3a">সংযোজন</a>),
-      চতুর্থ অধ্যায়
-      (<a href="/bn/articles/chapter-4a">প্রথম পরিচ্ছেদ</a>,
-      <a href="/bn/articles/chapter-4b">দ্বিতীয় পরিচ্ছেদ</a>,
-      <a href="/bn/articles/chapter-4c">তৃতীয় পরিচ্ছেদ</a>),
-      <a href="/bn/articles/chapter-5">পঞ্চম অধ্যায়</a>,
-      <a href="/bn/articles/chapter-6">ষষ্ঠ অধ্যায়</a>,
-      সপ্তম অধ্যায়
-      (<a href="/bn/articles/chapter-7a">প্রথম পরিচ্ছেদ</a>)
+      <a href="{{ '/bn/articles/chapter-1' | relative_url }}">প্রথম অধ্যায়</a>,
+      <a href="{{ '/bn/articles/chapter-2' | relative_url }}">দ্বিতীয় অধ্যায়</a>,
+      <a href="{{ '/bn/articles/chapter-3' | relative_url }}">তৃতীয় অধ্যায়</a>
+      (<a href="{{ '/bn/articles/chapter-3a' | relative_url }}">সংযোজন</a>),
+      <a href="{{ '/bn/articles/chapter-4a' | relative_url }}">চতুর্থ অধ্যায়, প্রথম পরিচ্ছেদ</a>,
+      <a href="{{ '/bn/articles/chapter-4b' | relative_url }}">চতুর্থ অধ্যায়, দ্বিতীয় পরিচ্ছেদ</a>,
+      <a href="{{ '/bn/articles/chapter-4c' | relative_url }}">চতুর্থ অধ্যায়, তৃতীয় পরিচ্ছেদ</a>,
+      <a href="{{ '/bn/articles/chapter-5' | relative_url }}">পঞ্চম অধ্যায়</a>,
+      <a href="{{ '/bn/articles/chapter-6' | relative_url }}">ষষ্ঠ অধ্যায়</a>,
+      <a href="{{ '/bn/articles/chapter-7a' | relative_url }}">সপ্তম অধ্যায়, প্রথম পরিচ্ছেদ</a>
     </div>
 
     <div class="sd-navbox__row">
       <span class="sd-navbox__label">Read in English:</span>
-      <a href="/articles/chapter-1">First Chapter</a>,
-      <a href="/articles/chapter-2">Second Chapter</a>,
-      <a href="/articles/chapter-3">Third Chapter</a>
-      (<a href="/articles/chapter-3a">Addendum</a>),
-      Fourth Chapter
-      (<a href="/articles/chapter-4a">Part I</a>,
-      <a href="/articles/chapter-4b">Part II</a>,
-      <a href="/articles/chapter-4c">Part III</a>),
-      <a href="/articles/chapter-5">Fifth Chapter</a>,
-      <a href="/articles/chapter-6">Sixth Chapter</a>,
-      Seventh Chapter
-      (<a href="/articles/chapter-7a">Part I</a>)
+      <a href="{{ '/articles/chapter-1' | relative_url }}">First Chapter</a>,
+      <a href="{{ '/articles/chapter-2' | relative_url }}">Second Chapter</a>,
+      <a href="{{ '/articles/chapter-3' | relative_url }}">Third Chapter</a>
+      (<a href="{{ '/articles/chapter-3a' | relative_url }}">Addendum</a>),
+      <a href="{{ '/articles/chapter-4a' | relative_url }}">Fourth Chapter, Part I</a>,
+      <a href="{{ '/articles/chapter-4b' | relative_url }}">Fourth Chapter, Part II</a>,
+      <a href="{{ '/articles/chapter-4c' | relative_url }}">Fourth Chapter, Part III</a>,
+      <a href="{{ '/articles/chapter-5' | relative_url }}">Fifth Chapter</a>,
+      <a href="{{ '/articles/chapter-6' | relative_url }}">Sixth Chapter</a>,
+      <a href="{{ '/articles/chapter-7a' | relative_url }}">Seventh Chapter, Part I</a>
     </div>
 
     <div class="sd-navbox__row">
-      <span class="sd-navbox__label">Series index:</span>
-      <a href="/articles/">English index</a> ·
-      <a href="/bn/articles/">বাংলা সূচি</a>
+      <span class="sd-navbox__label">Indexes:</span>
+      <a href="{{ '/articles/' | relative_url }}">English index</a> ·
+      <a href="{{ '/bn/articles/' | relative_url }}">বাংলা সূচি</a>
     </div>
   </div>
-</div>
+</nav>
