@@ -10,8 +10,6 @@ originally_created: 2025-08-06
 original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta3en.html"
 ---
 
-# Third Chapter
-
 My Mother Swapna Dutta's *Śrāddha* will be performed on Friday, 8 August 2025 (Bengali calendar: 22 Srabon 1432) at the Viveknagar Kalibari (Viveknagar Kali Temple), located in the Jadavpur area of South Kolkata. The rituals are expected to begin around 10:30 am with *upasana*, *yajna*, and *pindadaan*, all to be conducted under the guidance of the temple's resident priests.
 
 From 1:00 pm to 4:00 pm, arrangements will be made for a vegetarian meal for all those attending. As of now, the proposed menu includes white rice, *dal*, *shukto*, fried potatoes (*alu bhaja*), fried aubergine (*begun bhaja*), *dhokar dalna*, paneer curry, chutney, papad, rasgullas, and sandesh. Approximately 70 esteemed guests have been invited so far, and this number may increase slightly. The Kalibari's own kitchen unit will oversee the cooking and serving, with the sweets (rasgullas and sandesh) being procured separately from Srihari Mistanna Bhandar, a well-known sweet shop near the temple.

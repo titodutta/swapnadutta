@@ -10,8 +10,6 @@ originally_created: 2025-08-04
 original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta2en.html"
 ---
 
-# Chapter Two
-
 Today, I come before you as a hawker, with my wares laid out. I have fine things to show you—some truly exquisite. Among them, I am carrying a mirror today. This mirror is why I am here. Would you care to look?
 
 There is no obligation to buy—just look, that costs nothing.

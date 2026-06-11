@@ -10,8 +10,6 @@ originally_created: 2025-08-13
 original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta4ben.html"
 ---
 
-# Fourth Chapter, Part II — The Ghāṭkāj Ceremony
-
 According to the customs of [Sanātana Dharma](https://en.wikipedia.org/wiki/San%C4%81tana_Dharma) ([Hinduism](https://en.wikipedia.org/wiki/Hinduism)), *Ghāṭkāj* is an important part of a person's *Śrāddha* ceremony. Generally, *Ghāṭkāj* is performed just before the *Ādya Śrāddha* (the first *Śrāddha* after the mourning period). In most cases, it takes place the day before the *Śrāddha*, though sometimes early on the day itself. Since the day of *Śrāddha* is usually very busy, performing *Ghāṭkāj* the day before is more common and in line with scripture. *Ghāṭkāj* is the opening segment of the *Śrāddha*, marking the formal beginning of the ceremony.
 
 For my Mother, *Ghāṭkāj* was performed on Thursday, 7 August 2025 ([Bengali calendar](https://en.wikipedia.org/wiki/Bengali_calendar): 21 Śrāvaṇa 1432).

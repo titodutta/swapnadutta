@@ -10,8 +10,6 @@ originally_created: 2025-08-07
 original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta3aen.html"
 ---
 
-# Third Chapter (Addendum)
-
 Tomorrow, Friday, 8 August 2025 (Bengali calendar: 22 Srabon 1432), the ritual rites for my Mother will be performed.
 
 Yesterday, I published the third chapter — *The Pre-Śrāddha Chapter*. Today, on the eve of the ceremony, I am sharing this piece as an Addendum to that chapter.

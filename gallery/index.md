@@ -8,8 +8,6 @@ permalink: /gallery/
 created: 2026-05-15
 ---
 
-# Gallery
-
 This section brings together photographs, videos, scanned images, family albums, and other visual materials connected to the life and memory of Swapna Dutta.
 
 Some images document ordinary moments of everyday life, while others preserve important family occasions, travels, relationships, and periods that acquired meaning only in retrospect. Together, these materials form a visual archive that complements the written recollections published elsewhere on this website.

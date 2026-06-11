@@ -8,8 +8,6 @@ permalink: /articles/
 created: 2026-05-15
 ---
 
-# Articles
-
 This section brings together articles, reflections, memoirs, recollections, and other writings connected to the life and memory of Swapna Dutta. The collection includes personal narratives, archival material, translated texts, and essays written across different periods.
 
 Some writings are intimate and autobiographical in nature, while others attempt to place individual experiences within wider emotional, social, and historical contexts. Together, these articles form an evolving archive of remembrance.

@@ -10,8 +10,6 @@ originally_created: 2025-08-01
 original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta1en.html"
 ---
 
-# Chapter 1
-
 Swapna Dutta — my Mother. It is difficult for me to write anything about my Mother, and I am not entirely sure if I should—or if I am even capable or worthy of doing so.
 
 My Mother, Swapna Dutta (born 2 October 1953), passed away on 27 July 2025. I have heard that some religions and practices, like certain Sanatana Dharma traditions and Islam, discourage keeping pictures or memories of deceased individuals. There might be a strong reason for this view — these memories can bind us to the past. While there might not be much harm in that, those memories of the past are fixed. Right, wrong, events, actions — all are unchangeable. And the main point is, the person is not coming back.

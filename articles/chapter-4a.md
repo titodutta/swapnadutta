@@ -10,8 +10,6 @@ originally_created: 2025-08-10
 original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta4aen.html"
 ---
 
-# Swapna Dutta, my Mother: Chapter Four, Part I
-
 Yesterday, on Friday, 8 August 2025, the [*Śrāddha* ceremony](https://en.wikipedia.org/wiki/%C5%9Ar%C4%81ddha) for my Mother, Swapna Dutta, was performed. The day before, on Thursday, 7 August 2025, the *Ghāṭkāj* (ritualistic water rites or *ghāṭ-śrāddha*) had taken place. It is now time to begin writing Chapter Four — the *Śrāddha* Chapter.
 
 After working on this essay for several hours, I realised the draft was becoming far too long — a burden for both me to write and you to read. So, I have divided this chapter into three parts: 1) Introduction: *Śrāddha* and *Śraddhā*, 2) The *Ghāṭkāj* (ritualistic water rites), and 3) The Day of Śrāddha. For now, I'll begin Chapter Four, Part I.
