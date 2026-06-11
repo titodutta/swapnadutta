@@ -8,8 +8,7 @@ permalink: /
 created: 2026-05-14
 ---
 
-# Swapna Dutta
-
+**Swapna Dutta**  
 *2 October 1953 — 27 July 2025*
 
 This website is dedicated to the memory of Swapna Dutta. It brings together recollections, writings, photographs, and other materials connected to her life, while also serving as a space for reflection on memory, grief, family, and the passage of time.
