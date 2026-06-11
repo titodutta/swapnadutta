@@ -386,12 +386,40 @@ select:focus-visible {
   }
 
   .page-title {
-    font-size: clamp(2rem, 8vw, 2.8rem);
+font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.2rem);
   }
 
   .page-content p,
   .page-content li {
     max-width: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --bg: #121212;
+    --surface: #1b1b1b;
+    --surface-soft: #242424;
+
+    --text: #f2f2f2;
+    --muted: #b8b8b8;
+
+    --border: #3a3a3a;
+    --line: #333333;
+
+    --accent: #8ab4ff;
+    --accent-hover: #a7c4ff;
+
+    --shadow-md: none;
+  }
+
+  .content-card {
+    box-shadow: none;
+  }
+
+  .article-image img {
+    box-shadow: none;
   }
 }
 
