@@ -13,7 +13,7 @@ created: 2026-05-14
 **Swapna Dutta**  
 *2 October 1953 — 27 July 2025*
 
-This project website is dedicated to the memory of Swapna Dutta. It brings together recollections, writings, photographs, and other materials connected to her life, while also serving as a space for reflection on memory, grief, family, and the passage of time.
+This website project is dedicated to the memory of Swapna Dutta. It brings together recollections, writings, photographs, and other materials connected to her life, while also serving as a space for reflection on memory, grief, family, and the passage of time.
 
 These writings began in the period immediately following my Mother's death, at a time when I was struggling to come to terms with the emotional disorientation that followed such a loss. Writing became one of the first ways through which I tried to emerge from that state of despair and gradually understand both the absence she left behind and the enduring presence of memory in everyday life.
 
