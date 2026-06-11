@@ -1,6 +1,9 @@
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© {{ "now" | date: "%Y" }} {{ site.title }}</p>
-    <p class="footer-note">In memory, with love.</p>
+  <div class="footer-inner">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title | default: 'Swapna Dutta' }}</p>
+
+    {% if site.description %}
+    <p class="footer-note">{{ site.description }}</p>
+    {% endif %}
   </div>
 </footer>

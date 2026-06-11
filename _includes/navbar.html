@@ -1,7 +1,7 @@
 <nav class="site-navbar" aria-label="Primary navigation">
   <div class="site-navbar__inner">
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-      <span class="nav-toggle__label">Menu</span>
+      Menu
     </button>
 
     <ul id="primary-nav" class="nav-list">
@@ -18,20 +18,9 @@
       const nav = document.getElementById('primary-nav');
       if (!toggle || !nav) return;
 
-      const setOpen = (open) => {
-        nav.classList.toggle('is-open', open);
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggle.classList.toggle('is-open', open);
-      };
-
-      setOpen(false);
-
       toggle.addEventListener('click', function () {
-        setOpen(!nav.classList.contains('is-open'));
-      });
-
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 820) setOpen(false);
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     })();
   </script>

@@ -1,6 +1,7 @@
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | default: 'Swapna Dutta' }}</a>
+
     {% if site.description %}
     <p class="site-tagline">{{ site.description }}</p>
     {% endif %}
