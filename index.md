@@ -1,10 +1,10 @@
 ---
 layout: default
-lang: bn
-title: হোম
-description: "স্বপ্না দত্তকে নিবেদিত স্মারক ও সংরক্ষণমূলক ওয়েবসাইট।"
+lang: en
+title: Home
+description: "Memorial and archival website dedicated to Swapna Dutta."
 categories: [Project pages]
-permalink: /bn/
+permalink: /
 alternate_en: /
 alternate_bn: /bn/
 created: 2026-05-14
