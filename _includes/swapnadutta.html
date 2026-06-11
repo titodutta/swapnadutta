@@ -1,9 +1,10 @@
 <div class="sd-navbox" role="navigation" aria-label="Swapna Dutta series navigation">
   <style>
     .sd-navbox {
+      color-scheme: light dark;
       margin: 1.5rem 0;
       border: 1px solid #a2a9b1;
-      background: #f8f9fa;
+      background-color: #f8f9fa;
       color: #202122;
       font-size: 0.95rem;
       line-height: 1.55;
@@ -28,8 +29,9 @@
       padding: 0.5rem 0.75rem;
       text-align: center;
       font-weight: 700;
-      background: #eaecf0;
+      background-color: #eaecf0;
       border-bottom: 1px solid #a2a9b1;
+      color: inherit;
     }
 
     .sd-navbox__body {
@@ -49,7 +51,7 @@
     @media (prefers-color-scheme: dark) {
       .sd-navbox {
         border-color: #54595d;
-        background: #1f1f1f;
+        background-color: #1f1f1f;
         color: #eaecf0;
       }
 
@@ -57,8 +59,16 @@
         color: #8ab4f8;
       }
 
+      .sd-navbox a:visited {
+        color: #c58af9;
+      }
+
+      .sd-navbox a:focus-visible {
+        outline-color: #8ab4f8;
+      }
+
       .sd-navbox__title {
-        background: #2a2a2a;
+        background-color: #2a2a2a;
         border-bottom-color: #54595d;
       }
 
