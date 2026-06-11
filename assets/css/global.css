@@ -46,18 +46,18 @@ select {
 }
 
 :root {
-  --bg: #f7f7f5;
+  --bg: #f6f6f4;
   --surface: #ffffff;
-  --surface-soft: #fafaf8;
+  --surface-soft: #fbfbf9;
   --text: #202122;
-  --muted: #666a70;
-  --border: #d8d8d3;
+  --muted: #54595d;
+  --border: #d9d9d3;
   --accent: #3366cc;
   --accent-hover: #254eaa;
-  --shadow: 0 8px 24px rgba(20, 20, 20, 0.04);
+  --shadow: 0 8px 24px rgba(20, 20, 20, 0.035);
   --radius: 10px;
-  --page-width: 78rem;
-  --content-width: 64rem;
+  --page-width: 84rem;
+  --content-width: 66rem;
   --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: "Source Serif 4", "Noto Serif Bengali", Georgia, serif;
 }
@@ -68,7 +68,7 @@ select {
     --surface: #181a1c;
     --surface-soft: #202327;
     --text: #eceae5;
-    --muted: #b3aea4;
+    --muted: #b1aba1;
     --border: #32363b;
     --accent: #8ab4ff;
     --accent-hover: #b3ccff;
@@ -81,7 +81,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  font-size: 1.04rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -112,18 +112,18 @@ body {
 .site-header__inner {
   width: min(94%, var(--page-width));
   margin: 0 auto;
-  padding: 1.1rem 0 0.9rem;
+  padding: 1rem 0 0.9rem;
 }
 
 .site-branding {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.85rem;
 }
 
 .site-title {
   display: inline-block;
   color: var(--text);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -136,26 +136,26 @@ body {
 .site-tagline {
   margin-top: 0.25rem;
   color: var(--muted);
-  font-size: 0.97rem;
+  font-size: 0.96rem;
 }
 
 .site-nav {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.55rem;
 }
 
 .nav-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
+  gap: 1rem;
   padding-left: 0;
 }
 
 .nav-list a {
   color: var(--text);
   text-decoration: none;
-  font-size: 1rem;
-  padding-bottom: 0.2rem;
+  font-size: 0.98rem;
+  padding-bottom: 0.15rem;
   border-bottom: 2px solid transparent;
 }
 
@@ -168,9 +168,9 @@ body {
 
 .language-row {
   display: flex;
-  gap: 0.85rem;
+  gap: 0.75rem;
   align-items: center;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
@@ -192,7 +192,7 @@ body {
 }
 
 .site-main {
-  padding: 1.5rem 0 3rem;
+  padding: 1.4rem 0 3rem;
 }
 
 .page-shell {
@@ -212,14 +212,14 @@ body {
 
 .page-header {
   margin-bottom: 2rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.2rem;
   border-bottom: 1px solid var(--border);
 }
 
 .page-title {
   max-width: 22ch;
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(2.2rem, 5vw, 3.9rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -228,7 +228,7 @@ body {
 .page-meta {
   margin-top: 0.8rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.94rem;
 }
 
 .page-content {
@@ -249,13 +249,13 @@ body {
 }
 
 .page-content h2 {
-  margin-top: 2.8rem;
-  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  margin-top: 2.7rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
 .page-content h3 {
-  margin-top: 2.1rem;
-  font-size: 1.4rem;
+  margin-top: 2rem;
+  font-size: 1.35rem;
 }
 
 .page-content p,
@@ -278,7 +278,7 @@ body {
 }
 
 .page-content blockquote {
-  padding: 1rem 1.2rem;
+  padding: 1rem 1.15rem;
   border-left: 4px solid var(--accent);
   background: var(--surface-soft);
 }
@@ -349,7 +349,7 @@ body {
 .footer-inner {
   width: min(94%, var(--page-width));
   margin: 0 auto;
-  padding: 1.5rem 0 2rem;
+  padding: 1.45rem 0 2rem;
   text-align: center;
 }
 
