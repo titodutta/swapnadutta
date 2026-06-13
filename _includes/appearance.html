@@ -1,0 +1,206 @@
+<div id="appearance-widget">
+
+<button id="appearance-toggle" aria-label="Appearance settings">
+  Aa
+</button>
+
+<div id="appearance-panel" hidden>
+
+  <h2>Appearance</h2>
+
+  <label for="theme-select">Theme</label>
+  <select id="theme-select">
+    <option value="system">System</option>
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+  </select>
+
+  <label for="font-select">Text size</label>
+  <select id="font-select">
+    <option value="normal">Normal</option>
+    <option value="large">Large</option>
+    <option value="xlarge">Extra large</option>
+  </select>
+
+  <button id="appearance-reset" type="button">
+    Reset settings
+  </button>
+
+</div>
+
+</div>
+
+<style>
+#appearance-widget {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+}
+
+#appearance-toggle {
+  min-width: 48px;
+  min-height: 48px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#appearance-panel {
+  width: 260px;
+
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+#appearance-panel h2 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+#appearance-panel label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+#appearance-panel select,
+#appearance-panel button {
+  width: 100%;
+}
+
+html.font-large {
+  font-size: 112.5%;
+}
+
+html.font-xlarge {
+  font-size: 125%;
+}
+
+html.theme-light {
+  color-scheme: light;
+}
+
+html.theme-dark {
+  color-scheme: dark;
+}
+
+@media (max-width: 600px) {
+  #appearance-panel {
+    width: min(280px, calc(100vw - 2rem));
+  }
+}
+</style>
+
+<script>
+(function () {
+
+  const html = document.documentElement;
+
+  const toggle =
+    document.getElementById('appearance-toggle');
+
+  const panel =
+    document.getElementById('appearance-panel');
+
+  const themeSelect =
+    document.getElementById('theme-select');
+
+  const fontSelect =
+    document.getElementById('font-select');
+
+  const resetButton =
+    document.getElementById('appearance-reset');
+
+  const savedTheme =
+    localStorage.getItem('theme') || 'system';
+
+  const savedFont =
+    localStorage.getItem('fontSize') || 'normal';
+
+  function applyTheme(theme) {
+
+    html.classList.remove(
+      'theme-light',
+      'theme-dark'
+    );
+
+    if (theme === 'light') {
+      html.classList.add('theme-light');
+    }
+
+    if (theme === 'dark') {
+      html.classList.add('theme-dark');
+    }
+
+    localStorage.setItem('theme', theme);
+  }
+
+  function applyFont(size) {
+
+    html.classList.remove(
+      'font-large',
+      'font-xlarge'
+    );
+
+    if (size === 'large') {
+      html.classList.add('font-large');
+    }
+
+    if (size === 'xlarge') {
+      html.classList.add('font-xlarge');
+    }
+
+    localStorage.setItem('fontSize', size);
+  }
+
+  applyTheme(savedTheme);
+  applyFont(savedFont);
+
+  themeSelect.value = savedTheme;
+  fontSelect.value = savedFont;
+
+  toggle.addEventListener('click', () => {
+    panel.hidden = !panel.hidden;
+  });
+
+  themeSelect.addEventListener('change', () => {
+    applyTheme(themeSelect.value);
+  });
+
+  fontSelect.addEventListener('change', () => {
+    applyFont(fontSelect.value);
+  });
+
+  resetButton.addEventListener('click', () => {
+
+    localStorage.removeItem('theme');
+    localStorage.removeItem('fontSize');
+
+    html.classList.remove(
+      'theme-light',
+      'theme-dark',
+      'font-large',
+      'font-xlarge'
+    );
+
+    themeSelect.value = 'system';
+    fontSelect.value = 'normal';
+  });
+
+})();
+</script>
