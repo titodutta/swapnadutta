@@ -1,15 +1,31 @@
 <footer class="site-footer">
   <div class="footer-inner">
 
-    <p>&copy; {{ 'now' | date: '%Y' }} Swapna Dutta</p>
+    {% if page.url == '/bn/' or page.url contains '/bn/' %}
 
-    <p class="footer-note">
-      Content on this website is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) licence unless otherwise stated.
-    </p>
+      <p>&copy; {{ 'now' | date: '%Y' }} স্বপ্না দত্ত</p>
 
-    <p class="footer-note">
-      This website is under construction.
-    </p>
+      <p class="footer-note">
+        অন্যথায় উল্লেখ না থাকলে এই ওয়েবসাইটের বিষয়বস্তু ক্রিয়েটিভ কমন্স অ্যাট্রিবিউশন-শেয়ারঅ্যালাইক ৪.০ আন্তর্জাতিক (CC BY-SA 4.0) লাইসেন্সের অধীনে প্রকাশিত।
+      </p>
+
+      <p class="footer-note">
+        এই ওয়েবসাইটটি নির্মাণাধীন।
+      </p>
+
+    {% else %}
+
+      <p>&copy; {{ 'now' | date: '%Y' }} Swapna Dutta</p>
+
+      <p class="footer-note">
+        Content on this website is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) licence unless otherwise stated.
+      </p>
+
+      <p class="footer-note">
+        This website is under construction.
+      </p>
+
+    {% endif %}
 
   </div>
 </footer>
