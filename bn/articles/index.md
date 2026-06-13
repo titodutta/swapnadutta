@@ -1,7 +1,7 @@
 ---
 layout: default
 lang: bn
-title: প্রবন্ধ
+title: নিবন্ধ
 description: "স্বপ্না দত্তকে ঘিরে স্মৃতিচারণ, প্রবন্ধ, আত্মকথন ও সংরক্ষণমূলক লেখা।"
 categories: [Project pages]
 permalink: /bn/articles/
@@ -18,10 +18,10 @@ created: 2026-05-15
   <input
     type="search"
     id="articleSearch"
-    placeholder="প্রবন্ধ খুঁজুন"
-    aria-label="প্রবন্ধ খুঁজুন">
+    placeholder="নিবন্ধ খুঁজুন"
+    aria-label="নিবন্ধ খুঁজুন">
 
-  <select id="articleSort" aria-label="প্রবন্ধ সাজান">
+  <select id="articleSort" aria-label="নিবন্ধ সাজান">
 
     <option value="newest">
       নতুন থেকে পুরোনো
