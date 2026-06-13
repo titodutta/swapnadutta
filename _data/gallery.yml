@@ -1,5 +1,6 @@
 - id: SD-PH-0001
   file: swapnadutta0001.jpg
+  exif: true
   date:
   location:
   people: []
@@ -11,6 +12,7 @@
 
 - id: SD-PH-0002
   file: swapnadutta0002.jpg
+  exif: true
   date:
   location:
   people: []
@@ -22,6 +24,7 @@
 
 - id: SD-PH-0003
   file: swapnadutta0003.jpg
+  exif: true
   date:
   location:
   people: []
@@ -33,6 +36,7 @@
 
 - id: SD-PH-0004
   file: swapnadutta0004.jpg
+  exif: true
   date:
   location:
   people: []
@@ -44,6 +48,7 @@
 
 - id: SD-PH-0005
   file: swapnadutta0005.jpg
+  exif: true
   date:
   location:
   people: []
@@ -55,6 +60,7 @@
 
 - id: SD-PH-0006
   file: swapnadutta0006.jpg
+  exif: true
   date:
   location:
   people: []
@@ -66,6 +72,7 @@
 
 - id: SD-PH-0007
   file: swapnadutta0007.jpg
+  exif: true
   date:
   location:
   people: []
