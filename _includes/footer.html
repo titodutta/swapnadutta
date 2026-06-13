@@ -2,8 +2,20 @@
   <div class="footer-inner">
 
     {% if page.url == '/bn/' or page.url contains '/bn/' %}
+    {% assign bn_year = 'now' | date: '%Y' %}
+{% assign bn_year = bn_year
+  | replace: '0', '০'
+  | replace: '1', '১'
+  | replace: '2', '২'
+  | replace: '3', '৩'
+  | replace: '4', '৪'
+  | replace: '5', '৫'
+  | replace: '6', '৬'
+  | replace: '7', '৭'
+  | replace: '8', '৮'
+  | replace: '9', '৯' %}
 
-      <p>&copy; {{ 'now' | date: '%Y' }} স্বপ্না দত্ত</p>
+<p>&copy; {{ bn_year }} স্বপ্না দত্ত</p>
 
       <p class="footer-note">
         অন্যথায় উল্লেখ না থাকলে এই ওয়েবসাইটের বিষয়বস্তু ক্রিয়েটিভ কমন্স অ্যাট্রিবিউশন-শেয়ারঅ্যালাইক ৪.০ আন্তর্জাতিক (CC BY-SA 4.0) লাইসেন্সের অধীনে প্রকাশিত।
