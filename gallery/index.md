@@ -41,18 +41,18 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   {% assign day = date_parts[2] %}
 
   {% case month %}
-    {% when "01" %}{% assign month_name = "Jan" %}
-    {% when "02" %}{% assign month_name = "Feb" %}
-    {% when "03" %}{% assign month_name = "Mar" %}
-    {% when "04" %}{% assign month_name = "Apr" %}
+    {% when "01" %}{% assign month_name = "January" %}
+    {% when "02" %}{% assign month_name = "February" %}
+    {% when "03" %}{% assign month_name = "March" %}
+    {% when "04" %}{% assign month_name = "April" %}
     {% when "05" %}{% assign month_name = "May" %}
-    {% when "06" %}{% assign month_name = "Jun" %}
-    {% when "07" %}{% assign month_name = "Jul" %}
-    {% when "08" %}{% assign month_name = "Aug" %}
-    {% when "09" %}{% assign month_name = "Sep" %}
-    {% when "10" %}{% assign month_name = "Oct" %}
-    {% when "11" %}{% assign month_name = "Nov" %}
-    {% when "12" %}{% assign month_name = "Dec" %}
+    {% when "06" %}{% assign month_name = "June" %}
+    {% when "07" %}{% assign month_name = "July" %}
+    {% when "08" %}{% assign month_name = "August" %}
+    {% when "09" %}{% assign month_name = "September" %}
+    {% when "10" %}{% assign month_name = "October" %}
+    {% when "11" %}{% assign month_name = "November" %}
+    {% when "12" %}{% assign month_name = "December" %}
   {% endcase %}
 
   {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
