@@ -16,65 +16,72 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 
 ## Gallery
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0001.jpg">
-    <img src="/assets/images/gallery/swapnadutta0001.jpg" alt="" loading="lazy">
-  </a>
-  <figcaption>TODO: Add caption</figcaption>
-</figure>
+<div class="photo-gallery">
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0002.jpg">
-    <img src="/assets/images/gallery/swapnadutta0002.jpg" alt="" loading="lazy">
-  </a>
-  <figcaption>TODO: Add caption</figcaption>
-</figure>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0001.jpg">
+      <img src="/assets/images/gallery/swapnadutta0001.jpg" alt="" loading="lazy">
+    </a>
+    <!-- Caption to be added later -->
+  </figure>
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0003.jpg">
-    <img src="/assets/images/gallery/swapnadutta0003.jpg" alt="" loading="lazy">
-  </a>
-  <figcaption>TODO: Add caption</figcaption>
-</figure>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0002.jpg">
+      <img src="/assets/images/gallery/swapnadutta0002.jpg" alt="" loading="lazy">
+    </a>
+    <!-- Caption to be added later -->
+  </figure>
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0004.jpg">
-    <img src="/assets/images/gallery/swapnadutta0004.jpg" alt="" loading="lazy">
-  </a>
-  <figcaption>TODO: Add caption</figcaption>
-</figure>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0003.jpg">
+      <img src="/assets/images/gallery/swapnadutta0003.jpg" alt="" loading="lazy">
+    </a>
+    <!-- Caption to be added later -->
+  </figure>
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0005.jpg">
-    <img src="/assets/images/gallery/swapnadutta0005.jpg" alt="" loading="lazy">
-  </a>
-  <figcaption>TODO: Add caption</figcaption>
-</figure>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0004.jpg">
+      <img src="/assets/images/gallery/swapnadutta0004.jpg" alt="" loading="lazy">
+    </a>
+    <!-- Caption to be added later -->
+  </figure>
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0006.jpg">
-    <img src="/assets/images/gallery/swapnadutta0006.jpg" alt="" loading="lazy">
-  </a>
-  <figcaption>TODO: Add caption</figcaption>
-</figure>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0005.jpg">
+      <img src="/assets/images/gallery/swapnadutta0005.jpg" alt="" loading="lazy">
+    </a>
+    <!-- Caption to be added later -->
+  </figure>
+
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0006.jpg">
+      <img src="/assets/images/gallery/swapnadutta0006.jpg" alt="" loading="lazy">
+    </a>
+    <!-- Caption to be added later -->
+  </figure>
+
+</div>
 
 <style>
-figure {
-  margin: 2rem auto;
-  text-align: center;
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-figure img {
+.photo-gallery figure {
+  margin: 0;
+}
+
+.photo-gallery img {
   display: block;
   width: 100%;
-  max-width: 900px;
   height: auto;
-  margin: 0 auto;
   border-radius: 8px;
 }
 
-figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.95rem;
+.photo-gallery a {
+  display: block;
 }
 </style>
