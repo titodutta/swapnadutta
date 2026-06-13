@@ -69,7 +69,8 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   {% if metadata != "" %}
     {% assign metadata = metadata | append: " • " %}
   {% endif %}
-  {% assign metadata = metadata | append: photo.people_en | join: ", " %}
+  {% assign people_text = photo.people_en | join: ", " %}
+  {% assign metadata = metadata | append: people_text %}
 {% endif %}
 
 {% if metadata != "" %}
