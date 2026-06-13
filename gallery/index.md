@@ -28,9 +28,33 @@ The gallery is intended not merely as a collection of images, but as an attempt 
         loading="lazy">
     </a>
 
-    {% if photo.caption_en %}
-      <figcaption>{{ photo.caption_en }}</figcaption>
-    {% endif %}
+{% if photo.caption_en %}
+  <div class="photo-caption">{{ photo.caption_en }}</div>
+{% endif %}
+
+{% assign metadata = "" %}
+
+{% if photo.date %}
+  {% assign metadata = photo.date %}
+{% endif %}
+
+{% if photo.location %}
+  {% if metadata != "" %}
+    {% assign metadata = metadata | append: " • " %}
+  {% endif %}
+  {% assign metadata = metadata | append: photo.location %}
+{% endif %}
+
+{% if photo.people.size > 0 %}
+  {% if metadata != "" %}
+    {% assign metadata = metadata | append: " • " %}
+  {% endif %}
+  {% assign metadata = metadata | append: photo.people | join: ", " %}
+{% endif %}
+
+{% if metadata != "" %}
+  <div class="photo-meta">{{ metadata }}</div>
+{% endif %}
   </figure>
 
 {% endfor %}
@@ -58,5 +82,15 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 
 .photo-gallery a {
   display: block;
+}
+.photo-caption {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.photo-meta {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #444;
 }
 </style>
