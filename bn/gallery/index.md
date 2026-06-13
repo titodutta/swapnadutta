@@ -82,23 +82,22 @@ created: 2026-05-15
   {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
 {% endif %}
 
-{% if photo.location_bn %}
-  {% if metadata != "" %}
-    {% assign metadata = metadata | append: " • " %}
-  {% endif %}
-  {% assign metadata = metadata | append: photo.location_bn %}
-{% endif %}
-
 {% if photo.people_bn.size > 0 %}
-  {% if metadata != "" %}
-    {% assign metadata = metadata | append: " • " %}
-  {% endif %}
-  {% assign people_text = photo.people_bn | join: ", " %}
-  {% assign metadata = metadata | append: people_text %}
+  <div class="photo-meta">
+    👥 {{ photo.people_bn | join: ", " }}
+  </div>
 {% endif %}
 
-{% if metadata != "" %}
-  <div class="photo-meta">{{ metadata }}</div>
+{% if photo.location_bn %}
+  <div class="photo-meta">
+    📍 {{ photo.location_bn }}
+  </div>
+{% endif %}
+
+{% if photo.date %}
+  <div class="photo-meta">
+    📅 {{ day }} {{ month_name }} {{ year }}
+  </div>
 {% endif %}
 
   </figure>

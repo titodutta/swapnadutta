@@ -58,23 +58,22 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
 {% endif %}
 
-{% if photo.location_en %}
-  {% if metadata != "" %}
-    {% assign metadata = metadata | append: " • " %}
-  {% endif %}
-  {% assign metadata = metadata | append: photo.location_en %}
-{% endif %}
-
 {% if photo.people_en.size > 0 %}
-  {% if metadata != "" %}
-    {% assign metadata = metadata | append: " • " %}
-  {% endif %}
-  {% assign people_text = photo.people_en | join: ", " %}
-  {% assign metadata = metadata | append: people_text %}
+  <div class="photo-meta">
+    👥 {{ photo.people_en | join: ", " }}
+  </div>
 {% endif %}
 
-{% if metadata != "" %}
-  <div class="photo-meta">{{ metadata }}</div>
+{% if photo.location_en %}
+  <div class="photo-meta">
+    📍 {{ photo.location_en }}
+  </div>
+{% endif %}
+
+{% if photo.date %}
+  <div class="photo-meta">
+    📅 {{ day }} {{ month_name }} {{ year }}
+  </div>
 {% endif %}
   </figure>
 
