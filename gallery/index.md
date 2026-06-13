@@ -60,12 +60,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 
 {% if photo.people %}
   <div class="photo-meta">
-    👥
-    {% for person_id in photo.people %}
-      {% assign person = site.data.people[person_id] %}
-      {% unless forloop.first %}, {% endunless %}
-      {{ person.en }}
-    {% endfor %}
+    👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.en }}{% endfor %}
   </div>
 {% endif %}
 

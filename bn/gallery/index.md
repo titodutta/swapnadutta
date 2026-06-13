@@ -84,12 +84,7 @@ created: 2026-05-15
 
 {% if photo.people %}
   <div class="photo-meta">
-    👥
-    {% for person_id in photo.people %}
-      {% assign person = site.data.people[person_id] %}
-      {% unless forloop.first %}, {% endunless %}
-      {{ person.bn }}
-    {% endfor %}
+    👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.bn }}{% endfor %}
   </div>
 {% endif %}
 
