@@ -35,7 +35,27 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 {% assign metadata = "" %}
 
 {% if photo.date %}
-  {% assign metadata = photo.date %}
+  {% assign date_parts = photo.date | split: "-" %}
+  {% assign year = date_parts[0] %}
+  {% assign month = date_parts[1] %}
+  {% assign day = date_parts[2] %}
+
+  {% case month %}
+    {% when "01" %}{% assign month_name = "Jan" %}
+    {% when "02" %}{% assign month_name = "Feb" %}
+    {% when "03" %}{% assign month_name = "Mar" %}
+    {% when "04" %}{% assign month_name = "Apr" %}
+    {% when "05" %}{% assign month_name = "May" %}
+    {% when "06" %}{% assign month_name = "Jun" %}
+    {% when "07" %}{% assign month_name = "Jul" %}
+    {% when "08" %}{% assign month_name = "Aug" %}
+    {% when "09" %}{% assign month_name = "Sep" %}
+    {% when "10" %}{% assign month_name = "Oct" %}
+    {% when "11" %}{% assign month_name = "Nov" %}
+    {% when "12" %}{% assign month_name = "Dec" %}
+  {% endcase %}
+
+  {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
 {% endif %}
 
 {% if photo.location %}
@@ -86,11 +106,13 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 .photo-caption {
   margin-top: 0.5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .photo-meta {
   margin-top: 0.25rem;
   font-size: 0.9rem;
   color: #444;
+  text-align: center;
 }
 </style>
