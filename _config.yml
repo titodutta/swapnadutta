@@ -1,5 +1,9 @@
-title: "Swapna Dutta"
-description: "Na hanyate hanyamāne śarīre"
+title_en: "Swapna Dutta"
+title_bn: "স্বপ্না দত্ত"
+
+description_en: "Na hanyate hanyamāne śarīre"
+description_bn: "ন হন্যতে হন্যমানে শরীরে"
+
 timezone: Asia/Kolkata
 
 markdown: kramdown

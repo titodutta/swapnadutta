@@ -1,10 +1,21 @@
 {% assign is_bn = page.url contains '/bn/' %}
+
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | default: 'Swapna Dutta' }}</a>
+    <a class="site-title" href="{% if is_bn %}/bn/{% else %}/{% endif %}">
+      {% if is_bn %}
+        {{ site.title_bn }}
+      {% else %}
+        {{ site.title_en }}
+      {% endif %}
+    </a>
 
-    {% if site.description %}
-    <p class="site-tagline">{{ site.description }}</p>
-    {% endif %}
+    <p class="site-tagline">
+      {% if is_bn %}
+        {{ site.description_bn }}
+      {% else %}
+        {{ site.description_en }}
+      {% endif %}
+    </p>
   </div>
 </header>
