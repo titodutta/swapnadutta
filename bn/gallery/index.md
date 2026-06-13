@@ -93,7 +93,8 @@ created: 2026-05-15
   {% if metadata != "" %}
     {% assign metadata = metadata | append: " • " %}
   {% endif %}
-  {% assign metadata = metadata | append: photo.people_bn | join: ", " %}
+  {% assign people_text = photo.people_bn | join: ", " %}
+  {% assign metadata = metadata | append: people_text %}
 {% endif %}
 
 {% if metadata != "" %}
