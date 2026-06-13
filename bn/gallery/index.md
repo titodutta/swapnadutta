@@ -82,22 +82,18 @@ created: 2026-05-15
   {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
 {% endif %}
 
-{% if photo.location %}
+{% if photo.location_bn %}
   {% if metadata != "" %}
     {% assign metadata = metadata | append: " • " %}
   {% endif %}
-  {% assign metadata = metadata | append: photo.location %}
+  {% assign metadata = metadata | append: photo.location_bn %}
 {% endif %}
 
-{% if photo.people.size > 0 %}
+{% if photo.people_bn.size > 0 %}
   {% if metadata != "" %}
     {% assign metadata = metadata | append: " • " %}
   {% endif %}
-  {% assign metadata = metadata | append: photo.people | join: ", " %}
-{% endif %}
-
-{% if metadata != "" %}
-  <div class="photo-meta">{{ metadata }}</div>
+  {% assign metadata = metadata | append: photo.people_bn | join: ", " %}
 {% endif %}
 
   </figure>
