@@ -28,9 +28,78 @@ created: 2026-05-15
         loading="lazy">
     </a>
 
-    {% if photo.caption_bn %}
-      <figcaption>{{ photo.caption_bn }}</figcaption>
-    {% endif %}
+{% if photo.caption_bn %}
+  <div class="photo-caption">{{ photo.caption_bn }}</div>
+{% endif %}
+
+{% assign metadata = "" %}
+
+{% if photo.date %}
+  {% assign date_parts = photo.date | split: "-" %}
+  {% assign year = date_parts[0] %}
+  {% assign month = date_parts[1] %}
+  {% assign day = date_parts[2] %}
+
+  {% assign day = day
+  | replace: "0", "০"
+  | replace: "1", "১"
+  | replace: "2", "২"
+  | replace: "3", "৩"
+  | replace: "4", "৪"
+  | replace: "5", "৫"
+  | replace: "6", "৬"
+  | replace: "7", "৭"
+  | replace: "8", "৮"
+  | replace: "9", "৯" %}
+
+{% assign year = year
+  | replace: "0", "০"
+  | replace: "1", "১"
+  | replace: "2", "২"
+  | replace: "3", "৩"
+  | replace: "4", "৪"
+  | replace: "5", "৫"
+  | replace: "6", "৬"
+  | replace: "7", "৭"
+  | replace: "8", "৮"
+  | replace: "9", "৯" %}
+
+  {% case month %}
+    {% when "01" %}{% assign month_name = "জানুয়ারি" %}
+    {% when "02" %}{% assign month_name = "ফেব্রুয়ারি" %}
+    {% when "03" %}{% assign month_name = "মার্চ" %}
+    {% when "04" %}{% assign month_name = "এপ্রিল" %}
+    {% when "05" %}{% assign month_name = "মে" %}
+    {% when "06" %}{% assign month_name = "জুন" %}
+    {% when "07" %}{% assign month_name = "জুলাই" %}
+    {% when "08" %}{% assign month_name = "আগস্ট" %}
+    {% when "09" %}{% assign month_name = "সেপ্টেম্বর" %}
+    {% when "10" %}{% assign month_name = "অক্টোবর" %}
+    {% when "11" %}{% assign month_name = "নভেম্বর" %}
+    {% when "12" %}{% assign month_name = "ডিসেম্বর" %}
+  {% endcase %}
+
+  {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
+{% endif %}
+
+{% if photo.location %}
+  {% if metadata != "" %}
+    {% assign metadata = metadata | append: " • " %}
+  {% endif %}
+  {% assign metadata = metadata | append: photo.location %}
+{% endif %}
+
+{% if photo.people.size > 0 %}
+  {% if metadata != "" %}
+    {% assign metadata = metadata | append: " • " %}
+  {% endif %}
+  {% assign metadata = metadata | append: photo.people | join: ", " %}
+{% endif %}
+
+{% if metadata != "" %}
+  <div class="photo-meta">{{ metadata }}</div>
+{% endif %}
+
   </figure>
 
 {% endfor %}
@@ -58,5 +127,18 @@ created: 2026-05-15
 
 .photo-gallery a {
   display: block;
+}
+
+.photo-caption {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.photo-meta {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #444;
+  text-align: center;
 }
 </style>
