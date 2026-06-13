@@ -18,152 +18,23 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 
 <div class="photo-gallery">
 
+{% for photo in site.data.gallery %}
+
   <figure>
-  <a href="/assets/images/gallery/swapnadutta0001.jpg">
-    <img src="/assets/images/gallery/swapnadutta0001.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
+    <a href="/assets/images/gallery/{{ photo.file }}">
+      <img
+        src="/assets/images/gallery/{{ photo.file }}"
+        alt="{{ photo.alt_en | default: '' }}"
+        loading="lazy">
+    </a>
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0002.jpg">
-    <img src="/assets/images/gallery/swapnadutta0002.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
+    {% if photo.caption_en %}
+      <figcaption>{{ photo.caption_en }}</figcaption>
+    {% endif %}
+  </figure>
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0003.jpg">
-    <img src="/assets/images/gallery/swapnadutta0003.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
+{% endfor %}
 
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0004.jpg">
-    <img src="/assets/images/gallery/swapnadutta0004.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0005.jpg">
-    <img src="/assets/images/gallery/swapnadutta0005.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0006.jpg">
-    <img src="/assets/images/gallery/swapnadutta0006.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0007.jpg">
-    <img src="/assets/images/gallery/swapnadutta0007.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0008.jpg">
-    <img src="/assets/images/gallery/swapnadutta0008.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0009.jpg">
-    <img src="/assets/images/gallery/swapnadutta0009.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0010.jpg">
-    <img src="/assets/images/gallery/swapnadutta0010.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0011.jpg">
-    <img src="/assets/images/gallery/swapnadutta0011.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0012.jpg">
-    <img src="/assets/images/gallery/swapnadutta0012.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0013.jpg">
-    <img src="/assets/images/gallery/swapnadutta0013.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0014.jpg">
-    <img src="/assets/images/gallery/swapnadutta0014.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0015.jpg">
-    <img src="/assets/images/gallery/swapnadutta0015.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0016.jpg">
-    <img src="/assets/images/gallery/swapnadutta0016.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0017.jpg">
-    <img src="/assets/images/gallery/swapnadutta0017.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0018.jpg">
-    <img src="/assets/images/gallery/swapnadutta0018.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0019.jpg">
-    <img src="/assets/images/gallery/swapnadutta0019.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0020.jpg">
-    <img src="/assets/images/gallery/swapnadutta0020.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
-
-<figure>
-  <a href="/assets/images/gallery/swapnadutta0021.jpg">
-    <img src="/assets/images/gallery/swapnadutta0021.jpg" alt="" loading="lazy">
-  </a>
-  <!-- <figcaption></figcaption> -->
-</figure>
 </div>
 
 <style>
