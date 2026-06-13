@@ -1,206 +1,693 @@
-<div id="appearance-widget">
+{% comment %}
+  Appearance / reading preferences widget
+  - Reusable Jekyll include for English + Bangla pages
+  - Auto-localizes based on URL path (/bn/ => Bangla)
+  - Persists preferences in localStorage
+  - Overrides existing CSS custom properties without introducing a separate theme system
+  - Include near the end of <body>: {% include appearance.html %}
+{% endcomment %}
 
-<button id="appearance-toggle" aria-label="Appearance settings">
-  Aa
-</button>
-
-<div id="appearance-panel" hidden>
-
-  <h2>Appearance</h2>
-
-  <label for="theme-select">Theme</label>
-  <select id="theme-select">
-    <option value="system">System</option>
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-  </select>
-
-  <label for="font-select">Text size</label>
-  <select id="font-select">
-    <option value="normal">Normal</option>
-    <option value="large">Large</option>
-    <option value="xlarge">Extra large</option>
-  </select>
-
-  <button id="appearance-reset" type="button">
-    Reset settings
+<div class="appearance-widget" data-appearance-widget>
+  <button
+    class="appearance-widget__toggle"
+    type="button"
+    aria-controls="appearance-panel"
+    aria-expanded="false"
+    data-appearance-toggle
+  >
+    <span class="sr-only" data-i18n="openSettings">Appearance settings</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10.325 4.317a1.724 1.724 0 0 1 3.35 0l.18.782a1.724 1.724 0 0 0 2.573 1.066l.694-.405a1.724 1.724 0 0 1 2.372.61l.64 1.108a1.724 1.724 0 0 1-.611 2.372l-.695.405a1.724 1.724 0 0 0-.848 1.487c0 .274.066.544.193.787.127.243.312.447.539.593l.695.405a1.724 1.724 0 0 1 .611 2.372l-.64 1.108a1.724 1.724 0 0 1-2.372.61l-.694-.405a1.724 1.724 0 0 0-2.573 1.066l-.18.782a1.724 1.724 0 0 1-3.35 0l-.18-.782a1.724 1.724 0 0 0-2.573-1.066l-.694.405a1.724 1.724 0 0 1-2.372-.61l-.64-1.108a1.724 1.724 0 0 1 .611-2.372l.695-.405a1.724 1.724 0 0 0 .848-1.487 1.73 1.73 0 0 0-.193-.787 1.724 1.724 0 0 0-.539-.593l-.695-.405a1.724 1.724 0 0 1-.611-2.372l.64-1.108a1.724 1.724 0 0 1 2.372-.61l.694.405a1.724 1.724 0 0 0 2.573-1.066l.18-.782Z"/>
+      <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z"/>
+    </svg>
   </button>
 
-</div>
+  <div
+    class="appearance-widget__panel"
+    id="appearance-panel"
+    role="dialog"
+    aria-modal="false"
+    aria-hidden="true"
+    aria-labelledby="appearance-title"
+    tabindex="-1"
+    data-appearance-panel
+  >
+    <div class="appearance-widget__header">
+      <div>
+        <p class="appearance-widget__eyebrow" data-i18n="panelLabel">Reading settings</p>
+        <h2 class="appearance-widget__title" id="appearance-title" data-i18n="panelTitle">Appearance</h2>
+      </div>
+      <button class="appearance-widget__close" type="button" data-appearance-close>
+        <span class="sr-only" data-i18n="closeSettings">Close settings</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 6 18 18M18 6 6 18"/>
+        </svg>
+      </button>
+    </div>
 
+    <form class="appearance-widget__form" data-appearance-form>
+      <fieldset class="appearance-widget__group">
+        <legend class="appearance-widget__legend" data-i18n="themeLegend">Theme</legend>
+        <div class="appearance-widget__options appearance-widget__options--three">
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-theme" value="system" data-setting="theme">
+            <span data-i18n="themeSystem">System default</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-theme" value="light" data-setting="theme">
+            <span data-i18n="themeLight">Light mode</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-theme" value="dark" data-setting="theme">
+            <span data-i18n="themeDark">Dark mode</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="appearance-widget__group">
+        <legend class="appearance-widget__legend" data-i18n="textSizeLegend">Text size</legend>
+        <div class="appearance-widget__options appearance-widget__options--three">
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-text-size" value="normal" data-setting="textSize">
+            <span data-i18n="textSizeNormal">Normal</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-text-size" value="large" data-setting="textSize">
+            <span data-i18n="textSizeLarge">Large</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-text-size" value="xlarge" data-setting="textSize">
+            <span data-i18n="textSizeXLarge">Extra large</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="appearance-widget__group">
+        <legend class="appearance-widget__legend" data-i18n="lineHeightLegend">Line height</legend>
+        <div class="appearance-widget__options appearance-widget__options--three">
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-line-height" value="normal" data-setting="lineHeight">
+            <span data-i18n="lineHeightNormal">Normal</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-line-height" value="relaxed" data-setting="lineHeight">
+            <span data-i18n="lineHeightRelaxed">Relaxed</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-line-height" value="spacious" data-setting="lineHeight">
+            <span data-i18n="lineHeightSpacious">Spacious</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="appearance-widget__group">
+        <legend class="appearance-widget__legend" data-i18n="backgroundLegend">Reading background</legend>
+        <div class="appearance-widget__options appearance-widget__options--stacked">
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-background" value="default" data-setting="background">
+            <span data-i18n="backgroundDefault">Default site colours</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-background" value="sepia" data-setting="background">
+            <span data-i18n="backgroundSepia">Sepia reading mode</span>
+          </label>
+          <label class="appearance-widget__choice">
+            <input type="radio" name="appearance-background" value="contrast" data-setting="background">
+            <span data-i18n="backgroundContrast">High-contrast mode</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="appearance-widget__footer">
+        <button class="appearance-widget__reset" type="button" data-appearance-reset data-i18n="reset">Reset settings</button>
+        <p class="appearance-widget__status" aria-live="polite" data-appearance-status></p>
+      </div>
+    </form>
+  </div>
 </div>
 
 <style>
-#appearance-widget {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 1000;
-}
-
-#appearance-toggle {
-  min-width: 48px;
-  min-height: 48px;
-
-  border: 1px solid var(--border);
-  border-radius: 999px;
-
-  background: var(--surface);
-  color: var(--text);
-
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#appearance-panel {
-  width: 260px;
-
-  margin-bottom: 0.75rem;
-  padding: 1rem;
-
-  border: 1px solid var(--border);
-  border-radius: 12px;
-
-  background: var(--surface);
-  color: var(--text);
-
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-
-#appearance-panel h2 {
-  margin-top: 0;
-  font-size: 1rem;
-}
-
-#appearance-panel label {
-  display: block;
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
-}
-
-#appearance-panel select,
-#appearance-panel button {
-  width: 100%;
-}
-
-html.font-large {
-  font-size: 112.5%;
-}
-
-html.font-xlarge {
-  font-size: 125%;
-}
-
-html.theme-light {
-  color-scheme: light;
-}
-
-html.theme-dark {
-  color-scheme: dark;
-}
-
-@media (max-width: 600px) {
-  #appearance-panel {
-    width: min(280px, calc(100vw - 2rem));
+  .appearance-widget {
+    --aw-offset: max(1rem, env(safe-area-inset-bottom, 0px));
+    --aw-inline-offset: max(1rem, env(safe-area-inset-left, 0px));
+    --aw-panel-width: min(24rem, calc(100vw - 2rem));
+    --aw-border: color-mix(in srgb, var(--color-border, rgba(0, 0, 0, 0.18)) 86%, transparent);
+    --aw-surface: color-mix(in srgb, var(--color-surface, #ffffff) 92%, var(--color-bg, #f8f8f6));
+    --aw-surface-strong: color-mix(in srgb, var(--color-surface-2, #ffffff) 94%, var(--color-bg, #f8f8f6));
+    --aw-text: var(--color-text, #1f1f1f);
+    --aw-muted: var(--color-text-muted, #666666);
+    --aw-accent: var(--color-primary, #4a5c74);
+    --aw-shadow: var(--shadow-lg, 0 14px 36px rgba(0, 0, 0, 0.16));
+    position: fixed;
+    left: var(--aw-inline-offset);
+    bottom: var(--aw-offset);
+    z-index: 90;
+    font-family: var(--font-body, inherit);
   }
-}
+
+  .appearance-widget *,
+  .appearance-widget *::before,
+  .appearance-widget *::after {
+    box-sizing: border-box;
+  }
+
+  .appearance-widget__toggle,
+  .appearance-widget__close,
+  .appearance-widget__reset {
+    appearance: none;
+    border: 1px solid var(--aw-border);
+    background: var(--aw-surface);
+    color: var(--aw-text);
+  }
+
+  .appearance-widget__toggle {
+    inline-size: 3.5rem;
+    block-size: 3.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--aw-shadow);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .appearance-widget__toggle svg,
+  .appearance-widget__close svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  .appearance-widget__panel {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 0.75rem);
+    width: var(--aw-panel-width);
+    max-height: min(75vh, 34rem);
+    overflow: auto;
+    border: 1px solid var(--aw-border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--aw-surface) 88%, transparent);
+    color: var(--aw-text);
+    box-shadow: var(--aw-shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.75rem) scale(0.98);
+    transform-origin: bottom left;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 220ms;
+  }
+
+  .appearance-widget.is-open .appearance-widget__panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: opacity 180ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0s;
+  }
+
+  .appearance-widget__header,
+  .appearance-widget__footer {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .appearance-widget__header {
+    margin-bottom: 1rem;
+  }
+
+  .appearance-widget__eyebrow {
+    margin: 0 0 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--aw-muted);
+  }
+
+  .appearance-widget__title {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    font-family: var(--font-display, var(--font-body, inherit));
+    font-weight: 600;
+  }
+
+  .appearance-widget__close {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  .appearance-widget__form {
+    display: grid;
+    gap: 0.875rem;
+  }
+
+  .appearance-widget__group {
+    margin: 0;
+    padding: 0.875rem;
+    border: 1px solid var(--aw-border);
+    border-radius: 0.875rem;
+    background: color-mix(in srgb, var(--aw-surface-strong) 94%, transparent);
+    min-inline-size: 0;
+  }
+
+  .appearance-widget__legend {
+    padding: 0 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .appearance-widget__options {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .appearance-widget__options--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .appearance-widget__options--stacked {
+    grid-template-columns: 1fr;
+  }
+
+  .appearance-widget__choice {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-inline-size: 0;
+  }
+
+  .appearance-widget__choice input {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .appearance-widget__choice span {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--aw-border);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: var(--aw-text);
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .appearance-widget__options--stacked .appearance-widget__choice span {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .appearance-widget__choice input:checked + span {
+    border-color: color-mix(in srgb, var(--aw-accent) 70%, var(--aw-border));
+    background: color-mix(in srgb, var(--aw-accent) 11%, var(--aw-surface));
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--aw-accent) 24%, transparent);
+  }
+
+  .appearance-widget__choice input:focus-visible + span,
+  .appearance-widget__toggle:focus-visible,
+  .appearance-widget__close:focus-visible,
+  .appearance-widget__reset:focus-visible {
+    outline: 2px solid var(--aw-accent);
+    outline-offset: 3px;
+  }
+
+  .appearance-widget__footer {
+    align-items: center;
+    margin-top: 0.25rem;
+  }
+
+  .appearance-widget__reset {
+    min-height: 2.75rem;
+    padding: 0.7rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .appearance-widget__status {
+    margin: 0;
+    flex: 1;
+    text-align: right;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    color: var(--aw-muted);
+  }
+
+  .appearance-widget__toggle:hover,
+  .appearance-widget__close:hover,
+  .appearance-widget__reset:hover,
+  .appearance-widget__choice input:hover + span {
+    background: color-mix(in srgb, var(--aw-surface-strong) 88%, var(--color-bg, #fff));
+  }
+
+  .appearance-widget__toggle:active,
+  .appearance-widget__close:active,
+  .appearance-widget__reset:active,
+  .appearance-widget__choice input:active + span {
+    transform: translateY(1px);
+  }
+
+  @media (max-width: 40rem) {
+    .appearance-widget {
+      left: max(0.75rem, env(safe-area-inset-left, 0px));
+      right: max(0.75rem, env(safe-area-inset-right, 0px));
+      bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+    }
+
+    .appearance-widget__panel {
+      width: min(100%, 28rem);
+      max-height: min(70vh, 32rem);
+    }
+
+    .appearance-widget__options--three {
+      grid-template-columns: 1fr;
+    }
+
+    .appearance-widget__footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .appearance-widget__status {
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .appearance-widget__panel,
+    .appearance-widget__choice span,
+    .appearance-widget__toggle,
+    .appearance-widget__close,
+    .appearance-widget__reset {
+      transition: none;
+    }
+  }
 </style>
 
 <script>
-(function () {
+  (function () {
+    if (window.__appearanceWidgetInitialized) return;
+    window.__appearanceWidgetInitialized = true;
 
-  const html = document.documentElement;
+    var root = document.documentElement;
+    var widget = document.querySelector('[data-appearance-widget]');
+    if (!widget) return;
 
-  const toggle =
-    document.getElementById('appearance-toggle');
+    var toggle = widget.querySelector('[data-appearance-toggle]');
+    var panel = widget.querySelector('[data-appearance-panel]');
+    var closeButton = widget.querySelector('[data-appearance-close]');
+    var resetButton = widget.querySelector('[data-appearance-reset]');
+    var status = widget.querySelector('[data-appearance-status]');
+    var translatable = widget.querySelectorAll('[data-i18n]');
+    var settingInputs = widget.querySelectorAll('[data-setting]');
+    var storageKey = 'memorial-appearance-settings';
+    var focusableSelector = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    var previousFocus = null;
 
-  const panel =
-    document.getElementById('appearance-panel');
+    var defaults = {
+      theme: 'system',
+      textSize: 'normal',
+      lineHeight: 'normal',
+      background: 'default'
+    };
 
-  const themeSelect =
-    document.getElementById('theme-select');
+    var translations = {
+      en: {
+        openSettings: 'Open appearance settings',
+        closeSettings: 'Close settings',
+        panelLabel: 'Reading settings',
+        panelTitle: 'Appearance',
+        themeLegend: 'Theme',
+        themeSystem: 'System default',
+        themeLight: 'Light mode',
+        themeDark: 'Dark mode',
+        textSizeLegend: 'Text size',
+        textSizeNormal: 'Normal',
+        textSizeLarge: 'Large',
+        textSizeXLarge: 'Extra large',
+        lineHeightLegend: 'Line height',
+        lineHeightNormal: 'Normal',
+        lineHeightRelaxed: 'Relaxed',
+        lineHeightSpacious: 'Spacious',
+        backgroundLegend: 'Reading background',
+        backgroundDefault: 'Default site colours',
+        backgroundSepia: 'Sepia reading mode',
+        backgroundContrast: 'High-contrast mode',
+        reset: 'Reset settings',
+        saved: 'Settings saved',
+        resetMessage: 'Settings reset',
+        toggleLabelOpen: 'Open appearance settings',
+        toggleLabelClose: 'Close appearance settings'
+      },
+      bn: {
+        openSettings: 'রূপ ও পঠন সেটিংস খুলুন',
+        closeSettings: 'রূপ ও পঠন সেটিংস বন্ধ করুন',
+        panelLabel: 'পড়ার সেটিংস',
+        panelTitle: 'রূপ',
+        themeLegend: 'থিম',
+        themeSystem: 'সিস্টেমের ডিফল্ট',
+        themeLight: 'লাইট মোড',
+        themeDark: 'ডার্ক মোড',
+        textSizeLegend: 'অক্ষরের আকার',
+        textSizeNormal: 'স্বাভাবিক',
+        textSizeLarge: 'বড়',
+        textSizeXLarge: 'অতিরিক্ত বড়',
+        lineHeightLegend: 'লাইন উচ্চতা',
+        lineHeightNormal: 'স্বাভাবিক',
+        lineHeightRelaxed: 'আরামদায়ক',
+        lineHeightSpacious: 'বিস্তৃত',
+        backgroundLegend: 'পড়ার পটভূমি',
+        backgroundDefault: 'সাইটের ডিফল্ট রং',
+        backgroundSepia: 'সেপিয়া পঠন মোড',
+        backgroundContrast: 'উচ্চ কনট্রাস্ট মোড',
+        reset: 'সেটিংস রিসেট করুন',
+        saved: 'সেটিংস সংরক্ষিত হয়েছে',
+        resetMessage: 'সেটিংস রিসেট হয়েছে',
+        toggleLabelOpen: 'রূপ ও পঠন সেটিংস খুলুন',
+        toggleLabelClose: 'রূপ ও পঠন সেটিংস বন্ধ করুন'
+      }
+    };
 
-  const fontSelect =
-    document.getElementById('font-select');
+    var language = /^\/bn(?:\/|$)/.test(window.location.pathname) ? 'bn' : 'en';
+    var copy = translations[language];
 
-  const resetButton =
-    document.getElementById('appearance-reset');
-
-  const savedTheme =
-    localStorage.getItem('theme') || 'system';
-
-  const savedFont =
-    localStorage.getItem('fontSize') || 'normal';
-
-  function applyTheme(theme) {
-
-    html.classList.remove(
-      'theme-light',
-      'theme-dark'
-    );
-
-    if (theme === 'light') {
-      html.classList.add('theme-light');
+    function setTranslations() {
+      translatable.forEach(function (node) {
+        var key = node.getAttribute('data-i18n');
+        if (!copy[key]) return;
+        node.textContent = copy[key];
+      });
+      updateToggleLabel(widget.classList.contains('is-open'));
     }
 
-    if (theme === 'dark') {
-      html.classList.add('theme-dark');
+    function updateToggleLabel(isOpen) {
+      toggle.setAttribute('aria-label', isOpen ? copy.toggleLabelClose : copy.toggleLabelOpen);
+      toggle.setAttribute('title', isOpen ? copy.toggleLabelClose : copy.toggleLabelOpen);
     }
 
-    localStorage.setItem('theme', theme);
-  }
-
-  function applyFont(size) {
-
-    html.classList.remove(
-      'font-large',
-      'font-xlarge'
-    );
-
-    if (size === 'large') {
-      html.classList.add('font-large');
+    function readStoredSettings() {
+      try {
+        var raw = localStorage.getItem(storageKey);
+        if (!raw) return Object.assign({}, defaults);
+        var parsed = JSON.parse(raw);
+        return Object.assign({}, defaults, parsed);
+      } catch (error) {
+        return Object.assign({}, defaults);
+      }
     }
 
-    if (size === 'xlarge') {
-      html.classList.add('font-xlarge');
+    var settings = readStoredSettings();
+
+    function writeStoredSettings() {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(settings));
+      } catch (error) {
+        return;
+      }
     }
 
-    localStorage.setItem('fontSize', size);
-  }
+    function applyTheme(value) {
+      if (value === 'light' || value === 'dark') {
+        root.setAttribute('data-theme', value);
+        root.style.colorScheme = value;
+      } else {
+        root.removeAttribute('data-theme');
+        root.style.colorScheme = '';
+      }
+      root.setAttribute('data-user-theme', value);
+    }
 
-  applyTheme(savedTheme);
-  applyFont(savedFont);
+    function applyTextSize(value) {
+      var scaleMap = {
+        normal: '1',
+        large: '1.125',
+        xlarge: '1.25'
+      };
+      root.style.setProperty('--user-text-scale', scaleMap[value] || scaleMap.normal);
+      root.setAttribute('data-user-text-size', value);
+    }
 
-  themeSelect.value = savedTheme;
-  fontSelect.value = savedFont;
+    function applyLineHeight(value) {
+      var lineMap = {
+        normal: '1.6',
+        relaxed: '1.8',
+        spacious: '2'
+      };
+      root.style.setProperty('--user-line-height', lineMap[value] || lineMap.normal);
+      root.setAttribute('data-user-line-height', value);
+    }
 
-  toggle.addEventListener('click', () => {
-    panel.hidden = !panel.hidden;
-  });
+    function applyBackground(value) {
+      root.removeAttribute('data-reading-background');
+      if (value !== 'default') {
+        root.setAttribute('data-reading-background', value);
+      }
+      root.setAttribute('data-user-background', value);
+    }
 
-  themeSelect.addEventListener('change', () => {
-    applyTheme(themeSelect.value);
-  });
+    function applySettings() {
+      applyTheme(settings.theme);
+      applyTextSize(settings.textSize);
+      applyLineHeight(settings.lineHeight);
+      applyBackground(settings.background);
+      syncInputs();
+    }
 
-  fontSelect.addEventListener('change', () => {
-    applyFont(fontSelect.value);
-  });
+    function syncInputs() {
+      settingInputs.forEach(function (input) {
+        var key = input.getAttribute('data-setting');
+        input.checked = settings[key] === input.value;
+      });
+    }
 
-  resetButton.addEventListener('click', () => {
+    function announce(message) {
+      status.textContent = '';
+      window.requestAnimationFrame(function () {
+        status.textContent = message;
+      });
+    }
 
-    localStorage.removeItem('theme');
-    localStorage.removeItem('fontSize');
+    function openPanel() {
+      previousFocus = document.activeElement;
+      widget.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.setAttribute('aria-hidden', 'false');
+      updateToggleLabel(true);
+      var firstFocusable = panel.querySelector('input:checked') || panel.querySelector(focusableSelector);
+      if (firstFocusable) firstFocusable.focus();
+    }
 
-    html.classList.remove(
-      'theme-light',
-      'theme-dark',
-      'font-large',
-      'font-xlarge'
-    );
+    function closePanel(returnFocus) {
+      widget.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      panel.setAttribute('aria-hidden', 'true');
+      updateToggleLabel(false);
+      if (returnFocus !== false && previousFocus && typeof previousFocus.focus === 'function') {
+        previousFocus.focus();
+      }
+    }
 
-    themeSelect.value = 'system';
-    fontSelect.value = 'normal';
-  });
+    function trapFocus(event) {
+      if (!widget.classList.contains('is-open') || event.key !== 'Tab') return;
+      var focusable = panel.querySelectorAll(focusableSelector);
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
 
-})();
+    function handleKeydown(event) {
+      if (event.key === 'Escape' && widget.classList.contains('is-open')) {
+        event.preventDefault();
+        closePanel();
+      }
+      trapFocus(event);
+    }
+
+    toggle.addEventListener('click', function () {
+      if (widget.classList.contains('is-open')) {
+        closePanel(false);
+      } else {
+        openPanel();
+      }
+    });
+
+    closeButton.addEventListener('click', function () {
+      closePanel();
+    });
+
+    resetButton.addEventListener('click', function () {
+      settings = Object.assign({}, defaults);
+      writeStoredSettings();
+      applySettings();
+      announce(copy.resetMessage);
+    });
+
+    settingInputs.forEach(function (input) {
+      input.addEventListener('change', function () {
+        var key = input.getAttribute('data-setting');
+        settings[key] = input.value;
+        writeStoredSettings();
+        applySettings();
+        announce(copy.saved);
+      });
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!widget.classList.contains('is-open')) return;
+      if (widget.contains(event.target)) return;
+      closePanel(false);
+    });
+
+    document.addEventListener('keydown', handleKeydown);
+
+    var mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', function () {
+        if (settings.theme === 'system') applyTheme('system');
+      });
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(function () {
+        if (settings.theme === 'system') applyTheme('system');
+      });
+    }
+
+    setTranslations();
+    applySettings();
+  })();
 </script>
