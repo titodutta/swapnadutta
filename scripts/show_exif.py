@@ -6,39 +6,44 @@ import subprocess
 with open("_data/gallery.yml", "r", encoding="utf-8") as f:
     photos = yaml.safe_load(f)
 
+updated = 0
+
 for photo in photos:
 
     if not photo.get("exif"):
         continue
 
+    if photo.get("date"):
+        continue
+
     image = f"assets/images/gallery/{photo['file']}"
 
-    try:
-        result = subprocess.run(
-            [
-                "exiftool",
-                "-DateTimeOriginal",
-                "-Model",
-                "-GPSPosition",
-                image
-            ],
-            capture_output=True,
-            text=True,
-            check=True
-        )
+    result = subprocess.run(
+        [
+            "exiftool",
+            "-s3",
+            "-DateTimeOriginal",
+            image
+        ],
+        capture_output=True,
+        text=True
+    )
 
-        print("=" * 60)
-        print(photo["id"])
-        print(photo["file"])
+    exif_date = result.stdout.strip()
 
-        output = result.stdout.strip()
+    if exif_date:
+        photo["date"] = exif_date[:10].replace(":", "-", 2)
+        updated += 1
+        print(f"{photo['id']} -> {photo['date']}")
 
-        if output:
-            print(output)
-        else:
-            print("No useful EXIF metadata found")
+with open("_data/gallery.yml", "w", encoding="utf-8") as f:
+    yaml.dump(
+        photos,
+        f,
+        allow_unicode=True,
+        sort_keys=False,
+        default_flow_style=False
+    )
 
-    except Exception as e:
-        print("=" * 60)
-        print(photo["id"])
-        print(f"ERROR: {e}")
+print()
+print(f"Updated {updated} records")
