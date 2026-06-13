@@ -2,10 +2,8 @@
   file: swapnadutta0001.jpg
   exif: false
   date:
-  location_en: 29 Mahanirban Math, Kolkata, West Bengal, India
-  location_bn: ২৯ মহানির্বাণ মঠ, কলকাতা, পশ্চিমবঙ্গ, ভারত
-  people_en: ["Swapna Dutta", "Tito Dutta"]
-  people_bn: ["স্বপ্না দত্ত", "টিটো দত্ত"]
+  location: [a1, l3]
+  people: [p1, p2]
   tags_en: ["Kolkata", "Mahanirban Math"]
   tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
   alt_en:
@@ -17,10 +15,8 @@
   file: swapnadutta0002.jpg
   exif: false
   date:
-  location_en: 29 Mahanirban Math, Kolkata, West Bengal, India
-  location_bn: ২৯ মহানির্বাণ মঠ, কলকাতা, পশ্চিমবঙ্গ, ভারত
-  people_en: []
-  people_bn: []
+  location: [a1, l3]
+  people: []
   tags_en: ["Kolkata", "Mahanirban Math"]
   tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
   alt_en:
@@ -32,9 +28,8 @@
   file: swapnadutta0003.jpg
   exif: false
   date:
-  location_en: 29 Mahanirban Math, Kolkata, West Bengal, India
-  location_bn: ২৯ মহানির্বাণ মঠ, কলকাতা, পশ্চিমবঙ্গ, ভারত
-  people: [p1, p2]
+  location: [a1, l3]
+  people: [p1, p2, p3, p4]
   tags_en: ["Kolkata", "Mahanirban Math"]
   tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
   alt_en:
@@ -46,8 +41,7 @@
   file: swapnadutta0004.jpg
   exif: true
   date: 2013-01-10
-  location_en:
-  location_bn:
+  location: 
   people: [p1, p2]
   tags_en: []
   tags_bn: []
@@ -60,8 +54,7 @@
   file: swapnadutta0005.jpg
   exif: true
   date: 2013-01-10
-  location_en:
-  location_bn:
+  location: 
   people_en: []
   people_bn: []
   tags_en: []
@@ -75,8 +68,7 @@
   file: swapnadutta0006.jpg
   exif: true
   date: 2013-01-10
-  location_en:
-  location_bn:
+  location: 
   people_en: []
   people_bn: []
   tags_en: []

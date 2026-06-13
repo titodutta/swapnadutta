@@ -1,0 +1,22 @@
+# Countries, states, cities
+
+l1:
+  en: India
+  bn: ভারত
+
+l2:
+  en: West Bengal
+  bn: পশ্চিমবঙ্গ
+  located_in: l1
+
+l3:
+  en: Kolkata
+  bn: কলকাতা
+  located_in: l2
+
+# Areas, neighbourhoods, addresses
+
+a1:
+  en: 29 Mahanirban Math
+  bn: ২৯ মহানির্বাণ মঠ
+  located_in: l3

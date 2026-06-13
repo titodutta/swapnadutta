@@ -64,9 +64,9 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   </div>
 {% endif %}
 
-{% if photo.location_en %}
+{% if photo.location %}
   <div class="photo-meta">
-    📍 {{ photo.location_en }}
+    📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
   </div>
 {% endif %}
 

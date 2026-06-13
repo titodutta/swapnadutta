@@ -88,9 +88,9 @@ created: 2026-05-15
   </div>
 {% endif %}
 
-{% if photo.location_bn %}
+{% if photo.location %}
   <div class="photo-meta">
-    📍 {{ photo.location_bn }}
+    📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.bn }}{% endfor %}
   </div>
 {% endif %}
 
