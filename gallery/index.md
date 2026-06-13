@@ -14,150 +14,67 @@ Some images document ordinary moments of everyday life, while others preserve im
 
 The gallery is intended not merely as a collection of images, but as an attempt to preserve fragments of lived experience across time.
 
-<div class="gallery-tools">
+## Gallery
 
-  <input
-    type="search"
-    id="gallerySearch"
-    placeholder="Search gallery"
-    aria-label="Search gallery">
+<figure>
+  <a href="/assets/images/gallery/swapnadutta0001.jpg">
+    <img src="/assets/images/gallery/swapnadutta0001.jpg" alt="" loading="lazy">
+  </a>
+  <figcaption>TODO: Add caption</figcaption>
+</figure>
 
-  <select id="gallerySort" aria-label="Sort gallery">
+<figure>
+  <a href="/assets/images/gallery/swapnadutta0002.jpg">
+    <img src="/assets/images/gallery/swapnadutta0002.jpg" alt="" loading="lazy">
+  </a>
+  <figcaption>TODO: Add caption</figcaption>
+</figure>
 
-    <option value="newest">
-      Newest first
-    </option>
+<figure>
+  <a href="/assets/images/gallery/swapnadutta0003.jpg">
+    <img src="/assets/images/gallery/swapnadutta0003.jpg" alt="" loading="lazy">
+  </a>
+  <figcaption>TODO: Add caption</figcaption>
+</figure>
 
-    <option value="oldest">
-      Oldest first
-    </option>
+<figure>
+  <a href="/assets/images/gallery/swapnadutta0004.jpg">
+    <img src="/assets/images/gallery/swapnadutta0004.jpg" alt="" loading="lazy">
+  </a>
+  <figcaption>TODO: Add caption</figcaption>
+</figure>
 
-    <option value="az">
-      Title A–Z
-    </option>
+<figure>
+  <a href="/assets/images/gallery/swapnadutta0005.jpg">
+    <img src="/assets/images/gallery/swapnadutta0005.jpg" alt="" loading="lazy">
+  </a>
+  <figcaption>TODO: Add caption</figcaption>
+</figure>
 
-    <option value="za">
-      Title Z–A
-    </option>
+<figure>
+  <a href="/assets/images/gallery/swapnadutta0006.jpg">
+    <img src="/assets/images/gallery/swapnadutta0006.jpg" alt="" loading="lazy">
+  </a>
+  <figcaption>TODO: Add caption</figcaption>
+</figure>
 
-  </select>
+<style>
+figure {
+  margin: 2rem auto;
+  text-align: center;
+}
 
-</div>
+figure img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
 
-## Gallery items
-
-<ul id="galleryList" class="gallery-list">
-
-{% assign gallery_items = site.pages
-  | where_exp: "item", "item.url contains '/gallery/'"
-  | where_exp: "item", "item.url != '/gallery/'"
-  | where_exp: "item", "item.lang != 'bn'" %}
-
-{% assign sorted_gallery = gallery_items | sort: "created" | reverse %}
-
-{% for item in sorted_gallery %}
-
-<li
-  class="gallery-item"
-  data-title="{{ item.title | downcase }}"
-  data-date="{{ item.created | date: '%Y-%m-%d' }}">
-
-  <h3>
-    <a href="{{ item.url | relative_url }}">
-      {{ item.title }}
-    </a>
-  </h3>
-
-  {% if item.description %}
-  <p>
-    {{ item.description }}
-  </p>
-  {% endif %}
-
-  {% if item.created %}
-  <small>
-    {{ item.created | date: "%-d %B %Y" }}
-  </small>
-  {% endif %}
-
-</li>
-
-{% endfor %}
-
-</ul>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  const searchInput =
-    document.getElementById('gallerySearch');
-
-  const sortSelect =
-    document.getElementById('gallerySort');
-
-  const galleryList =
-    document.getElementById('galleryList');
-
-  const items =
-    Array.from(galleryList.querySelectorAll('.gallery-item'));
-
-  function filterGallery() {
-
-    const query =
-      searchInput.value.toLowerCase();
-
-    items.forEach(item => {
-
-      const title =
-        item.dataset.title;
-
-      item.style.display =
-        title.includes(query)
-          ? ''
-          : 'none';
-    });
-  }
-
-  function sortGallery() {
-
-    const value = sortSelect.value;
-
-    const sorted = [...items];
-
-    sorted.sort((a, b) => {
-
-      const titleA = a.dataset.title;
-      const titleB = b.dataset.title;
-
-      const dateA = a.dataset.date;
-      const dateB = b.dataset.date;
-
-      if (value === 'newest') {
-        return dateB.localeCompare(dateA);
-      }
-
-      if (value === 'oldest') {
-        return dateA.localeCompare(dateB);
-      }
-
-      if (value === 'az') {
-        return titleA.localeCompare(titleB);
-      }
-
-      if (value === 'za') {
-        return titleB.localeCompare(titleA);
-      }
-
-      return 0;
-    });
-
-    sorted.forEach(item => {
-      galleryList.appendChild(item);
-    });
-  }
-
-  searchInput.addEventListener('input', filterGallery);
-
-  sortSelect.addEventListener('change', sortGallery);
-});
-</script>
+figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+</style>
