@@ -34,8 +34,7 @@
   date:
   location_en: 29 Mahanirban Math, Kolkata, West Bengal, India
   location_bn: ২৯ মহানির্বাণ মঠ, কলকাতা, পশ্চিমবঙ্গ, ভারত
-  people_en: ["Swapna Dutta", "Tito Dutta", "Rupen", "Tupai"]
-  people_bn: ["স্বপ্না দত্ত", "টিটো দত্ত", "রুপেন", "টুপাই"]
+  people: [p1, p2]
   tags_en: ["Kolkata", "Mahanirban Math"]
   tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
   alt_en:
@@ -49,8 +48,7 @@
   date: 2013-01-10
   location_en:
   location_bn:
-  people_en: ["Swapna Dutta", "Tito Dutta"]
-  people_bn: ["স্বপ্না দত্ত", "টিটো দত্ত"]
+  people: [p1, p2]
   tags_en: []
   tags_bn: []
   alt_en:

@@ -58,9 +58,14 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
 {% endif %}
 
-{% if photo.people_en.size > 0 %}
+{% if photo.people %}
   <div class="photo-meta">
-    👥 {{ photo.people_en | join: ", " }}
+    👥
+    {% for person_id in photo.people %}
+      {% assign person = site.data.people[person_id] %}
+      {% unless forloop.first %}, {% endunless %}
+      {{ person.en }}
+    {% endfor %}
   </div>
 {% endif %}
 

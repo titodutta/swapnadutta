@@ -82,9 +82,14 @@ created: 2026-05-15
   {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
 {% endif %}
 
-{% if photo.people_bn.size > 0 %}
+{% if photo.people %}
   <div class="photo-meta">
-    👥 {{ photo.people_bn | join: ", " }}
+    👥
+    {% for person_id in photo.people %}
+      {% assign person = site.data.people[person_id] %}
+      {% unless forloop.first %}, {% endunless %}
+      {{ person.bn }}
+    {% endfor %}
   </div>
 {% endif %}
 
