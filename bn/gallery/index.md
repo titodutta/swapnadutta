@@ -14,149 +14,68 @@ created: 2026-05-15
 
 এই গ্যালারির উদ্দেশ্য শুধুমাত্র ছবি সংরক্ষণ নয়, বরং সময়ের ভেতর দিয়ে অতিক্রান্ত জীবনের কিছু টুকরো অভিজ্ঞতাকে ধরে রাখার প্রয়াস।
 
-<div class="gallery-tools">
+## গ্যালারি
 
-  <input
-    type="search"
-    id="gallerySearch"
-    placeholder="গ্যালারি খুঁজুন"
-    aria-label="গ্যালারি খুঁজুন">
+<div class="photo-gallery">
 
-  <select id="gallerySort" aria-label="গ্যালারি সাজান">
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0001.jpg">
+      <img src="/assets/images/gallery/swapnadutta0001.jpg" alt="" loading="lazy">
+    </a>
+  </figure>
 
-    <option value="newest">
-      নতুন থেকে পুরোনো
-    </option>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0002.jpg">
+      <img src="/assets/images/gallery/swapnadutta0002.jpg" alt="" loading="lazy">
+    </a>
+  </figure>
 
-    <option value="oldest">
-      পুরোনো থেকে নতুন
-    </option>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0003.jpg">
+      <img src="/assets/images/gallery/swapnadutta0003.jpg" alt="" loading="lazy">
+    </a>
+  </figure>
 
-    <option value="az">
-      শিরোনাম: অ-হ
-    </option>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0004.jpg">
+      <img src="/assets/images/gallery/swapnadutta0004.jpg" alt="" loading="lazy">
+    </a>
+  </figure>
 
-    <option value="za">
-      শিরোনাম: হ-অ
-    </option>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0005.jpg">
+      <img src="/assets/images/gallery/swapnadutta0005.jpg" alt="" loading="lazy">
+    </a>
+  </figure>
 
-  </select>
+  <figure>
+    <a href="/assets/images/gallery/swapnadutta0006.jpg">
+      <img src="/assets/images/gallery/swapnadutta0006.jpg" alt="" loading="lazy">
+    </a>
+  </figure>
 
 </div>
 
-## গ্যালারির তালিকা
+<style>
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
 
-<ul id="galleryList" class="gallery-list">
+.photo-gallery figure {
+  margin: 0;
+}
 
-{% assign gallery_items = site.pages
-  | where_exp: "item", "item.url contains '/bn/gallery/'"
-  | where_exp: "item", "item.url != '/bn/gallery/'" %}
+.photo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
-{% assign sorted_gallery = gallery_items | sort: "created" | reverse %}
-
-{% for item in sorted_gallery %}
-
-<li
-  class="gallery-item"
-  data-title="{{ item.title | downcase }}"
-  data-date="{{ item.created | date: '%Y-%m-%d' }}">
-
-  <h3>
-    <a href="{{ item.url | relative_url }}">
-      {{ item.title }}
-    </a>
-  </h3>
-
-  {% if item.description %}
-  <p>
-    {{ item.description }}
-  </p>
-  {% endif %}
-
-  {% if item.created %}
-  <small>
-    {{ item.created | date: "%-d %B %Y" }}
-  </small>
-  {% endif %}
-
-</li>
-
-{% endfor %}
-
-</ul>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  const searchInput =
-    document.getElementById('gallerySearch');
-
-  const sortSelect =
-    document.getElementById('gallerySort');
-
-  const galleryList =
-    document.getElementById('galleryList');
-
-  const items =
-    Array.from(galleryList.querySelectorAll('.gallery-item'));
-
-  function filterGallery() {
-
-    const query =
-      searchInput.value.toLowerCase();
-
-    items.forEach(item => {
-
-      const title =
-        item.dataset.title;
-
-      item.style.display =
-        title.includes(query)
-          ? ''
-          : 'none';
-    });
-  }
-
-  function sortGallery() {
-
-    const value = sortSelect.value;
-
-    const sorted = [...items];
-
-    sorted.sort((a, b) => {
-
-      const titleA = a.dataset.title;
-      const titleB = b.dataset.title;
-
-      const dateA = a.dataset.date;
-      const dateB = b.dataset.date;
-
-      if (value === 'newest') {
-        return dateB.localeCompare(dateA);
-      }
-
-      if (value === 'oldest') {
-        return dateA.localeCompare(dateB);
-      }
-
-      if (value === 'az') {
-        return titleA.localeCompare(titleB);
-      }
-
-      if (value === 'za') {
-        return titleB.localeCompare(titleA);
-      }
-
-      return 0;
-    });
-
-    sorted.forEach(item => {
-      galleryList.appendChild(item);
-    });
-  }
-
-  searchInput.addEventListener('input', filterGallery);
-
-  sortSelect.addEventListener('change', sortGallery);
-});
-</script>
+.photo-gallery a {
+  display: block;
+}
+</style>
