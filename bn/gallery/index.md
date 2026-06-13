@@ -88,9 +88,9 @@ created: 2026-05-15
   </div>
 {% endif %}
 
-{% if photo.location %}
+{% if photo.people.size > 0 %}
   <div class="photo-meta">
-    📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.bn }}{% endfor %}
+    👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.bn }}{% endfor %}
   </div>
 {% endif %}
 
