@@ -96,6 +96,10 @@ created: 2026-05-15
   {% assign metadata = metadata | append: photo.people_bn | join: ", " %}
 {% endif %}
 
+{% if metadata != "" %}
+  <div class="photo-meta">{{ metadata }}</div>
+{% endif %}
+
   </figure>
 
 {% endfor %}

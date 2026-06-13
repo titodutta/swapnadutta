@@ -4,7 +4,9 @@
   date:
   location_en: 29 Mahanirban Math, Kolkata, West Bengal, India
   location_bn: ২৯ মহানির্বাণ মঠ, কলকাতা, পশ্চিমবঙ্গ, ভারত
-  people_en: []
+  people_en: 
+    - Swapna Dutta
+    - Tito Dutta
   people_bn: []
   tags_en:
     - Kolkata
