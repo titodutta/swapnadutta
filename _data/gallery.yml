@@ -4,8 +4,8 @@
   date:
   location: [a1, l3]
   people: [p1, p2]
-  tags_en: ["Kolkata", "Mahanirban Math"]
-  tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
+  tags_en: [Kolkata, Mahanirban Math]
+  tags_bn: [কলকাতা, মহানির্বাণ মঠ]
   alt_en:
   alt_bn:
   caption_en:
@@ -17,8 +17,8 @@
   date:
   location: [a1, l3]
   people: []
-  tags_en: ["Kolkata", "Mahanirban Math"]
-  tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
+  tags_en: [Kolkata, Mahanirban Math]
+  tags_bn: [কলকাতা, মহানির্বাণ মঠ]
   alt_en:
   alt_bn:
   caption_en:
@@ -30,8 +30,8 @@
   date:
   location: [a1, l3]
   people: [p1, p2, p3, p4]
-  tags_en: ["Kolkata", "Mahanirban Math"]
-  tags_bn: ["কলকাতা", "মহানির্বাণ মঠ"]
+  tags_en: [Kolkata, Mahanirban Math]
+  tags_bn: [কলকাতা, মহানির্বাণ মঠ]
   alt_en:
   alt_bn:
   caption_en:
@@ -41,7 +41,7 @@
   file: swapnadutta0004.jpg
   exif: true
   date: 2013-01-10
-  location: 
+  location:
   people: [p1, p2]
   tags_en: []
   tags_bn: []
@@ -54,7 +54,7 @@
   file: swapnadutta0005.jpg
   exif: true
   date: 2013-01-10
-  location: 
+  location:
   people_en: []
   people_bn: []
   tags_en: []
@@ -68,7 +68,7 @@
   file: swapnadutta0006.jpg
   exif: true
   date: 2013-01-10
-  location: 
+  location:
   people_en: []
   people_bn: []
   tags_en: []
@@ -168,7 +168,7 @@
   caption_en:
   caption_bn:
 
-  - id: SD-PH-0013
+- id: SD-PH-0013
   file: swapnadutta0013.jpg
   exif: true
   date: 2017-06-04
@@ -291,7 +291,7 @@
 - id: SD-PH-0022
   file: swapnadutta0022.jpg
   exif: true
-  date: 
+  date: '2017-07-09'
   location_en:
   location_bn:
   people_en: []
@@ -306,7 +306,7 @@
 - id: SD-PH-0023
   file: swapnadutta0023.jpg
   exif: true
-  date: 
+  date: '2017-07-10'
   location_en:
   location_bn:
   people_en: []
@@ -321,7 +321,7 @@
 - id: SD-PH-0024
   file: swapnadutta0024.jpg
   exif: true
-  date: 
+  date: '2017-07-10'
   location_en:
   location_bn:
   people_en: []
@@ -336,7 +336,7 @@
 - id: SD-PH-0025
   file: swapnadutta0025.jpg
   exif: true
-  date: 
+  date: '2017-07-10'
   location_en:
   location_bn:
   people_en: []
@@ -351,7 +351,7 @@
 - id: SD-PH-0026
   file: swapnadutta0026.jpg
   exif: true
-  date: 
+  date: '2017-08-08'
   location_en:
   location_bn:
   people_en: []
@@ -366,7 +366,7 @@
 - id: SD-PH-0027
   file: swapnadutta0027.jpg
   exif: true
-  date: 
+  date: '2017-09-16'
   location_en:
   location_bn:
   people_en: []
@@ -381,7 +381,7 @@
 - id: SD-PH-0028
   file: swapnadutta0028.jpg
   exif: true
-  date: 
+  date: '2017-11-17'
   location_en:
   location_bn:
   people_en: []

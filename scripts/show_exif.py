@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 
-import yaml
 import subprocess
+from ruamel.yaml import YAML
+
+# Initialize the YAML round-trip parser
+yaml = YAML()
+yaml.preserve_quotes = False  # Drops unnecessary quotes for strings
+yaml.default_style = None     # Prevents quotes around plain strings/dates
+yaml.width = 4096             # Prevents automatic line wrapping for long strings
 
 with open("_data/gallery.yml", "r", encoding="utf-8") as f:
-    photos = yaml.safe_load(f)
+    photos = yaml.load(f)
 
 updated = 0
 
 for photo in photos:
-
+    
     if not photo.get("exif"):
         continue
 
@@ -37,13 +43,7 @@ for photo in photos:
         print(f"{photo['id']} -> {photo['date']}")
 
 with open("_data/gallery.yml", "w", encoding="utf-8") as f:
-    yaml.dump(
-        photos,
-        f,
-        allow_unicode=True,
-        sort_keys=False,
-        default_flow_style=False
-    )
+    yaml.dump(photos, f)
 
 print()
 print(f"Updated {updated} records")
