@@ -71,6 +71,16 @@
       </article>
     </div>
   </main>
+  
+  <script>
+document.addEventListener('keydown', function (e) {
+  if (e.altKey && e.shiftKey && e.key === 'G') {
+    window.location.href =
+      'https://github.com/titodutta/swapnadutta/blob/main/{{ page.path }}';
+  }
+});
+</script>
+
   {% include footer.html %}
 </body>
 </html>
