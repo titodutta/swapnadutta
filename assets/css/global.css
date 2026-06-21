@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. CORE RESET & ANTI-GLARE CANVAS ENVIRONMENT
+   1. CORE RESET & CANVASETTE
    ========================================================================== */
 *,
 *::before,
@@ -31,25 +31,25 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   2. SEMANTIC ARCHIVE TOKENS (PREMIUM JOURNAL ARCHETYPE)
+   2. RE-ENGINEERED PREMIUM ARCHIVE DESIGN TOKENS
    ========================================================================== */
 :root {
-  /* LIGHT MODE: Editorial Gallery Parchment */
-  --bg: #f5f2eb;            /* Rich, tactile book-paper tint to isolate cards */
-  --surface: #fbfbfa;       /* High-grade linen/stone white for major panels */
-  --surface-soft: #edeae3;  /* Subdued contrast tone for tools & blockquotes */
-  --text: #16181b;          /* Dark iron ink tone for crisp reading clarity */
-  --muted: #5a6067;         /* Classic dark neutral for secondary metadata */
-  --border: #d5cfc4;        /* Earthy structural divider line */
-  --line: #e6e0d5;          /* Delicate light secondary rule */
-  --accent: #193c6d;        /* Deep historical academic indigo */
-  --accent-hover: #0f274a;  /* Dark midnight blue reactive state */
+  /* LIGHT CONFIG: Gallery Studio Muted Cream */
+  --bg: #f2efe9;            /* Deep studio matte paper background */
+  --surface: #ffffff;       /* Pure white layout cards */
+  --surface-soft: #f7f6f2;  /* Smooth grey-beige tint for tools/quotes */
+  --text: #111315;          /* Off-black charcoal ink */
+  --muted: #62686f;         /* Neutral slate for metadata */
+  --border: #ceca4;        /* Soft stone borders */
+  --line: #e6e3dc;          /* Clean layout dividing grid lines */
+  --accent: #274b7d;        /* Deep gallery sapphire accent */
+  --accent-hover: #173154;  /* Dark indigo focus state */
 
-  /* Structural Rules */
-  --page-width: 1200px;     /* Comfortable total width layout canvas */
-  --content-width: 820px;   /* Precise structural reading width for single column text */
+  /* Layout Boundaries */
+  --page-width: 1280px;
+  --content-width: 800px;   /* Perfect visual density line width for text */
 
-  /* System Spacing Scale */
+  /* Modern Sharp Spacing Scale */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -61,44 +61,45 @@ button, input, textarea, select {
   --space-12: 3rem;
   --space-16: 4rem;
 
-  /* Sharp Geometric Radii (Archive Look) */
+  /* Sharp Industrial Corners (Premium Archive Look) */
   --radius-sm: 2px;
   --radius-md: 4px;
-  --radius-lg: 6px;
+  --radius-lg: 8px;
   --radius-full: 999px;
 
-  /* Typography Infrastructure */
-  --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Fonts */
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
 
-  /* High-Contrast Dynamic Scales */
-  --text-sm: clamp(0.88rem, 0.85rem + 0.15vw, 0.96rem);
-  --text-base: clamp(1.05rem, 1.02rem + 0.15vw, 1.15rem);
-  --text-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.55rem);
-  --text-xl: clamp(1.85rem, 1.4rem + 1.5vw, 2.8rem);
-  --text-2xl: clamp(2.6rem, 1.8rem + 3.5vw, 4.5rem);
+  /* Asymmetric Font Hierarchy Scales */
+  --text-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --text-base: clamp(1.02rem, 0.99rem + 0.15vw, 1.12rem);
+  --text-lg: clamp(1.2rem, 1.1rem + 0.4vw, 1.45rem);
+  --text-xl: clamp(1.6rem, 1.3rem + 1.2vw, 2.4rem);
+  --text-2xl: clamp(2.4rem, 1.6rem + 3vw, 4rem);
 
-  --shadow-premium: 0 20px 40px rgba(22, 24, 27, 0.03), 0 1px 3px rgba(22, 24, 27, 0.02);
+  /* Deep Elevation Shadow */
+  --shadow-premium: 0 30px 60px rgba(17, 19, 21, 0.04), 0 2px 8px rgba(17, 19, 21, 0.02);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* DARK MODE: Low Eye-Strain Museum Charcoal */
-    --bg: #121316;          /* Deep gallery charcoal matrix */
-    --surface: #1a1c1f;     /* Slightly elevated museum panel tint */
-    --surface-soft: #22252a;/* Tactical internal utility zones */
-    --text: #e4e7eb;        /* Low-glow silver-white to prevent halation/blurring */
-    --muted: #a0a7b1;       /* Soft readable grey for structural links */
-    --border: #2e3238;      /* Deep iron panel frames */
-    --line: #26292e;        /* Subtle internal boundary cut lines */
-    --accent: #8cb4f5;      /* Luminescent sapphire visual anchor */
-    --accent-hover: #b0ccfa;/* Soft glow interaction response */
+    /* DARK CONFIG: Low-Glare Velvet Charcoal */
+    --bg: #0f1012;          /* True deep studio black/grey matrix */
+    --surface: #17191c;     /* Elevated panel slate */
+    --surface-soft: #202327;/* Inner module contrast fills */
+    --text: #e2e5e8;        /* Soft silver typography ink (prevents blur glare) */
+    --muted: #9ba2a9;       /* Subdued secondary descriptions */
+    --border: #2a2d33;      /* Dark frame borders */
+    --line: #22252a;        /* Subtle container separators */
+    --accent: #7ca5eb;      /* Vibrant low-light active anchor blue */
+    --accent-hover: #a1c0f5;/* Soft active highlight */
     --shadow-premium: none;
   }
 }
 
 /* ==========================================================================
-   3. BASE TYPOGRAPHY & INCLUSIVE FRAMEWORK
+   3. GLOBAL TEXT CONFIGURATION & ACCESSIBILITY
    ========================================================================== */
 body {
   min-height: 100vh;
@@ -111,6 +112,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Add custom breathing scale space specifically to Bengali typography frames */
 :lang(bn) {
   line-height: 1.95;
   letter-spacing: normal;
@@ -128,12 +130,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   transform: translateY(-250%);
   z-index: 1000;
   padding: var(--space-3) var(--space-6);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  font-weight: 600;
+  background: var(--text);
+  color: var(--surface);
   text-decoration: none;
+  font-weight: 600;
   font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
 }
 
 .skip-link:focus {
@@ -141,18 +143,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   4. HEADER & HERO OVERHAUL (THE JOURNAL ARCHETYPE)
+   4. NEW ASYMMETRIC HEADER HERO MODULE
    ========================================================================== */
 .site-header {
   background: var(--surface);
-  border-bottom: 4px double var(--border);
-  padding: var(--space-12) 0 var(--space-8);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-16) 0 var(--space-12);
 }
 
 .site-header__inner {
   width: min(92%, var(--page-width));
   margin: 0 auto;
-  text-align: center;
+  text-align: left; /* Shifted to modern asymmetric left-alignment */
 }
 
 .site-title {
@@ -164,30 +166,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.05em;
-  text-transform: uppercase;
+  position: relative;
 }
 
-.site-title:hover {
-  color: var(--accent);
+.site-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: var(--space-8);
+  height: 3px;
+  background: var(--accent); /* Tiny spatial geometric layout dot anchor */
 }
 
 .site-tagline {
-  margin-top: var(--space-4);
-  max-width: 54ch;
-  margin-inline: auto;
+  margin-top: var(--space-6);
+  max-width: 50ch;
+  margin-left: 0;
   color: var(--muted);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: var(--text-lg);
-  line-height: 1.5;
+  font-family: var(--sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
 }
 
 /* ==========================================================================
-   5. DYNAMIC BUTTON-GRID NAVIGATION SYSTEM
+   5. PREMIUM ARCHIVE BUTTON-STRIP NAVIGATION MENU
    ========================================================================== */
 .site-navbar {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 900; /* Pin navigation dynamically when browsing deep copy entries */
 }
 
 .nav-container {
@@ -197,39 +207,49 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .nav-menu {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Asymmetric left-aligned alignment grid mapping */
+  gap: var(--space-6);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nav-menu li {
-  border-right: 1px solid var(--line);
-}
-
-.nav-menu li:first-child {
-  border-left: 1px solid var(--line);
-}
-
 .nav-menu a {
   display: inline-block;
-  padding: var(--space-4) var(--space-6);
+  padding: var(--space-5) 0;
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
   font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  transition: background 0.2s;
+  position: relative;
 }
 
-.nav-menu a:hover {
-  background-color: var(--surface-soft);
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
   color: var(--accent);
 }
 
+.nav-menu a:hover::after,
+.nav-menu a:focus-visible::after {
+  transform: scaleX(1);
+}
+
 /* ==========================================================================
-   6. CLEAN SINGLE-COLUMN CONTENT CARD
+   6. SINGLE-COLUMN MASTERWORK CONTAINER SHELL
    ========================================================================== */
 .site-main {
   padding: var(--space-12) 0 var(--space-16);
@@ -240,20 +260,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin: 0 auto;
 }
 
-/* Restored to clean, uniform, single-column panel display container */
 .content-card {
   width: 100%;
   margin: 0 auto;
   padding: var(--space-12) var(--space-10);
   background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-premium);
 }
 
 .page-header {
   margin-bottom: var(--space-12);
-  padding-bottom: var(--space-6);
-  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--line);
 }
 
 .page-title-row {
@@ -274,18 +294,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .language-switcher {
   flex-shrink: 0;
   padding: var(--space-2) var(--space-4);
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--text);
+  color: var(--text);
   font-size: var(--text-sm);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   text-decoration: none;
-  transition: all 0.2s;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
 }
 
 .language-switcher:hover {
-  background: var(--accent);
+  background: var(--text);
   color: var(--surface);
 }
 
@@ -307,10 +328,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   7. PREMIUM EDITORIAL CONTENT TYPOGRAPHY (DEEP CHAPTERS)
+   7. HIGH-END EDITORIAL TEXT TYPOGRAPHY (DEEP READING)
    ========================================================================== */
 .page-content {
-  max-width: var(--content-width); /* Restricts inner copy box directly for clear readability scan metrics */
+  max-width: var(--content-width);
 }
 
 .page-content > * + * {
@@ -329,10 +350,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .page-content h2 {
   margin-top: var(--space-16);
   font-size: var(--text-lg);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: var(--space-2);
+  color: var(--accent);
 }
 
 .page-content h3 {
@@ -343,20 +364,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .page-content p,
 .page-content li {
-  font-family: var(--serif);
+  font-family: var(--serif); /* Deep text reads pivot entirely to the editorial serif */
   font-size: var(--text-base);
   line-height: 1.85;
-}
-
-.page-content > p:first-of-type::first-letter {
-  font-family: var(--serif);
-  font-size: 3.5em;
-  float: left;
-  line-height: 0.85;
-  padding-right: var(--space-3);
-  margin-top: var(--space-1);
-  font-weight: 700;
-  color: var(--accent);
 }
 
 .page-content ul,
@@ -365,58 +375,50 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .page-content a {
-  color: var(--text);
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-color: var(--border);
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.25em;
   text-decoration-thickness: 1px;
 }
 
 .page-content a:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+  color: var(--accent-hover);
+  text-decoration-color: var(--accent-hover);
 }
 
 .page-content blockquote {
-  position: relative;
   padding: var(--space-6) var(--space-8);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);
+  border-left: 3px solid var(--accent);
   background: var(--surface-soft);
+  font-family: var(--serif);
+  font-style: italic;
   margin: var(--space-8) 0;
-}
-
-.page-content blockquote p::first-letter {
-  font-size: inherit;
-  float: none;
-  padding-right: 0;
-  margin-top: 0;
-  font-weight: inherit;
-  color: inherit;
 }
 
 .page-content hr {
   border: 0;
-  height: 4px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  height: 1px;
+  background: var(--border);
   margin: var(--space-12) 0;
 }
 
 /* ==========================================================================
-   8. ARCHIVAL PHOTOGRAPH MEDIA TILES
+   8. ARCHIVAL GALLERY MEDIA MODULES
    ========================================================================== */
 .article-image {
   margin: var(--space-12) 0;
   background: var(--surface-soft);
-  padding: var(--space-4);
+  padding: var(--space-6);
   border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .article-image img {
   width: 100%;
-  max-height: 560px;
+  max-height: 580px;
   object-fit: contain;
+  border-radius: var(--radius-sm);
 }
 
 .article-image figcaption {
@@ -428,16 +430,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   9. HIGH-CONTRAST INDICES & MODERN COMPACT DASHBOARDS
+   9. MODERN TWO-COLUMN ARCHIVE MAGAZINE GRIDS (INDEX MODULES)
    ========================================================================== */
 .article-tools,
 .gallery-tools {
   display: flex;
   gap: var(--space-4);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-10);
   background: var(--surface-soft);
   padding: var(--space-4);
   border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .article-tools input,
@@ -457,11 +460,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   flex: 1;
 }
 
+/* Converts boring default list items into a beautiful clean magazine columns layout */
 .article-list,
 .gallery-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: var(--space-6);
+  gap: var(--space-8);
   list-style: none;
   padding: 0;
 }
@@ -471,9 +475,17 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border: 1px solid var(--border);
   padding: var(--space-6);
   background: var(--surface);
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-item:hover,
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(17, 19, 21, 0.03);
 }
 
 .article-item h3,
@@ -502,6 +514,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   line-height: 1.6;
 }
 
+.article-item small,
+.gallery-item small {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* ==========================================================================
    10. SYSTEM FOOTER
    ========================================================================== */
@@ -515,13 +535,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .footer-inner {
   width: min(92%, var(--page-width));
   margin: 0 auto;
-  text-align: center;
+  text-align: left; /* Aligned symmetrically with left-aligned brand metrics */
   font-size: var(--text-sm);
   color: var(--muted);
 }
 
 /* ==========================================================================
-   11. FLUID RESPONSIVE SYSTEM OVERRIDES
+   11. FLUID RESPONSIVE ADAPTATIONS
    ========================================================================== */
 @media (max-width: 1024px) {
   .article-list,
@@ -532,27 +552,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 @media (max-width: 768px) {
   .site-header {
-    padding: var(--space-8) 0;
+    padding: var(--space-10) 0;
   }
   
   .nav-menu {
     flex-direction: column;
+    gap: 0;
     width: 100%;
   }
-  
+
   .nav-menu li {
-    border: none;
+    width: 100%;
     border-bottom: 1px solid var(--line);
-    text-align: center;
-  }
-  
-  .nav-menu li:last-child {
-    border: none;
   }
 
   .nav-menu a {
     display: block;
-    padding: var(--space-4);
+    padding: var(--space-4) var(--space-2);
+  }
+  
+  .nav-menu a::after {
+    display: none;
   }
 
   .article-tools,
@@ -579,7 +599,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   12. ACCESSIBILITY & PRINT ENGINE
+   12. MOTION SAFETY AND PRINT ENGINE
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
