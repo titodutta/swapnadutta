@@ -31,7 +31,7 @@ button, input, textarea, select {
 }
 
 /* ==========================================================================
-   2. OVERHAULED SEMANTIC ARCHIVE TOKENS (PREMIUM JOURNAL ARCHETYPE)
+   2. SEMANTIC ARCHIVE TOKENS (PREMIUM JOURNAL ARCHETYPE)
    ========================================================================== */
 :root {
   /* LIGHT MODE: Editorial Gallery Parchment */
@@ -46,9 +46,8 @@ button, input, textarea, select {
   --accent-hover: #0f274a;  /* Dark midnight blue reactive state */
 
   /* Structural Rules */
-  --page-width: 1440px;     /* Widen layout canvas for modern display proportions */
-  --sidebar-width: 300px;   /* Fixed structural column width for the sidebar */
-  --content-width: 880px;   /* Narrow text block constraint for premium readability */
+  --page-width: 1200px;     /* Comfortable total width layout canvas */
+  --content-width: 820px;   /* Precise structural reading width for single column text */
 
   /* System Spacing Scale */
   --space-1: 0.25rem;
@@ -230,7 +229,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   6. STRUCTURAL ASYMMETRIC SIDEBAR GRID HOOKS
+   6. CLEAN SINGLE-COLUMN CONTENT CARD
    ========================================================================== */
 .site-main {
   padding: var(--space-12) 0 var(--space-16);
@@ -241,43 +240,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin: 0 auto;
 }
 
-/* 
-   Overhauled Layout Architecture to inject an elegant Sidebar grid framework.
-   Splits your content area into an asymmetric dual layout format.
-*/
+/* Restored to clean, uniform, single-column panel display container */
 .content-card {
   width: 100%;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-10);
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-premium);
-  
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1px 1fr; /* Sidebar, Visual Border Rule, Content */
-  gap: 0;
 }
 
-/* Structural Sidebar Canvas Container Panel */
-.site-sidebar-panel {
-  padding: var(--space-10) var(--space-8);
-  background: var(--surface-soft);
-  border-right: 1px solid var(--border);
-}
-
-/* Vertical Dividing Line */
-.grid-divider-rule {
-  background-color: var(--border);
-  width: 1px;
-  height: 100%;
-}
-
-/* Main Display Canvas Panel */
-.main-content-panel {
-  padding: var(--space-10) var(--space-12);
-}
-
-/* ==========================================================================
-   7. PAGE HEADERS & METADATA INFRASTRUCTURE
-   ========================================================================== */
 .page-header {
   margin-bottom: var(--space-12);
   padding-bottom: var(--space-6);
@@ -335,10 +307,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   8. PREMIUM EDITORIAL CONTENT TYPOGRAPHY (DEEP CHAPTERS)
+   7. PREMIUM EDITORIAL CONTENT TYPOGRAPHY (DEEP CHAPTERS)
    ========================================================================== */
 .page-content {
-  max-width: var(--content-width);
+  max-width: var(--content-width); /* Restricts inner copy box directly for clear readability scan metrics */
 }
 
 .page-content > * + * {
@@ -432,7 +404,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   9. ARCHIVAL PHOTOGRAPH MEDIA TILES
+   8. ARCHIVAL PHOTOGRAPH MEDIA TILES
    ========================================================================== */
 .article-image {
   margin: var(--space-12) 0;
@@ -456,7 +428,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   10. HIGH-CONTRAST INDICES & MODERN COMPACT DASHBOARDS
+   9. HIGH-CONTRAST INDICES & MODERN COMPACT DASHBOARDS
    ========================================================================== */
 .article-tools,
 .gallery-tools {
@@ -531,7 +503,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   11. SYSTEM FOOTER
+   10. SYSTEM FOOTER
    ========================================================================== */
 .site-footer {
   margin-top: var(--space-16);
@@ -549,29 +521,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   12. FLUID RESPONSIVE SYSTEM OVERRIDES & GRID COLLAPSING
+   11. FLUID RESPONSIVE SYSTEM OVERRIDES
    ========================================================================== */
-@media (max-width: 1140px) {
-  /* Collapse layout from a three-column sidebar grid back to a clean vertical card stack */
-  .content-card {
-    grid-template-columns: 1fr;
-  }
-  
-  .site-sidebar-panel {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    padding: var(--space-6) var(--space-4);
-  }
-  
-  .grid-divider-rule {
-    display: none;
-  }
-  
-  .main-content-panel {
-    padding: var(--space-8) var(--space-4);
-  }
-}
-
 @media (max-width: 1024px) {
   .article-list,
   .gallery-list {
@@ -608,6 +559,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .gallery-tools {
     flex-direction: column;
   }
+
+  .content-card {
+    padding: var(--space-8) var(--space-4);
+  }
 }
 
 @media (max-width: 640px) {
@@ -624,7 +579,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   13. ACCESSIBILITY & PRINT ENGINE
+   12. ACCESSIBILITY & PRINT ENGINE
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -635,7 +590,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 @media print {
-  .site-header, .site-navbar, .site-footer, .skip-link, .article-tools, .gallery-tools, .site-sidebar-panel, .grid-divider-rule {
+  .site-header, .site-navbar, .site-footer, .skip-link, .article-tools, .gallery-tools {
     display: none !important;
   }
   .site-main { padding: 0 !important; }
