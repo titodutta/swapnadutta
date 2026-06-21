@@ -19,7 +19,6 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 <div class="photo-gallery">
 
 {% for photo in site.data.gallery %}
-
   <figure>
     <a href="/assets/images/gallery/{{ photo.file }}">
       <img
@@ -28,55 +27,28 @@ The gallery is intended not merely as a collection of images, but as an attempt 
         loading="lazy">
     </a>
 
-{% if photo.caption_en %}
-  <div class="photo-caption">{{ photo.caption_en }}</div>
-{% endif %}
+    {% if photo.caption_en %}
+      <div class="photo-caption">{{ photo.caption_en }}</div>
+    {% endif %}
 
-{% assign metadata = "" %}
+    {% if photo.people.size > 0 %}
+      <div class="photo-meta">
+        👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.en }}{% endfor %}
+      </div>
+    {% endif %}
 
-{% if photo.date %}
-  {% assign date_parts = photo.date | split: "-" %}
-  {% assign year = date_parts[0] %}
-  {% assign month = date_parts[1] %}
-  {% assign day = date_parts[2] %}
+    {% if photo.location.size > 0 %}
+      <div class="photo-meta">
+        📍 {% for location_id in photo.location %}{% assign location = site.data.location[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
+      </div>
+    {% endif %}
 
-  {% case month %}
-    {% when "01" %}{% assign month_name = "January" %}
-    {% when "02" %}{% assign month_name = "February" %}
-    {% when "03" %}{% assign month_name = "March" %}
-    {% when "04" %}{% assign month_name = "April" %}
-    {% when "05" %}{% assign month_name = "May" %}
-    {% when "06" %}{% assign month_name = "June" %}
-    {% when "07" %}{% assign month_name = "July" %}
-    {% when "08" %}{% assign month_name = "August" %}
-    {% when "09" %}{% assign month_name = "September" %}
-    {% when "10" %}{% assign month_name = "October" %}
-    {% when "11" %}{% assign month_name = "November" %}
-    {% when "12" %}{% assign month_name = "December" %}
-  {% endcase %}
-
-  {% assign metadata = day | append: " " | append: month_name | append: " " | append: year %}
-{% endif %}
-
-{% if photo.people.size > 0 %}
-  <div class="photo-meta">
-    👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.en }}{% endfor %}
-  </div>
-{% endif %}
-
-{% if photo.location %}
-  <div class="photo-meta">
-    📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
-  </div>
-{% endif %}
-
-{% if photo.date %}
-  <div class="photo-meta">
-    📅 {{ day }} {{ month_name }} {{ year }}
-  </div>
-{% endif %}
+    {% if photo.date %}
+      <div class="photo-meta">
+        📅 {{ photo.date | date: "%-d %B %Y" }}
+      </div>
+    {% endif %}
   </figure>
-
 {% endfor %}
 
 </div>
@@ -103,6 +75,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 .photo-gallery a {
   display: block;
 }
+
 .photo-caption {
   margin-top: 0.5rem;
   font-weight: 600;
