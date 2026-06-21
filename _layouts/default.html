@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
 
-    <script>
+  <script>
   (function() {
     // 1. Check the URL for the darkmode parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -39,7 +39,7 @@
       }
     }
   })();
-</script>
+  </script>
 </head>
 <body>
   
@@ -109,13 +109,27 @@
     </div>
   </main>
   
-  <script>
-  document.addEventListener('keydown', function (e) {
-    if (e.altKey && e.shiftKey && e.key === 'G') {
-      window.location.href = 'https://github.com/titodutta/swapnadutta/blob/main/{{ page.path }}';
+<script>
+document.addEventListener('keydown', function (e) {
+  // 1. GitHub Repository Target Shortcut (Alt + Shift + G)
+  if (e.altKey && e.shiftKey && e.key === 'G') {
+    window.location.href = 'https://github.com/titodutta/swapnadutta/blob/main/{{ page.path }}';
+  }
+
+  // 2. Dynamic Theme Engine Parameter Switcher (Alt + Shift + D)
+  if (e.altKey && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+    const isDarkNow = document.documentElement.classList.contains('forced-dark') || 
+                      (!document.documentElement.classList.contains('forced-light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    // Toggle Strategy execution
+    if (isDarkNow) {
+      window.location.search = '?darkmode=0';
+    } else {
+      window.location.search = '?darkmode=1';
     }
-  });
-  </script>
+  }
+});
+</script>
 
   {% include footer.html %}
 </body>
