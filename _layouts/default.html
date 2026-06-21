@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,37 +28,48 @@
         {% if page.title %}
         <header class="page-header">
           <div class="page-title-row">
-  <h1 class="page-title">{{ page.title }}</h1> 
+            <h1 class="page-title">{{ page.title }}</h1> 
 
-  {% if page.url contains '/bn/' %}
-    <a
-      class="language-switcher"
-      href="{{ page.url | remove_first: '/bn' }}"
-      title="Read this page in English"
-      aria-label="Read this page in English">
-      English
-    </a>
-  {% else %}
-    <a
-      class="language-switcher"
-      href="/bn{{ page.url }}"
-      title="বাংলায় পড়ুন"
-      aria-label="Read this page in Bengali">
-      বাংলা
-    </a>
-  {% endif %}
-</div>
+            {% if page.url contains '/bn/' %}
+              <a
+                class="language-switcher"
+                href="{{ page.url | remove_first: '/bn' }}"
+                lang="en"
+                title="Read this page in English"
+                aria-label="Read this page in English">
+                English
+              </a>
+            {% else %}
+              <a
+                class="language-switcher"
+                href="/bn{{ page.url }}"
+                lang="bn"
+                title="বাংলায় পড়ুন"
+                aria-label="Read this page in Bengali">
+                বাংলা
+              </a>
+            {% endif %}
+          </div>
 
           {% if page.date or page.last_modified_at %}
           <p class="page-meta">
             {% if page.date %}
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+              <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
             {% endif %}
+            
             {% if page.date and page.last_modified_at %}
-            <span aria-hidden="true"> · </span>
+              <span aria-hidden="true"> · </span>
             {% endif %}
+            
             {% if page.last_modified_at %}
-            <span>Updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time></span>
+              <span>
+                {% if page.url contains '/bn/' %}
+                  আপডেট করা হয়েছে 
+                {% else %}
+                  Updated 
+                {% endif %}
+                <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time>
+              </span>
             {% endif %}
           </p>
           {% endif %}
@@ -73,13 +84,12 @@
   </main>
   
   <script>
-document.addEventListener('keydown', function (e) {
-  if (e.altKey && e.shiftKey && e.key === 'G') {
-    window.location.href =
-      'https://github.com/titodutta/swapnadutta/blob/main/{{ page.path }}';
-  }
-});
-</script>
+  document.addEventListener('keydown', function (e) {
+    if (e.altKey && e.shiftKey && e.key === 'G') {
+      window.location.href = 'https://github.com/titodutta/swapnadutta/blob/main/{{ page.path }}';
+    }
+  });
+  </script>
 
   {% include footer.html %}
 </body>
