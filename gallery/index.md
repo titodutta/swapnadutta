@@ -14,7 +14,7 @@ Some images document ordinary moments of everyday life, while others preserve im
 
 The gallery is intended not merely as a collection of images, but as an attempt to preserve fragments of lived experience across time.
 
-## Gallery
+## Media
 
 <div class="photo-gallery">
 
