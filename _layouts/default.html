@@ -15,6 +15,31 @@
   <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
 </head>
+  <script>
+  (function() {
+    // 1. Check the URL for the darkmode parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const darkModeParam = urlParams.get('darkmode');
+
+    if (darkModeParam === '1') {
+      // Force dark mode
+      document.documentElement.classList.add('forced-dark');
+      localStorage.setItem('forced-theme', 'dark');
+    } else if (darkModeParam === '0') {
+      // Force light mode
+      document.documentElement.classList.add('forced-light');
+      localStorage.setItem('forced-theme', 'light');
+    } else {
+      // 2. Fallback: If no URL parameter is present, check localStorage
+      const savedTheme = localStorage.getItem('forced-theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('forced-dark');
+      } else if (savedTheme === 'light') {
+        document.documentElement.classList.add('forced-light');
+      }
+    }
+  })();
+</script>
 <body>
   
   <a class="skip-link" href="#main-content">Skip to content</a>
