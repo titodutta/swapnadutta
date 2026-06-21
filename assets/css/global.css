@@ -47,7 +47,8 @@ button, input, textarea, select {
 
   /* Structural Rules */
   --page-width: 1440px;     /* Widen layout canvas for modern display proportions */
-  --content-width: 820px;   /* Narrow text block constraint for premium readability */
+  --sidebar-width: 300px;   /* Fixed structural column width for the sidebar */
+  --content-width: 880px;   /* Narrow text block constraint for premium readability */
 
   /* System Spacing Scale */
   --space-1: 0.25rem;
@@ -73,7 +74,7 @@ button, input, textarea, select {
 
   /* High-Contrast Dynamic Scales */
   --text-sm: clamp(0.88rem, 0.85rem + 0.15vw, 0.96rem);
-  --text-base: clamp(1.05rem, 1.02rem + 0.15vw, 1.15rem); /* Scaled slightly up for reading comfort */
+  --text-base: clamp(1.05rem, 1.02rem + 0.15vw, 1.15rem);
   --text-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.55rem);
   --text-xl: clamp(1.85rem, 1.4rem + 1.5vw, 2.8rem);
   --text-2xl: clamp(2.6rem, 1.8rem + 3.5vw, 4.5rem);
@@ -106,18 +107,16 @@ body {
   color: var(--text);
   font-family: var(--sans);
   font-size: var(--text-base);
-  line-height: 1.8; /* Generous vertical balance */
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Deep structural breathing room override for Bengali character layouts */
 :lang(bn) {
   line-height: 1.95;
   letter-spacing: normal;
 }
 
-/* High-Contrast Sharp Target Accessible Keyboard Nav Indicators */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px dashed var(--accent);
   outline-offset: 4px;
@@ -147,7 +146,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
    ========================================================================== */
 .site-header {
   background: var(--surface);
-  /* Elegant double-line heritage border layout split */
   border-bottom: 4px double var(--border);
   padding: var(--space-12) 0 var(--space-8);
 }
@@ -167,7 +165,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.05em;
-  text-transform: uppercase; /* Bold architectural presence */
+  text-transform: uppercase;
 }
 
 .site-title:hover {
@@ -180,7 +178,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin-inline: auto;
   color: var(--muted);
   font-family: var(--serif);
-  font-style: italic; /* Classic publishing layout hint */
+  font-style: italic;
   font-size: var(--text-lg);
   line-height: 1.5;
 }
@@ -232,7 +230,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   6. STRUCTURAL PAGE LAYOUT & ASYMMETRIC CONTENT CARDS
+   6. STRUCTURAL ASYMMETRIC SIDEBAR GRID HOOKS
    ========================================================================== */
 .site-main {
   padding: var(--space-12) 0 var(--space-16);
@@ -243,19 +241,44 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin: 0 auto;
 }
 
-/* Complete removal of clinical border-radius curves for a sharp, premium paper aesthetic */
+/* 
+   Overhauled Layout Architecture to inject an elegant Sidebar grid framework.
+   Splits your content area into an asymmetric dual layout format.
+*/
 .content-card {
   width: 100%;
-  max-width: var(--page-width); /* Stretches to full system boundary */
-  margin: 0 auto;
-  padding: var(--space-12) var(--space-10);
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-premium);
+  
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1px 1fr; /* Sidebar, Visual Border Rule, Content */
+  gap: 0;
 }
 
+/* Structural Sidebar Canvas Container Panel */
+.site-sidebar-panel {
+  padding: var(--space-10) var(--space-8);
+  background: var(--surface-soft);
+  border-right: 1px solid var(--border);
+}
+
+/* Vertical Dividing Line */
+.grid-divider-rule {
+  background-color: var(--border);
+  width: 1px;
+  height: 100%;
+}
+
+/* Main Display Canvas Panel */
+.main-content-panel {
+  padding: var(--space-10) var(--space-12);
+}
+
+/* ==========================================================================
+   7. PAGE HEADERS & METADATA INFRASTRUCTURE
+   ========================================================================== */
 .page-header {
-  max-width: var(--content-width);
   margin-bottom: var(--space-12);
   padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border);
@@ -312,10 +335,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   7. PREMIUM EDITORIAL CONTENT TYPOGRAPHY (DEEP CHAPTERS)
+   8. PREMIUM EDITORIAL CONTENT TYPOGRAPHY (DEEP CHAPTERS)
    ========================================================================== */
 .page-content {
-  max-width: var(--content-width); /* Keeps long copy perfectly compressed for comfort */
+  max-width: var(--content-width);
 }
 
 .page-content > * + * {
@@ -348,12 +371,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .page-content p,
 .page-content li {
-  font-family: var(--serif); /* Deep reading components switch completely to premium serif */
+  font-family: var(--serif);
   font-size: var(--text-base);
   line-height: 1.85;
 }
 
-/* Elegant drop-cap initialization layout helper for the first sentence */
 .page-content > p:first-of-type::first-letter {
   font-family: var(--serif);
   font-size: 3.5em;
@@ -405,12 +427,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border: 0;
   height: 4px;
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border); /* Heritage double horizontal break */
+  border-bottom: 1px solid var(--border);
   margin: var(--space-12) 0;
 }
 
 /* ==========================================================================
-   8. ARCHIVAL PHOTOGRAPH MEDIA TILES
+   9. ARCHIVAL PHOTOGRAPH MEDIA TILES
    ========================================================================== */
 .article-image {
   margin: var(--space-12) 0;
@@ -434,7 +456,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   9. HIGH-CONTRAST INDICES & MODERN COMPACT DASHBOARDS
+   10. HIGH-CONTRAST INDICES & MODERN COMPACT DASHBOARDS
    ========================================================================== */
 .article-tools,
 .gallery-tools {
@@ -466,7 +488,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .article-list,
 .gallery-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Converts boring vertical stacks into magazine columns */
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--space-6);
   list-style: none;
   padding: 0;
@@ -509,7 +531,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   10. SYSTEM FOOTER
+   11. SYSTEM FOOTER
    ========================================================================== */
 .site-footer {
   margin-top: var(--space-16);
@@ -527,8 +549,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   11. FLUID RESPONSIVE SYSTEM OVERRIDES
+   12. FLUID RESPONSIVE SYSTEM OVERRIDES & GRID COLLAPSING
    ========================================================================== */
+@media (max-width: 1140px) {
+  /* Collapse layout from a three-column sidebar grid back to a clean vertical card stack */
+  .content-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .site-sidebar-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .grid-divider-rule {
+    display: none;
+  }
+  
+  .main-content-panel {
+    padding: var(--space-8) var(--space-4);
+  }
+}
+
 @media (max-width: 1024px) {
   .article-list,
   .gallery-list {
@@ -565,10 +608,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .gallery-tools {
     flex-direction: column;
   }
-
-  .content-card {
-    padding: var(--space-6) var(--space-4);
-  }
 }
 
 @media (max-width: 640px) {
@@ -585,7 +624,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   12. ACCESSIBILITY & PRINT ENGINE
+   13. ACCESSIBILITY & PRINT ENGINE
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -596,7 +635,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 @media print {
-  .site-header, .site-navbar, .site-footer, .skip-link, .article-tools, .gallery-tools {
+  .site-header, .site-navbar, .site-footer, .skip-link, .article-tools, .gallery-tools, .site-sidebar-panel, .grid-divider-rule {
     display: none !important;
   }
   .site-main { padding: 0 !important; }
