@@ -113,14 +113,13 @@ created: 2026-05-15
   flex-direction: column;
 }
 
-/* This creates a uniform frame for the image */
 .photo-gallery a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px; /* Uniform height for row alignment */
-  background-color: #f9f9f9; /* Soft background filling empty space */
-  border: 1px solid #eee;
+  height: 300px;
+  background-color: var(--surface-soft); /* Flips cleanly to dark surface */
+  border: 1px solid var(--border);       /* Flips cleanly to dark border */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -129,19 +128,21 @@ created: 2026-05-15
   display: block;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Shows the full uncropped image */
+  object-fit: contain;
 }
 
 .photo-caption {
   margin-top: 0.5rem;
   font-weight: 600;
   text-align: center;
+  line-height: 1.4;
 }
 
 .photo-meta {
   margin-top: 0.25rem;
   font-size: 0.9rem;
-  color: #444;
+  color: var(--muted); /* Becomes legible silver-grey in dark mode */
   text-align: center;
+  line-height: 1.5;    /* Gives breathing room to Bengali script loops */
 }
 </style>

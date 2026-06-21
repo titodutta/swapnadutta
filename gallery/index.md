@@ -67,14 +67,14 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   flex-direction: column;
 }
 
-/* This creates a uniform frame for the image */
+/* Updated container box to dynamically adjust with your main theme tokens */
 .photo-gallery a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px; /* Uniform height for row alignment */
-  background-color: #f9f9f9; /* Soft background filling empty space */
-  border: 1px solid #eee;
+  height: 300px;
+  background-color: var(--surface-soft); /* Follows theme variable maps */
+  border: 1px solid var(--border);       /* Follows theme variable maps */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -83,7 +83,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   display: block;
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* Shows the full uncropped image */
+  object-fit: contain;
 }
 
 .photo-caption {
@@ -95,7 +95,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 .photo-meta {
   margin-top: 0.25rem;
   font-size: 0.9rem;
-  color: #444;
+  color: var(--muted); /* Adapts automatically for clean reading contrast */
   text-align: center;
 }
 </style>
