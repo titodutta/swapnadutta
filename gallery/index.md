@@ -31,15 +31,15 @@ The gallery is intended not merely as a collection of images, but as an attempt 
       <div class="photo-caption">{{ photo.caption_en }}</div>
     {% endif %}
 
-    {% if photo.people.size > 0 %}
+    {% if photo.people %}
       <div class="photo-meta">
         👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.en }}{% endfor %}
       </div>
     {% endif %}
 
-    {% if photo.location.size > 0 %}
+    {% if photo.location %}
       <div class="photo-meta">
-        📍 {% for location_id in photo.location %}{% assign location = site.data.location[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
+        📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
       </div>
     {% endif %}
 
