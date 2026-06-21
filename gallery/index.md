@@ -56,24 +56,34 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 <style>
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin: 2rem 0;
 }
 
 .photo-gallery figure {
   margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* This creates a uniform frame for the image */
+.photo-gallery a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px; /* Uniform height for row alignment */
+  background-color: #f9f9f9; /* Soft background filling empty space */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .photo-gallery img {
   display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.photo-gallery a {
-  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Shows the full uncropped image */
 }
 
 .photo-caption {
