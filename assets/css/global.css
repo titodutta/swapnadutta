@@ -1,3 +1,4 @@
+/* SYSTEM_CORE_CSS_TYPOGRAPHY_BALANCE_V3 */
 *,
 *::before,
 *::after {
@@ -77,11 +78,12 @@ select {
   --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
 
-  --text-sm: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
-  --text-base: clamp(1rem, 0.97rem + 0.2vw, 1.08rem);
-  --text-lg: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
-  --text-xl: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
-  --text-2xl: clamp(2.35rem, 1.5rem + 3vw, 4rem);
+  /* AUDITED TYPE CAPS */
+  --text-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --text-base: clamp(1rem, 0.97rem + 0.15vw, 1.06rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);     
+  --text-xl: clamp(1.45rem, 1.25rem + 1vw, 1.95rem);      
+  --text-2xl: clamp(2.25rem, 1.5rem + 3.5vw, 3.85rem);    
 
   --shadow-md: 0 10px 30px rgba(20, 20, 20, 0.05);
 }
@@ -122,7 +124,7 @@ body {
 .site-header__inner {
   width: min(96%, var(--page-width));
   margin: 0 auto;
-  padding: var(--space-8) 0 var(--space-6);
+  padding: var(--space-10) 0 var(--space-8);
   text-align: center;
 }
 
@@ -131,9 +133,9 @@ body {
   color: var(--text);
   text-decoration: none;
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem);
+  font-size: var(--text-2xl); /* Promoted to maximum fluid scale */
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 0.95;          /* Tightened line spacing for massive layouts */
   letter-spacing: -0.04em;
 }
 
@@ -143,11 +145,11 @@ body {
 }
 
 .site-tagline {
-  margin-top: var(--space-3);
-  max-width: 62ch;
+  margin-top: var(--space-4);
+  max-width: 64ch;
   margin-inline: auto;
   color: var(--muted);
-  font-size: var(--text-sm);
+  font-size: var(--text-base); /* Scaled slightly for balanced alignment */
   line-height: 1.65;
 }
 
@@ -163,7 +165,7 @@ body {
 .content-card {
   width: min(100%, var(--content-width));
   margin: 0 auto;
-  padding: clamp(1.25rem, 2.8vw, 2.75rem);
+  padding: clamp(1.25rem, 4vw, 3.5rem);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -171,30 +173,30 @@ body {
 }
 
 .page-header {
-  margin-bottom: var(--space-8);
-  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-8);
   border-bottom: 1px solid var(--line);
 }
 
 .page-title {
   font-family: var(--serif);
-  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.2rem);
+  font-size: clamp(2rem, 1.6rem + 2vw, 3.25rem); /* Significantly scaled up */
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 .page-title-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .language-switcher {
   flex-shrink: 0;
   color: var(--accent);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
@@ -206,17 +208,17 @@ body {
 }
 
 .page-description {
-  margin-top: var(--space-4);
-  max-width: 62ch;
+  margin-top: var(--space-5);
+  max-width: 66ch;
   color: var(--muted);
-  font-size: var(--text-base);
-  line-height: 1.7;
+  font-size: var(--text-lg); /* Boosted reader scale for header intros */
+  line-height: 1.65;
 }
 
 .page-meta {
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
 .page-content > * + * {
@@ -228,13 +230,13 @@ body {
 .page-content h4 {
   color: var(--text);
   font-family: var(--serif);
-  line-height: 1.16;
-  letter-spacing: -0.03em;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
 }
 
 .page-content h2 {
   margin-top: var(--space-12);
-  font-size: var(--text-xl);
+  font-size: var(--text-xl); /* Reduced inline size for clean hierarchy */
   font-weight: 700;
 }
 
@@ -246,7 +248,7 @@ body {
 
 .page-content h4 {
   margin-top: var(--space-6);
-  font-size: 1.08rem;
+  font-size: 1.06rem;
   font-weight: 700;
 }
 
@@ -359,24 +361,16 @@ select:focus-visible {
 
 @media (max-width: 640px) {
   .site-header__inner {
-    padding: var(--space-6) 0 var(--space-5);
-  }
-
-  .site-title {
-    font-size: clamp(1.85rem, 8vw, 2.8rem);
+    padding: var(--space-8) 0 var(--space-6);
   }
 
   .site-main {
-    padding-top: var(--space-6);
+    padding-top: var(--space-4);
   }
 
   .content-card {
-    padding: 1.1rem;
+    padding: 1.25rem;
     border-radius: var(--radius-md);
-  }
-
-  .page-title {
-    font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.2rem);
   }
 
   .page-content p,
