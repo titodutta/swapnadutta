@@ -1,4 +1,4 @@
-/* SYSTEM_CORE_CSS_TYPOGRAPHY_BALANCE_V3 */
+/* SYSTEM_CORE_CSS_TYPOGRAPHY_BALANCE_V4 */
 *,
 *::before,
 *::after {
@@ -78,12 +78,12 @@ select {
   --sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: "Source Serif 4", Georgia, serif;
 
-  /* AUDITED TYPE CAPS */
+  /* BALANCED TYPOGRAPHY MAP */
   --text-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
   --text-base: clamp(1rem, 0.97rem + 0.15vw, 1.06rem);
-  --text-lg: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);     
-  --text-xl: clamp(1.45rem, 1.25rem + 1vw, 1.95rem);      
-  --text-2xl: clamp(2.25rem, 1.5rem + 3.5vw, 3.85rem);    
+  --text-lg: clamp(1.18rem, 1.1rem + 0.4vw, 1.38rem);     /* Enhanced intro/description scale */
+  --text-xl: clamp(1.45rem, 1.25rem + 1vw, 1.95rem);      /* H2 Content Titles */
+  --text-2xl: clamp(2rem, 1.4rem + 2.5vw, 3.25rem);       /* Scaled back page/site titles */
 
   --shadow-md: 0 10px 30px rgba(20, 20, 20, 0.05);
 }
@@ -133,10 +133,10 @@ body {
   color: var(--text);
   text-decoration: none;
   font-family: var(--serif);
-  font-size: var(--text-2xl); /* Promoted to maximum fluid scale */
+  font-size: var(--text-2xl); /* Brought down dynamically */
   font-weight: 700;
-  line-height: 0.95;          /* Tightened line spacing for massive layouts */
-  letter-spacing: -0.04em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 .site-title:hover,
@@ -146,11 +146,11 @@ body {
 
 .site-tagline {
   margin-top: var(--space-4);
-  max-width: 64ch;
+  max-width: 66ch;
   margin-inline: auto;
   color: var(--muted);
-  font-size: var(--text-base); /* Scaled slightly for balanced alignment */
-  line-height: 1.65;
+  font-size: var(--text-lg); /* Promoted to clean, readable descriptive size */
+  line-height: 1.68;
 }
 
 .site-main {
@@ -180,10 +180,10 @@ body {
 
 .page-title {
   font-family: var(--serif);
-  font-size: clamp(2rem, 1.6rem + 2vw, 3.25rem); /* Significantly scaled up */
+  font-size: clamp(1.8rem, 1.4rem + 1.8vw, 2.85rem); /* Modulated and scaled down slightly */
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .page-title-row {
@@ -211,8 +211,8 @@ body {
   margin-top: var(--space-5);
   max-width: 66ch;
   color: var(--muted);
-  font-size: var(--text-lg); /* Boosted reader scale for header intros */
-  line-height: 1.65;
+  font-size: var(--text-lg); /* Matches increased site description prominence */
+  line-height: 1.68;
 }
 
 .page-meta {
@@ -236,7 +236,7 @@ body {
 
 .page-content h2 {
   margin-top: var(--space-12);
-  font-size: var(--text-xl); /* Reduced inline size for clean hierarchy */
+  font-size: var(--text-xl);
   font-weight: 700;
 }
 
