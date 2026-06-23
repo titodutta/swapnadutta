@@ -2,9 +2,12 @@
 <div class="category-footer-box">
   <span class="category-footer-label">{% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}</span>
   <div class="category-footer-links">
-    {% for cat in page.categories %}
-      <a href="{{ '/categories/' | relative_url }}{{ cat | slugify }}/">{{ cat }}</a>{% unless forloop.last %}<span class="category-footer-pipe">|</span>{% endunless %}
-    {% endfor %}
+    {%- for cat in page.categories -%}
+      <a href="{{ '/categories/' | relative_url }}{{ cat | slugify }}/">{{ cat }}</a>
+      {%- unless forloop.last -%}
+        <span class="category-footer-pipe">|</span>
+      {%- endunless -%}
+    {%- endfor -%}
   </div>
 </div>
 
@@ -26,7 +29,7 @@
   font-weight: 700;
   color: var(--text);
   display: inline-block;
-  margin-right: var(--space-2);
+  margin-right: var(--space-1); /* Kept tight to exactly one character width */
 }
 
 .category-footer-links {
