@@ -42,11 +42,21 @@ for photo in photos:
         reordered_photos.append(photo)
         continue
 
-    # Read existing states
-    has_date = bool(photo.get("date"))
-    has_time = bool(photo.get("time"))
-    has_camera = bool(photo.get("camera"))
-    has_gps = bool(photo.get("coordinates"))
+    # FORCE BACKFILL GATE: If it has EXIF but no coordinates key, parse it!
+    if photo.get("exif") and not photo.get("coordinates"):
+        has_date = bool(photo.get("date"))
+        has_time = bool(photo.get("time"))
+        has_camera = bool(photo.get("camera"))
+        has_gps = False
+    else:
+        # Standard safety gate for everything else
+        has_date = bool(photo.get("date"))
+        has_time = bool(photo.get("time"))
+        has_camera = bool(photo.get("camera"))
+        has_gps = bool(photo.get("coordinates"))
+        if has_date and has_time and has_camera and has_gps:
+            reordered_photos.append(photo)
+            continue
 
     image = f"assets/images/gallery/{photo['file']}"
     record_updated = False
@@ -57,7 +67,7 @@ for photo in photos:
         exif_date = get_exif_field(image, "-DateTimeOriginal")
         if exif_date and len(exif_date) >= 16:
             raw_date = exif_date[:10].replace(":", "-", 2)
-            raw_time = exif_date[11:16]  # e.g., "06:32"
+            raw_time = exif_date[11:16]  # e.g., "16:24"
             
             if not has_date:
                 photo["date"] = PlainScalarString(raw_date)
@@ -113,12 +123,10 @@ for photo in photos:
     # STABLE FIELD REORDERING: Construct a clean mapping order explicitly
     ordered_entry = yaml.map()
     
-    # Core identifying details at the absolute top
     ordered_entry["id"] = photo.get("id")
     ordered_entry["file"] = photo.get("file")
     ordered_entry["exif"] = photo.get("exif")
     
-    # Text strings and manually assigned content elements next
     ordered_entry["location_en"] = photo.get("location_en")
     ordered_entry["location_bn"] = photo.get("location_bn")
     ordered_entry["people_en"] = photo.get("people_en", [])
@@ -130,16 +138,27 @@ for photo in photos:
     ordered_entry["caption_en"] = photo.get("caption_en")
     ordered_entry["caption_bn"] = photo.get("caption_bn")
     
-    # Automated metadata elements placed uniformly at the bottom block
-    if photo.get("date"): ordered_entry["date"] = photo["date"]
-    if photo.get("time"): ordered_entry["time"] = photo["time"]
-    if photo.get("camera"): ordered_entry["camera"] = photo["camera"]
+    # Force string evaluation on existing dates/times to wrap them safely into strict text
+    if photo.get("date"): ordered_entry["date"] = PlainScalarString(str(photo["date"]))
+    if photo.get("time"): ordered_entry["time"] = PlainScalarString(str(photo["time"]))
+    if photo.get("camera"): ordered_entry["camera"] = PlainScalarString(str(photo["camera"]))
     if photo.get("coordinates"): ordered_entry["coordinates"] = photo["coordinates"]
 
     reordered_photos.append(ordered_entry)
 
+# Write the file and inject clean formatting breaks between elements
 with open("_data/gallery.yml", "w", encoding="utf-8") as f:
     yaml.dump(reordered_photos, f)
 
+# POST-PROCESSING: Read back the raw text file and place a newline break before each list item
+with open("_data/gallery.yml", "r", encoding="utf-8") as f:
+    content = f.read()
+
+# Re-adds structural breaks right before every clean list dashboard indicator
+formatted_content = re.sub(r"\n- id:", r"\n\n- id:", content)
+
+with open("_data/gallery.yml", "w", encoding="utf-8") as f:
+    f.write(formatted_content)
+
 print()
-print(f"Updated and reordered structural layout for {len(reordered_photos)} records.")
+print(f"Updated records. Pristine layout with clean entry spacing restored.")
