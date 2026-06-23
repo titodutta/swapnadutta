@@ -42,7 +42,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 
       {%- if photo.location_en and photo.location_en.size > 0 -%}
         <div class="photo-meta">
-          📍 {% for location_id in photo.location_en %}{% assign location = site.data.location[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
+          📍 {% for location_id in photo.location_en %}{% assign location = site.data.location[location_id] | default: site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
         </div>
       {%- endif -%}
 
