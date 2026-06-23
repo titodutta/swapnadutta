@@ -1,62 +1,49 @@
 {% if page.categories and page.categories.size > 0 %}
 <div class="category-footer-box">
-  <div class="category-footer-content">
-    
-    <strong class="category-footer-label">
-      {% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}
-    </strong>
-
-    <ul class="category-footer-list">
-      {% for cat in page.categories %}
-        <li>
-          <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>
-          {% unless forloop.last %}
-            <span class="category-footer-divider">|</span>
-          {% endunless %}
-        </li>
-      {% endfor %}
-    </ul>
-
-  </div>
+  <strong class="category-footer-label">
+    {% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}
+  </strong>
+  <ul class="category-footer-list">
+    {% for cat in page.categories %}
+      <li>
+        <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>
+        {% unless forloop.last %}<span class="category-footer-divider">|</span>{% endunless %}
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <style>
 /* Base/Light Mode Styles */
 .category-footer-box {
-  margin-top: 3rem; 
-  padding: 0.6rem 0.8rem; 
+  margin-top: 2rem; 
+  padding: 0.4rem 0.6rem; 
   background-color: #f9f9f9; 
   border: 1px solid #ccc; 
   border-radius: 6px; 
   font-size: 0.95rem; 
   clear: both;
-}
-
-.category-footer-content {
-  display: flex; 
-  flex-wrap: wrap; 
-  align-items: center; 
-  gap: 0.5rem;
+  line-height: 1.4;
 }
 
 .category-footer-label {
   font-weight: 800; 
   color: #1a1a1a;
+  display: inline;
+  margin-right: 0.25rem;
 }
 
 .category-footer-list {
   list-style-type: none; 
   margin: 0; 
   padding: 0; 
-  display: flex; 
-  flex-wrap: wrap; 
-  align-items: center; 
-  line-height: 1.4;
+  display: inline;
 }
 
 .category-footer-list li {
-  display: inline-flex; 
-  align-items: center;
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .category-footer-list a {
@@ -69,7 +56,7 @@
 }
 
 .category-footer-divider {
-  margin: 0 0.5rem; 
+  margin: 0 0.4rem; 
   color: #ccc; 
   font-weight: normal; 
   user-select: none;
@@ -77,8 +64,6 @@
 
 /* =========================================================
    Dark Mode Support Matrix
-   Hooks cleanly into both your layout's '.forced-dark' 
-   class and system preference queries.
    ========================================================= */
 @media (prefers-color-scheme: dark) {
   html:not(.forced-light) .category-footer-box {
@@ -96,7 +81,6 @@
   }
 }
 
-/* Hard explicit template class overrides */
 html.forced-dark .category-footer-box {
   background-color: #1f2937;
   border-color: #374151;
