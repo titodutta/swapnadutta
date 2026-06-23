@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% assign category_name = page.title | remove: "Category:" | strip %}
+{% assign category_pages = site.pages | where_exp: "p", "p.categories contains category_name" | sort: "title" %}
+
+<div class="category-page">
+  <h2>
+    <strong class="category-label">{% if page.lang == 'bn' %}শ্রেণী:{% else %}Category:{% endif %}</strong> {{ category_name }}
+    <span class="count">({{ category_pages.size }})</span>
+  </h2>
+  {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+
+  {% if category_pages.size > 0 %}
+    {% assign grouped = category_pages | group_by_exp: "p", "p.title | slice: 0, 1" %}
+    {% for group in grouped %}
+      <h3 id="{{ category_name | slugify }}">{{ group.name | upcase }}</h3>
+      <ul>
+        {% for p in group.items %}
+          <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>{% if page.lang == 'bn' %}এই শ্রেণীতে কোনো পাতা নেই।{% else %}No pages in this category yet.{% endif %}</p>
+  {% endif %}
+</div>
