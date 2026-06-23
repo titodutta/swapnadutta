@@ -1,12 +1,12 @@
 - id: SD-PH-0001
   file: swapnadutta0001.jpg
-  exif: true
-  location_en: null
-  location_bn: null
-  people_en: []
-  people_bn: []
-  tags_en: []
-  tags_bn: []
+  exif: false
+  location_en: [a1, l3]
+  location_bn: [a1, l3]
+  people_en: [p1, p2]
+  people_bn: [p1, p2]
+  tags_en: [Kolkata, Mahanirban Math]
+  tags_bn: [কলকাতা, মহানির্বাণ মঠ]
   alt_en: null
   alt_bn: null
   caption_en: null
@@ -14,13 +14,13 @@
 
 - id: SD-PH-0002
   file: swapnadutta0002.jpg
-  exif: true
-  location_en: null
-  location_bn: null
+  exif: false
+  location_en: [a1, l3]
+  location_bn: [a1, l3]
   people_en: []
   people_bn: []
-  tags_en: []
-  tags_bn: []
+  tags_en: [Kolkata, Mahanirban Math]
+  tags_bn: [কলকাতা, মহানির্বাণ মঠ]
   alt_en: null
   alt_bn: null
   caption_en: null
@@ -28,13 +28,13 @@
 
 - id: SD-PH-0003
   file: swapnadutta0003.jpg
-  exif: true
-  location_en: null
-  location_bn: null
-  people_en: []
-  people_bn: []
-  tags_en: []
-  tags_bn: []
+  exif: false
+  location_en: [a1, l3]
+  location_bn: [a1, l3]
+  people_en: [p1, p2, p3, p4]
+  people_bn: [p1, p2, p3, p4]
+  tags_en: [Kolkata, Mahanirban Math]
+  tags_bn: [কলকাতা, মহানির্বাণ মঠ]
   alt_en: null
   alt_bn: null
   caption_en: null
@@ -45,8 +45,8 @@
   exif: true
   location_en: null
   location_bn: null
-  people_en: []
-  people_bn: []
+  people_en: [p1, p2]
+  people_bn: [p1, p2]
   tags_en: []
   tags_bn: []
   alt_en: null
