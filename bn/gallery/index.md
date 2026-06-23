@@ -109,6 +109,7 @@ created: 2026-05-15
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: min-content; /* CRITICAL: Snaps row tracks tightly to the content height */
   gap: 2rem;
   margin: 2rem 0;
 }
