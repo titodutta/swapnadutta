@@ -1,28 +1,30 @@
 {% if page.categories and page.categories.size > 0 %}
-<div class="category-page" style="margin-top: 2rem;">
-  <h2>
-    <strong class="category-label">
-      {% if page.lang == 'bn' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}
+<!-- Self-contained structured category block container -->
+<div class="category-footer-block" style="margin-top: 3rem; padding: 0.6rem 0.8rem; background-color: #f9f9f9; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; clear: both;">
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+    
+    <!-- Bold Label Section -->
+    <strong style="font-weight: 800; color: #000;">
+      {% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}
     </strong>
-  </h2>
-  <ul style="list-style-type: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-    {% for cat in page.categories %}
-      <li style="display: inline-block;">
-        {% if page.lang == 'bn' %}
-          <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">
-            {% case cat %}
-              {% when 'Project pages' %}প্রকল্প পাতা
-              {% when 'Articles' %}নিবন্ধসমূহ
-              {% when 'Letters' %}চিঠিপত্র
-              {% else %}{{ cat }}
-            {% endcase %}
-          </a>
-        {% else %}
-          <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>
-        {% endif %}
-        {% unless forloop.last %}<span style="margin-left: 0.5rem; color: #ccc;">|</span>{% endunless %}
-      </li>
-    {% endfor %}
-  </ul>
+
+    <!-- List wrapper matching standard line rendering layout -->
+    <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; line-height: 1.4;">
+      {% for cat in page.categories %}
+        <li style="display: inline-flex; align-items: center;">
+          {% if page.url contains '/bn/' %}
+            <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}" style="color: #0645ad; text-decoration: none;">{{ cat }}</a>
+          {% else %}
+            <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}" style="color: #0645ad; text-decoration: none;">{{ cat }}</a>
+          {% endif %}
+          
+          {% unless forloop.last %}
+            <span style="margin: 0 0.5rem; color: #ccc; font-weight: normal; user-select: none;">|</span>
+          {% endunless %}
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>
 </div>
 {% endif %}
