@@ -9,8 +9,10 @@
 </div>
 
 <style>
-/* Clean Base Box Framework */
+/* Clean Base Box Framework - Now occupying full width */
 .category-footer-box {
+  display: block !important;
+  width: 100% !important;
   margin-top: var(--space-8) !important;
   padding: var(--space-2) var(--space-3);
   background-color: var(--surface-soft);
@@ -21,18 +23,16 @@
   clear: both;
 }
 
-/* Forces structural components to lock horizontally flush without layout spaces */
-.category-footer-box, 
-.category-footer-links {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
+/* Keeps the text segments flowing smoothly next to each other inside the block */
 .category-footer-label {
   font-weight: 700;
   color: var(--text);
+  display: inline-block;
   margin-right: var(--space-2);
+}
+
+.category-footer-links {
+  display: inline;
 }
 
 .category-footer-links a {
