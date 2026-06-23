@@ -3,13 +3,12 @@
   <span class="category-footer-label">{% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}</span>
   <div class="category-footer-links">
     {% for cat in page.categories %}
-      <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %}<span class="category-footer-pipe">|</span>{% endunless %}
+      <a href="{{ '/categories/' | relative_url }}{{ cat | slugify }}/">{{ cat }}</a>{% unless forloop.last %}<span class="category-footer-pipe">|</span>{% endunless %}
     {% endfor %}
   </div>
 </div>
 
 <style>
-/* Clean Base Box Framework - Now occupying full width */
 .category-footer-box {
   display: block !important;
   width: 100% !important;
@@ -23,7 +22,6 @@
   clear: both;
 }
 
-/* Keeps the text segments flowing smoothly next to each other inside the block */
 .category-footer-label {
   font-weight: 700;
   color: var(--text);
