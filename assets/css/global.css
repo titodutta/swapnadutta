@@ -551,3 +551,15 @@ html.forced-dark .article-image img {
     width: 100%;
   }
 }
+
+@media (max-width: 640px) {
+  /* Tighten the main canvas bottom padding on mobile */
+  .site-main {
+    padding-bottom: var(--space-6) !important; /* Drops from 4rem to 1.5rem */
+  }
+
+  /* Pull the footer closer to the content card */
+  .site-footer {
+    margin-top: var(--space-6) !important; /* Drops from 3rem to 1.5rem */
+  }
+}
