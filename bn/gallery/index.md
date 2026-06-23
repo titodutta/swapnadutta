@@ -19,7 +19,7 @@ created: 2026-05-15
 <div class="photo-gallery">
 
 {% for photo in site.data.gallery %}
-  <figure class="gallery-item">
+  <div class="gallery-item">
     <div class="photo-container">
       <a href="/assets/images/gallery/{{ photo.file }}">
         <img
@@ -96,29 +96,31 @@ created: 2026-05-15
 
       {%- if photo.coordinates -%}
         <div class="photo-meta compact-text">
-          🌐 ওপেনস্ট্রিটম্যাপে <a href="https://www.openstreetmap.org/?mlat={{ photo.coordinates[0] }}&mlon={{ photo.coordinates[1] }}#map=17/{{ photo.coordinates[0] }}/{{ photo.coordinates[1] }}" rel="noopener">স্থানটি দেখুন</a>
+          🌐 ওপেনস্ট্রিটম্যাপে <a href="https://www.openstreetmap.org/?mlat={{ photo.coordinates[0] }}&mlon={{ photo.coordinates[1] }}#map=17/{{ photo.coordinates[0] }}//{{ photo.coordinates[1] }}" rel="noopener">স্থানটি দেখুন</a>
         </div>
       {%- endif -%}
     </div>
-  </figure>
+  </div>
 {% endfor %}
 
 </div>
 
 <style>
+/* Main clean auto-fit layout area */
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: min-content; /* CRITICAL: Snaps row tracks tightly to the content height */
-  gap: 2rem;
+  grid-row-gap: 1.5rem;   /* Strictly sets gap between rows */
+  grid-column-gap: 2rem;  /* Sets gap between columns */
   margin: 2rem 0;
+  align-items: start;     /* Prevents grid areas from forcing row height expansions */
 }
 
+/* Base structural blocks */
 .gallery-item {
+  display: block;        /* Obliterates flex column mechanics */
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Forces content up and removes huge row gaps */
+  padding: 0;
   background: transparent;
 }
 
@@ -145,12 +147,15 @@ created: 2026-05-15
   object-fit: contain;
 }
 
+/* Label content adjustments */
 .gallery-details {
-  padding: 0.5rem 0;
+  display: block;
+  padding: 0.5rem 0 0 0;
+  margin: 0;
 }
 
 .photo-caption {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-weight: 600;
   text-align: center;
   line-height: 1.4;
@@ -163,7 +168,6 @@ created: 2026-05-15
   line-height: 1.5;
 }
 
-/* ক্যামেরা এবং ম্যাপের বিষয়ের জন্য নিবিড় ৯০% ফন্ট স্কেলিং */
 .compact-text {
   font-size: 0.85rem !important; 
   color: var(--muted);
@@ -172,5 +176,16 @@ created: 2026-05-15
 .compact-text a {
   color: inherit;
   text-decoration: underline;
+}
+
+/* Mobile responsive layout safety block overrides */
+@media (max-width: 480px) {
+  .photo-gallery {
+    grid-template-columns: 1fr; /* Strict single column list tracking on mobile screens */
+    grid-row-gap: 2rem;
+  }
+  .photo-container a {
+    height: 250px; /* Reduces heights slightly for mobile screen proportions */
+  }
 }
 </style>
