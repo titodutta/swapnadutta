@@ -110,15 +110,16 @@ created: 2026-05-15
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-row-gap: 1.5rem;   /* Strictly sets gap between rows */
-  grid-column-gap: 2rem;  /* Sets gap between columns */
+  grid-auto-rows: min-content; /* Keeps the grid rows tightly bound to actual content */
+  grid-row-gap: 3.5rem;        /* Generous, clean breathing room between rows */
+  grid-column-gap: 2rem;       /* Perfect spacing between columns */
   margin: 2rem 0;
-  align-items: start;     /* Prevents grid areas from forcing row height expansions */
 }
 
 /* Base structural blocks */
 .gallery-item {
-  display: block;        /* Obliterates flex column mechanics */
+  display: flex;               /* Brought back flex to force uniform vertical heights */
+  flex-direction: column;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -150,7 +151,7 @@ created: 2026-05-15
 /* Label content adjustments */
 .gallery-details {
   display: block;
-  padding: 0.5rem 0 0 0;
+  padding: 0.75rem 0 0 0;      /* Slight extra padding above the text strings */
   margin: 0;
 }
 
@@ -162,7 +163,7 @@ created: 2026-05-15
 }
 
 .photo-meta {
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;         /* Clean breathing space between individual meta lines */
   font-size: 0.95rem;
   text-align: center;
   line-height: 1.5;
@@ -181,11 +182,11 @@ created: 2026-05-15
 /* Mobile responsive layout safety block overrides */
 @media (max-width: 480px) {
   .photo-gallery {
-    grid-template-columns: 1fr; /* Strict single column list tracking on mobile screens */
-    grid-row-gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-row-gap: 3rem;        /* Relaxed spacing for clean scanning on mobile view */
   }
   .photo-container a {
-    height: 250px; /* Reduces heights slightly for mobile screen proportions */
+    height: 280px;             /* Better portrait aspect ratios for mobile screens */
   }
 }
 </style>
