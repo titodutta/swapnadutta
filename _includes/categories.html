@@ -1,25 +1,17 @@
 {% if page.categories and page.categories.size > 0 %}
-<!-- Self-contained structured category block container -->
-<div class="category-footer-block" style="margin-top: 3rem; padding: 0.6rem 0.8rem; background-color: #f9f9f9; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; clear: both;">
-  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+<div class="category-footer-box">
+  <div class="category-footer-content">
     
-    <!-- Bold Label Section -->
-    <strong style="font-weight: 800; color: #000;">
+    <strong class="category-footer-label">
       {% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}
     </strong>
 
-    <!-- List wrapper matching standard line rendering layout -->
-    <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; line-height: 1.4;">
+    <ul class="category-footer-list">
       {% for cat in page.categories %}
-        <li style="display: inline-flex; align-items: center;">
-          {% if page.url contains '/bn/' %}
-            <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}" style="color: #0645ad; text-decoration: none;">{{ cat }}</a>
-          {% else %}
-            <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}" style="color: #0645ad; text-decoration: none;">{{ cat }}</a>
-          {% endif %}
-          
+        <li>
+          <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>
           {% unless forloop.last %}
-            <span style="margin: 0 0.5rem; color: #ccc; font-weight: normal; user-select: none;">|</span>
+            <span class="category-footer-divider">|</span>
           {% endunless %}
         </li>
       {% endfor %}
@@ -27,4 +19,96 @@
 
   </div>
 </div>
+
+<style>
+/* Base/Light Mode Styles */
+.category-footer-box {
+  margin-top: 3rem; 
+  padding: 0.6rem 0.8rem; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  font-size: 0.95rem; 
+  clear: both;
+}
+
+.category-footer-content {
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  gap: 0.5rem;
+}
+
+.category-footer-label {
+  font-weight: 800; 
+  color: #1a1a1a;
+}
+
+.category-footer-list {
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+  flex-wrap: wrap; 
+  align-items: center; 
+  line-height: 1.4;
+}
+
+.category-footer-list li {
+  display: inline-flex; 
+  align-items: center;
+}
+
+.category-footer-list a {
+  color: #005cc5; 
+  text-decoration: none;
+}
+
+.category-footer-list a:hover {
+  text-decoration: underline;
+}
+
+.category-footer-divider {
+  margin: 0 0.5rem; 
+  color: #ccc; 
+  font-weight: normal; 
+  user-select: none;
+}
+
+/* =========================================================
+   Dark Mode Support Matrix
+   Hooks cleanly into both your layout's '.forced-dark' 
+   class and system preference queries.
+   ========================================================= */
+@media (prefers-color-scheme: dark) {
+  html:not(.forced-light) .category-footer-box {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+  html:not(.forced-light) .category-footer-label {
+    color: #f3f4f6;
+  }
+  html:not(.forced-light) .category-footer-list a {
+    color: #93c5fd;
+  }
+  html:not(.forced-light) .category-footer-divider {
+    color: #4b5563;
+  }
+}
+
+/* Hard explicit template class overrides */
+html.forced-dark .category-footer-box {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+html.forced-dark .category-footer-label {
+  color: #f3f4f6;
+}
+html.forced-dark .category-footer-list a {
+  color: #93c5fd;
+}
+html.forced-dark .category-footer-divider {
+  color: #4b5563;
+}
+</style>
 {% endif %}
