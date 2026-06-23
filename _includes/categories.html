@@ -12,13 +12,10 @@
 </div>
 
 <style>
-/* Clean Base Box Framework - Set to 100% full width */
 .category-footer-box {
   display: block !important;
   width: 100% !important;
   margin-top: var(--space-8) !important;
-  /* Dynamically neutralizes the parent card's bottom padding to eliminate the white gap seen in 1000242352.jpg */
-  margin-bottom: calc(-1 * clamp(1.25rem, 4vw, 3.5rem)) !important;
   padding: var(--space-2) var(--space-3);
   background-color: var(--surface-soft);
   border: 1px solid var(--border);
@@ -28,12 +25,11 @@
   clear: both;
 }
 
-/* Keeps text components perfectly inline to kill layout gaps */
 .category-footer-label {
   font-weight: 700;
   color: var(--text);
   display: inline-block;
-  margin-right: var(--space-1);
+  margin-right: var(--space-1); /* Kept tight to exactly one character width */
 }
 
 .category-footer-links {
