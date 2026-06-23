@@ -1,5 +1,5 @@
 {% if page.categories and page.categories.size > 0 %}
-<div class="category-footer-box">
+<div class="category-footer-line">
   <span class="category-footer-label">{% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}</span>
   <div class="category-footer-links">
     {%- for cat in page.categories -%}
@@ -12,14 +12,13 @@
 </div>
 
 <style>
-.category-footer-box {
+/* Clean typography footer line - drops the box background to fit naturally inside mobile padding */
+.category-footer-line {
   display: block !important;
   width: 100% !important;
-  margin-top: var(--space-8) !important;
-  padding: var(--space-2) var(--space-3);
-  background-color: var(--surface-soft);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  margin-top: var(--space-10) !important;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line); /* A simple subtle divider line above it */
   font-size: var(--text-sm);
   line-height: 1.4;
   clear: both;
@@ -27,9 +26,9 @@
 
 .category-footer-label {
   font-weight: 700;
-  color: var(--text);
+  color: var(--muted);
   display: inline-block;
-  margin-right: var(--space-1); /* Kept tight to exactly one character width */
+  margin-right: var(--space-1);
 }
 
 .category-footer-links {
