@@ -15,10 +15,10 @@ if os.path.exists("_data/gallery.yml"):
 
     cleaned_lines = []
     for line in raw_lines:
-        # Catch lines like "  time: 11:18" or "  time: 668.0" and strip/mark them if broken
         if line.startswith("  time: ") and not ("'" in line or '"' in line):
             val = line.replace("  time: ", "").strip()
-            # If it already corrupted into a float, we drop it so exiftool can re-extract it
+            # If it's a corrupted numerical value, we strip it out completely 
+            # so the EXIF logic below can clean it up and pull fresh text
             if "." in val or val.isdigit():
                 continue
             cleaned_lines.append(f"  time: '{val}'\n")
@@ -30,14 +30,17 @@ if os.path.exists("_data/gallery.yml"):
 
 # Initialize the YAML round-trip parser
 yaml = YAML()
-yaml.preserve_quotes = False  
+yaml.preserve_quotes = True  # Changed to True to respect explicit quote forcing
 yaml.width = 4096             
 
-# Force all strings and dates to be completely plain (drops single quotes on dates)
 def represent_none(self, data):
     return self.represent_scalar('tag:yaml.org,2002:null', 'null')
 
 def string_representer(mapping, data):
+    # FIX: If the data already has an explicit scalar string style (like single quotes), 
+    # preserve its style instead of overriding it with style=''
+    if hasattr(data, 'style'):
+        return mapping.represent_scalar('tag:yaml.org,2002:str', str(data), style=data.style)
     return mapping.represent_scalar('tag:yaml.org,2002:str', str(data), style='')
 
 yaml.representer.add_representer(type(None), represent_none)
@@ -60,13 +63,20 @@ def get_exif_field(image_path, tag):
 reordered_photos = []
 
 for photo in photos:
+    photo_id = photo.get("id", "UNKNOWN_ID")
+    file_name = photo.get("file", "UNKNOWN_FILE")
+
     if not photo.get("exif"):
         reordered_photos.append(photo)
         continue
 
-    # FORCE BACKFILL GATE: Check what elements need parsing
+    # Clean check to identify corrupted numerical times
+    raw_time_val = str(photo.get("time", ""))
+    is_time_corrupted = ("." in raw_time_val) or (raw_time_val.isdigit())
+
+    # FORCE BACKFILL GATE: If time is corrupted, force backfill execution
     has_date = bool(photo.get("date"))
-    has_time = bool(photo.get("time")) and not (str(photo.get("time")).replace('.','',1).isdigit())
+    has_time = bool(photo.get("time")) and not is_time_corrupted
     has_camera = bool(photo.get("camera"))
     has_gps = bool(photo.get("coordinates"))
 
@@ -74,69 +84,82 @@ for photo in photos:
         reordered_photos.append(photo)
         continue
 
-    image = f"assets/images/gallery/{photo['file']}"
+    image = f"assets/images/gallery/{file_name}"
+    
+    if not os.path.exists(image):
+        print(f"⚠️ Warning: Missing target asset path for {photo_id} ({file_name}). Skipping EXIF loop.")
+        reordered_photos.append(photo)
+        continue
+
     record_updated = False
     log_details = []
 
-    # 1. Extract Date and Time cleanly
-    if not has_date or not has_time:
-        exif_date = get_exif_field(image, "-DateTimeOriginal")
-        if exif_date and len(exif_date) >= 16:
-            raw_date = exif_date[:10].replace(":", "-", 2)
-            raw_time = exif_date[11:16]  # e.g., "16:24"
-            
-            if not has_date:
-                photo["date"] = PlainScalarString(raw_date)
-                record_updated = True
-                log_details.append(f"Date: {photo['date']}")
+    try:
+        # 1. Extract Date and Time cleanly
+        if not has_date or not has_time:
+            exif_date = get_exif_field(image, "-DateTimeOriginal")
+            if exif_date and len(exif_date) >= 16:
+                raw_date = exif_date[:10].replace(":", "-", 2)
+                raw_time = exif_date[11:16]  # e.g., "16:24"
                 
-            if not has_time:
-                photo["time"] = SingleQuotedScalarString(raw_time)
-                record_updated = True
-                log_details.append(f"Time: {photo['time']}")
-
-    # 2. Extract Camera Model
-    if not has_camera:
-        camera_model = get_exif_field(image, "-Model")
-        if camera_model:
-            photo["camera"] = PlainScalarString(camera_model)
-            record_updated = True
-            log_details.append(f"Cam: {photo['camera']}")
-
-    # 3. Extract GPS Coordinates
-    if not has_gps:
-        gps_lat = get_exif_field(image, "-GPSLatitude#")
-        gps_lon = get_exif_field(image, "-GPSLongitude#")
-        
-        if gps_lat and gps_lon:
-            try:
-                lat_float = round(float(gps_lat), 6)
-                lon_float = round(float(gps_lon), 6)
-                
-                is_blocked = False
-                if os.path.exists(".env.local"):
-                    with open(".env.local", "r", encoding="utf-8") as env_f:
-                        env_data = env_f.read()
-                        lat_min = float(re.search(r"BLOCK_LAT_MIN=(.+)", env_data).group(1))
-                        lat_max = float(re.search(r"BLOCK_LAT_MAX=(.+)", env_data).group(1))
-                        lon_min = float(re.search(r"BLOCK_LON_MIN=(.+)", env_data).group(1))
-                        lon_max = float(re.search(r"BLOCK_LON_MAX=(.+)", env_data).group(1))
-                        
-                        if (lat_min <= lat_float <= lat_max) and (lon_min <= lon_float <= lon_max):
-                            is_blocked = True
-
-                if not is_blocked:
-                    photo["coordinates"] = [lat_float, lon_float]
+                if not has_date:
+                    photo["date"] = PlainScalarString(raw_date)
                     record_updated = True
-                    log_details.append(f"GPS: {photo['coordinates']}")
-            except Exception:
-                pass
+                    log_details.append(f"Date: {photo['date']}")
+                    
+                # Overwrites the corrupted numerical time with a fresh, quoted string literal
+                if not has_time:
+                    photo["time"] = SingleQuotedScalarString(raw_time)
+                    record_updated = True
+                    log_details.append(f"Time: {photo['time']}")
+
+        # 2. Extract Camera Model
+        if not has_camera:
+            camera_model = get_exif_field(image, "-Model")
+            if camera_model:
+                photo["camera"] = PlainScalarString(camera_model)
+                record_updated = True
+                log_details.append(f"Cam: {photo['camera']}")
+
+        # 3. Extract GPS Coordinates
+        if not has_gps:
+            gps_lat = get_exif_field(image, "-GPSLatitude#")
+            gps_lon = get_exif_field(image, "-GPSLongitude#")
+            
+            if gps_lat and gps_lon:
+                try:
+                    lat_float = round(float(gps_lat), 6)
+                    lon_float = round(float(gps_lon), 6)
+                    
+                    is_blocked = False
+                    if os.path.exists(".env.local"):
+                        with open(".env.local", "r", encoding="utf-8") as env_f:
+                            env_data = env_f.read()
+                            lat_min = float(re.search(r"BLOCK_LAT_MIN=(.+)", env_data).group(1))
+                            lat_max = float(re.search(r"BLOCK_LAT_MAX=(.+)", env_data).group(1))
+                            lon_min = float(re.search(r"BLOCK_LON_MIN=(.+)", env_data).group(1))
+                            lon_max = float(re.search(r"BLOCK_LON_MAX=(.+)", env_data).group(1))
+                            
+                            if (lat_min <= lat_float <= lat_max) and (lon_min <= lon_float <= lon_max):
+                                is_blocked = True
+
+                    if not is_blocked:
+                        photo["coordinates"] = [lat_float, lon_float]
+                        record_updated = True
+                        log_details.append(f"GPS: {photo['coordinates']}")
+                except Exception:
+                    pass
+
+    except Exception as error_msg:
+        print(f"❌ PIPELINE EXCEPTION on ID {photo_id} ({file_name}): {error_msg}")
+        reordered_photos.append(photo)
+        continue
 
     if record_updated:
         updated += 1
         print(f"{photo['id']} -> {' | '.join(log_details)}")
 
-    # STABLE FIELD REORDERING: Map out structured entries explicitly
+    # STABLE FIELD REORDERING
     ordered_entry = yaml.map()
     ordered_entry["id"] = photo.get("id")
     ordered_entry["file"] = photo.get("file")
@@ -154,7 +177,6 @@ for photo in photos:
     ordered_entry["caption_bn"] = photo.get("caption_bn")
     
     if photo.get("date"): ordered_entry["date"] = PlainScalarString(str(photo["date"]))
-    # LOCK TIME TO EXPLICIT SINGLE QUOTES IN THE DATA DUMP
     if photo.get("time"): ordered_entry["time"] = SingleQuotedScalarString(str(photo["time"]))
     if photo.get("camera"): ordered_entry["camera"] = PlainScalarString(str(photo["camera"]))
     if photo.get("coordinates"): ordered_entry["coordinates"] = photo["coordinates"]
@@ -173,4 +195,4 @@ with open("_data/gallery.yml", "w", encoding="utf-8") as f:
     f.write(formatted_content)
 
 print()
-print(f"Done. Processed metadata cleanly with single-quoted timestamps fixed.")
+print(f"Done. Processed metadata cleanly with single-quoted timestamps fixed. Total files updated: {updated}")
