@@ -4,14 +4,36 @@ import subprocess
 import os
 import re
 from ruamel.yaml import YAML
-from ruamel.yaml.scalarstring import PlainScalarString
+from ruamel.yaml.scalarstring import PlainScalarString, SingleQuotedScalarString
+
+# ==============================================================================
+# PHASE 0: RAW TEXT LINE FILTER (Fixes pre-existing unquoted times before loading)
+# ==============================================================================
+if os.path.exists("_data/gallery.yml"):
+    with open("_data/gallery.yml", "r", encoding="utf-8") as f:
+        raw_lines = f.readlines()
+
+    cleaned_lines = []
+    for line in raw_lines:
+        # Catch lines like "  time: 11:18" or "  time: 668.0" and strip/mark them if broken
+        if line.startswith("  time: ") and not ("'" in line or '"' in line):
+            val = line.replace("  time: ", "").strip()
+            # If it already corrupted into a float, we drop it so exiftool can re-extract it
+            if "." in val or val.isdigit():
+                continue
+            cleaned_lines.append(f"  time: '{val}'\n")
+        else:
+            cleaned_lines.append(line)
+
+    with open("_data/gallery.yml", "w", encoding="utf-8") as f:
+        f.writelines(cleaned_lines)
 
 # Initialize the YAML round-trip parser
 yaml = YAML()
 yaml.preserve_quotes = False  
 yaml.width = 4096             
 
-# Force all strings and dates to be completely plain (drops single quotes)
+# Force all strings and dates to be completely plain (drops single quotes on dates)
 def represent_none(self, data):
     return self.represent_scalar('tag:yaml.org,2002:null', 'null')
 
@@ -42,27 +64,21 @@ for photo in photos:
         reordered_photos.append(photo)
         continue
 
-    # FORCE BACKFILL GATE: If it has EXIF but no coordinates key, parse it!
-    if photo.get("exif") and not photo.get("coordinates"):
-        has_date = bool(photo.get("date"))
-        has_time = bool(photo.get("time"))
-        has_camera = bool(photo.get("camera"))
-        has_gps = False
-    else:
-        # Standard safety gate for everything else
-        has_date = bool(photo.get("date"))
-        has_time = bool(photo.get("time"))
-        has_camera = bool(photo.get("camera"))
-        has_gps = bool(photo.get("coordinates"))
-        if has_date and has_time and has_camera and has_gps:
-            reordered_photos.append(photo)
-            continue
+    # FORCE BACKFILL GATE: Check what elements need parsing
+    has_date = bool(photo.get("date"))
+    has_time = bool(photo.get("time")) and not (str(photo.get("time")).replace('.','',1).isdigit())
+    has_camera = bool(photo.get("camera"))
+    has_gps = bool(photo.get("coordinates"))
+
+    if has_date and has_time and has_camera and has_gps:
+        reordered_photos.append(photo)
+        continue
 
     image = f"assets/images/gallery/{photo['file']}"
     record_updated = False
     log_details = []
 
-    # 1. Extract Date and Time cleanly as strict string representations
+    # 1. Extract Date and Time cleanly
     if not has_date or not has_time:
         exif_date = get_exif_field(image, "-DateTimeOriginal")
         if exif_date and len(exif_date) >= 16:
@@ -75,7 +91,7 @@ for photo in photos:
                 log_details.append(f"Date: {photo['date']}")
                 
             if not has_time:
-                photo["time"] = PlainScalarString(raw_time)
+                photo["time"] = SingleQuotedScalarString(raw_time)
                 record_updated = True
                 log_details.append(f"Time: {photo['time']}")
 
@@ -87,7 +103,7 @@ for photo in photos:
             record_updated = True
             log_details.append(f"Cam: {photo['camera']}")
 
-    # 3. Extract GPS Coordinates with Privacy Firewall Checked
+    # 3. Extract GPS Coordinates
     if not has_gps:
         gps_lat = get_exif_field(image, "-GPSLatitude#")
         gps_lon = get_exif_field(image, "-GPSLongitude#")
@@ -120,9 +136,8 @@ for photo in photos:
         updated += 1
         print(f"{photo['id']} -> {' | '.join(log_details)}")
 
-    # STABLE FIELD REORDERING: Construct a clean mapping order explicitly
+    # STABLE FIELD REORDERING: Map out structured entries explicitly
     ordered_entry = yaml.map()
-    
     ordered_entry["id"] = photo.get("id")
     ordered_entry["file"] = photo.get("file")
     ordered_entry["exif"] = photo.get("exif")
@@ -138,27 +153,24 @@ for photo in photos:
     ordered_entry["caption_en"] = photo.get("caption_en")
     ordered_entry["caption_bn"] = photo.get("caption_bn")
     
-    # Force string evaluation on existing dates/times to wrap them safely into strict text
     if photo.get("date"): ordered_entry["date"] = PlainScalarString(str(photo["date"]))
-    if photo.get("time"): ordered_entry["time"] = PlainScalarString(str(photo["time"]))
+    # LOCK TIME TO EXPLICIT SINGLE QUOTES IN THE DATA DUMP
+    if photo.get("time"): ordered_entry["time"] = SingleQuotedScalarString(str(photo["time"]))
     if photo.get("camera"): ordered_entry["camera"] = PlainScalarString(str(photo["camera"]))
     if photo.get("coordinates"): ordered_entry["coordinates"] = photo["coordinates"]
 
     reordered_photos.append(ordered_entry)
 
-# Write the file and inject clean formatting breaks between elements
 with open("_data/gallery.yml", "w", encoding="utf-8") as f:
     yaml.dump(reordered_photos, f)
 
-# POST-PROCESSING: Read back the raw text file and place a newline break before each list item
 with open("_data/gallery.yml", "r", encoding="utf-8") as f:
     content = f.read()
 
-# Re-adds structural breaks right before every clean list dashboard indicator
 formatted_content = re.sub(r"\n- id:", r"\n\n- id:", content)
 
 with open("_data/gallery.yml", "w", encoding="utf-8") as f:
     f.write(formatted_content)
 
 print()
-print(f"Updated records. Pristine layout with clean entry spacing restored.")
+print(f"Done. Processed metadata cleanly with single-quoted timestamps fixed.")
