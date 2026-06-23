@@ -30,75 +30,75 @@ created: 2026-05-15
     </div>
 
     <div class="gallery-details">
-      {% if photo.caption_bn %}
+      {%- if photo.caption_bn -%}
         <div class="photo-caption">{{ photo.caption_bn }}</div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.people_bn and photo.people_bn.size > 0 %}
+      {%- if photo.people_bn and photo.people_bn.size > 0 -%}
         <div class="photo-meta">👥 {{ photo.people_bn | join: ", " }}</div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.location_bn %}
+      {%- if photo.location_bn -%}
         <div class="photo-meta">📍 {{ photo.location_bn }}</div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.date %}
-        {% assign date_parts = photo.date | split: "-" %}
-        {% assign year = date_parts[0] %}
-        {% assign month = date_parts[1] %}
-        {% assign day = date_parts[2] %}
+      {%- if photo.date -%}
+        {%- assign date_parts = photo.date | split: "-" -%}
+        {%- assign year = date_parts[0] -%}
+        {%- assign month = date_parts[1] -%}
+        {%- assign day = date_parts[2] -%}
 
-        {% assign day = day
+        {%- assign day = day
           | replace: "0", "০" | replace: "1", "১" | replace: "2", "২" | replace: "3", "৩"
           | replace: "4", "৪" | replace: "5", "৫" | replace: "6", "৬" | replace: "7", "৭"
-          | replace: "8", "৮" | replace: "9", "৯" %}
+          | replace: "8", "৮" | replace: "9", "৯" -%}
 
-        {% assign year = year
+        {%- assign year = year
           | replace: "0", "০" | replace: "1", "১" | replace: "2", "২" | replace: "3", "৩"
           | replace: "4", "৪" | replace: "5", "৫" | replace: "6", "৬" | replace: "7", "৭"
-          | replace: "8", "৮" | replace: "9", "৯" %}
+          | replace: "8", "৮" | replace: "9", "৯" -%}
 
-        {% case month %}
-          {% when "01" %}{% assign month_name = "জানুয়ারি" %}
-          {% when "02" %}{% assign month_name = "ফেব্রুয়ারি" %}
-          {% when "03" %}{% assign month_name = "মার্চ" %}
-          {% when "04" %}{% assign month_name = "এপ্রিল" %}
-          {% when "05" %}{% assign month_name = "মে" %}
-          {% when "06" %}{% assign month_name = "জুন" %}
-          {% when "07" %}{% assign month_name = "জুলাই" %}
-          {% when "08" %}{% assign month_name = "আগস্ট" %}
-          {% when "09" %}{% assign month_name = "সেপ্টেম্বর" %}
-          {% when "10" %}{% assign month_name = "অক্টোবর" %}
-          {% when "11" %}{% assign month_name = "নভেম্বর" %}
-          {% when "12" %}{% assign month_name = "ডিসেম্বর" %}
-        {% endcase %}
+        {%- case month -%}
+          {%- when "01" -%}{% assign month_name = "জানুয়ারি" %}
+          {%- when "02" -%}{% assign month_name = "ফেব্রুয়ারি" %}
+          {%- when "03" -%}{% assign month_name = "মার্চ" %}
+          {%- when "04" -%}{% assign month_name = "এপ্রিল" %}
+          {%- when "05" -%}{% assign month_name = "মে" %}
+          {%- when "06" -%}{% assign month_name = "জুন" %}
+          {%- when "07" -%}{% assign month_name = "জুলাই" %}
+          {%- when "08" -%}{% assign month_name = "আগস্ট" %}
+          {%- when "09" -%}{% assign month_name = "সেপ্টেম্বর" %}
+          {%- when "10" -%}{% assign month_name = "অক্টোবর" %}
+          {%- when "11" -%}{% assign month_name = "নভেম্বর" %}
+          {%- when "12" -%}{% assign month_name = "ডিসেম্বর" %}
+        {%- endcase -%}
 
         <div class="photo-meta">
           📅 {% if photo.date contains "-" %}{{ day }} {{ month_name }} {{ year }}{% else %}{{ photo.date }}{% endif %}
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.time %}
-        {% assign bn_time = photo.time 
+      {%- if photo.time -%}
+        {%- assign bn_time = photo.time 
           | replace: "0", "০" | replace: "1", "১" | replace: "2", "২" | replace: "3", "৩"
           | replace: "4", "৪" | replace: "5", "৫" | replace: "6", "৬" | replace: "7", "৭"
-          | replace: "8", "৮" | replace: "9", "৯" %}
+          | replace: "8", "৮" | replace: "9", "৯" -%}
         <div class="photo-meta compact-text">
-          🕒 সময়: {{ bn_time }} আইএসটি (IST)
+          🕒 সময়: {{ bn_time }} আইএসটি (IST)
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.camera %}
+      {%- if photo.camera -%}
         <div class="photo-meta compact-text">
           📷 ডিভাইস: {{ photo.camera }}
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.coordinates %}
+      {%- if photo.coordinates -%}
         <div class="photo-meta compact-text">
           🌐 ওপেনস্ট্রিটম্যাপে <a href="https://www.openstreetmap.org/?mlat={{ photo.coordinates[0] }}&mlon={{ photo.coordinates[1] }}#map=17/{{ photo.coordinates[0] }}/{{ photo.coordinates[1] }}" rel="noopener">স্থানটি দেখুন</a>
         </div>
-      {% endif %}
+      {%- endif -%}
     </div>
   </figure>
 {% endfor %}
