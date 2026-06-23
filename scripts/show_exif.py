@@ -183,13 +183,18 @@ for photo in photos:
 
     reordered_photos.append(ordered_entry)
 
+# Save the clean round-trip YAML data dump
 with open("_data/gallery.yml", "w", encoding="utf-8") as f:
     yaml.dump(reordered_photos, f)
 
+# Read it back to enforce immaculate, uniform spacing between photo blocks
 with open("_data/gallery.yml", "r", encoding="utf-8") as f:
     content = f.read()
 
-formatted_content = re.sub(r"\n- id:", r"\n\n- id:", content)
+# Normalize spacing: strips any cluster of multiple newlines and forces exactly ONE empty line before every entry block
+formatted_content = re.sub(r"\n\s*- id:", r"\n\n- id:", content)
+# Trim trailing whitespace at the absolute end of the file to keep Git diffs clean
+formatted_content = formatted_content.strip() + "\n"
 
 with open("_data/gallery.yml", "w", encoding="utf-8") as f:
     f.write(formatted_content)

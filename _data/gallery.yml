@@ -12,9 +12,6 @@
   caption_en: null
   caption_bn: null
 
-
-
-
 - id: SD-PH-0002
   file: swapnadutta0002.jpg
   exif: false
@@ -29,9 +26,6 @@
   caption_en: null
   caption_bn: null
 
-
-
-
 - id: SD-PH-0003
   file: swapnadutta0003.jpg
   exif: false
@@ -45,9 +39,6 @@
   alt_bn: null
   caption_en: null
   caption_bn: null
-
-
-
 
 - id: SD-PH-0004
   file: swapnadutta0004.jpg
@@ -387,10 +378,6 @@
   coordinates:
   - 21.661747
   - 87.693909
-
-
-
-
 
 - id: SD-PH-0026
   file: swapnadutta0027.jpg
@@ -1704,10 +1691,6 @@
   - 26.88858
   - 75.808685
 
-
-
-
-
 - id: SD-PH-0103
   file: swapnadutta0104.jpg
   exif: true
@@ -1727,10 +1710,6 @@
   coordinates:
   - 26.888603
   - 75.808739
-
-
-
-
 
 - id: SD-PH-0104
   file: swapnadutta0105.jpg
@@ -1752,10 +1731,6 @@
   - 26.892469
   - 75.815697
 
-
-
-
-
 - id: SD-PH-0105
   file: swapnadutta0106.jpg
   exif: true
@@ -1775,10 +1750,6 @@
   coordinates:
   - 26.892469
   - 75.815697
-
-
-
-
 
 - id: SD-PH-0106
   file: swapnadutta0107.jpg
@@ -1800,10 +1771,6 @@
   - 26.925489
   - 75.82444
 
-
-
-
-
 - id: SD-PH-0107
   file: swapnadutta0108.jpg
   exif: true
@@ -1823,10 +1790,6 @@
   coordinates:
   - 26.945621
   - 75.841591
-
-
-
-
 
 - id: SD-PH-0108
   file: swapnadutta0109.jpg
@@ -1848,10 +1811,6 @@
   - 26.945621
   - 75.841591
 
-
-
-
-
 - id: SD-PH-0109
   file: swapnadutta0110.jpg
   exif: true
@@ -1871,10 +1830,6 @@
   coordinates:
   - 26.945621
   - 75.841591
-
-
-
-
 
 - id: SD-PH-0110
   file: swapnadutta0111.jpg
@@ -1896,10 +1851,6 @@
   - 26.945621
   - 75.841591
 
-
-
-
-
 - id: SD-PH-0111
   file: swapnadutta0112.jpg
   exif: true
@@ -1919,10 +1870,6 @@
   coordinates:
   - 26.986479
   - 75.85083
-
-
-
-
 
 - id: SD-PH-0112
   file: swapnadutta0113.jpg
@@ -1944,10 +1891,6 @@
   - 26.986479
   - 75.85083
 
-
-
-
-
 - id: SD-PH-0113
   file: swapnadutta0114.jpg
   exif: true
@@ -1967,10 +1910,6 @@
   coordinates:
   - 26.986313
   - 75.85083
-
-
-
-
 
 - id: SD-PH-0114
   file: swapnadutta0115.jpg
@@ -1992,10 +1931,6 @@
   - 26.98597
   - 75.850494
 
-
-
-
-
 - id: SD-PH-0115
   file: swapnadutta0116.jpg
   exif: true
@@ -2015,10 +1950,6 @@
   coordinates:
   - 26.98597
   - 75.850494
-
-
-
-
 
 - id: SD-PH-0116
   file: swapnadutta0117.jpg
@@ -2040,10 +1971,6 @@
   - 26.986315
   - 75.850754
 
-
-
-
-
 - id: SD-PH-0117
   file: swapnadutta0118.jpg
   exif: true
@@ -2063,10 +1990,6 @@
   coordinates:
   - 27.168995
   - 78.046112
-
-
-
-
 
 - id: SD-PH-0118
   file: swapnadutta0119.jpg
@@ -2088,10 +2011,6 @@
   - 27.171219
   - 78.042152
 
-
-
-
-
 - id: SD-PH-0119
   file: swapnadutta0120.jpg
   exif: true
@@ -2111,10 +2030,6 @@
   coordinates:
   - 27.172255
   - 78.042175
-
-
-
-
 
 - id: SD-PH-0120
   file: swapnadutta0121.jpg
@@ -2136,10 +2051,6 @@
   - 27.172255
   - 78.042175
 
-
-
-
-
 - id: SD-PH-0121
   file: swapnadutta0122.jpg
   exif: true
@@ -2159,10 +2070,6 @@
   coordinates:
   - 27.172255
   - 78.042175
-
-
-
-
 
 - id: SD-PH-0122
   file: swapnadutta0123.jpg
@@ -2184,10 +2091,6 @@
   - 27.172255
   - 78.042175
 
-
-
-
-
 - id: SD-PH-0123
   file: swapnadutta0124.jpg
   exif: true
@@ -2207,10 +2110,6 @@
   coordinates:
   - 27.172255
   - 78.042175
-
-
-
-
 
 - id: SD-PH-0124
   file: swapnadutta0125.jpg
@@ -2232,10 +2131,6 @@
   - 27.172138
   - 78.042145
 
-
-
-
-
 - id: SD-PH-0125
   file: swapnadutta0126.jpg
   exif: true
@@ -2255,10 +2150,6 @@
   coordinates:
   - 27.172138
   - 78.042145
-
-
-
-
 
 - id: SD-PH-0126
   file: swapnadutta0127.jpg
@@ -2280,10 +2171,6 @@
   - 27.172001
   - 78.042145
 
-
-
-
-
 - id: SD-PH-0127
   file: swapnadutta0128.jpg
   exif: true
@@ -2303,3 +2190,200 @@
   coordinates:
   - 27.172001
   - 78.042145
+
+- id: SD-PH-0128
+  file: swapnadutta0128.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '06:32'
+  camera: vivo 1803
+  coordinates:
+  - 27.172001
+  - 78.042145
+
+- id: SD-PH-0129
+  file: swapnadutta0129.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '06:39'
+  camera: vivo 1803
+  coordinates:
+  - 27.172266
+  - 78.042107
+
+- id: SD-PH-0130
+  file: swapnadutta0130.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '06:39'
+  camera: vivo 1803
+  coordinates:
+  - 27.172266
+  - 78.042107
+
+- id: SD-PH-0131
+  file: swapnadutta0131.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '07:25'
+  camera: vivo 1803
+  coordinates:
+  - 27.172144
+  - 78.042152
+
+- id: SD-PH-0132
+  file: swapnadutta0132.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '07:25'
+  camera: vivo 1803
+  coordinates:
+  - 27.172144
+  - 78.042152
+
+- id: SD-PH-0133
+  file: swapnadutta0133.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '08:28'
+  camera: vivo 1803
+  coordinates:
+  - 27.170532
+  - 78.046265
+
+- id: SD-PH-0134
+  file: swapnadutta0134.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '08:28'
+  camera: vivo 1803
+  coordinates:
+  - 27.170532
+  - 78.046265
+
+- id: SD-PH-0135
+  file: swapnadutta0135.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-13'
+  time: '20:11'
+  camera: vivo 1803
+
+- id: SD-PH-0136
+  file: swapnadutta0136.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-15'
+  time: '18:29'
+  camera: vivo 1803
+  coordinates:
+  - 27.580112
+  - 77.691284
+
+- id: SD-PH-0137
+  file: swapnadutta0137.jpg
+  exif: true
+  location_en: null
+  location_bn: null
+  people_en: []
+  people_bn: []
+  tags_en: []
+  tags_bn: []
+  alt_en: null
+  alt_bn: null
+  caption_en: null
+  caption_bn: null
+  date: '2018-10-15'
+  time: '18:30'
+  camera: vivo 1803
+  coordinates:
+  - 27.57996
+  - 77.690887
