@@ -23,7 +23,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
     <a href="/assets/images/gallery/{{ photo.file }}">
       <img
         src="/assets/images/gallery/{{ photo.file }}"
-        alt="{{ photo.alt_en | default: '' }}"
+        alt="{{ photo.alt_en | default: photo.caption_en | default: '' }}"
         loading="lazy">
     </a>
 
@@ -31,21 +31,33 @@ The gallery is intended not merely as a collection of images, but as an attempt 
       <div class="photo-caption">{{ photo.caption_en }}</div>
     {% endif %}
 
-    {% if photo.people %}
+    {% if photo.people_en and photo.people_en.size > 0 %}
       <div class="photo-meta">
-        👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.en }}{% endfor %}
+        👥 {{ photo.people_en | join: ", " }}
       </div>
     {% endif %}
 
-    {% if photo.location %}
+    {% if photo.location_en %}
       <div class="photo-meta">
-        📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.en }}{% endfor %}
+        📍 {{ photo.location_en }}
       </div>
     {% endif %}
 
     {% if photo.date %}
       <div class="photo-meta">
-        📅 {{ photo.date | date: "%-d %B %Y" }}
+        📅 {% if photo.date contains "-" %}{{ photo.date | date: "%-d %B %Y" }}{% else %}{{ photo.date }}{% endif %}
+      </div>
+    {% endif %}
+
+    {% if photo.camera %}
+      <div class="photo-meta">
+        📷 Shot on {{ photo.camera }}
+      </div>
+    {% endif %}
+
+    {% if photo.coordinates %}
+      <div class="photo-meta">
+        🗺️ <a href="https://www.openstreetmap.org/?mlat={{ photo.coordinates[0] }}&mlon={{ photo.coordinates[1] }}#map=17/{{ photo.coordinates[0] }}/{{ photo.coordinates[1] }}" rel="noopener">View on Map</a>
       </div>
     {% endif %}
   </figure>

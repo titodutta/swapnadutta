@@ -362,6 +362,9 @@
   alt_bn:
   caption_en:
   caption_bn:
+  coordinates:
+  - 21.661747
+  - 87.693909
 
 - id: SD-PH-0027
   file: swapnadutta0027.jpg
@@ -377,6 +380,7 @@
   alt_bn:
   caption_en:
   caption_bn:
+  camera: SCH-I535
 
 - id: SD-PH-0028
   file: swapnadutta0028.jpg
@@ -392,6 +396,7 @@
   alt_bn:
   caption_en:
   caption_bn:
+  camera: SCH-I535
 
 # GALLERY_DATA_BLOCK_29_TO_43
 - id: SD-PH-0029
@@ -409,6 +414,7 @@
   caption_bn:
   date: '2017-11-18'
 
+  camera: SCH-I535
 - id: SD-PH-0030
   file: swapnadutta0030.jpg
   exif: true
@@ -424,6 +430,7 @@
   caption_bn:
   date: '2017-11-18'
 
+  camera: SCH-I535
 - id: SD-PH-0031
   file: swapnadutta0031.jpg
   exif: true
@@ -439,6 +446,7 @@
   caption_bn:
   date: '2017-11-18'
 
+  camera: SCH-I535
 - id: SD-PH-0032
   file: swapnadutta0032.jpg
   exif: true
@@ -454,6 +462,7 @@
   caption_bn:
   date: '2017-11-19'
 
+  camera: SCH-I535
 - id: SD-PH-0033
   file: swapnadutta0033.jpg
   exif: true
@@ -469,6 +478,7 @@
   caption_bn:
   date: '2017-11-19'
 
+  camera: SCH-I535
 - id: SD-PH-0034
   file: swapnadutta0034.jpg
   exif: true
@@ -484,6 +494,7 @@
   caption_bn:
   date: '2017-11-19'
 
+  camera: SCH-I535
 - id: SD-PH-0035
   file: swapnadutta0035.jpg
   exif: true
@@ -499,6 +510,7 @@
   caption_bn:
   date: '2017-11-19'
 
+  camera: SCH-I535
 - id: SD-PH-0036
   file: swapnadutta0036.jpg
   exif: true
@@ -514,6 +526,7 @@
   caption_bn:
   date: '2017-11-19'
 
+  camera: SCH-I535
 - id: SD-PH-0037
   file: swapnadutta0037.jpg
   exif: true
@@ -529,6 +542,7 @@
   caption_bn:
   date: '2017-11-19'
 
+  camera: SCH-I535
 - id: SD-PH-0038
   file: swapnadutta0038.jpg
   exif: true
@@ -544,6 +558,7 @@
   caption_bn:
   date: '2017-11-20'
 
+  camera: SCH-I535
 - id: SD-PH-0039
   file: swapnadutta0039.jpg
   exif: true
@@ -559,6 +574,7 @@
   caption_bn:
   date: '2017-11-20'
 
+  camera: SCH-I535
 - id: SD-PH-0040
   file: swapnadutta0040.jpg
   exif: true
@@ -574,6 +590,7 @@
   caption_bn:
   date: '2017-11-20'
 
+  camera: SCH-I535
 - id: SD-PH-0041
   file: swapnadutta0041.jpg
   exif: true
@@ -589,6 +606,7 @@
   caption_bn:
   date: '2017-11-20'
 
+  camera: SCH-I535
 - id: SD-PH-0042
   file: swapnadutta0042.jpg
   exif: true
@@ -604,6 +622,7 @@
   caption_bn:
   date: '2017-11-20'
 
+  camera: SCH-I535
 - id: SD-PH-0043
   file: swapnadutta0043.jpg
   exif: true
@@ -620,6 +639,7 @@
   date: '2017-11-20'
 
 # GALLERY_DATA_BLOCK_44_TO_58
+  camera: SCH-I535
 - id: SD-PH-0044
   file: swapnadutta0044.jpg
   exif: true
@@ -635,6 +655,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0045
   file: swapnadutta0045.jpg
   exif: true
@@ -650,6 +671,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0046
   file: swapnadutta0046.jpg
   exif: true
@@ -665,6 +687,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0047
   file: swapnadutta0047.jpg
   exif: true
@@ -680,6 +703,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0048
   file: swapnadutta0048.jpg
   exif: true
@@ -695,6 +719,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0049
   file: swapnadutta0049.jpg
   exif: true
@@ -710,6 +735,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0050
   file: swapnadutta0050.jpg
   exif: true
@@ -725,6 +751,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0051
   file: swapnadutta0051.jpg
   exif: true
@@ -740,6 +767,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0052
   file: swapnadutta0052.jpg
   exif: true
@@ -755,6 +783,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0053
   file: swapnadutta0053.jpg
   exif: true
@@ -770,6 +799,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0054
   file: swapnadutta0054.jpg
   exif: true
@@ -785,6 +815,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0055
   file: swapnadutta0055.jpg
   exif: true
@@ -800,6 +831,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0056
   file: swapnadutta0056.jpg
   exif: true
@@ -815,6 +847,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0057
   file: swapnadutta0057.jpg
   exif: true
@@ -830,6 +863,7 @@
   caption_bn:
   date: '2017-11-21'
 
+  camera: SCH-I535
 - id: SD-PH-0058
   file: swapnadutta0058.jpg
   exif: true
@@ -846,6 +880,7 @@
   date: '2017-11-21'
 
 # GALLERY_DATA_BLOCK_59_TO_75
+  camera: SCH-I535
 - id: SD-PH-0059
   file: swapnadutta0059.jpg
   exif: true
@@ -861,6 +896,7 @@
   caption_bn:
   date: '2017-11-22'
 
+  camera: SCH-I535
 - id: SD-PH-0060
   file: swapnadutta0060.jpg
   exif: true
@@ -876,6 +912,7 @@
   caption_bn:
   date: '2017-11-22'
 
+  camera: SCH-I535
 - id: SD-PH-0061
   file: swapnadutta0061.jpg
   exif: true
@@ -891,6 +928,7 @@
   caption_bn:
   date: '2017-11-22'
 
+  camera: SCH-I535
 - id: SD-PH-0062
   file: swapnadutta0062.jpg
   exif: true
@@ -906,6 +944,7 @@
   caption_bn:
   date: '2017-11-22'
 
+  camera: SCH-I535
 - id: SD-PH-0063
   file: swapnadutta0063.jpg
   exif: true
@@ -921,6 +960,7 @@
   caption_bn:
   date: '2017-11-22'
 
+  camera: SCH-I535
 - id: SD-PH-0064
   file: swapnadutta0064.jpg
   exif: true
@@ -936,6 +976,7 @@
   caption_bn:
   date: '2018-02-05'
 
+  camera: SCH-I535
 - id: SD-PH-0065
   file: swapnadutta0065.jpg
   exif: true
@@ -951,6 +992,7 @@
   caption_bn:
   date: '2018-02-05'
 
+  camera: SCH-I535
 - id: SD-PH-0066
   file: swapnadutta0066.jpg
   exif: true
@@ -966,6 +1008,7 @@
   caption_bn:
   date: '2018-02-06'
 
+  camera: SCH-I535
 - id: SD-PH-0067
   file: swapnadutta0067.jpg
   exif: true
@@ -981,6 +1024,7 @@
   caption_bn:
   date: '2018-02-06'
 
+  camera: SCH-I535
 - id: SD-PH-0068
   file: swapnadutta0068.jpg
   exif: true
@@ -996,6 +1040,7 @@
   caption_bn:
   date: '2018-02-06'
 
+  camera: SCH-I535
 - id: SD-PH-0069
   file: swapnadutta0069.jpg
   exif: true
@@ -1011,6 +1056,7 @@
   caption_bn:
   date: '2018-02-07'
 
+  camera: SCH-I535
 - id: SD-PH-0070
   file: swapnadutta0070.jpg
   exif: true
@@ -1026,6 +1072,7 @@
   caption_bn:
   date: '2018-02-07'
 
+  camera: SCH-I535
 - id: SD-PH-0071
   file: swapnadutta0071.jpg
   exif: true
@@ -1041,6 +1088,7 @@
   caption_bn:
   date: '2018-02-07'
 
+  camera: SCH-I535
 - id: SD-PH-0072
   file: swapnadutta0072.jpg
   exif: true
@@ -1056,6 +1104,7 @@
   caption_bn:
   date: '2018-02-07'
 
+  camera: SCH-I535
 - id: SD-PH-0073
   file: swapnadutta0073.jpg
   exif: true
@@ -1071,6 +1120,7 @@
   caption_bn:
   date: '2018-02-07'
 
+  camera: SCH-I535
 - id: SD-PH-0074
   file: swapnadutta0074.jpg
   exif: true
@@ -1086,6 +1136,7 @@
   caption_bn:
   date: '2018-02-07'
 
+  camera: SCH-I535
 - id: SD-PH-0075
   file: swapnadutta0075.jpg
   exif: true
@@ -1102,6 +1153,7 @@
   date: '2018-02-07'
 
 # GALLERY_DATA_BLOCK_76_TO_117
+  camera: SCH-I535
 - id: SD-PH-0076
   file: swapnadutta0076.jpg
   exif: true
@@ -1117,6 +1169,7 @@
   caption_bn:
   date: '2018-02-08'
 
+  camera: SCH-I535
 - id: SD-PH-0077
   file: swapnadutta0077.jpg
   exif: true
@@ -1132,6 +1185,7 @@
   caption_bn:
   date: '2018-02-08'
 
+  camera: SCH-I535
 - id: SD-PH-0078
   file: swapnadutta0078.jpg
   exif: true
@@ -1147,6 +1201,7 @@
   caption_bn:
   date: '2018-02-08'
 
+  camera: SCH-I535
 - id: SD-PH-0079
   file: swapnadutta0079.jpg
   exif: true
@@ -1162,6 +1217,7 @@
   caption_bn:
   date: '2018-02-08'
 
+  camera: SCH-I535
 - id: SD-PH-0080
   file: swapnadutta0080.jpg
   exif: true
@@ -1177,6 +1233,7 @@
   caption_bn:
   date: '2018-02-08'
 
+  camera: SCH-I535
 - id: SD-PH-0081
   file: swapnadutta0081.jpg
   exif: true
@@ -1192,6 +1249,7 @@
   caption_bn:
   date: '2018-03-27'
 
+  camera: SCH-I535
 - id: SD-PH-0082
   file: swapnadutta0082.jpg
   exif: true
@@ -1207,6 +1265,7 @@
   caption_bn:
   date: '2018-04-16'
 
+  camera: SCH-I535
 - id: SD-PH-0083
   file: swapnadutta0083.jpg
   exif: true
@@ -1222,6 +1281,7 @@
   caption_bn:
   date: '2018-04-16'
 
+  camera: SCH-I535
 - id: SD-PH-0084
   file: swapnadutta0084.jpg
   exif: true
@@ -1237,6 +1297,7 @@
   caption_bn:
   date: '2018-06-03'
 
+  camera: SCH-I535
 - id: SD-PH-0085
   file: swapnadutta0085.jpg
   exif: true
@@ -1252,6 +1313,7 @@
   caption_bn:
   date: '2018-06-03'
 
+  camera: SCH-I535
 - id: SD-PH-0086
   file: swapnadutta0086.jpg
   exif: true
@@ -1267,6 +1329,7 @@
   caption_bn:
   date: '2018-06-03'
 
+  camera: SCH-I535
 - id: SD-PH-0087
   file: swapnadutta0087.jpg
   exif: true
@@ -1282,6 +1345,7 @@
   caption_bn:
   date: '2018-06-04'
 
+  camera: SCH-I535
 - id: SD-PH-0088
   file: swapnadutta0088.jpg
   exif: true
@@ -1297,6 +1361,7 @@
   caption_bn:
   date: '2018-06-04'
 
+  camera: SCH-I535
 - id: SD-PH-0089
   file: swapnadutta0089.jpg
   exif: true
@@ -1312,6 +1377,7 @@
   caption_bn:
   date: '2018-06-04'
 
+  camera: SCH-I535
 - id: SD-PH-0090
   file: swapnadutta0090.jpg
   exif: true
@@ -1327,6 +1393,7 @@
   caption_bn:
   date: '2018-06-04'
 
+  camera: SCH-I535
 - id: SD-PH-0091
   file: swapnadutta0091.jpg
   exif: true
@@ -1342,6 +1409,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0092
   file: swapnadutta0092.jpg
   exif: true
@@ -1357,6 +1425,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0093
   file: swapnadutta0093.jpg
   exif: true
@@ -1372,6 +1441,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0094
   file: swapnadutta0094.jpg
   exif: true
@@ -1387,6 +1457,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0095
   file: swapnadutta0095.jpg
   exif: true
@@ -1402,6 +1473,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0096
   file: swapnadutta0096.jpg
   exif: true
@@ -1417,6 +1489,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0097
   file: swapnadutta0097.jpg
   exif: true
@@ -1432,6 +1505,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0098
   file: swapnadutta0098.jpg
   exif: true
@@ -1447,6 +1521,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0099
   file: swapnadutta0099.jpg
   exif: true
@@ -1462,6 +1537,7 @@
   caption_bn:
   date: '2018-06-06'
 
+  camera: SCH-I535
 - id: SD-PH-0100
   file: swapnadutta0100.jpg
   exif: true
@@ -1477,6 +1553,7 @@
   caption_bn:
   date: '2018-06-08'
 
+  camera: SCH-I535
 - id: SD-PH-0101
   file: swapnadutta0101.jpg
   exif: true
@@ -1492,6 +1569,7 @@
   caption_bn:
   date: '2018-06-08'
 
+  camera: SCH-I535
 - id: SD-PH-0102
   file: swapnadutta0102.jpg
   exif: true
@@ -1507,6 +1585,7 @@
   caption_bn:
   date: '2018-10-10'
 
+  camera: vivo 1803
 - id: SD-PH-0103
   file: swapnadutta0103.jpg
   exif: true
@@ -1522,6 +1601,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.88858
+  - 75.808685
 - id: SD-PH-0104
   file: swapnadutta0104.jpg
   exif: true
@@ -1537,6 +1620,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.888603
+  - 75.808739
 - id: SD-PH-0105
   file: swapnadutta0105.jpg
   exif: true
@@ -1552,6 +1639,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.892469
+  - 75.815697
 - id: SD-PH-0106
   file: swapnadutta0106.jpg
   exif: true
@@ -1567,6 +1658,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.892469
+  - 75.815697
 - id: SD-PH-0107
   file: swapnadutta0107.jpg
   exif: true
@@ -1582,6 +1677,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.925489
+  - 75.82444
 - id: SD-PH-0108
   file: swapnadutta0108.jpg
   exif: true
@@ -1597,6 +1696,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.945621
+  - 75.841591
 - id: SD-PH-0109
   file: swapnadutta0109.jpg
   exif: true
@@ -1612,6 +1715,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.945621
+  - 75.841591
 - id: SD-PH-0110
   file: swapnadutta0110.jpg
   exif: true
@@ -1627,6 +1734,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.945621
+  - 75.841591
 - id: SD-PH-0111
   file: swapnadutta0111.jpg
   exif: true
@@ -1642,6 +1753,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.945621
+  - 75.841591
 - id: SD-PH-0112
   file: swapnadutta0112.jpg
   exif: true
@@ -1657,6 +1772,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.986479
+  - 75.85083
 - id: SD-PH-0113
   file: swapnadutta0113.jpg
   exif: true
@@ -1672,6 +1791,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.986479
+  - 75.85083
 - id: SD-PH-0114
   file: swapnadutta0114.jpg
   exif: true
@@ -1687,6 +1810,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.986313
+  - 75.85083
 - id: SD-PH-0115
   file: swapnadutta0115.jpg
   exif: true
@@ -1702,6 +1829,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.98597
+  - 75.850494
 - id: SD-PH-0116
   file: swapnadutta0116.jpg
   exif: true
@@ -1717,6 +1848,10 @@
   caption_bn:
   date: '2018-10-11'
 
+  camera: vivo 1803
+  coordinates:
+  - 26.98597
+  - 75.850494
 - id: SD-PH-0117
   file: swapnadutta0117.jpg
   exif: true
@@ -1733,6 +1868,10 @@
   date: '2018-10-11'
 
 # GALLERY_DATA_BLOCK_118_TO_128
+  camera: vivo 1803
+  coordinates:
+  - 26.986315
+  - 75.850754
 - id: SD-PH-0118
   file: swapnadutta0118.jpg
   exif: true
@@ -1748,6 +1887,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.168995
+  - 78.046112
 - id: SD-PH-0119
   file: swapnadutta0119.jpg
   exif: true
@@ -1763,6 +1906,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.171219
+  - 78.042152
 - id: SD-PH-0120
   file: swapnadutta0120.jpg
   exif: true
@@ -1778,6 +1925,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172255
+  - 78.042175
 - id: SD-PH-0121
   file: swapnadutta0121.jpg
   exif: true
@@ -1793,6 +1944,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172255
+  - 78.042175
 - id: SD-PH-0122
   file: swapnadutta0122.jpg
   exif: true
@@ -1808,6 +1963,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172255
+  - 78.042175
 - id: SD-PH-0123
   file: swapnadutta0123.jpg
   exif: true
@@ -1823,6 +1982,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172255
+  - 78.042175
 - id: SD-PH-0124
   file: swapnadutta0124.jpg
   exif: true
@@ -1838,6 +2001,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172255
+  - 78.042175
 - id: SD-PH-0125
   file: swapnadutta0125.jpg
   exif: true
@@ -1853,6 +2020,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172138
+  - 78.042145
 - id: SD-PH-0126
   file: swapnadutta0126.jpg
   exif: true
@@ -1868,6 +2039,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172138
+  - 78.042145
 - id: SD-PH-0127
   file: swapnadutta0127.jpg
   exif: true
@@ -1883,6 +2058,10 @@
   caption_bn:
   date: '2018-10-13'
 
+  camera: vivo 1803
+  coordinates:
+  - 27.172001
+  - 78.042145
 - id: SD-PH-0128
   file: swapnadutta0128.jpg
   exif: true
@@ -1897,3 +2076,7 @@
   caption_en:
   caption_bn:
   date: '2018-10-13'
+  camera: vivo 1803
+  coordinates:
+  - 27.172001
+  - 78.042145
