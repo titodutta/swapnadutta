@@ -19,8 +19,7 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 <div class="photo-gallery">
 
 {% for photo in site.data.gallery %}
-  <figure class="gallery-item">
-    <!-- Image Display Container (Isolated to prevent container stretching) -->
+  <div class="gallery-item">
     <div class="photo-container">
       <a href="/assets/images/gallery/{{ photo.file }}">
         <img
@@ -30,65 +29,65 @@ The gallery is intended not merely as a collection of images, but as an attempt 
       </a>
     </div>
 
-    <!-- Metadata Details Content Area -->
     <div class="gallery-details">
-      {% if photo.caption_en %}
+      {%- if photo.caption_en -%}
         <div class="photo-caption">{{ photo.caption_en }}</div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.people_en and photo.people_en.size > 0 %}
+      {%- if photo.people_en and photo.people_en.size > 0 -%}
         <div class="photo-meta">👥 {{ photo.people_en | join: ", " }}</div>
-      {% endif %}
+      {%- endif -%}
 
-      {% if photo.location_en %}
+      {%- if photo.location_en -%}
         <div class="photo-meta">📍 {{ photo.location_en }}</div>
-      {% endif %}
+      {%- endif -%}
 
-      <!-- Primary Date Display -->
-      {% if photo.date %}
+      {%- if photo.date -%}
         <div class="photo-meta">
           📅 {% if photo.date contains "-" %}{{ photo.date | date: "%-d %B %Y" }}{% else %}{{ photo.date }}{% endif %}
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      <!-- Time Display -->
-      {% if photo.time %}
+      {%- if photo.time -%}
         <div class="photo-meta compact-text">
           🕒 {{ photo.time }} IST
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      <!-- Camera Hardware Info -->
-      {% if photo.camera %}
+      {%- if photo.camera -%}
         <div class="photo-meta compact-text">
           📷 Shot on {{ photo.camera }}
         </div>
-      {% endif %}
+      {%- endif -%}
 
-      <!-- Clean Map Link Placement (One-word link text with globe icon) -->
-      {% if photo.coordinates %}
+      {%- if photo.coordinates -%}
         <div class="photo-meta compact-text">
           🌐 <a href="https://www.openstreetmap.org/?mlat={{ photo.coordinates[0] }}&mlon={{ photo.coordinates[1] }}#map=17/{{ photo.coordinates[0] }}/{{ photo.coordinates[1] }}" rel="noopener">Location</a> on OpenStreetMap
         </div>
-      {% endif %}
+      {%- endif -%}
     </div>
-  </figure>
+  </div>
 {% endfor %}
 
 </div>
 
 <style>
+/* Main clean auto-fit layout area */
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-auto-rows: min-content; /* Keeps the grid rows tightly bound to actual content */
+  grid-row-gap: 3.5rem;        /* Generous, clean breathing room between rows */
+  grid-column-gap: 2rem;       /* Perfect spacing between columns */
   margin: 2rem 0;
 }
 
+/* Base structural blocks */
 .gallery-item {
-  margin: 0;
-  display: flex;
+  display: flex;               /* Forces uniform vertical layout column bounds */
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   background: transparent;
 }
 
@@ -115,20 +114,25 @@ The gallery is intended not merely as a collection of images, but as an attempt 
   object-fit: contain;
 }
 
+/* Label content adjustments */
 .gallery-details {
-  padding: 0.5rem 0;
+  display: block;
+  padding: 0.75rem 0 0 0;      /* Clean top spacing above layout text strings */
+  margin: 0;
 }
 
 .photo-caption {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   font-weight: 600;
   text-align: center;
+  line-height: 1.4;
 }
 
 .photo-meta {
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;         /* Balanced line gaps for clean scannability */
   font-size: 0.95rem;
   text-align: center;
+  line-height: 1.5;
 }
 
 /* Explicit 90% size scaling for camera hardware, time, and map elements */
@@ -140,5 +144,16 @@ The gallery is intended not merely as a collection of images, but as an attempt 
 .compact-text a {
   color: inherit;
   text-decoration: underline;
+}
+
+/* Mobile responsive layout safety block overrides */
+@media (max-width: 480px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    grid-row-gap: 3rem;        /* Relaxed list tracking rows for smaller mobile screens */
+  }
+  .photo-container a {
+    height: 280px;             /* Balanced display container framework proportions on mobile views */
+  }
 }
 </style>
