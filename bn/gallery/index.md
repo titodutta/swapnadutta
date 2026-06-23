@@ -19,81 +19,87 @@ created: 2026-05-15
 <div class="photo-gallery">
 
 {% for photo in site.data.gallery %}
-  <figure>
-    <a href="/assets/images/gallery/{{ photo.file }}">
-      <img
-        src="/assets/images/gallery/{{ photo.file }}"
-        alt="{{ photo.alt_bn | default: '' }}"
-        loading="lazy">
-    </a>
+  <figure class="gallery-item">
+    <div class="photo-container">
+      <a href="/assets/images/gallery/{{ photo.file }}">
+        <img
+          src="/assets/images/gallery/{{ photo.file }}"
+          alt="{{ photo.alt_bn | default: photo.caption_bn | default: '' }}"
+          loading="lazy">
+      </a>
+    </div>
 
-    {% if photo.caption_bn %}
-      <div class="photo-caption">{{ photo.caption_bn }}</div>
-    {% endif %}
+    <div class="gallery-details">
+      {% if photo.caption_bn %}
+        <div class="photo-caption">{{ photo.caption_bn }}</div>
+      {% endif %}
 
-    {% if photo.date %}
-      {% assign date_parts = photo.date | split: "-" %}
-      {% assign year = date_parts[0] %}
-      {% assign month = date_parts[1] %}
-      {% assign day = date_parts[2] %}
+      {% if photo.people_bn and photo.people_bn.size > 0 %}
+        <div class="photo-meta">👥 {{ photo.people_bn | join: ", " }}</div>
+      {% endif %}
 
-      {% assign day = day
-        | replace: "0", "০"
-        | replace: "1", "১"
-        | replace: "2", "২"
-        | replace: "3", "৩"
-        | replace: "4", "৪"
-        | replace: "5", "৫"
-        | replace: "6", "৬"
-        | replace: "7", "৭"
-        | replace: "8", "৮"
-        | replace: "9", "৯" %}
+      {% if photo.location_bn %}
+        <div class="photo-meta">📍 {{ photo.location_bn }}</div>
+      {% endif %}
 
-      {% assign year = year
-        | replace: "0", "০"
-        | replace: "1", "১"
-        | replace: "2", "২"
-        | replace: "3", "৩"
-        | replace: "4", "৪"
-        | replace: "5", "৫"
-        | replace: "6", "৬"
-        | replace: "7", "৭"
-        | replace: "8", "৮"
-        | replace: "9", "৯" %}
+      {% if photo.date %}
+        {% assign date_parts = photo.date | split: "-" %}
+        {% assign year = date_parts[0] %}
+        {% assign month = date_parts[1] %}
+        {% assign day = date_parts[2] %}
 
-      {% case month %}
-        {% when "01" %}{% assign month_name = "জানুয়ারি" %}
-        {% when "02" %}{% assign month_name = "ফেব্রুয়ারি" %}
-        {% when "03" %}{% assign month_name = "মার্চ" %}
-        {% when "04" %}{% assign month_name = "এপ্রিল" %}
-        {% when "05" %}{% assign month_name = "মে" %}
-        {% when "06" %}{% assign month_name = "জুন" %}
-        {% when "07" %}{% assign month_name = "জুলাই" %}
-        {% when "08" %}{% assign month_name = "আগস্ট" %}
-        {% when "09" %}{% assign month_name = "সেপ্টেম্বর" %}
-        {% when "10" %}{% assign month_name = "অক্টোবর" %}
-        {% when "11" %}{% assign month_name = "নভেম্বর" %}
-        {% when "12" %}{% assign month_name = "ডিসেম্বর" %}
-      {% endcase %}
-    {% endif %}
+        {% assign day = day
+          | replace: "0", "০" | replace: "1", "১" | replace: "2", "২" | replace: "3", "৩"
+          | replace: "4", "৪" | replace: "5", "৫" | replace: "6", "৬" | replace: "7", "৭"
+          | replace: "8", "৮" | replace: "9", "৯" %}
 
-    {% if photo.people %}
-      <div class="photo-meta">
-        👥 {% for person_id in photo.people %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.bn }}{% endfor %}
-      </div>
-    {% endif %}
+        {% assign year = year
+          | replace: "0", "০" | replace: "1", "১" | replace: "2", "২" | replace: "3", "৩"
+          | replace: "4", "৪" | replace: "5", "৫" | replace: "6", "৬" | replace: "7", "৭"
+          | replace: "8", "৮" | replace: "9", "৯" %}
 
-    {% if photo.location %}
-      <div class="photo-meta">
-        📍 {% for location_id in photo.location %}{% assign location = site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.bn }}{% endfor %}
-      </div>
-    {% endif %}
+        {% case month %}
+          {% when "01" %}{% assign month_name = "জানুয়ারি" %}
+          {% when "02" %}{% assign month_name = "ফেব্রুয়ারি" %}
+          {% when "03" %}{% assign month_name = "মার্চ" %}
+          {% when "04" %}{% assign month_name = "এপ্রিল" %}
+          {% when "05" %}{% assign month_name = "মে" %}
+          {% when "06" %}{% assign month_name = "জুন" %}
+          {% when "07" %}{% assign month_name = "জুলাই" %}
+          {% when "08" %}{% assign month_name = "আগস্ট" %}
+          {% when "09" %}{% assign month_name = "সেপ্টেম্বর" %}
+          {% when "10" %}{% assign month_name = "অক্টোবর" %}
+          {% when "11" %}{% assign month_name = "নভেম্বর" %}
+          {% when "12" %}{% assign month_name = "ডিসেম্বর" %}
+        {% endcase %}
 
-    {% if photo.date %}
-      <div class="photo-meta">
-        📅 {{ day }} {{ month_name }} {{ year }}
-      </div>
-    {% endif %}
+        <div class="photo-meta">
+          📅 {% if photo.date contains "-" %}{{ day }} {{ month_name }} {{ year }}{% else %}{{ photo.date }}{% endif %}
+        </div>
+      {% endif %}
+
+      {% if photo.time %}
+        {% assign bn_time = photo.time 
+          | replace: "0", "০" | replace: "1", "১" | replace: "2", "২" | replace: "3", "৩"
+          | replace: "4", "৪" | replace: "5", "৫" | replace: "6", "৬" | replace: "7", "৭"
+          | replace: "8", "৮" | replace: "9", "৯" %}
+        <div class="photo-meta compact-text">
+          🕒 সময়: {{ bn_time }} আইএসটি (IST)
+        </div>
+      {% endif %}
+
+      {% if photo.camera %}
+        <div class="photo-meta compact-text">
+          📷 ডিভাইস: {{ photo.camera }}
+        </div>
+      {% endif %}
+
+      {% if photo.coordinates %}
+        <div class="photo-meta compact-text">
+          🌐 ওপেনস্ট্রিটম্যাপে <a href="https://www.openstreetmap.org/?mlat={{ photo.coordinates[0] }}&mlon={{ photo.coordinates[1] }}#map=17/{{ photo.coordinates[0] }}/{{ photo.coordinates[1] }}" rel="noopener">স্থানটি দেখুন</a>
+        </div>
+      {% endif %}
+    </div>
   </figure>
 {% endfor %}
 
@@ -103,32 +109,42 @@ created: 2026-05-15
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   margin: 2rem 0;
 }
 
-.photo-gallery figure {
+.gallery-item {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background: transparent;
 }
 
-.photo-gallery a {
+.photo-container {
+  display: block;
+  width: 100%;
+}
+
+.photo-container a {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 300px;
-  background-color: var(--surface-soft); /* Flips cleanly to dark surface */
-  border: 1px solid var(--border);       /* Flips cleanly to dark border */
+  background-color: var(--surface-soft);
+  border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.photo-gallery img {
+.photo-container img {
   display: block;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+.gallery-details {
+  padding: 0.5rem 0;
 }
 
 .photo-caption {
@@ -140,9 +156,19 @@ created: 2026-05-15
 
 .photo-meta {
   margin-top: 0.25rem;
-  font-size: 0.9rem;
-  color: var(--muted); /* Becomes legible silver-grey in dark mode */
+  font-size: 0.95rem;
   text-align: center;
-  line-height: 1.5;    /* Gives breathing room to Bengali script loops */
+  line-height: 1.5;
+}
+
+/* ক্যামেরা এবং ম্যাপের বিষয়ের জন্য নিবিড় ৯০% ফন্ট স্কেলিং */
+.compact-text {
+  font-size: 0.85rem !important; 
+  color: var(--muted);
+}
+
+.compact-text a {
+  color: inherit;
+  text-decoration: underline;
 }
 </style>
