@@ -117,6 +117,7 @@ created: 2026-05-15
   margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; /* Forces content up and removes huge row gaps */
   background: transparent;
 }
 
