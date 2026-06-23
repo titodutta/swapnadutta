@@ -34,12 +34,16 @@ created: 2026-05-15
         <div class="photo-caption">{{ photo.caption_bn }}</div>
       {%- endif -%}
 
-      {%- if photo.people_bn and photo.people_bn.size > 0 -%}
-        <div class="photo-meta">👥 {{ photo.people_bn | join: ", " }}</div>
+      {%- if photo.people_en and photo.people_en.size > 0 -%}
+        <div class="photo-meta">
+          👥 {% for person_id in photo.people_en %}{% assign person = site.data.people[person_id] %}{% unless forloop.first %}, {% endunless %}{{ person.bn }}{% endfor %}
+        </div>
       {%- endif -%}
 
-      {%- if photo.location_bn -%}
-        <div class="photo-meta">📍 {{ photo.location_bn }}</div>
+      {%- if photo.location_en and photo.location_en.size > 0 -%}
+        <div class="photo-meta">
+          📍 {% for location_id in photo.location_en %}{% assign location = site.data.location[location_id] | default: site.data.locations[location_id] %}{% unless forloop.first %}, {% endunless %}{{ location.bn }}{% endfor %}
+        </div>
       {%- endif -%}
 
       {%- if photo.date -%}
