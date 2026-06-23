@@ -1,98 +1,54 @@
 {% if page.categories and page.categories.size > 0 %}
 <div class="category-footer-box">
-  <strong class="category-footer-label">
-    {% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}
-  </strong>
-  <ul class="category-footer-list">
+  <span class="category-footer-label">{% if page.url contains '/bn/' %}শ্রেণীসমূহ:{% else %}Categories:{% endif %}</span>
+  <div class="category-footer-links">
     {% for cat in page.categories %}
-      <li>
-        <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>
-        {% unless forloop.last %}<span class="category-footer-divider">|</span>{% endunless %}
-      </li>
+      <a href="{{ '/categories/' | relative_url }}#{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %}<span class="category-footer-pipe">|</span>{% endunless %}
     {% endfor %}
-  </ul>
+  </div>
 </div>
 
 <style>
-/* Base/Light Mode Styles */
+/* Clean Base Box Framework */
 .category-footer-box {
-  margin-top: 2rem; 
-  padding: 0.4rem 0.6rem; 
-  background-color: #f9f9f9; 
-  border: 1px solid #ccc; 
-  border-radius: 6px; 
-  font-size: 0.95rem; 
-  clear: both;
+  margin-top: var(--space-8) !important;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
   line-height: 1.4;
+  clear: both;
+}
+
+/* Forces structural components to lock horizontally flush without layout spaces */
+.category-footer-box, 
+.category-footer-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .category-footer-label {
-  font-weight: 800; 
-  color: #1a1a1a;
-  display: inline;
-  margin-right: 0.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-right: var(--space-2);
 }
 
-.category-footer-list {
-  list-style-type: none; 
-  margin: 0; 
-  padding: 0; 
-  display: inline;
+.category-footer-links a {
+  color: var(--accent) !important;
+  text-decoration: none !important;
 }
 
-.category-footer-list li {
-  display: inline;
-  margin: 0;
-  padding: 0;
+.category-footer-links a:hover {
+  color: var(--accent-hover) !important;
+  text-decoration: underline !important;
 }
 
-.category-footer-list a {
-  color: #005cc5; 
-  text-decoration: none;
-}
-
-.category-footer-list a:hover {
-  text-decoration: underline;
-}
-
-.category-footer-divider {
-  margin: 0 0.4rem; 
-  color: #ccc; 
-  font-weight: normal; 
+.category-footer-pipe {
+  margin: 0 var(--space-2);
+  color: var(--border);
   user-select: none;
-}
-
-/* =========================================================
-   Dark Mode Support Matrix
-   ========================================================= */
-@media (prefers-color-scheme: dark) {
-  html:not(.forced-light) .category-footer-box {
-    background-color: #1f2937;
-    border-color: #374151;
-  }
-  html:not(.forced-light) .category-footer-label {
-    color: #f3f4f6;
-  }
-  html:not(.forced-light) .category-footer-list a {
-    color: #93c5fd;
-  }
-  html:not(.forced-light) .category-footer-divider {
-    color: #4b5563;
-  }
-}
-
-html.forced-dark .category-footer-box {
-  background-color: #1f2937;
-  border-color: #374151;
-}
-html.forced-dark .category-footer-label {
-  color: #f3f4f6;
-}
-html.forced-dark .category-footer-list a {
-  color: #93c5fd;
-}
-html.forced-dark .category-footer-divider {
-  color: #4b5563;
 }
 </style>
 {% endif %}
