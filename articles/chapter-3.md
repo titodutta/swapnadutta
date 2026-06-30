@@ -20,7 +20,7 @@ And now, a couple of days before the *Śrāddha*, I begin writing the third chap
 
 <figure class="article-image">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh21ujKlOdv79z0qfys3JIlUYO_xz_Ao6qeDG6Ri7KFF4I1uuUDut7dkKow7U0D4j76Rab-3CyGI3oCvIbsF7jDA4JnpkJzrulX_r9St4IaqVmXWGvuGs7uC-LDPCmn7wQAe68KQRVGDpHuTXTLjlhdss3xIE7SJvrG5G6lBznnPjomdi_FilRo5G_dDVs/s915/IMG_20200108_140709468-EFFECTS.jpg" alt="A woman and a man are standing in front of a snow-covered natural backdrop. Both are holding chunks of ice in their hands. The woman is wearing an orange saree with a dark-coloured jacket, a woollen cap on her head, and sunglasses. The man is wearing a colourful sweater and a scarf, smiling as he looks at the camera. In the background are snow-covered trees and small houses. The atmosphere is cold and peaceful." title="Mother and I, at Kashmir">
-  <figcaption>Mother and I...<br>About 20 kilometres from [Srinagar, Kashmir](https://en.wikipedia.org/wiki/Srinagar). On the way to [Sonmarg](https://en.wikipedia.org/wiki/Srinagar).<br>8 January 2020</figcaption>
+  <figcaption>Mother and I...<br>About 20 kilometres from <a href="https://en.wikipedia.org/wiki/Srinagar">Srinagar, Kashmir</a>. On the way to <a href="https://en.wikipedia.org/wiki/Srinagar">Sonmarg</a>.<br>8 January 2020</figcaption>
 </figure>
 
 # *Disbelief* in *Belief*
