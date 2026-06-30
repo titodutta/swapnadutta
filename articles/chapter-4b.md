@@ -16,7 +16,7 @@ For my Mother, *Ghāṭkāj* was performed on Thursday, 7 August 2025 ([Bengali 
 
 <figure class="article-image">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtKQvXDxmty0qhAUGNXpxcws6vivwYQK1DUgz38Am3bTNXVQHuwVm2kml2j2cxgv125km4YzW5jPaJ25zzpDUkqmHgugcs90kF5FA3xJP4vFddNVNyeB78SLqHE_jjvLYe-HTFXcXZ2Ku0lyzhmGKKCy29kdiyzO4hRRRYtKhn7M6PB6UjtYjIxjEi7Rw/s686/Swapna%20Dutta%20at%20Jayrambati.jpg" alt="A full-length photo of a woman with short, black hair, wearing a red sweater over a yellow and green sari and a green scarf. She is standing in the foreground, facing the camera and smiling gently. Behind her is a large, ornate, golden gate with the words 'SRI SRI MATRI MANDIR' written across the top.">
-  <figcaption>My Mother, in front of the Mother's Temple at [Jayrambati](https://en.wikipedia.org/wiki/Jayrambati); <br>Photo taken on 13 January 2020. <br>[Sarada Devi](https://en.wikipedia.org/wiki/Sarada_Devi), spiritual consort of [Ramakrishna](https://en.wikipedia.org/wiki/Ramakrishna), was born in this village in 1853.</figcaption>
+  <figcaption>My Mother, in front of the Mother's Temple at <a href="https://en.wikipedia.org/wiki/Jayrambati">Jayrambati</a>; <br>Photo taken on 13 January 2020. <br><a href="https://en.wikipedia.org/wiki/Sarada_Devi">Sarada Devi</a>, spiritual consort of <a href="https://en.wikipedia.org/wiki/Ramakrishna">Ramakrishna</a>, was born in this village in 1853.</figcaption>
 </figure>
 
 # *Ghāṭkāj* — The Name and Location
@@ -30,7 +30,7 @@ Due to this deep connection, *Ghāṭkāj* is traditionally performed on the ban
 *Ghāṭśrāddha* is known by several other names, each reflecting a different aspect or ritual detail of the ceremony.
 
 1. ***Ghāṭśrāddha***: Named so because the *Śrāddha* takes place on the bank of a river or pond.
-2. ***Ghāṭpiṇ\dadāna***: Commonly used since the main spot for offering [piṇ\das](https://en.wikipedia.org/wiki/Pinda_(riceball)) (rice balls) is the *ghāṭ*.
+2. ***Ghāṭpiṇḍadāna***: Commonly used since the main spot for offering [piṇ\das](https://en.wikipedia.org/wiki/Pinda_(riceball)) (rice balls) is the *ghāṭ*.
 3. ***Pūraka piṇ\dadāna***: The *pūraka piṇ\da* given this day is not food for the departed but aids in forming their subtle post-death body.
 4. ***Jala–śrāddha***: Called this as the ritual involves direct contact with water (*Jala*).
 5. ***Tarpana Śraddha***: Alongside *piṇ\dadāna* at the *ghāṭ*, sesame seed offerings (*tilatarpaṇa*) are made; priests often call this *[Tarpana Śraddha](https://en.wikipedia.org/wiki/Tarpana)*.
@@ -38,7 +38,7 @@ Due to this deep connection, *Ghāṭkāj* is traditionally performed on the ban
 
 <figure class="article-image">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEher64f2Qa1WhLx4ct1NB1enf-VhUwXtVtzv7888fIdMbrJepsER3EsvBwJFEhMxM7pGvobKBgA3V91tjuQsWR3n15ToDqXtyVEtOj8bNSEzn4KSkbYFaiEfmO14Z7S9hgLygsWZegyMQZ_E0U5GijS-XZ9uhWZWxIh0YpwuX1CC0Wd3fk4jTzkR6eV5UA/s915/Viveknagar%20Jheel.jpg" alt="A view of the northern ghāt of Viveknagar Jheel, where the water is still and the sky’s reflection is visible.">
-  <figcaption>Photo taken from the northern *ghāt* of Viveknagar Jheel.<br>Here my Mother's *Ghāṭśrāddha* ceremony was performed.</figcaption>
+  <figcaption>Photo taken from the northern <i>ghāt</i> of Viveknagar Jheel.<br>Here my Mother's <i>Ghāṭśrāddha</i> ceremony was performed.</figcaption>
 </figure>
 
 ## *Pūraka Piṇ\da*
@@ -87,8 +87,8 @@ Though discussion of God or belief systems falls outside this chapter's scope, I
 The priest led the repentance mantras and resolutions accordingly.
 
 <figure class="article-image">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjk_CxocQCzbN6AFINkZpmewMAlTP62ox59He9kRW8xH6iKeCbotmtc-rI8p0v38Lyeu9bXwEDZYzcuAIrDLdNo-yE4WPR42SDdun46IItRr_dYE21jus0Mi0VxK-rIjc4RNhbYSoaEQfpWrN3TydytNszZc-arZWolWo0RF3flcDohpB8KmbTaF1Ebzg/s686/Viveknagar%20Jheel%20Ghaat%20Kaaj%207%20August%202025.jpg" alt="A moment captured during the Ghāṭkāj ceremony at the bank of Viveknagar Jheel. In the photo, two men are seated on the ground.">
-  <figcaption>Piṇ\da making in progress during the *Ghāṭkāj* ceremony.</figcaption>
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjb_CxocQCzbN6AFINkZpmewMAlTP62ox59He9kRW8xH6iKeCbotmtc-rI8p0v38Lyeu9bXwEDZYzcuAIrDLdNo-yE4WPR42SDdun46IItRr_dYE21jus0Mi0VxK-rIjc4RNhbYSoaEQfpWrN3TydytNszZc-arZWolWo0RF3flcDohpB8KmbTaF1Ebzg/s686/Viveknagar%20Jheel%20Ghaat%20Kaaj%207%20August%202025.jpg" alt="A moment captured during the Ghāṭkāj ceremony at the bank of Viveknagar Jheel. In the photo, two men are seated on the ground.">
+  <figcaption>Piṇ\da making in progress during the <i>Ghāṭkāj</i> ceremony.</figcaption>
 </figure>
 
 ## *Piṇ\dadāna* Ritual
@@ -97,16 +97,16 @@ Next, invoking Lord [Vishnu](https://en.wikipedia.org/wiki/Vishnu), the offering
 
 > Sanskrit: "ॐ विष्णु। ॐ विष्णु। ॐ विष्णु। (*or*, नमोः विष्णु, नमोः विष्णु, नमोः विष्णु)। 
 > 
-> ॐ।अद्य कृष्णपक्षे श्रावणमासस्य एकविंशतितमे दिने, गुरुवासरे, अहं विष्णोः चरणयोः स्थित्वा मम गोत्रं शाण्डिल्यमिति, मम नाम टिटो दत्त इति उच्चারयामि। शाण्डिल्यगोत्रजा माता स्वप्ना दत्तायाः प्रेतत्वमोक्षार्थं तस्याः श्राद्धनिमित्तं च, विवेकनगरझिलतटे तस्याः पितृलोकप्राप्तये अस्य श्राद्धकर्माङ्गभूतं घाटकार्यं अहं सम्पादयामि।"
+> ॐ।अद्य कृष्णपक्षे श्रावणमासस्य एकविंशतितमे दिने, गुरुवासरे, अहं विष्णोः चरणयोः स्थित्वा मम गोत्रं शाण्डিল্যमिति, मम नाम टिटो दत्त इति उच्चारयामि। शाण्डिल्यगोत्रजा माता स्वप्না दत्तायाः प्रेতत्वमोक्षार्थं तस्याः श्राद्धनिमित्तं च, विवेकनगरझिलतटे तस्याः पितृलोकप्राप्तये अस्य श्राद्धकर्माङ्गभूतं घाटकार्यं अहं सम्पादयामि।"
 > 
 > **Translation**: "ॐ ([Om](https://en.wikipedia.org/wiki/Om)) [Vishnu](https://en.wikipedia.org/wiki/Vishnu). ॐ Vishnu. ॐ Vishnu. (or *Namah* Vishnu, *Namah* Vishnu, *Namah* Vishnu.) 
 > 
-> On this [Krishna Paksha](https://en.wikipedia.org/wiki/Paksha#Krishna_Paksha), 21st day of [Śrāvaṇa](https://en.wikipedia.org/wiki/Srabon) month, Thursday, I am taking refuge at the feet of [Vishnu](https://en.wikipedia.org/wiki/Vishnu). My *[gotra](https://en.wikipedia.org/wiki/Gotra)* is *[Shāṇḍilya](https://en.wikipedia.org/wiki/Shandilya)*, and my name is Tito Dutta. For the liberation of my Mother Swapna Dutta, born in the *Shāṇḍilya gotra,* and on the occasion of her *Śrāddha*, I am performing this *Ghāṭkāj* ceremony at Viveknagar Jheel for her soul's peaceful journey to the other world."
+> On this [Krishna Paksha](https://en.wikipedia.org/wiki/Paksha#Krishna_Paksha), 21st day of [Śrāvaṇa](https://en.wikipedia.org/wiki/Srabon) month, Thursday, I am taking refuge at the feet of [Vishnu](https://en.wikipedia.org/wiki/Vishnu). My *[gotra](https://en.wikipedia.org/wiki/Gotra)* is *[Shāṇ\dilya](https://en.wikipedia.org/wiki/Shandilya)*, and my name is Tito Dutta. For the liberation of my Mother Swapna Dutta, born in the *Shāṇ\dilya gotra,* and on the occasion of her *Śrāddha*, I am performing this *Ghāṭkāj* ceremony at Viveknagar Jheel for her soul's peaceful journey to the other world."
 
 With this declaration, the *piṇ\dadāna* began, accompanied by various *mantras* including the *[Sūrya Namaskāra mantra](https://en.wikipedia.org/wiki/Sun_Salutation#Mantras)* (Sun salutation) and *Gayatri mantra.* Eleven *piṇ\das* were offered. Each piṇ\da was dedicated with a mantra, for example:
 
-1. ॐ। शाण्डिल्यगोत्रस्य मातुः स्वप्ना दत्तायाः एष ते मस्तकरूपः पिण्डः स्वाहा। (**Translation**: ॐ. This piṇ\da is dedicated to my Mother, Swapna Dutta, of the *[Shāṇḍilya](https://en.wikipedia.org/wiki/Shandilya) [gotra](https://en.wikipedia.org/wiki/Gotra)*, for the construction of her subtle head in the afterlife.)
-2. ॐ। शाण्डिल्यगोत्रस्य मातुः स्वप्ना दत्तायाः एष ते स्कन्धবাহুরূপः पिण्डः स्वाहा। (**Translation**: ॐ. This piṇ\da is dedicated to my Mother, Swapna Dutta, of the *Shāṇḍilya gotra*, for the formation of her shoulders and arms in the subtle body.)
+1. ॐ। शाण्डिल্যगोत्रस्य मातुः स्वप्ना दत्तायाः एष ते मस्तकरूपः पिण्डः स्वाहा। (**Translation**: ॐ. This piṇ\da is dedicated to my Mother, Swapna Dutta, of the *[Shāṇ\dilya](https://en.wikipedia.org/wiki/Shandilya) [gotra](https://en.wikipedia.org/wiki/Gotra)*, for the construction of her subtle head in the afterlife.)
+2. ॐ। शाण्डिल्यगोत्रस्य मातुः स्वप्না दत्तायाः एष ते स्कन्धবাহুরूपः पिण्डः स्वाहा। (**Translation**: ॐ. This piṇ\da is dedicated to my Mother, Swapna Dutta, of the *Shāṇ\dilya gotra*, for the formation of her shoulders and arms in the subtle body.)
 3. ॐ। शाण्डिल्यगोत्रस्य मातुः स्वप्ना दत्तायाः एष ते बक्षःकण्ठरूपः पिण्डः स्वाहा। (**Translation**: ॐ. This piṇ\da is dedicated to my Mother, Swapna Dutta, of the *Shāṇ\dilya gotra*, for the creation of her chest and throat in the subtle body.)
 
 Similarly, other *piṇ\das* were dedicated. The eleventh *piṇ\da* was dedicated to the crow:
