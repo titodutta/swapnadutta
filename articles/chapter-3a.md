@@ -1,3 +1,15 @@
+---
+layout: default
+lang: en
+title: "Swapna Dutta, My Mother: Third Chapter (Addendum)"
+description: "An addendum to the third chapter reflecting on mourning rituals, belief, grief, curiosity, and remembrance after the death of Swapna Dutta."
+categories: [Articles]
+permalink: /articles/chapter-3a/
+created: 2026-05-15
+originally_created: 2025-08-07
+original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta3aen.html"
+---
+
 Tomorrow, Friday, 8 August 2025 ([Bengali calendar](https://en.wikipedia.org/wiki/Bengali_calendar): 22 [Srabon](https://en.wikipedia.org/wiki/Srabon) 1432), the ritual rites for my Mother will be performed. Yesterday, I published the [third chapter](https://www.silentcontemplation.com/2025/08/swapnadutta3en.html) — The Pre-*Śrāddha* Chapter. Today, on the eve of the ceremony, I am sharing this piece as an Addendum to that chapter. Perhaps it could have been simply appended to the previous chapter. But I chose not to, for two reasons: 1) More than thirty hours have passed since that piece was published. 2) This addendum was largely prompted by the responses and reflections I received after sharing the third chapter. Therefore, I am presenting it here as a standalone note.
 
 <figure class="article-image">
