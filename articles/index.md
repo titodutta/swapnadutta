@@ -1,60 +1,61 @@
 ---
 layout: default
-lang: bn
-title: নিবন্ধ
-description: "স্বপ্না দত্তকে ঘিরে স্মৃতিচারণ, প্রবন্ধ, আত্মকথন ও সংরক্ষণমূলক লেখা।"
+lang: en
+title: Articles
+description: "Articles, reflections, memoirs, and archival writings related to Swapna Dutta."
 categories: [Project pages]
-permalink: /bn/articles/
+permalink: /articles/
 created: 2026-05-15
 ---
 
-এই বিভাগে স্বপ্না দত্তকে ঘিরে লেখা স্মৃতিচারণ, ব্যক্তিগত অভিজ্ঞতা, আত্মকথনধর্মী রচনা, সংরক্ষণমূলক উপাদান এবং বিভিন্ন প্রতিফলনধর্মী লেখাকে একত্র করা হয়েছে। এখানে প্রকাশিত লেখাগুলির কিছু গভীরভাবে ব্যক্তিগত, আবার কিছু বৃহত্তর মানবিক অভিজ্ঞতা, পরিবার, স্মৃতি, শোক এবং সময়ের প্রবাহকে কেন্দ্র করে নির্মিত।
+This section brings together articles, reflections, memoirs, recollections, and other writings connected to the life and memory of Swapna Dutta. The collection includes personal narratives, archival material, translated texts, and essays written across different periods.
 
-এই সংকলনের উদ্দেশ্য শুধুমাত্র একটি ব্যক্তিগত স্মৃতিভাণ্ডার তৈরি করা নয়, বরং স্মরণ, সম্পর্ক এবং মানবজীবনের ভঙ্গুরতার অভিজ্ঞতাকে নথিবদ্ধ করাও।
+Some writings are intimate and autobiographical in nature, while others attempt to place individual experiences within wider emotional, social, and historical contexts. Together, these articles form an evolving archive of remembrance.
 
 <div class="article-tools">
 
   <input
     type="search"
     id="articleSearch"
-    placeholder="নিবন্ধ খুঁজুন"
-    aria-label="নিবন্ধ খুঁজুন">
+    placeholder="Search articles"
+    aria-label="Search articles">
 
-  <select id="articleSort" aria-label="নিবন্ধ সাজান">
+  <select id="articleSort" aria-label="Sort articles">
 
     <option value="oldest">
-      পুরোনো থেকে নতুন (ডিফল্ট)
+      Oldest first (Default)
     </option>
 
     <option value="newest">
-      নতুন থেকে পুরোনো
+      Newest first
     </option>
 
     <option value="az">
-      শিরোনাম: অ-হ
+      Title A–Z
     </option>
 
     <option value="za">
-      শিরোনাম: হ-অ
+      Title Z–A
     </option>
 
     <option value="random">
-      যাদৃচ্ছিক মোড (Random Mode)
+      Random Mode
     </option>
 
   </select>
 
 </div>
 
-## প্রবন্ধের তালিকা
+## List of articles
 
 <ul id="articleList" class="article-list">
 
-{% assign bangla_articles = site.pages
-  | where_exp: "item", "item.url contains '/bn/articles/'"
-  | where_exp: "item", "item.url != '/bn/articles/'" %}
+{% assign english_articles = site.pages
+  | where_exp: "item", "item.url contains '/articles/'"
+  | where_exp: "item", "item.url != '/articles/'"
+  | where_exp: "item", "item.lang != 'bn'" %}
 
-{% assign sorted_articles = bangla_articles | sort: "originally_created" %}
+{% assign sorted_articles = english_articles | sort: "originally_created" %}
 
 {% for article in sorted_articles %}
 
@@ -77,7 +78,7 @@ created: 2026-05-15
 
     {% if article.originally_created %}
     <small>
-      রচনার তারিখ: {{ article.originally_created | date: "%-d %B %Y" }}
+      Written on: {{ article.originally_created | date: "%-d %B %Y" }}
     </small>
     {% endif %}
 
