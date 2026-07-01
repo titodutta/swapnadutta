@@ -22,12 +22,12 @@ Some writings are intimate and autobiographical in nature, while others attempt 
 
   <select id="articleSort" aria-label="Sort articles">
 
-    <option value="newest">
-      Newest first
+    <option value="oldest">
+      Oldest first (Default)
     </option>
 
-    <option value="oldest">
-      Oldest first
+    <option value="newest">
+      Newest first
     </option>
 
     <option value="az">
@@ -36,6 +36,10 @@ Some writings are intimate and autobiographical in nature, while others attempt 
 
     <option value="za">
       Title Z–A
+    </option>
+
+    <option value="random">
+      Random Mode
     </option>
 
   </select>
@@ -51,14 +55,14 @@ Some writings are intimate and autobiographical in nature, while others attempt 
   | where_exp: "item", "item.url != '/articles/'"
   | where_exp: "item", "item.lang != 'bn'" %}
 
-{% assign sorted_articles = english_articles | sort: "created" | reverse %}
+{% assign sorted_articles = english_articles | sort: "originally_created" %}
 
 {% for article in sorted_articles %}
 
   <li
     class="article-item"
     data-title="{{ article.title | downcase }}"
-    data-date="{{ article.created | date: '%Y-%m-%d' }}">
+    data-date="{{ article.originally_created | date: '%Y-%m-%d' }}">
 
     <h3>
       <a href="{{ article.url | relative_url }}">
@@ -72,9 +76,9 @@ Some writings are intimate and autobiographical in nature, while others attempt 
     </p>
     {% endif %}
 
-    {% if article.created %}
+    {% if article.originally_created %}
     <small>
-      {{ article.created | date: "%-d %B %Y" }}
+      Written on: {{ article.originally_created | date: "%-d %B %Y" }}
     </small>
     {% endif %}
 
@@ -87,88 +91,97 @@ Some writings are intimate and autobiographical in nature, while others attempt 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  const searchInput =
-    document.getElementById('articleSearch');
-
-  const sortSelect =
-    document.getElementById('articleSort');
-
-  const articleList =
-    document.getElementById('articleList');
-
-  const articles =
-    Array.from(articleList.querySelectorAll('.article-item'));
+  const searchInput = document.getElementById('articleSearch');
+  const sortSelect = document.getElementById('articleSort');
+  const articleList = document.getElementById('articleList');
+  const articles = Array.from(articleList.querySelectorAll('.article-item'));
 
   function filterArticles() {
-
-    const query =
-      searchInput.value.toLowerCase();
-
+    const query = searchInput.value.toLowerCase();
     articles.forEach(article => {
-
-      const title =
-        article.dataset.title;
-
-      article.style.display =
-        title.includes(query)
-          ? ''
-          : 'none';
+      const title = article.dataset.title;
+      article.style.display = title.includes(query) ? '' : 'none';
     });
   }
 
   function sortArticles() {
-
     const value = sortSelect.value;
+    const sorted = [...articles];
 
-    const sorted =
-      [...articles];
-
-    sorted.sort((a, b) => {
-
-      const titleA =
-        a.dataset.title;
-
-      const titleB =
-        b.dataset.title;
-
-      const dateA =
-        a.dataset.date;
-
-      const dateB =
-        b.dataset.date;
-
-      if (value === 'newest') {
-        return dateB.localeCompare(dateA);
+    if (value === 'random') {
+      // Fisher-Yates Shuffle array variant for unbiased random calculation
+      for (let i = sorted.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
       }
+    } else {
+      sorted.sort((a, b) => {
+        const titleA = a.dataset.title;
+        const titleB = b.dataset.title;
+        const dateA = a.dataset.date;
+        const dateB = b.dataset.date;
 
-      if (value === 'oldest') {
-        return dateA.localeCompare(dateB);
-      }
-
-      if (value === 'az') {
-        return titleA.localeCompare(titleB);
-      }
-
-      if (value === 'za') {
-        return titleB.localeCompare(titleA);
-      }
-
-      return 0;
-    });
+        if (value === 'newest') {
+          return dateB.localeCompare(dateA);
+        }
+        if (value === 'oldest') {
+          return dateA.localeCompare(dateB);
+        }
+        if (value === 'az') {
+          return titleA.localeCompare(titleB);
+        }
+        if (value === 'za') {
+          return titleB.localeCompare(titleA);
+        }
+        return 0;
+      });
+    }
 
     sorted.forEach(article => {
       articleList.appendChild(article);
     });
   }
 
-  searchInput.addEventListener(
-    'input',
-    filterArticles
-  );
-
-  sortSelect.addEventListener(
-    'change',
-    sortArticles
-  );
+  searchInput.addEventListener('input', filterArticles);
+  sortSelect.addEventListener('change', sortArticles);
 });
 </script>
+
+<style>
+  :root {
+    --tool-bg: #f9f9f9;
+    --tool-text: #222222;
+    --tool-border: #dddddd;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --tool-bg: #1e1e1e;
+      --tool-text: #e0e0e0;
+      --tool-border: #444444;
+    }
+  }
+
+  .article-tools {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .article-tools input,
+  .article-tools select {
+    background-color: var(--tool-bg);
+    color: var(--tool-text);
+    border: 1px solid var(--tool-border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .article-tools input {
+    flex: 1;
+    min-width: 200px;
+  }
+</style>
