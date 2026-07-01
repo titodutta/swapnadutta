@@ -1,61 +1,60 @@
 ---
 layout: default
-lang: en
-title: Articles
-description: "Articles, reflections, memoirs, and archival writings related to Swapna Dutta."
+lang: bn
+title: নিবন্ধ
+description: "স্বপ্না দত্তকে ঘিরে স্মৃতিচারণ, প্রবন্ধ, আত্মকথন ও সংরক্ষণমূলক লেখা।"
 categories: [Project pages]
-permalink: /articles/
+permalink: /bn/articles/
 created: 2026-05-15
 ---
 
-This section brings together articles, reflections, memoirs, recollections, and other writings connected to the life and memory of Swapna Dutta. The collection includes personal narratives, archival material, translated texts, and essays written across different periods.
+এই বিভাগে স্বপ্না দত্তকে ঘিরে লেখা স্মৃতিচারণ, ব্যক্তিগত অভিজ্ঞতা, আত্মকথনধর্মী রচনা, সংরক্ষণমূলক উপাদান এবং বিভিন্ন প্রতিফলনধর্মী লেখাকে একত্র করা হয়েছে। এখানে প্রকাশিত লেখাগুলির কিছু গভীরভাবে ব্যক্তিগত, আবার কিছু বৃহত্তর মানবিক অভিজ্ঞতা, পরিবার, স্মৃতি, শোক এবং সময়ের প্রবাহকে কেন্দ্র করে নির্মিত।
 
-Some writings are intimate and autobiographical in nature, while others attempt to place individual experiences within wider emotional, social, and historical contexts. Together, these articles form an evolving archive of remembrance.
+এই সংকলনের উদ্দেশ্য শুধুমাত্র একটি ব্যক্তিগত স্মৃতিভাণ্ডার তৈরি করা নয়, বরং স্মরণ, সম্পর্ক এবং মানবজীবনের ভঙ্গুরতার অভিজ্ঞতাকে নথিবদ্ধ করাও।
 
 <div class="article-tools">
 
   <input
     type="search"
     id="articleSearch"
-    placeholder="Search articles"
-    aria-label="Search articles">
+    placeholder="নিবন্ধ খুঁজুন"
+    aria-label="নিবন্ধ খুঁজুন">
 
-  <select id="articleSort" aria-label="Sort articles">
+  <select id="articleSort" aria-label="নিবন্ধ সাজান">
 
     <option value="oldest">
-      Oldest first (Default)
+      পুরোনো থেকে নতুন (ডিফল্ট)
     </option>
 
     <option value="newest">
-      Newest first
+      নতুন থেকে পুরোনো
     </option>
 
     <option value="az">
-      Title A–Z
+      শিরোনাম: অ-হ
     </option>
 
     <option value="za">
-      Title Z–A
+      শিরোনাম: হ-অ
     </option>
 
     <option value="random">
-      Random Mode
+      যাদৃচ্ছিক মোড (Random Mode)
     </option>
 
   </select>
 
 </div>
 
-## List of articles
+## প্রবন্ধের তালিকা
 
 <ul id="articleList" class="article-list">
 
-{% assign english_articles = site.pages
-  | where_exp: "item", "item.url contains '/articles/'"
-  | where_exp: "item", "item.url != '/articles/'"
-  | where_exp: "item", "item.lang != 'bn'" %}
+{% assign bangla_articles = site.pages
+  | where_exp: "item", "item.url contains '/bn/articles/'"
+  | where_exp: "item", "item.url != '/bn/articles/'" %}
 
-{% assign sorted_articles = english_articles | sort: "originally_created" %}
+{% assign sorted_articles = bangla_articles | sort: "originally_created" %}
 
 {% for article in sorted_articles %}
 
@@ -78,7 +77,7 @@ Some writings are intimate and autobiographical in nature, while others attempt 
 
     {% if article.originally_created %}
     <small>
-      Written on: {{ article.originally_created | date: "%-d %B %Y" }}
+      রচনার তারিখ: {{ article.originally_created | date: "%-d %B %Y" }}
     </small>
     {% endif %}
 
@@ -145,69 +144,3 @@ document.addEventListener('DOMContentLoaded', () => {
   sortSelect.addEventListener('change', sortArticles);
 });
 </script>
-
-<style>
-  :root {
-    --tool-bg: #f9f9f9;
-    --tool-text: #222222;
-    --tool-border: #dddddd;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --tool-bg: #1e1e1e;
-      --tool-text: #e0e0e0;
-      --tool-border: #444444;
-    }
-    
-    .article-tools input,
-    .article-tools select {
-      background-color: var(--tool-bg) !important;
-      color: var(--tool-text) !important;
-      border-color: var(--tool-border) !important;
-      -webkit-text-fill-color: var(--tool-text) !important;
-    }
-  }
-
-  .article-tools {
-    display: flex;
-    gap: 12px;
-    margin: 20px 0;
-    flex-wrap: wrap;
-  }
-
-  .article-tools input,
-  .article-tools select {
-    background-color: var(--tool-bg);
-    color: var(--tool-text);
-    border: 1px solid var(--tool-border);
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .article-tools input[type="search"]::-webkit-search-decoration,
-  .article-tools input[type="search"]::-webkit-search-cancel-button,
-  .article-tools input[type="search"]::-webkit-search-results-button,
-  .article-tools input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .article-tools input {
-    flex: 1;
-    min-width: 200px;
-  }
-
-  /* Retaining default native dropdown indicator structure cleanly for layout balance */
-  .article-tools select {
-    padding-right: 28px;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    background-size: 16px;
-  }
-</style>
