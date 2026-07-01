@@ -20,7 +20,7 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta3.html"
 
 <figure class="article-image">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh21ujKlOdv79z0qfys3JIlUYO_xz_Ao6qeDG6Ri7KFF4I1uuUDut7dkKow7U0D4j76Rab-3CyGI3oCvIbsF7jDA4JnpkJzrulX_r9St4IaqVmXWGvuGs7uC-LDPCmn7wQAe68KQRVGDpHuTXTLjlhdss3xIE7SJvrG5G6lBznnPjomdi_FilRo5G_dDVs/s915/IMG_20200108_140709468-EFFECTS.jpg" alt="বরফে ঢাকা প্রাকৃতিক পটভূমির সামনে এক মহিলা ও এক পুরুষ দাঁড়িয়ে আছেন। উভয়ের হাতে একটি করে বরফের চাঙর রয়েছে। মহিলা পরেছেন কমলা শাড়ি ও গাঢ় রঙের জ্যাকেট, মাথায় টুপি ও চোখে সানগ্লাস। পুরুষটি রঙিন সোয়েটার ও স্কার্ফ পরা, হাসিমুখে ক্যামেরার দিকে তাকিয়ে আছেন। পিছনে বরফে ঢাকা গাছপালা ও ছোট ছোট বাড়ি। পরিবেশে শীত ও শান্তিময় আবহ।" title="মা আর আমি। কাশ্মীরে।">
-  <figcaption>মা ও আমি। কত বরফ!<br>[শ্রীনগর](https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A7%8D%E0%A6%B0%E0%A7%80%E0%A6%A8%E0%A6%97%E0%A6%B0) থেকে ~২০ কিলোমটার দূরে। [সোনমার্গের](https://bn.wikipedia.org/wiki/%E0%A6%B8%E0%A7%8B%E0%A6%A8%E0%A6%AE%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%99) পথে।<br>৮ জানুয়ারি ২০২০</figcaption>
+  <figcaption>মা ও আমি। কত বরফ!<br><a href="https://bn.wikipedia.org/wiki/%E0%A6%B6%E0%A7%8D%E0%A6%B0%E0%A7%80%E0%A6%A8%E0%A6%97%E0%A6%B0">শ্রীনগর</a> থেকে ~২০ কিলোমটার দূরে। <a href="https://bn.wikipedia.org/wiki/%E0%A6%B8%E0%A7%8B%E0%A6%A8%E0%A6%AE%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%99">সোনমার্গের</a> পথে।<br>৮ জানুয়ারি ২০২০</figcaption>
 </figure>
 
 # বিশ্বাসে অবিশ্বাস
@@ -48,8 +48,8 @@ original_url: "https://www.silentcontemplation.com/2025/08/swapnadutta3.html"
 আমি "বিশ্বাস"-কেই বিশ্বাস করি না।
 
 <figure class="article-image">
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-HgSv0_V7VLb_qG671JRhUbB95fBkK5i80OVp2V34HoaTSesoXe70Js6nGNdtAtMW0ZehzOXPF6gqehd4TMVXf7dvH7UexI5mqmXRDg4mwHFll0UEKLcTTXdkeBbbqG0B49D8qtN1fc16Gs0ps9ysha8LFW1oEPI8BSXfKBoMG2gv_1Ho3sVyb-7NS8c/s686/Swapna%20Dutta%20Garcha.jpg" alt="একজন মহিলা সাদা শাড়ি করে রাস্তায় দাঁড়িয়ে আছেন। পেছনে একটি চক্ষু চিকিৎসালয়, যার সাইনবোর্ডে লেখা আছে 'Dr. Nihar Munsi Eye Foundation'। রাতের আলোয় চারপাশে অল্প আলো-আঁধারি পরিবেশ। রাস্তার ধারে গাছপালা এবং ভবনের দেওয়াল দেখা যাচ্ছে。" title="আমার মা, কলকাতার গরচা রোড অঞ্চলে।">
-  <figcaption>আমার মা, কলকাতার [গরচা রোড অঞ্চলে](https://bn.wikipedia.org/wiki/%E0%A7%AE%E0%A7%AB_%E0%A6%A8%E0%A6%82_%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A1,_%E0%A6%95%E0%A6%B2%E0%A6%95%E0%A6%BE%E0%A6%A4%E0%A6%BE_%E0%A6%AA%E0%A7%8C%E0%A6%B0%E0%A6%B8%E0%A6%82%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE)।<br>২৪ নভেম্বর ২০১৯ তারিখে তোলা ছবি।<br>আমার মায়ের ছোটবেলার একটা বড় অংশ এই গরচা অঞ্চলে কেটেছিল।<br>(প্রয়াত) ডাঃ নীহার মুন্সী, যাঁর বাড়ির সামনে দাঁড়িয়ে এই ছবি তোলা,<br>সেই সময় তিনি এই অঞ্চলের এক প্রখ্যাত চক্ষু চিকিৎসক ছিলেন।</figcaption>
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-HgSv0_V7VLb_qG671JRhUbB95fBkK5i80OVp2V34HoaTSesoXe70Js6nGNdtAtMW0ZehzOXPF6gqehd4TMVXf7dvH7UexI5mqmXRDg4mwHFll0UEKLcTTXdkeBbbqG0B49D8qtN1fc16Gs0ps9ysha8LFW1oEPI8BSXfKBoMG2gv_1Ho3sVyb-7NS8c/s686/Swapna%20Dutta%20Garcha.jpg" alt="একজন মহিলা সাদা শাড়ি করে রাস্তায় দাঁড়িয়ে আছেন। পেছনে একটি চক্ষু চিকিৎসালয়, যার সাইনবোর্ডে লেখা আছে 'Dr. Nihar Munsi Eye Foundation'। রাতের আলোয় চারপাশে অল্প আলো-আঁধারি পরিবেশ। রাস্তার ধারে গাছপালা এবং ভবনের দেওয়াল দেখা যাচ্ছে।" title="আমার মা, কলকাতার গরচা রোড অঞ্চলে।">
+  <figcaption>আমার মা, কলকাতার <a href="https://bn.wikipedia.org/wiki/%E0%A7%AE%E0%A7%AB_%E0%A6%A8%E0%A6%82_%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A1,_%E0%A6%95%E0%A6%B2%E0%A6%95%E0%A6%BE%E0%A6%A4%E0%A6%BE_%E0%A6%AA%E0%A7%8C%E0%A6%B0%E0%A6%B8%E0%A6%82%E0%A6%B8%E0%A7%8D%E0%A6%A5%E0%A6%BE">গরচা রোড অঞ্চলে</a>।<br>২৪ নভেম্বর ২০১৯ তারিখে তোলা ছবি।<br>আমার মায়ের ছোটবেলার একটা বড় অংশ এই গরচা অঞ্চলে কেটেছিল।<br>(প্রয়াত) ডাঃ নীহার মুন্সী, যাঁর বাড়ির সামনে দাঁড়িয়ে এই ছবি তোলা,<br>সেই সময় তিনি এই অঞ্চলের এক প্রখ্যাত চক্ষু চিকিৎসক ছিলেন。</figcaption>
 </figure>
 
 # শয়ে শয়ে সংশয় {#s100}
