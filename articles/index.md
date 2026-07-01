@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sorted = [...articles];
 
     if (value === 'random') {
-      // Fisher-Yates Shuffle array variant for unbiased random calculation
       for (let i = sorted.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [sorted[i], sorted[j]] = [sorted[j], sorted[i]];
@@ -154,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     --tool-border: #dddddd;
   }
 
-  /* This block handles the dark mode overrides perfectly */
   @media (prefers-color-scheme: dark) {
     :root {
       --tool-bg: #1e1e1e;
@@ -162,12 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
       --tool-border: #444444;
     }
     
-    /* Explicitly forcing the browser to override default input/select backgrounds */
     .article-tools input,
     .article-tools select {
       background-color: var(--tool-bg) !important;
       color: var(--tool-text) !important;
       border-color: var(--tool-border) !important;
+      -webkit-text-fill-color: var(--tool-text) !important;
     }
   }
 
@@ -187,10 +185,29 @@ document.addEventListener('DOMContentLoaded', () => {
     border-radius: 6px;
     font-size: 14px;
     outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .article-tools input[type="search"]::-webkit-search-decoration,
+  .article-tools input[type="search"]::-webkit-search-cancel-button,
+  .article-tools input[type="search"]::-webkit-search-results-button,
+  .article-tools input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   .article-tools input {
     flex: 1;
     min-width: 200px;
+  }
+
+  /* Retaining default native dropdown indicator structure cleanly for layout balance */
+  .article-tools select {
+    padding-right: 28px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
   }
 </style>
