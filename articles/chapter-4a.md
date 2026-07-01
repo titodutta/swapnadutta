@@ -18,7 +18,7 @@ After working on this essay for several hours, I realised the draft was becoming
   <figcaption>Swapna Dutta, my Mother<br>At the [Naimisharanya temple grounds](https://en.wikipedia.org/wiki/Shri_Naimishnath_Vishnu_Temple), [Uttar Pradesh](https://en.wikipedia.org/wiki/Uttar_Pradesh). <br>A photo from 7 October 2019.</figcaption>
 </figure>
 
-# *Śrāddha* and *Śraddhā*
+## *Śrāddha* and *Śraddhā*
 
 The essential purpose of *Śrāddha* ritual is to ensure the peace and liberation of the souls of parents and forebears. It is a ceremony that forms an unseen bridge between the living and the departed. Through it, we remember our ancestors, acknowledge the debt we owe them, and pray for their spiritual rest.
 
@@ -97,11 +97,11 @@ In the [*Kesamutti Sutta*](https://en.wikipedia.org/wiki/Kesamutti_Sutta), also 
 
 I have quoted several sayings in the paragraphs above. Many more statements and opinions could be collected on this subject. What is clear is that this is not a case of differing schools of thought—all sages have the same opinion. Across faiths and philosophies — theist, atheist, agnostic, or scientific — one message is constant— without sincerity and attentiveness, no meaningful act bears fruit.
 
-# *Ṛṇa-traya — The Three Debts*
+## *Ṛṇa-traya — The Three Debts*
 
 In [Sanātana Dharma](https://en.wikipedia.org/wiki/San%C4%81tana_Dharma) (Hinduism), it is taught that every human life carries certain eternal duties and obligations. According to the scriptures, a person is born already bearing three debts — the *Deva-ṛṇa* (debt to the gods, for blessings and natural forces), the *Ṛṣi-ṛṇa* (debt to the sages, for wisdom and knowledge), and the *Pitṛ-ṛṇa* (debt to the ancestors, for life and heritage). Fulfilling these is considered one of the primary responsibilities of a householder.
 
-## *Deva–ṛṇa* — Debt to the Devas
+### *Deva–ṛṇa* — Debt to the Devas
 
 The *[Vedas](https://en.wikipedia.org/wiki/Vedas)* describe the *[Devas](https://en.wikipedia.org/wiki/Deva_(Hinduism))* (gods) not merely as divine beings, but as personifications of nature and cosmic forces — the Sun, Moon, Wind, Fire, Varuṇa, and others. They constantly give without ceasing, sustaining life and livelihood. This debt is repaid through *[yajña](https://en.wikipedia.org/wiki/Yajna)* (sacrifice), worship, and prayer.
 
@@ -114,7 +114,7 @@ Devānbhāvayatānena te devā bhāvayantu vaḥ।
 **Translation**  
 Honour and nourish the Devas through sacrifice and devotion; in return, may the Devas bring you prosperity.
 
-## *Ṛṣi–ṛṇa* — Debt to the Sages
+### *Ṛṣi–ṛṇa* — Debt to the Sages
 
 The knowledge of the [*Vedas*](https://en.wikipedia.org/wiki/Vedas), the teachings of *[Dharma](https://en.wikipedia.org/wiki/Dharma)*, and the guidance of the spiritual path all come to us through the labour and insight of the *[Ṛṣis](https://en.wikipedia.org/wiki/Rishi)*. Their research, austerity, and discipline opened the way for humanity’s spiritual growth.
 
@@ -129,15 +129,15 @@ The Veda is the root of Dharma in its entirety, and the Smṛti and conduct are 
 
 Repaying this debt means studying, preserving, and living by that knowledge, and passing it forward to others.
 
-## *Pitṛ–ṛṇa* — Debt to the Ancestors
+### *Pitṛ–ṛṇa* — Debt to the Ancestors
 
 Our very existence — our birth, lineage, and social identity — is the gift of our forebears. It is a sacred duty to seek their peace during life and after death.
 
 This debt is repaid through rites such as *[Śrāddha](https://en.wikipedia.org/wiki/%C5%9Ar%C4%81ddha)*, *[Piṇḍa-dāna](https://en.wikipedia.org/wiki/Pinda_(riceball))*, *[Tarpaṇa](https://en.wikipedia.org/wiki/Tarpana)*, and the preservation of the family lineage. Among these, the *Śrāddha* ceremony is regarded as the foremost means of releasing oneself from the *Pitṛ-ṛṇa*.
 
-# *Śrāddha* — Types and Other Details
+## *Śrāddha* — Types and Other Details
 
-## The Sixteen Forms of *Śrāddha*
+### The Sixteen Forms of *Śrāddha*
 
 According to the *[Dharmaśāstras](https://en.wikipedia.org/wiki/Dharma%C5%9B%C4%81stra)* (ancient Hindu legal and moral codes), there are sixteen principal kinds of *Śrāddha*— 
 
@@ -160,7 +160,7 @@ According to the *[Dharmaśāstras](https://en.wikipedia.org/wiki/Dharma%C5%9B%C
 
 **Note**: The exact list of sixteen ***Śrāddhas*** (rituals) may differ between communities, regions, and philosophical schools. The central idea, however, remains that these rites — from the time of death until the completion of the first year — guide the soul on its journey and bring it peace in the afterlife. Collectively, they are known as *Ṣoḍaśa Śrāddha* (the sixteen ancestor rites), a concept that unifies all these ceremonies under one framework.
 
-## *Ādya Śrāddha* (first *Śrāddha* performed after death)
+### *Ādya Śrāddha* (first *Śrāddha* performed after death)
 
 After the period of *aśauca* (ritual impurity or mourning period) following the death of parents, relatives, or friends, the *Śrāddha* ritual performed is called *Ādya Śrāddha.* Since it is the first offering, it is also called *Prathamoddiṣṭa Śrāddha* (first-designated *Śrāddha*).
 
@@ -190,11 +190,11 @@ From the time of a person’s death until the conclusion of the *Śrāddha* rite
 4. ***Śrāddha*** (ancestral offering ceremony): Remembering the deceased, offering *[Tarpana](https://en.wikipedia.org/wiki/Tarpana)* (libations of water), food, and other gifts to *Brāhmaṇas*, along with recitation of *[Mantras](https://en.wikipedia.org/wiki/Mantra)*.
 5. ***Niyamabhaṅga*** (ritual conclusion of mourning restrictions): On the first or second day after the *Śrāddha*, the family resumes normal religious and social duties. This marks the conclusion of the *Ādya Śrāddha*.
 
-# The *Garuḍa Purāṇa*
+## The *Garuḍa Purāṇa*
 
 Any writing of *Śrāddha* would be incomplete without referring to the *[Garuḍa Purāṇa](https://en.wikipedia.org/wiki/Garuda_Purana)*. Counted among the eighteen major *[Mahāpurāṇas](https://en.wikipedia.org/wiki/Puranas)* in the *Sanātana Dharma* tradition, this work takes the form of a dialogue between [Lord Viṣṇu](https://en.wikipedia.org/wiki/Vishnu) and his celestial carrier, [Garuḍa](https://en.wikipedia.org/wiki/Garuda). The section known as the *Preta–khaṇḍa* deals extensively with the mysteries of death and what follows it — the journey of the soul, the domains of [Yama](https://en.wikipedia.org/wiki/Yama), the consequences of one's deeds, and the cycle of rebirth. It explains in vivid detail how the soul leaves its mortal frame, the observances during the *aśauca* (period of ritual impurity), the role of *Śrāddha* and *pitṛ–tarpaṇa* (offerings made to the forefathers), and how a being attains heaven, hell, or another birth according to its *[Karma](https://en.wikipedia.org/wiki/Karma_in_Hinduism)*. The *Garuḍa Purāṇa* places strong emphasis on cultivating devotion, practising virtuous deeds, and living in harmony with dharma as the surest means of overcoming the fear of death.
 
-## First Stage of the Journey: Days 1–13
+### First Stage of the Journey: Days 1–13
 
 According to the *Preta–khaṇḍa* (section on the departed) of the *Garuḍa Purāṇa*—
 
@@ -205,7 +205,7 @@ According to the *Preta–khaṇḍa* (section on the departed) of the *Garuḍa
 5. **Day 12:** Through *Ghāṭkāj* (ritual at a riverbank or pond), the fading *sūkṣma-śarīra* (subtle body) is transformed into a *piṇḍaja-śarīra* (ritually–formed body).
 6. **Day 13:** The final *Śrāddha* of this stage makes the path smoother, calmer, and wider for the soul's onward journey.
 
-## Second Stage of the Journey: Days 14–361
+### Second Stage of the Journey: Days 14–361
 
 Day 14 onwards: The *Ātman* begins its main route through Yamaloka (realm of Yama). This path is long and demanding, with many tests and obstacles.
 
@@ -213,7 +213,7 @@ Day 14 onwards: The *Ātman* begins its main route through Yamaloka (realm of Ya
 
 **Variation**: For *Brāhmaṇas* (priestly class), the period is counted as 359 days. Community traditions and regional customs may slightly alter this number.
 
-# Heaven or Hell
+## Heaven or Hell
 
 According to the *[Garuḍa Purāṇa](https://en.wikipedia.org/wiki/Garuda_Purana)*, once the journey of 359 or 361 days is completed, the soul's trial in *Yamaloka* reaches its conclusion, and its next destination is decided. Based on the weighing of virtuous deeds (*satkarma*) and sinful deeds (*asatkarma*), it is determined whether the departed will proceed to the heaven (*svarga*) or hell (*naraka*). If merit outweighs demerit, the soul is sent to the heaven, where the benefits of good actions are enjoyed. If sin outweighs virtue, the soul receives punishment in the hell. Where the results are mixed, the soul experiences portions of both states in succession.
 
@@ -223,11 +223,11 @@ Hell (*naraka*), by contrast, is the place of retribution for wrongful acts. The
 
 After the sojourn in *svarga* or *naraka*, the soul prepares for rebirth. Entry into a new human womb takes place in accordance with the decrees and order of Yama.
 
-## *Vārṣika Śrāddha*
+### *Vārṣika Śrāddha*
 
 The *Vārṣika Śrāddha* (annual ancestral offering ritual) is generally performed at the end of this 359- or 361-day journey (or at the solar year's count of 365 days), marking the completion of the soul's passage. For the rite, an auspicious lunar date (*tithi*) is selected. In the case of *Brāhmaṇas* (priestly class), it is held on the 359th day; for other *[Varṇas](https://en.wikipedia.org/wiki/Varna_(Hinduism))* (social classes), on the 361st day. Since the date of death itself corresponds to a lunar date, most families perform the annual *Śrāddha* exactly one year later on that same *tithi* (date). Alternatively, it may be conducted on the *amāvasyā tithi* (new moon) of the corresponding month. As with the Ādya *Ś*rāddha (first funeral rite), the annual *Ś*rāddha includes remembrance, worship, *piṇ\ḍa-dāna* (offering of rice-balls to ancestors), *homa* (fire oblation), and feeding of *Brāhmaṇas*.
 
-# Disclaimers
+## Disclaimers
 
 A few words about disclaimers —
 
@@ -235,7 +235,7 @@ A few words about disclaimers —
 * The themes involved are not only extensive but also intricate. Contemplating and documenting the long path after death is, in my view, no easy undertaking.
 * For reference, I have quoted from sources such as the *Manusmṛti*, the *Garuḍa Purāṇa*, and the Bhagavad Gita. However, I am not urging anyone to accept these accounts as unquestionable truth. I myself cannot claim to fully comprehend every part of these descriptions. Belief without understanding and heartfelt insight is hollow. You are therefore free to believe or doubt, to inquire and to investigate in your own manner.
 
-# And "Liberation"? Then will I not attain *Mokṣa*?
+## And "Liberation"? Then will I not attain *Mokṣa*?
 
 Disclaimers, or statements of limitation, usually appear either at the beginning or the very end of a text. In this case, however, there is still one final portion even after the disclaimer.
 

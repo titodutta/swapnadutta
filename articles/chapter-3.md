@@ -23,7 +23,7 @@ And now, a couple of days before the *Śrāddha*, I begin writing the third chap
   <figcaption>Mother and I...<br>About 20 kilometres from <a href="https://en.wikipedia.org/wiki/Srinagar">Srinagar, Kashmir</a>. On the way to <a href="https://en.wikipedia.org/wiki/Srinagar">Sonmarg</a>.<br>8 January 2020</figcaption>
 </figure>
 
-# *Disbelief* in *Belief*
+## *Disbelief* in *Belief*
 
 There is an old saying— "Faith brings things together; argument drives them apart." Faith is a universal emotion, widely and continuously exercised. Simultaneously, often, "belief" is one of the most confusing and deceitful notions. If its illusions remained confined within, that would be tolerable. But frequently, *belief* becomes a weapon — wielded by the fanatical, the ignorant, and the violent — to justify their own selfish ends. If we study human history over the past few centuries, perhaps its most tragic pattern has been the imposition of one's *belief* (or *disbelief*) upon others — by force, coercion, or fear. In the name of religion. In the name of tradition, of politics, of society. In the name of the nation, of nationalism. *Impose*. *Enforce*. Do *not* ask. Do not understand. Just *believe*.
 
@@ -44,7 +44,7 @@ I do not *believe* in *belief*.
   <figcaption>My Mother, in the Garcha Road area of Kolkata. <br>Photograph taken on 24 November 2019. <br>A significant part of my Mother's childhood was spent in this Garcha locality. <br>The photo was taken in front of the house of the late Dr. Nihar Munshi, <br>a renowned eye specialist of this area at the time.</figcaption>
 </figure>
 
-# Innumerable Queries
+## Innumerable Queries
 
 Now imagine an oil painting. 
 
@@ -75,13 +75,13 @@ Escape isn't an option. Wherever you turn, a flood of voices comes crashing in, 
   <figcaption>So much chaos! So much noise!</figcaption>
 </figure>
 
-# This Is Not a Critique
+## This Is Not a Critique
 
 In such a state of confusion and fatigue, I prepare to perform my Mother's *Śrāddha* on Friday, 8 August 2025. Look, my intention is not to criticise any Vedic rituals or the accounts of other religions like Islam. I am not here to point out flaws in communism or democracy.
 
 Maybe with deeper thought, I would find metaphor or ancient relevance in these rituals. Maybe in older times, everyone wore dhotis — hence rituals were conducted that way. Maybe [sacred threads](https://en.wikipedia.org/wiki/Upanayana) (*upavīta*) served as identifiers for learned men in a world without certificates. Maybe Prophet Muhammad and his followers ate dates simply because dates were abundant. When I search for the roots of rituals, I sometimes find purpose. But until I know, until I understand, how can I believe in an abstraction?
 
-# Whose Portrait Was It?
+## Whose Portrait Was It?
 
 Let me ask you, that imagined person in "Innumerable Queries" — whose portrait was that? Honestly — that person is me. And also — my Mother.
 

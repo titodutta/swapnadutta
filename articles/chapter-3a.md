@@ -17,7 +17,7 @@ Tomorrow, Friday, 8 August 2025 ([Bengali calendar](https://en.wikipedia.org/wik
   <figcaption>My Mother, in a temple in [Varanasi](https://en.wikipedia.org/wiki/Varanasi).<br>"Buddham Saranam Gacchami".<br>Photograph taken on 1 October 2019.</figcaption>
 </figure>
 
-# Questions and Responses
+## Questions and Responses
 
 After publishing the [third chapter](https://www.silentcontemplation.com/2025/08/swapnadutta3en.html) yesterday, I received a few questions and comments. Here, I will try to address some of them. I hope this addendum will strengthen the earlier text and serve as a bridge between the third and fourth chapters. For obvious reasons, I shall not mention the names of the questioners or commentators, but focus solely on the subject matter.
 
@@ -39,7 +39,7 @@ The ceremony itself is taking place at a temple. Vegetarian food will be served.
 
 Over the last twelve days, every decision I have made around the ceremony has been weighed carefully in the light of what I can afford.
 
-# *More Than You Asked For*
+## *More Than You Asked For*
 
 Coming back to the question of "belief." I wouldn't say I identify my outlook simply as disbelief. In [Rabindranath Tagore](https://en.wikipedia.org/wiki/Rabindranath_Tagore)'s poem "[Prārthanātīta Dāna](https://tagoreweb.in/Verses/kotha-39/prarthonatit-dan-4009)" (The Gift Beyond Asking), the final lines go—
 
@@ -54,7 +54,7 @@ Coming back to the question of "belief." I wouldn't say I identify my outlook si
 
 I could certainly offer my "belief," even if it were hollow or unexamined. But to me, perhaps, there is a greater gift I can give — curiosity — enthusiasm — a sense of inquiry. I remain profoundly interested in life and its nature. So I too shall "give more than you asked for" — my belief, mingled with enthusiastic curiosity.
 
-# Reason Above Rule
+## Reason Above Rule
 
 Over these twelve days, I have heard and followed several rules. Again and again, I have felt that understanding the reason matters more than simply following a rule. Or at least, it is best when a rule is joined to its reason.
 

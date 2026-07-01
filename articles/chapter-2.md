@@ -14,7 +14,7 @@ Today, I come before you as a hawker, with my wares laid out. I have fine things
 
 So, shall we begin?
 
-# All I Ever Wanted Was Love
+## All I Ever Wanted Was Love
 
 > “I longed for nothing  
 > Except Love, my entire life.  
@@ -60,19 +60,19 @@ This quest for Love is eternal—universal. *Man's Eternal Quest.* I have provid
   <figcaption>Swapna Dutta, photographed near <a href="https://kamarpukur.rkmm.org/">Ramakrishna Math, Kamarpukur</a>, <br>13 January 2020.</figcaption>
 </figure>
 
-# 27 July 2025: The Day my Mother Died
+## 27 July 2025: The Day my Mother Died
 
 My Mother, Swapna Dutta, passed away on Friday, 27 July 2025, at 11:25 pm, while undergoing treatment at [M. R. Bangur Hospital](https://www.mrbangurhospital.org/), Kolkata. She had been admitted to [K. P. C Medical College and Hospital](https://en.wikipedia.org/wiki/KPC_Medical_College_and_Hospital) from 24 June to 4 July and again from 21 July to 26 July.
 
-## First Admission at K. P. C. Medical College and Hospital
+### First Admission at K. P. C. Medical College and Hospital
 
 After my Mother's admission to K. P. C. Medical College and Hospital on 24 June, she underwent various tests, including CT scan, MRI scan, EEG, and USG. Some small brain strokes were found, along with other physical issues. Even after her discharge on Friday, 4 July, my Mother remained unwell. She was slowly recovering.
 
-## Second Admission at K. P. C. Medical College and Hospital
+### Second Admission at K. P. C. Medical College and Hospital
 
 By 20 July 2025, she could barely eat; even semi-solid food seemed to choke her. She had also been sleep-deprived for two nights straight. She was given sleeping medication as per the doctor's instructions, but she did not get much sleep. On Monday morning, 21 July 2025, I admitted my Mother to K. P. C. Medical College and Hospital for the second time. The main issues found were urosepsis and a few other complications. From 21 to 23 July, she was in the ICU. On 24 July, she was moved to the general ward. On 26 July, Saturday afternoon, she was discharged, still very unwell. We had hoped to take her out in a wheelchair, but had to use a stretcher. I sensed the discharge was rushed—but said nothing.
 
-## M. R. Bangur Hospital: The Last Hours
+### M. R. Bangur Hospital: The Last Hours
 
 The immediate next day, Sunday, 27 July, my Mother's health began to deteriorate again. She could not sit up, barely ate. I gave her some lactose-free milk in the early evening—she managed to swallow a few sips.
 
@@ -116,7 +116,7 @@ The lady doctor performed a few quick examinations and then called another docto
 
 My Mother Died!
 
-# Let My Heart Bloom Like Flowers at Her Feet
+## Let My Heart Bloom Like Flowers at Her Feet
 
 My Mother was a devotee of [Kali](https://en.wikipedia.org/wiki/Kali) (a Hindu goddess). On the other hand, my Father, Tarun Dutta (passed away 4 May 1998), was a devotee of [Tara](https://en.wikipedia.org/wiki/Tara_(Hindu_goddess)) (another form of Kali). I was ten years old when my Father died, I don't remember much detail. But I very distinctly remember my Mother's prayers.
 
@@ -146,7 +146,7 @@ It was never about practicality. We dreamed together.
 
 And that woman—that lady's death occurred in front of the balcony door of a crowded room in a government hospital! Lying on a trolley, waiting for an ECG test!
 
-# Digressing? Or Completing the Picture?
+## Digressing? Or Completing the Picture?
 
 <figure class="article-image">
   <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizHA9cx1rNBIo3c0REvMGXgccLoKnSU_t_MZDmhOyodkfeIqc0g2axFQu33Dd4a5kQgPFJAlxKcWDRHMJnD9gSSKFTX2zr4Oj3ANex4_HPW2JTAM1ckreg1b4jO50StwxXwwIEC5ELKQ74ThMyCo9K-nXGZvm1sCe9rYjFpXqEluVYX3xyqp_PSvTdKpQ/s686/Mother%20Courage.jpg" alt="Woman in blue sari standing by multilingual wall with '#iamcourage' written below.">
