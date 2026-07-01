@@ -154,11 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
     --tool-border: #dddddd;
   }
 
+  /* This block handles the dark mode overrides perfectly */
   @media (prefers-color-scheme: dark) {
     :root {
       --tool-bg: #1e1e1e;
       --tool-text: #e0e0e0;
       --tool-border: #444444;
+    }
+    
+    /* Explicitly forcing the browser to override default input/select backgrounds */
+    .article-tools input,
+    .article-tools select {
+      background-color: var(--tool-bg) !important;
+      color: var(--tool-text) !important;
+      border-color: var(--tool-border) !important;
     }
   }
 
