@@ -475,6 +475,9 @@ html.forced-dark .article-image img {
   }
 }
 
+/* ==========================================================================
+   FIXED ARTICLE TOOLS UI V2 (Dark Mode & Search Normalization)
+   ========================================================================== */
 .article-tools,
 .gallery-tools {
   display: flex;
@@ -491,8 +494,43 @@ html.forced-dark .article-image img {
   border: 1px solid var(--border);
   border-radius: 12px;
   font-size: 0.95rem;
-  background: var(--surface);
+  background-color: var(--surface);
   color: var(--text);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Explicit fallback adjustments for systems that enforce high-contrast dark overrides */
+@media (prefers-color-scheme: dark) {
+  html:not(.forced-light) .article-tools input,
+  html:not(.forced-light) .article-tools select,
+  html:not(.forced-light) .gallery-tools input,
+  html:not(.forced-light) .gallery-tools select {
+    background-color: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+    -webkit-text-fill-color: var(--text);
+  }
+}
+
+html.forced-dark .article-tools input,
+html.forced-dark .article-tools select,
+html.forced-dark .gallery-tools input,
+html.forced-dark .gallery-tools select {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+  -webkit-text-fill-color: var(--text);
+}
+
+/* Strips native WebKit magnifying glass/cancel button which forces a white layout */
+.article-tools input[type="search"]::-webkit-search-decoration,
+.article-tools input[type="search"]::-webkit-search-cancel-button,
+.article-tools input[type="search"]::-webkit-search-results-button,
+.article-tools input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .article-tools input,
@@ -506,36 +544,14 @@ html.forced-dark .article-image img {
   color: var(--muted);
 }
 
-.article-list,
-.gallery-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.article-item,
-.gallery-item {
-  border-bottom: 1px solid var(--border);
-  padding: 1.3rem 0;
-}
-
-.article-item h3,
-.gallery-item h3 {
-  margin: 0 0 0.5rem;
-}
-
-.article-item h3 a,
-.gallery-item h3 a {
-  text-decoration: none;
-}
-
-.article-item p,
-.gallery-item p {
-  margin-bottom: 0.6rem;
-}
-
-.article-item small,
-.gallery-item small {
-  color: var(--muted);
+/* Dropdown arrow configuration honoring current theme palette variables */
+.article-tools select,
+.gallery-tools select {
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
 }
 
 @media (max-width: 768px) {
@@ -543,7 +559,6 @@ html.forced-dark .article-image img {
   .gallery-tools {
     flex-direction: column;
   }
-
   .article-tools input,
   .article-tools select,
   .gallery-tools input,
